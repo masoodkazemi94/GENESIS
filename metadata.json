@@ -1,0 +1,8 @@
+{
+  "name": "GENESIS — A World Without Players",
+  "description": "An autonomous zero-player ecosystem simulation where independent worlds evolve, thrive, and adapt in real time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
