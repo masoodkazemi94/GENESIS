@@ -47,6 +47,8 @@ export class EventChronicle {
     extra?: {
       highlightSpeciesId?: string;
       highlightOrganismId?: string;
+      x?: number;
+      y?: number;
       isMilestone?: boolean;
     }
   ): SimulationEvent {
@@ -61,6 +63,8 @@ export class EventChronicle {
       description,
       highlightSpeciesId: extra?.highlightSpeciesId,
       highlightOrganismId: extra?.highlightOrganismId,
+      x: extra?.x,
+      y: extra?.y,
       isMilestone,
     };
 

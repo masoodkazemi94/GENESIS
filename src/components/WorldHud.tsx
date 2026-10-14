@@ -13,6 +13,7 @@ import { FocusSubject } from '../rendering/camera/director.js';
 import {
   formatChronicleSentence,
   generateScientificObservations,
+  getCurrentChronicleEvent,
 } from '../simulation/events/worldChronicle.js';
 import { ambientSound } from '../audio/ambientSound.js';
 
@@ -74,10 +75,10 @@ export const WorldHud: React.FC<WorldHudProps> = ({
   const currentObservation = observations[observationIndex % observations.length];
 
   // Latest verified chronicle event sentence
-  const latestMilestone = events.find((e) => e.isMilestone) || events[0];
-  const chronicleSentence = terrainMap && latestMilestone
-    ? formatChronicleSentence(latestMilestone, snapshot, terrainMap)
-    : latestMilestone?.description || 'Autonomous life balances across natural planetary biomes.';
+  const currentEvent = getCurrentChronicleEvent(snapshot);
+  const chronicleSentence = terrainMap && currentEvent
+    ? formatChronicleSentence(currentEvent, snapshot, terrainMap)
+    : currentEvent?.description || 'No recent major event.';
 
   // Milestones for the minimal history timeline
   const timelineMilestones = events

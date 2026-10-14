@@ -338,6 +338,8 @@ export interface SimulationEvent {
   description: string;
   highlightSpeciesId?: string;
   highlightOrganismId?: string;
+  x?: number;
+  y?: number;
   isMilestone?: boolean;
 }
 

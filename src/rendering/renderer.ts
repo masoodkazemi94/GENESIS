@@ -37,6 +37,14 @@ interface MountainPeak {
   radius: number;
 }
 
+interface DeathEffect {
+  x: number;
+  y: number;
+  radius: number;
+  color: number;
+  startedAt: number;
+}
+
 export class GenesisRenderer {
   public app: Application;
   public camera: CameraDirector;
@@ -58,6 +66,7 @@ export class GenesisRenderer {
 
   private currentSnapshot: SimulationSnapshot | null = null;
   private previousSnapshotMap: Map<string, { x: number; y: number; angle: number }> = new Map();
+  private deathEffects: DeathEffect[] = [];
   private lastSnapshotTime = 0;
   private terrainMap: TerrainMap | null = null;
   private particles: AmbientParticle[] = [];
@@ -265,11 +274,27 @@ export class GenesisRenderer {
 
   public setTerrain(terrain: TerrainMap): void {
     this.terrainMap = terrain;
+    this.currentSnapshot = null;
+    this.previousSnapshotMap.clear();
+    this.deathEffects = [];
     this.buildTerrainTexture();
   }
 
   public updateSnapshot(snapshot: SimulationSnapshot): void {
     if (this.currentSnapshot) {
+      const livingIds = new Set(snapshot.organisms.map((organism) => organism.id));
+      const now = performance.now();
+      for (const organism of this.currentSnapshot.organisms) {
+        if (!livingIds.has(organism.id)) {
+          this.deathEffects.push({
+            x: organism.x,
+            y: organism.y,
+            radius: 6.2 * (organism.genome.bodySize || 1),
+            color: parseInt(organism.speciesColorHex.replace('#', ''), 16) || 0x48c774,
+            startedAt: now,
+          });
+        }
+      }
       this.previousSnapshotMap.clear();
       for (let i = 0; i < this.currentSnapshot.organisms.length; i++) {
         const o = this.currentSnapshot.organisms[i];
@@ -790,6 +815,17 @@ export class GenesisRenderer {
       if (this.currentSnapshot.climate.solarRadiation < 0.25) {
         g.circle(posX, posY, size * 2.2).fill({ color: colorNum, alpha: 0.22 });
       }
+    }
+
+    const nowMs = performance.now();
+    this.deathEffects = this.deathEffects.filter((effect) => nowMs - effect.startedAt < 700);
+    for (const effect of this.deathEffects) {
+      const progress = (nowMs - effect.startedAt) / 700;
+      const opacity = 1 - progress;
+      g.circle(effect.x, effect.y, effect.radius * (1 - progress * 0.55))
+        .fill({ color: effect.color, alpha: opacity * 0.65 });
+      g.circle(effect.x, effect.y, effect.radius * (1 + progress * 1.8))
+        .stroke({ color: effect.color, width: 1.5, alpha: opacity * 0.7 });
     }
   }
 

@@ -24,6 +24,8 @@ export interface EnvironmentalUpdateResult {
     isMilestone?: boolean;
     highlightSpeciesId?: string;
     highlightOrganismId?: string;
+    x?: number;
+    y?: number;
   }>;
   recoveredPatches: ResourcePatch[];
   destroyedPlantsCount: number;
@@ -617,6 +619,8 @@ export function updateEnvironmentalDisasters(
               type: 'ecosystem_recovery',
               title: 'Ecosystem Habitat Recovery',
               description: `Pioneer flora has begun recolonizing ash-enriched recovered soils at sector (${cell.x}, ${cell.y}).`,
+              x: worldX,
+              y: worldY,
               isMilestone: true,
             });
           }

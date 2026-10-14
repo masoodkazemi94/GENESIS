@@ -213,7 +213,7 @@ export class SimulationEngine {
           newDisaster.name,
           `A catastrophic ${newDisaster.type.replace('_', ' ')} (severity ${(newDisaster.severity * 100).toFixed(0)}%) struck at tick ${this.tick}.`,
           this.tick,
-          { isMilestone: true }
+          { isMilestone: true, x: newDisaster.x, y: newDisaster.y }
         );
       }
     }
@@ -236,6 +236,8 @@ export class SimulationEngine {
         isMilestone: ev.isMilestone,
         highlightSpeciesId: ev.highlightSpeciesId,
         highlightOrganismId: ev.highlightOrganismId,
+        x: ev.x,
+        y: ev.y,
       });
     }
 
@@ -298,7 +300,7 @@ export class SimulationEngine {
           `Speciation: ${newTaxon.name}`,
           `A new lineage ("${newTaxon.commonName}") diverged from ${parentTaxon.name} (divergence ${(speciationResult.divergenceScore * 100).toFixed(1)}%).`,
           this.tick,
-          { highlightSpeciesId: newTaxon.id, isMilestone: true }
+          { highlightSpeciesId: newTaxon.id, x: parentA.x, y: parentA.y, isMilestone: true }
         );
       } else {
         childTaxon = parentTaxon;
@@ -371,7 +373,7 @@ export class SimulationEngine {
           'Apex Predator Reign',
           `An elder hunter from ${predator.speciesName} has claimed 5 successful prey hunts.`,
           this.tick,
-          { highlightOrganismId: predator.id, highlightSpeciesId: predator.speciesId, isMilestone: true }
+          { highlightOrganismId: predator.id, highlightSpeciesId: predator.speciesId, x: predator.x, y: predator.y, isMilestone: true }
         );
       }
     }
@@ -398,7 +400,7 @@ export class SimulationEngine {
             'Matriarch Milestone',
             `An organism from ${org.speciesName} has endured for ${(org.age / 20).toFixed(0)} seconds of continuous evolutionary history.`,
             this.tick,
-            { highlightOrganismId: org.id, highlightSpeciesId: org.speciesId, isMilestone: true }
+            { highlightOrganismId: org.id, highlightSpeciesId: org.speciesId, x: org.x, y: org.y, isMilestone: true }
           );
         }
       }
@@ -437,7 +439,7 @@ export class SimulationEngine {
                 'Drought-Induced Extinction',
                 `The line of ${taxon.name} ("${taxon.commonName}") collapsed amid severe drought at tick ${this.tick}.`,
                 this.tick,
-                { highlightSpeciesId: taxon.id, isMilestone: true }
+                { highlightSpeciesId: taxon.id, x: org.x, y: org.y, isMilestone: true }
               );
             } else {
               this.chronicle.addEvent(
@@ -445,7 +447,7 @@ export class SimulationEngine {
                 'Lineage Extinction',
                 `The line of ${taxon.name} ("${taxon.commonName}") has vanished from the world at tick ${this.tick}.`,
                 this.tick,
-                { highlightSpeciesId: taxon.id, isMilestone: true }
+                { highlightSpeciesId: taxon.id, x: org.x, y: org.y, isMilestone: true }
               );
             }
           }

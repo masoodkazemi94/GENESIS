@@ -43,6 +43,7 @@ import { CameraDirector } from './rendering/camera/director.js';
 import {
   formatChronicleSentence,
   generateScientificObservations,
+  getCurrentChronicleEvent,
 } from './simulation/events/worldChronicle.js';
 
 describe('Genesis Engine - Deterministic Procedural Terrain Generation', () => {
@@ -1717,6 +1718,7 @@ describe('Genesis - Hands-free Spectator Experience, Director & Chronicle', () =
     const hunter = engine.organisms[0];
     hunter.state = 'hunting';
     hunter.genome.diet = 'carnivore';
+    hunter.targetId = engine.organisms[1].id;
     hunter.x = 800;
     hunter.y = 800;
 
@@ -1734,6 +1736,26 @@ describe('Genesis - Hands-free Spectator Experience, Director & Chronicle', () =
     expect(director.target.x).toBeCloseTo((hunter.x + prey.x) / 2, 0);
   });
 
+  it('requires sustained same-species displacement before calling movement a migration', () => {
+    const director = new CameraDirector(2560, 2560);
+    const engine = new SimulationEngine(48123);
+    const group = engine.organisms.slice(0, 3);
+    group.forEach((organism, index) => {
+      organism.x = 800 + index * 12;
+      organism.y = 800;
+    });
+    director.update(0, engine.getSnapshot(), engine.terrain);
+
+    for (const organism of group) {
+      organism.x += 110;
+      organism.vx = 1.5;
+      organism.vy = 0;
+    }
+    director.update(14, engine.getSnapshot(), engine.terrain);
+    expect(director.subject.type).toBe('migration');
+    expect(director.subject.description).toContain('more than 90 world units');
+  });
+
   it('generates authentic natural history sentences from verified simulation events', () => {
     const engine = new SimulationEngine(48123);
     const snapshot = engine.getSnapshot();
@@ -1745,10 +1767,17 @@ describe('Genesis - Hands-free Spectator Experience, Director & Chronicle', () =
       type: 'speciation' as const,
       title: 'Speciation: Nova',
       description: 'A new lineage emerged.',
+      x: 800,
+      y: 800,
       isMilestone: true,
     };
     const specSentence = formatChronicleSentence(specEvent, snapshot, engine.terrain);
     expect(specSentence).toMatch(/A new lineage has emerged in the/);
+    const movedSnapshot = {
+      ...snapshot,
+      organisms: snapshot.organisms.map((organism) => ({ ...organism, x: 2300, y: 2300 })),
+    };
+    expect(formatChronicleSentence(specEvent, movedSnapshot, engine.terrain)).toBe(specSentence);
 
     const recovEvent = {
       id: 'rec_1',
@@ -1760,7 +1789,8 @@ describe('Genesis - Hands-free Spectator Experience, Director & Chronicle', () =
       isMilestone: true,
     };
     const recovSentence = formatChronicleSentence(recovEvent, snapshot, engine.terrain);
-    expect(recovSentence).toMatch(/are recovering after a devastating/);
+    expect(recovSentence).toMatch(/Pioneer flora is recolonizing recovered habitat/);
+    expect(recovSentence).not.toMatch(/drought/);
 
     const extEvent = {
       id: 'ext_1',
@@ -1773,6 +1803,26 @@ describe('Genesis - Hands-free Spectator Experience, Director & Chronicle', () =
     };
     const extSentence = formatChronicleSentence(extEvent, snapshot, engine.terrain);
     expect(extSentence).toMatch(/has vanished into planetary history/);
+
+    const droughtExtinction = formatChronicleSentence(
+      { ...extEvent, type: 'drought_extinction' }, snapshot, engine.terrain
+    );
+    expect(droughtExtinction).toMatch(/has vanished amid severe drought/);
+    expect(droughtExtinction).not.toMatch(/approaching/);
+
+    const unlocatedSpeciation = formatChronicleSentence(
+      { ...specEvent, x: undefined, y: undefined }, snapshot, engine.terrain
+    );
+    expect(unlocatedSpeciation).toBe('A new lineage has emerged.');
+  });
+
+  it('stops presenting old milestones as current events', () => {
+    const engine = new SimulationEngine(48123);
+    const initial = engine.getSnapshot();
+    expect(getCurrentChronicleEvent(initial)?.type).toBe('world_genesis');
+
+    const later = { ...initial, tick: 201 };
+    expect(getCurrentChronicleEvent(later)).toBeUndefined();
   });
 
   it('generates rotating scientific observations strictly from genuine snapshot data', () => {
@@ -1784,5 +1834,6 @@ describe('Genesis - Hands-free Spectator Experience, Director & Chronicle', () =
     expect(typeof observations[0]).toBe('string');
     const combined = observations.join(' ');
     expect(combined).toMatch(/living organisms|biomass|trophic|equilibrium/i);
+    expect(combined).not.toMatch(/stabilizes|has intensified|expand toward/);
   });
 });

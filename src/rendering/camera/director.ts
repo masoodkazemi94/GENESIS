@@ -26,6 +26,7 @@ export interface FocusSubject {
     | 'migration'
     | 'population_crisis'
     | 'ecological_recovery'
+    | 'disaster'
     | 'rare_mutation'
     | 'matriarch'
     | 'scenic';
@@ -58,6 +59,9 @@ export class CameraDirector {
   private readonly minDwellDuration = 13.0; // Minimum seconds to remain on an event to be understood
   private currentTrackedOrganismId: string | null = null;
   private currentSecondaryOrganismId: string | null = null;
+  private migrationOrigins = new Map<string, { x: number; y: number }>();
+  private lastWorldSeed: number | null = null;
+  private lastSnapshotTick = -1;
 
   // Scenic waypoints for rotating planetary overviews
   private scenicWaypoints: Array<{ x: number; y: number; zoom: number; name: string; desc: string }> = [];
@@ -77,29 +81,29 @@ export class CameraDirector {
         x: worldWidth * 0.5,
         y: worldHeight * 0.5,
         zoom: 0.75,
-        name: 'Central River Basin',
-        desc: 'Panoramic overview of the planetary heartland and river channels.',
+        name: 'Central Vista',
+        desc: 'A wide view of the current world.',
       },
       {
         x: worldWidth * 0.28,
         y: worldHeight * 0.32,
         zoom: 0.82,
-        name: 'Northwestern Woodlands',
-        desc: 'Ancient canopy shelters diverse foraging lineages.',
+        name: 'Northwestern Vista',
+        desc: 'A wide view of the northwestern terrain.',
       },
       {
         x: worldWidth * 0.72,
         y: worldHeight * 0.72,
         zoom: 0.8,
-        name: 'Southeastern Plains',
-        desc: 'Expansive open grasslands where herds roam.',
+        name: 'Southeastern Vista',
+        desc: 'A wide view of the southeastern terrain.',
       },
       {
         x: worldWidth * 0.75,
         y: worldHeight * 0.25,
         zoom: 0.85,
-        name: 'Northeastern Alpine Ridge',
-        desc: 'Rugged peaks dividing climatic wind patterns.',
+        name: 'Northeastern Vista',
+        desc: 'A wide view of the northeastern terrain.',
       },
     ];
   }
@@ -120,6 +124,20 @@ export class CameraDirector {
     terrain: TerrainMap
   ): void {
     const now = Date.now();
+    if (this.lastWorldSeed !== snapshot.worldSeed || snapshot.tick < this.lastSnapshotTick) {
+      this.migrationOrigins.clear();
+    }
+    this.lastWorldSeed = snapshot.worldSeed;
+    this.lastSnapshotTick = snapshot.tick;
+    for (const organism of snapshot.organisms) {
+      if (!this.migrationOrigins.has(organism.id)) {
+        this.migrationOrigins.set(organism.id, { x: organism.x, y: organism.y });
+      }
+    }
+    const livingIds = new Set(snapshot.organisms.map((organism) => organism.id));
+    for (const id of this.migrationOrigins.keys()) {
+      if (!livingIds.has(id)) this.migrationOrigins.delete(id);
+    }
 
     // Auto-resume autonomous director after 6 seconds of spectator inactivity
     if (this.isManualControl && now - this.lastManualInteractionTime > 6000) {
@@ -214,8 +232,8 @@ export class CameraDirector {
           type: 'extinction',
           description: recentExtinction.description,
         },
-        targetX: this.current.x,
-        targetY: this.current.y,
+        targetX: recentExtinction.x ?? this.current.x,
+        targetY: recentExtinction.y ?? this.current.y,
         targetZoom: 0.95,
       });
     }
@@ -253,11 +271,11 @@ export class CameraDirector {
         for (let j = 0; j < organisms.length; j++) {
           if (i === j) continue;
           const prey = organisms[j];
-          if (prey.speciesId !== hunter.speciesId && prey.state !== 'dead') {
+          if (prey.id === hunter.targetId && prey.speciesId !== hunter.speciesId && prey.state !== 'dead') {
             const dist = Math.hypot(hunter.x - prey.x, hunter.y - prey.y);
             if (dist < 85) {
               candidates.push({
-                score: 85 + (prey.state === 'fleeing' ? 10 : 0),
+                score: 85 + (prey.state === 'fleeing' ? 5 : 0),
                 subject: {
                   id: hunter.id,
                   name: `Predation: ${hunter.speciesName} pursuing ${prey.speciesName}`,
@@ -279,20 +297,24 @@ export class CameraDirector {
 
     // 4. Rare Mutations with Significant Consequences
     if (snapshot.mutationEvents && snapshot.mutationEvents.length > 0) {
-      const recentMutations = snapshot.mutationEvents.slice(-6);
-      const significantMutation = recentMutations.find((m) => m.delta > 0.22);
+      const recentMutations = snapshot.mutationEvents.slice(-60);
+      const significantMutation = recentMutations.find((m) =>
+        Math.abs(m.delta) > 0.22 && organisms.some((o) =>
+          o.id === m.offspringId && o.offspringCount >= 2
+        )
+      );
       if (significantMutation) {
         const mutatedOrg = organisms.find(
           (o) => o.id === significantMutation.offspringId && o.state !== 'dead'
         );
         if (mutatedOrg) {
           candidates.push({
-            score: 80,
+            score: 70,
             subject: {
               id: mutatedOrg.id,
-              name: `Divergent Mutation: ${mutatedOrg.speciesName}`,
+              name: `Reproductive Mutation: ${mutatedOrg.speciesName}`,
               type: 'rare_mutation',
-              description: `A distinct divergence in ${significantMutation.traitName} (+${(significantMutation.delta * 100).toFixed(0)}%) has manifested.`,
+              description: `A ${significantMutation.traitName} mutation of ${significantMutation.delta.toFixed(2)} was recorded in an organism that later had ${mutatedOrg.offspringCount} offspring.`,
             },
             targetX: mutatedOrg.x,
             targetY: mutatedOrg.y,
@@ -310,7 +332,7 @@ export class CameraDirector {
         const survivor = organisms.find((o) => o.speciesId === taxon.id && o.state !== 'dead');
         if (survivor) {
           candidates.push({
-            score: 75,
+            score: 80,
             subject: {
               id: survivor.id,
               name: `Vulnerable Lineage: ${taxon.name}`,
@@ -333,15 +355,15 @@ export class CameraDirector {
     );
     if (recoveryEvent) {
       candidates.push({
-        score: 70,
+        score: 75,
         subject: {
           id: recoveryEvent.id,
           name: recoveryEvent.title,
           type: 'ecological_recovery',
           description: recoveryEvent.description,
         },
-        targetX: terrain.worldWidth / 2,
-        targetY: terrain.worldHeight / 2,
+        targetX: recoveryEvent.x ?? terrain.worldWidth / 2,
+        targetY: recoveryEvent.y ?? terrain.worldHeight / 2,
         targetZoom: 0.9,
       });
     }
@@ -353,7 +375,7 @@ export class CameraDirector {
         subject: {
           id: d.id,
           name: d.name,
-          type: 'ecological_recovery',
+          type: 'disaster',
           description: `Catastrophic environmental event affecting local habitats.`,
         },
         targetX: d.x,
@@ -366,7 +388,11 @@ export class CameraDirector {
     if (organisms.length >= 4) {
       for (let i = 0; i < organisms.length; i += 3) {
         const orgA = organisms[i];
-        if (Math.hypot(orgA.vx, orgA.vy) > 1.2) {
+        const originA = this.migrationOrigins.get(orgA.id);
+        const travelAX = originA ? orgA.x - originA.x : 0;
+        const travelAY = originA ? orgA.y - originA.y : 0;
+        const travelA = Math.hypot(travelAX, travelAY);
+        if (travelA > 90 && Math.hypot(orgA.vx, orgA.vy) > 1.2) {
           // Check nearby comrades moving in same direction
           let coherentCount = 1;
           let avgX = orgA.x;
@@ -375,8 +401,12 @@ export class CameraDirector {
             if (i === j) continue;
             const orgB = organisms[j];
             const dist = Math.hypot(orgA.x - orgB.x, orgA.y - orgB.y);
-            if (dist < 140) {
-              const dot = (orgA.vx * orgB.vx + orgA.vy * orgB.vy) / (Math.hypot(orgA.vx, orgA.vy) * Math.hypot(orgB.vx, orgB.vy) + 0.001);
+            const originB = this.migrationOrigins.get(orgB.id);
+            const travelBX = originB ? orgB.x - originB.x : 0;
+            const travelBY = originB ? orgB.y - originB.y : 0;
+            const travelB = Math.hypot(travelBX, travelBY);
+            if (dist < 140 && orgB.speciesId === orgA.speciesId && travelB > 90) {
+              const dot = (travelAX * travelBX + travelAY * travelBY) / (travelA * travelB);
               if (dot > 0.6) {
                 coherentCount++;
                 avgX += orgB.x;
@@ -387,12 +417,12 @@ export class CameraDirector {
 
           if (coherentCount >= 3) {
             candidates.push({
-              score: 65,
+              score: 82,
               subject: {
                 id: orgA.id,
-                name: `Herd Migration: ${orgA.speciesName}`,
+                name: `Group Migration: ${orgA.speciesName}`,
                 type: 'migration',
-                description: `A herd of ${coherentCount} organisms traversing terrain toward sustenance.`,
+                description: `${coherentCount} members of one species have traveled more than 90 world units in a similar direction.`,
               },
               targetX: avgX / coherentCount,
               targetY: avgY / coherentCount,
@@ -454,6 +484,11 @@ export class CameraDirector {
     this.target.zoom = chosen.targetZoom;
     this.currentTrackedOrganismId = chosen.organismId || null;
     this.currentSecondaryOrganismId = chosen.secondaryOrganismId || null;
+    if (chosen.subject.type === 'migration') {
+      for (const organism of organisms) {
+        this.migrationOrigins.set(organism.id, { x: organism.x, y: organism.y });
+      }
+    }
   }
 
   public setManualPan(dx: number, dy: number): void {
