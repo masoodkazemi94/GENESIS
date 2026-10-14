@@ -15,6 +15,7 @@ import {
   generateScientificObservations,
   getCurrentChronicleEvent,
 } from '../simulation/events/worldChronicle.js';
+import { getCalendarDate } from '../simulation/calendar/calendar.js';
 import { ambientSound } from '../audio/ambientSound.js';
 
 interface WorldHudProps {
@@ -37,6 +38,7 @@ export const WorldHud: React.FC<WorldHudProps> = ({
   terrainMap,
   directorSubject,
   cameraSubject,
+  isLeader,
   isManualCamera,
   onResumeCamera,
   speed,
@@ -47,6 +49,7 @@ export const WorldHud: React.FC<WorldHudProps> = ({
 }) => {
   const [observationIndex, setObservationIndex] = useState(0);
   const [isAudioMuted, setIsAudioMuted] = useState(ambientSound.muted);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   // Rotate scientific observations every 13 seconds
   useEffect(() => {
@@ -60,17 +63,10 @@ export const WorldHud: React.FC<WorldHudProps> = ({
 
   const { stats, climate, events, worldName, worldSeed, species, organisms } = snapshot;
 
-  // 1 simulated year = 4 seasons (2400 ticks total = 2 minutes of real-time simulation at 50ms ticks)
-  const simulatedYear = Math.floor(stats.tick / 2400) + 1;
-  const eon = Math.floor(stats.tick / 9600) + 1;
-  const seasonCapitalized = climate.season.charAt(0).toUpperCase() + climate.season.slice(1);
+  // Authoritative calendar calculation: 2,400 ticks per day, 4 days per year (Spring, Summer, Autumn, Winter)
+  const calendarDate = getCalendarDate(stats.tick);
+  const seasonCapitalized = calendarDate.season.charAt(0).toUpperCase() + calendarDate.season.slice(1);
   const livingSpeciesCount = species.filter((s) => !s.extinct && s.aliveCount > 0).length;
-
-  // Time of day label
-  let timeOfDay = 'Dawn';
-  if (climate.dayCycle >= 0.18 && climate.dayCycle < 0.42) timeOfDay = 'Midday';
-  else if (climate.dayCycle >= 0.42 && climate.dayCycle < 0.58) timeOfDay = 'Dusk';
-  else if (climate.dayCycle >= 0.58) timeOfDay = 'Night';
 
   // Generate rotating scientific observations strictly from genuine snapshot data
   const observations = generateScientificObservations(snapshot);
@@ -93,24 +89,39 @@ export const WorldHud: React.FC<WorldHudProps> = ({
     setIsAudioMuted(!unmuted);
   };
 
+  const handleNewSeedClick = () => {
+    setShowConfirmModal(true);
+  };
+
+  const handleCancelNewSeed = () => {
+    setShowConfirmModal(false);
+  };
+
+  const handleConfirmNewSeed = () => {
+    setShowConfirmModal(false);
+    if (onRerunNewSeed) {
+      onRerunNewSeed();
+    }
+  };
+
   return (
     <div className="pointer-events-none absolute inset-0 select-none p-3 md:p-6 flex flex-col justify-between z-20 font-sans">
       {/* ================= TOP BAR ================= */}
       <header className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 w-full">
-        {/* World Identity & Simulated Year */}
+        {/* World Identity & Simulated Calendar */}
         <div className="pointer-events-auto bg-black/45 backdrop-blur-md border border-white/10 rounded-xl px-4 py-3 shadow-2xl max-w-sm">
           <div className="flex items-baseline gap-2">
             <h1 className="text-base md:text-lg font-serif font-semibold text-white tracking-wide">
               {worldName}
             </h1>
             <span className="text-xs font-mono text-emerald-400/90 font-medium">
-              Year {simulatedYear}
+              Year {calendarDate.year}, Day {calendarDate.dayOfYear}
             </span>
           </div>
 
           <div className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-white/70 font-mono">
             <span>
-              {seasonCapitalized} • {timeOfDay}
+              {seasonCapitalized} • {calendarDate.timeOfDay}
             </span>
             <span>•</span>
             <span className="text-white/90">
@@ -121,6 +132,14 @@ export const WorldHud: React.FC<WorldHudProps> = ({
               {livingSpeciesCount} Species
             </span>
           </div>
+
+          {/* Multi-Tab Observer Warning Banner */}
+          {!isLeader && (
+            <div className="mt-1.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-sky-950/70 border border-sky-500/30 text-[10px] text-sky-300 font-mono">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+              Observer Tab • Simulating in primary tab
+            </div>
+          )}
 
           {/* Active Disaster / Stress Alert Badge */}
           {climate.isDrought && (
@@ -217,7 +236,7 @@ export const WorldHud: React.FC<WorldHudProps> = ({
           {/* Rerun with New Seed Button */}
           {onRerunNewSeed && (
             <button
-              onClick={onRerunNewSeed}
+              onClick={handleNewSeedClick}
               title="Rerun world simulation with a brand-new random seed"
               className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-emerald-950/60 hover:bg-emerald-900/80 border border-emerald-500/30 hover:border-emerald-400 text-xs font-mono text-emerald-200 transition-all cursor-pointer shadow-lg active:scale-95"
             >
@@ -229,6 +248,64 @@ export const WorldHud: React.FC<WorldHudProps> = ({
           )}
         </div>
       </header>
+
+      {/* ================= CONFIRMATION MODAL (PRIORITY 3) ================= */}
+      {showConfirmModal && (
+        <div className="pointer-events-auto fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-md p-4">
+          <div className="max-w-md w-full bg-[#0d141c] border border-white/20 rounded-2xl p-6 shadow-2xl text-white font-mono animate-in fade-in zoom-in-95 duration-200">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-base font-semibold text-white">Generate Primordial World?</h3>
+                <p className="text-xs text-white/60 mt-0.5">Existing world will be archived</p>
+              </div>
+            </div>
+
+            <p className="text-xs text-white/80 leading-relaxed mb-4">
+              Generating a new random seed will replace the active world <span className="text-emerald-400 font-semibold">&ldquo;{worldName}&rdquo;</span>.
+              An archived recovery snapshot of your current world will be safely preserved in local storage before creation.
+            </p>
+
+            <div className="bg-black/40 border border-white/10 rounded-xl p-3 mb-5 text-[11px] space-y-1 text-white/70">
+              <div className="flex justify-between">
+                <span>Active World:</span>
+                <span className="text-white font-medium">{worldName}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>World Seed:</span>
+                <span className="text-white font-medium">{worldSeed}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Simulation Time:</span>
+                <span className="text-white font-medium">Year {calendarDate.year}, Day {calendarDate.dayOfYear} ({seasonCapitalized})</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Ecosystem:</span>
+                <span className="text-white font-medium">{organisms.length} organisms across {livingSpeciesCount} species</span>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-end gap-3">
+              <button
+                onClick={handleCancelNewSeed}
+                className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-xs text-white transition-colors cursor-pointer"
+              >
+                Cancel (Keep World)
+              </button>
+              <button
+                onClick={handleConfirmNewSeed}
+                className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs text-white font-semibold shadow-lg shadow-emerald-900/50 transition-all cursor-pointer active:scale-95"
+              >
+                Archive & Generate
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ================= BOTTOM BAR ================= */}
       <footer className="flex flex-col gap-3 w-full">
@@ -274,7 +351,7 @@ export const WorldHud: React.FC<WorldHudProps> = ({
               </span>
               <div className="flex items-center gap-6 w-full">
                 {timelineMilestones.map((m, idx) => {
-                  const mYear = Math.floor(m.tick / 2400) + 1;
+                  const mCal = getCalendarDate(m.tick);
                   const isLatest = idx === timelineMilestones.length - 1;
                   return (
                     <div
@@ -296,7 +373,7 @@ export const WorldHud: React.FC<WorldHudProps> = ({
                             : 'bg-cyan-400'
                         } ${isLatest ? 'ring-2 ring-white/50 animate-pulse' : ''}`}
                       />
-                      <span className="text-[11px] text-white/50">Yr {mYear}</span>
+                      <span className="text-[11px] text-white/50">Yr {mCal.year}, D{mCal.dayOfYear}</span>
                       <span className="text-xs truncate max-w-[110px]" title={m.title}>
                         {m.title}
                       </span>

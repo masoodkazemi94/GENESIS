@@ -3,10 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { SimulationSnapshot } from '../types/simulation.js';
+
 export interface SessionCoordinatorCallbacks {
   onBecameLeader: () => void;
   onBecameObserver: () => void;
+  onRemoteSnapshot?: (snapshot: SimulationSnapshot) => void;
 }
+
+export type CoordinatorMessage =
+  | { type: 'SNAPSHOT'; snapshot: SimulationSnapshot }
+  | { type: 'LEADER_HEARTBEAT'; tabId: string };
 
 export class SessionCoordinator {
   private isLeader = false;
@@ -14,73 +21,106 @@ export class SessionCoordinator {
   private abortController: AbortController | null = null;
   private callbacks: SessionCoordinatorCallbacks;
   private pollInterval: number | null = null;
+  private releaseWebLock: (() => void) | null = null;
+  private tabId: string;
 
   constructor(callbacks: SessionCoordinatorCallbacks) {
     this.callbacks = callbacks;
+    this.tabId = `tab_${Math.random().toString(36).slice(2, 9)}_${Date.now()}`;
     if (typeof BroadcastChannel !== 'undefined') {
-      this.channel = new BroadcastChannel('genesis_session_channel');
+      try {
+        this.channel = new BroadcastChannel('genesis_session_channel');
+        this.channel.onmessage = (event: MessageEvent<CoordinatorMessage>) => {
+          if (!this.isLeader && event.data?.type === 'SNAPSHOT' && this.callbacks.onRemoteSnapshot) {
+            this.callbacks.onRemoteSnapshot(event.data.snapshot);
+          }
+        };
+      } catch {
+        this.channel = null;
+      }
     }
   }
 
   public async start(): Promise<void> {
     if (typeof navigator !== 'undefined' && 'locks' in navigator) {
-      // Primary: Web Locks API
+      // Primary: Modern Web Locks API
       this.acquireWebLock();
     } else {
-      // Fallback: Heartbeat channel
+      // Fallback: LocalStorage Heartbeat Lease
       this.startHeartbeatFallback();
+    }
+  }
+
+  /**
+   * Broadcasts the simulation snapshot from the leader to observer tabs
+   */
+  public broadcastSnapshot(snapshot: SimulationSnapshot): void {
+    if (this.isLeader && this.channel) {
+      try {
+        this.channel.postMessage({ type: 'SNAPSHOT', snapshot });
+      } catch {
+        // Broadcast failures are safely ignored
+      }
     }
   }
 
   private acquireWebLock(): void {
     this.abortController = new AbortController();
 
-    navigator.locks.request(
-      'genesis_world_writer_lock',
-      { ifAvailable: true, signal: this.abortController.signal },
-      async (lock) => {
-        if (lock) {
-          this.isLeader = true;
-          this.callbacks.onBecameLeader();
+    navigator.locks
+      .request(
+        'genesis_world_writer_lock',
+        { ifAvailable: true, signal: this.abortController.signal },
+        async (lock) => {
+          if (lock) {
+            this.isLeader = true;
+            this.callbacks.onBecameLeader();
 
-          // Keep lock alive until page unload
-          return new Promise<void>((resolve) => {
-            const handleUnload = () => {
-              window.removeEventListener('beforeunload', handleUnload);
-              resolve();
-            };
-            window.addEventListener('beforeunload', handleUnload);
-          });
-        } else {
-          // Lock held by another tab -> Become observer
-          this.isLeader = false;
-          this.callbacks.onBecameObserver();
+            return new Promise<void>((resolve) => {
+              this.releaseWebLock = resolve;
+              const handleUnload = () => {
+                window.removeEventListener('beforeunload', handleUnload);
+                resolve();
+              };
+              window.addEventListener('beforeunload', handleUnload);
+            });
+          } else {
+            // Lock held by another tab -> become observer
+            this.isLeader = false;
+            this.callbacks.onBecameObserver();
 
-          // Retry acquiring the lock when the other tab closes
-          navigator.locks.request(
-            'genesis_world_writer_lock',
-            { signal: this.abortController?.signal },
-            async () => {
-              this.isLeader = true;
-              this.callbacks.onBecameLeader();
-              return new Promise<void>((resolve) => {
-                window.addEventListener('beforeunload', () => resolve(), { once: true });
-              });
-            }
-          );
+            // Queue up to take over leadership immediately if the leader closes
+            return navigator.locks.request(
+              'genesis_world_writer_lock',
+              { signal: this.abortController?.signal },
+              async () => {
+                this.isLeader = true;
+                this.callbacks.onBecameLeader();
+
+                return new Promise<void>((resolve) => {
+                  this.releaseWebLock = resolve;
+                  const handleUnload = () => {
+                    window.removeEventListener('beforeunload', handleUnload);
+                    resolve();
+                  };
+                  window.addEventListener('beforeunload', handleUnload);
+                });
+              }
+            );
+          }
         }
-      }
-    ).catch((err) => {
-      if (err.name !== 'AbortError') {
-        console.warn('[Genesis Coordinator] Web Lock fallback triggered:', err);
-        this.startHeartbeatFallback();
-      }
-    });
+      )
+      .catch((err) => {
+        if (err.name !== 'AbortError') {
+          console.warn('[Genesis Coordinator] Web Lock fallback triggered:', err);
+          this.startHeartbeatFallback();
+        }
+      });
   }
 
   private startHeartbeatFallback(): void {
     const LEASE_MS = 3000;
-    const tabId = `tab_${Math.random().toString(36).slice(2, 9)}`;
+    const tabId = this.tabId;
 
     const checkLeader = () => {
       const currentLease = localStorage.getItem('genesis_writer_lease');
@@ -119,7 +159,7 @@ export class SessionCoordinator {
     checkLeader();
     this.pollInterval = window.setInterval(checkLeader, 1000);
 
-    window.addEventListener('beforeunload', () => {
+    const handleUnload = () => {
       const lease = localStorage.getItem('genesis_writer_lease');
       if (lease) {
         try {
@@ -131,7 +171,8 @@ export class SessionCoordinator {
           // ignore
         }
       }
-    });
+    };
+    window.addEventListener('beforeunload', handleUnload);
   }
 
   public getIsLeader(): boolean {
@@ -139,14 +180,20 @@ export class SessionCoordinator {
   }
 
   public stop(): void {
+    if (this.releaseWebLock) {
+      this.releaseWebLock();
+      this.releaseWebLock = null;
+    }
     if (this.abortController) {
       this.abortController.abort();
     }
     if (this.pollInterval) {
       clearInterval(this.pollInterval);
+      this.pollInterval = null;
     }
     if (this.channel) {
       this.channel.close();
+      this.channel = null;
     }
   }
 }

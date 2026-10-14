@@ -77,6 +77,14 @@ export class PRNG {
   getSeed(): number {
     return this.state;
   }
+
+  getState(): number {
+    return this.state;
+  }
+
+  setState(state: number): void {
+    this.state = state >>> 0;
+  }
 }
 
 /**

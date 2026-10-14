@@ -311,6 +311,7 @@ export interface TerrainMap {
   worldHeight: number;       // world spatial units (2560)
   cellSize: number;          // 10
   cells: TerrainCell[];      // flat 1D array of 65536 cells
+  deterioratedIndices?: Set<number>;
 }
 
 export interface SimulationEvent {
@@ -403,6 +404,24 @@ export interface SavedWorldData {
   lastSavedTimestamp: number;
   lastSavedTick: number;
   terrainSeed: number;
+  prngState?: number;
+  disasterCooldowns?: {
+    drought: number;
+    wildfire: number;
+    flood: number;
+    volcanic_eruption: number;
+    cold_snap: number;
+  };
+  maxObservedAge?: number;
+  totalHabitatDeterioration?: number;
+  biosphereExtinctLogged?: boolean;
+  calendar?: {
+    year: number;
+    dayOfYear: number;
+    season: 'spring' | 'summer' | 'autumn' | 'winter';
+    dayCycle: number;
+    timeOfDay: string;
+  };
   climate: ClimateState;
   organisms: OrganismState[];
   resources: ResourcePatch[];

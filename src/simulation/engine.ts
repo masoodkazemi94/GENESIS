@@ -18,6 +18,7 @@ import {
   TerrainMap,
 } from '../types/simulation.js';
 import { PRNG } from './math/prng.js';
+import { getCalendarDate } from './calendar/calendar.js';
 import {
   createInitialClimate,
   updateClimate,
@@ -137,7 +138,24 @@ export class SimulationEngine {
       }
 
       this.chronicle.restoreEvents(seedOrSaved.events);
-      this.prng = new PRNG(this.worldSeed + this.tick);
+      if (typeof seedOrSaved.prngState === 'number') {
+        this.prng = new PRNG(seedOrSaved.prngState);
+      } else {
+        this.prng = new PRNG(this.worldSeed + this.tick);
+      }
+
+      if (seedOrSaved.disasterCooldowns) {
+        this.disasterCooldowns = { ...seedOrSaved.disasterCooldowns };
+      }
+      if (typeof seedOrSaved.maxObservedAge === 'number') {
+        this.maxObservedAge = seedOrSaved.maxObservedAge;
+      }
+      if (typeof seedOrSaved.totalHabitatDeterioration === 'number') {
+        this.totalHabitatDeterioration = seedOrSaved.totalHabitatDeterioration;
+      }
+      if (typeof seedOrSaved.biosphereExtinctLogged === 'boolean') {
+        this.biosphereExtinctLogged = seedOrSaved.biosphereExtinctLogged;
+      }
 
       // Recreate procedural terrain from seed
       const gen = generateNewWorld(this.worldSeed);
@@ -497,29 +515,6 @@ export class SimulationEngine {
         { isMilestone: true }
       );
     }
-
-    // Ecological rescue: ONLY if surviving taxa exist and world is not totally collapsed
-    if (this.organisms.length > 0 && this.organisms.length < 8 && this.tick > 200 && this.tick % 80 === 0) {
-      const activeTaxa = Array.from(this.speciesMap.values()).filter((s) => !s.extinct);
-      if (activeTaxa.length > 0) {
-        const rescueTaxon = this.prng.pick(activeTaxa);
-        const spawnPos = findValidSpawnLocation(this.terrain, this.prng);
-        const rescueOrg = createOrganism(
-          `rescue_${this.tick}_${this.prng.rangeInt(100, 999)}`,
-          rescueTaxon,
-          createBaseGenome(this.prng, rescueTaxon.diet),
-          1,
-          spawnPos.x,
-          spawnPos.y,
-          this.tick,
-          this.prng,
-          true
-        );
-        this.organisms.push(rescueOrg);
-        rescueTaxon.aliveCount = (rescueTaxon.aliveCount || 0) + 1;
-        this.speciesTree.recordBirth(rescueTaxon.id, this.tick);
-      }
-    }
   }
 
   public getStats(): EcosystemStats {
@@ -630,13 +625,19 @@ export class SimulationEngine {
 
   public serializeForStorage(): SavedWorldData {
     return {
-      version: 1,
+      version: 2,
       worldSeed: this.worldSeed,
       worldName: this.worldName,
       createdTimestamp: this.createdTimestamp,
       lastSavedTimestamp: Date.now(),
       lastSavedTick: this.tick,
       terrainSeed: this.worldSeed,
+      prngState: this.prng.getState(),
+      disasterCooldowns: { ...this.disasterCooldowns },
+      maxObservedAge: this.maxObservedAge,
+      totalHabitatDeterioration: this.totalHabitatDeterioration,
+      biosphereExtinctLogged: this.biosphereExtinctLogged,
+      calendar: getCalendarDate(this.tick),
       climate: { ...this.climate, activeDisasters: [...(this.climate.activeDisasters || [])] },
       organisms: this.organisms,
       resources: this.resources,

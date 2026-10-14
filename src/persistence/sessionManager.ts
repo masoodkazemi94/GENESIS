@@ -4,7 +4,13 @@
  */
 
 import { SavedWorldData } from '../types/simulation.js';
-import { clearSavedWorld, loadWorldFromIndexedDB, saveWorldToIndexedDB } from './idb.js';
+import {
+  archiveCurrentWorld,
+  clearSavedWorld,
+  isValidSavedWorld,
+  loadWorldFromIndexedDB,
+  saveWorldToIndexedDB,
+} from './idb.js';
 
 export function generateCryptoSeed(): number {
   if (typeof crypto !== 'undefined' && crypto.getRandomValues) {
@@ -21,27 +27,17 @@ export interface WorldSessionInitResult {
   freshSeed: number;
 }
 
+/**
+ * Initializes world session:
+ * - First-time visitors receive a new random world.
+ * - Returning visitors restore their existing saved world.
+ * - Refreshing restores the saved world and never intentionally deletes it.
+ * - Corrupt saves recover safely.
+ */
 export async function initializeWorldSession(): Promise<WorldSessionInitResult> {
-  // If fresh rerun requested for user turn, start with a new seed
-  const hasFreshSeed = typeof sessionStorage !== 'undefined' && sessionStorage.getItem('genesis_fresh_seed_run');
-  if (!hasFreshSeed) {
-    if (typeof sessionStorage !== 'undefined') {
-      try {
-        sessionStorage.setItem('genesis_fresh_seed_run', '1');
-      } catch {
-        // Ignore storage exceptions
-      }
-    }
-    const freshSeed = await resetWorldSession();
-    return {
-      isReturningWorld: false,
-      freshSeed,
-    };
-  }
-
   try {
     const saved = await loadWorldFromIndexedDB();
-    if (saved) {
+    if (saved && isValidSavedWorld(saved)) {
       return {
         isReturningWorld: true,
         savedData: saved,
@@ -52,7 +48,7 @@ export async function initializeWorldSession(): Promise<WorldSessionInitResult> 
     console.warn('[Genesis Session] Error loading world from IndexedDB:', err);
   }
 
-  // First visit or recovery: Generate a cryptographically random seed
+  // First visit or clean recovery fallback: Generate cryptographically random seed
   const freshSeed = generateCryptoSeed();
   return {
     isReturningWorld: false,
@@ -60,11 +56,24 @@ export async function initializeWorldSession(): Promise<WorldSessionInitResult> 
   };
 }
 
+/**
+ * Explicit user action to generate a new world seed.
+ * Safely archives the current world to recovery storage before clearing active world.
+ */
 export async function resetWorldSession(): Promise<number> {
+  await archiveCurrentWorld();
   await clearSavedWorld();
   return generateCryptoSeed();
 }
 
-export async function persistWorldSession(data: SavedWorldData): Promise<void> {
-  await saveWorldToIndexedDB(data);
+/**
+ * Persists world session if state is complete and valid.
+ * Does not overwrite with incomplete states.
+ */
+export async function persistWorldSession(data: SavedWorldData): Promise<boolean> {
+  if (!isValidSavedWorld(data)) {
+    console.warn('[Genesis Session] Aborting persist of invalid world data');
+    return false;
+  }
+  return await saveWorldToIndexedDB(data);
 }

@@ -398,6 +398,8 @@ export function updateEnvironmentalDisasters(
             cell.deterioration = Math.min(1.0, (cell.deterioration || 0) + 0.08 * disaster.severity);
             cell.burnedCooldown = 280;
             cell.ashFertilityBoost = 0.45;
+            if (!terrain.deterioratedIndices) terrain.deterioratedIndices = new Set();
+            terrain.deterioratedIndices.add(gy * terrain.width + gx);
           }
         }
       }
@@ -509,11 +511,15 @@ export function updateEnvironmentalDisasters(
             cell.deterioration = 1.0;
             cell.burnedCooldown = 400;
             cell.ashFertilityBoost = 0.70;
+            if (!terrain.deterioratedIndices) terrain.deterioratedIndices = new Set();
+            terrain.deterioratedIndices.add(gy * terrain.width + gx);
           } else if (distSq <= rSq) {
             // Volcanic ash deposit
             cell.deterioration = Math.min(0.65, (cell.deterioration || 0) + 0.03 * disaster.severity);
             cell.burnedCooldown = 220;
             cell.ashFertilityBoost = 0.55;
+            if (!terrain.deterioratedIndices) terrain.deterioratedIndices = new Set();
+            terrain.deterioratedIndices.add(gy * terrain.width + gx);
           }
         }
       }
@@ -574,58 +580,70 @@ export function updateEnvironmentalDisasters(
   }
 
   // 2. Local Habitat Deterioration Decay & Ecological Recolonization
-  for (let idx = 0; idx < terrain.cells.length; idx++) {
-    const cell = terrain.cells[idx];
-    if (!cell || !cell.deterioration || cell.deterioration <= 0) continue;
+  if (terrain.deterioratedIndices && terrain.deterioratedIndices.size > 0) {
+    const toRemove: number[] = [];
+    for (const idx of terrain.deterioratedIndices) {
+      const cell = terrain.cells[idx];
+      if (!cell || !cell.deterioration || cell.deterioration <= 0) {
+        toRemove.push(idx);
+        continue;
+      }
 
-    totalHabitatDeterioration += cell.deterioration;
+      totalHabitatDeterioration += cell.deterioration;
 
-    if (cell.burnedCooldown && cell.burnedCooldown > 0) {
-      cell.burnedCooldown -= 1;
-    } else {
-      // Natural recovery: soil microbes, lichens, and weeds heal scarred earth
-      cell.deterioration = Math.max(0, cell.deterioration - 0.006);
+      if (cell.burnedCooldown && cell.burnedCooldown > 0) {
+        cell.burnedCooldown -= 1;
+      } else {
+        // Natural recovery: soil microbes, lichens, and weeds heal scarred earth
+        cell.deterioration = Math.max(0, cell.deterioration - 0.006);
 
-      // When cell reaches full recovery, ash fertility boost promotes plant recolonization!
-      if (cell.deterioration === 0 && cell.ashFertilityBoost && cell.ashFertilityBoost > 0) {
-        const boost = cell.ashFertilityBoost;
-        cell.ashFertilityBoost = 0;
-        cell.fertility = Math.min(1.0, cell.fertility + boost * 0.25);
-        cell.plantSuitability = Math.min(1.0, cell.plantSuitability + boost * 0.2);
+        // When cell reaches full recovery, ash fertility boost promotes plant recolonization!
+        if (cell.deterioration === 0) {
+          toRemove.push(idx);
+          if (cell.ashFertilityBoost && cell.ashFertilityBoost > 0) {
+            const boost = cell.ashFertilityBoost;
+            cell.ashFertilityBoost = 0;
+            cell.fertility = Math.min(1.0, cell.fertility + boost * 0.25);
+            cell.plantSuitability = Math.min(1.0, cell.plantSuitability + boost * 0.2);
 
-        // Pioneer flora recolonizes recovered habitat!
-        if (resources.length < 210 && prng.chance(0.65)) {
-          const worldX = (cell.x + 0.5) * cs;
-          const worldY = (cell.y + 0.5) * cs;
-          const maxAmount = prng.range(45, 95);
-          const initialAmount = prng.range(20, 40);
+            // Pioneer flora recolonizes recovered habitat!
+            if (resources.length < 210 && prng.chance(0.65)) {
+              const worldX = (cell.x + 0.5) * cs;
+              const worldY = (cell.y + 0.5) * cs;
+              const maxAmount = prng.range(45, 95);
+              const initialAmount = prng.range(20, 40);
 
-          const pioneerPatch: ResourcePatch = {
-            id: `pioneer_${tick}_${prng.rangeInt(100, 999)}`,
-            x: worldX,
-            y: worldY,
-            type: 'plant',
-            amount: initialAmount,
-            maxAmount,
-            radius: prng.range(16, 28),
-            growthRate: prng.range(0.22, 0.42) * cell.plantSuitability,
-          };
+              const pioneerPatch: ResourcePatch = {
+                id: `pioneer_${tick}_${prng.rangeInt(100, 999)}`,
+                x: worldX,
+                y: worldY,
+                type: 'plant',
+                amount: initialAmount,
+                maxAmount,
+                radius: prng.range(16, 28),
+                growthRate: prng.range(0.22, 0.42) * cell.plantSuitability,
+              };
 
-          resources.push(pioneerPatch);
-          recoveredPatches.push(pioneerPatch);
+              resources.push(pioneerPatch);
+              recoveredPatches.push(pioneerPatch);
 
-          if (recoveredPatches.length === 1 && prng.chance(0.25)) {
-            newEvents.push({
-              type: 'ecosystem_recovery',
-              title: 'Ecosystem Habitat Recovery',
-              description: `Pioneer flora has begun recolonizing ash-enriched recovered soils at sector (${cell.x}, ${cell.y}).`,
-              x: worldX,
-              y: worldY,
-              isMilestone: true,
-            });
+              if (recoveredPatches.length === 1 && prng.chance(0.25)) {
+                newEvents.push({
+                  type: 'ecosystem_recovery',
+                  title: 'Ecosystem Habitat Recovery',
+                  description: `Pioneer flora has begun recolonizing ash-enriched recovered soils at sector (${cell.x}, ${cell.y}).`,
+                  x: worldX,
+                  y: worldY,
+                  isMilestone: true,
+                });
+              }
+            }
           }
         }
       }
+    }
+    for (let r = 0; r < toRemove.length; r++) {
+      terrain.deterioratedIndices.delete(toRemove[r]);
     }
   }
 

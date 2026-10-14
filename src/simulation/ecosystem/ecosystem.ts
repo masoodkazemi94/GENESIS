@@ -188,7 +188,7 @@ export function updateResourceEcosystem(
       // Carrion decomposition rate accelerates in warm humid weather, slows in freezing cold
       const localTemp = getEffectiveLocalTemperature(terrain, res.x, res.y, climate);
       const tempDecompMod = Math.max(0.2, Math.min(2.0, (localTemp + 10) / 25));
-      const decompRate = 0.14 * tempDecompMod;
+      const decompRate = 0.035 * tempDecompMod;
 
       const decayAmount = Math.min(res.amount, decompRate);
       res.amount -= decayAmount;

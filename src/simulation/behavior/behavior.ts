@@ -149,9 +149,9 @@ export function updateCreatureBehavior(
       }
     } else if (org.genome.diet === 'scavenger') {
       // -----------------------------------------------------------------------
-      // SCAVENGER: Prioritize decomposing carrion via keen olfactory sensing
+      // SCAVENGER: Prioritize decomposing carrion via keen olfactory sensing (1.8x range)
       // -----------------------------------------------------------------------
-      const nearbyCarrion = grid.queryCarrionRadius(org.x, org.y, sensor);
+      const nearbyCarrion = grid.queryCarrionRadius(org.x, org.y, sensor * 1.8);
       for (let c = 0; c < nearbyCarrion.length; c++) {
         const carrion = nearbyCarrion[c];
         if (carrion.amount <= 0.5) continue;
@@ -171,8 +171,8 @@ export function updateCreatureBehavior(
       }
 
       // If no carrion exists and scavenger is hungry, opportunistically forage flora
-      if (!nearestFoodTarget && org.energy < 45) {
-        const nearbyFlora = grid.queryFoodRadius(org.x, org.y, sensor * 0.7);
+      if (!nearestFoodTarget && org.energy < 55) {
+        const nearbyFlora = grid.queryFoodRadius(org.x, org.y, sensor);
         for (let r = 0; r < nearbyFlora.length; r++) {
           const patch = nearbyFlora[r];
           const dx = patch.x - org.x;
@@ -282,8 +282,8 @@ export function updateCreatureBehavior(
       }
     }
 
-    // 2. If no spring found within range, search nearby terrain cells for rivers, lakes, or beaches
-    if (!nearestWaterTarget) {
+    // 2. If no spring found within range and creature is thirsty, search nearby terrain cells
+    if (!nearestWaterTarget && org.hydration < 75) {
       const cs = terrain.cellSize;
       const orgGx = Math.floor(org.x / cs);
       const orgGy = Math.floor(org.y / cs);

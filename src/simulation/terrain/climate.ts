@@ -4,9 +4,9 @@
  */
 
 import { ClimateState, EnvironmentalDisaster } from '../../types/simulation.js';
+import { TICKS_PER_DAY, TICKS_PER_YEAR, getCalendarDate } from '../calendar/calendar.js';
 
-export const TICKS_PER_DAY = 2400; // 2 minutes per full day/night cycle at 50ms tick
-export const TICKS_PER_YEAR = TICKS_PER_DAY * 4; // 4 days per year (spring, summer, autumn, winter)
+export { TICKS_PER_DAY, TICKS_PER_YEAR };
 
 export function createInitialClimate(): ClimateState {
   return {
@@ -26,8 +26,9 @@ export function createInitialClimate(): ClimateState {
 }
 
 export function updateClimate(current: ClimateState, tick: number): ClimateState {
-  const dayCycle = (tick % TICKS_PER_DAY) / TICKS_PER_DAY;
-  const yearCycle = (tick % TICKS_PER_YEAR) / TICKS_PER_YEAR;
+  const cal = getCalendarDate(tick);
+  const dayCycle = cal.dayCycle;
+  const season = cal.season;
 
   // Day sun curve (0 to 1, max at midday 0.25)
   // Sinusoidal curve where day is [0, 0.5], night is [0.5, 1.0]
@@ -37,26 +38,27 @@ export function updateClimate(current: ClimateState, tick: number): ClimateState
   let solarRadiation = Math.max(0, sunRaw);
 
   // Seasons
-  let season: 'spring' | 'summer' | 'autumn' | 'winter';
   let seasonalTempOffset = 0;
   let seasonalRainOffset = 0;
 
-  if (yearCycle < 0.25) {
-    season = 'spring';
-    seasonalTempOffset = 0;
-    seasonalRainOffset = 0.20; // snowmelt & spring rains
-  } else if (yearCycle < 0.5) {
-    season = 'summer';
-    seasonalTempOffset = 7.0;  // warm summer heat
-    seasonalRainOffset = -0.15;// drier season
-  } else if (yearCycle < 0.75) {
-    season = 'autumn';
-    seasonalTempOffset = 1.0;  // crisp autumn
-    seasonalRainOffset = 0.05;
-  } else {
-    season = 'winter';
-    seasonalTempOffset = -8.5; // freezing winter
-    seasonalRainOffset = -0.18;// frozen precipitation
+  switch (season) {
+    case 'spring':
+      seasonalTempOffset = 0;
+      seasonalRainOffset = 0.20; // snowmelt & spring rains
+      break;
+    case 'summer':
+      seasonalTempOffset = 7.0;  // warm summer heat
+      seasonalRainOffset = -0.15;// drier season
+      break;
+    case 'autumn':
+      seasonalTempOffset = 1.0;  // crisp autumn
+      seasonalRainOffset = 0.05;
+      break;
+    case 'winter':
+    default:
+      seasonalTempOffset = -8.5; // freezing winter
+      seasonalRainOffset = -0.18;// frozen precipitation
+      break;
   }
 
   // Multi-cycle slow macro climate trend (e.g. multi-eon oscillation without chaos)
