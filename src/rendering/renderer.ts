@@ -620,6 +620,12 @@ export class GenesisRenderer {
         g.moveTo(res.x - res.radius * 0.45, res.y - res.radius * 0.15)
           .lineTo(res.x + res.radius * 0.45, res.y + res.radius * 0.15)
           .stroke({ color: 0xe8decb, width: 2.2, alpha: 0.85 * decayAlpha });
+      } else if (res.type === 'water_spring') {
+        const poolAlpha = Math.min(1.0, Math.max(0.2, res.amount / res.maxAmount));
+        const pulse = Math.sin(time * 2.2 + i) * 1.2;
+        g.circle(res.x, res.y, res.radius + pulse).fill({ color: 0x0284c7, alpha: 0.45 * poolAlpha });
+        g.circle(res.x, res.y, res.radius * 0.65).fill({ color: 0x38bdf8, alpha: 0.7 * poolAlpha });
+        g.circle(res.x, res.y, res.radius).stroke({ color: 0xbae6fd, width: 1.5, alpha: 0.75 * poolAlpha });
       }
     }
   }
@@ -809,6 +815,13 @@ export class GenesisRenderer {
         });
       } else if (org.state === 'reproducing' || org.state === 'mating') {
         g.circle(posX, posY, size * 2.1).stroke({ color: 0xf472b6, width: 1.3, alpha: 0.8 });
+      } else if (org.state === 'drinking') {
+        const drinkPulse = Math.sin(time * 6.5) * (size * 0.22);
+        g.circle(posX + cosA * (size * 0.7), posY + sinA * (size * 0.7), size * 0.95 + drinkPulse).stroke({
+          color: 0x38bdf8,
+          width: 1.4,
+          alpha: 0.75,
+        });
       }
 
       // Bioluminescent night glow

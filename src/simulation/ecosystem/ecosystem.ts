@@ -44,6 +44,25 @@ export function createInitialResources(terrain: TerrainMap, prng: PRNG, count = 
     });
   }
 
+  // Spawn natural freshwater drinking springs & oases
+  for (let w = 0; w < 30; w++) {
+    const x = prng.range(60, terrain.worldWidth - 60);
+    const y = prng.range(60, terrain.worldHeight - 60);
+    const cell = getCellAt(terrain, x, y);
+    if (!cell || cell.isWater) continue;
+    if (cell.moisture < 0.22 && prng.chance(0.7)) continue;
+    patches.push({
+      id: `spring_${patches.length}_${prng.rangeInt(1000, 9999)}`,
+      x,
+      y,
+      type: 'water_spring',
+      amount: 140,
+      maxAmount: 140,
+      radius: 18,
+      growthRate: 0.85,
+    });
+  }
+
   return patches;
 }
 
@@ -176,6 +195,15 @@ export function updateResourceEcosystem(
 
       recycledSoilNutrients += decayAmount * 0.8;
       carrionBiomass += res.amount;
+    } else if (res.type === 'water_spring') {
+      if (climate.isDrought) {
+        // Drought parches natural freshwater springs
+        const parching = 0.12 * Math.max(0.3, climate.droughtSeverity || 0.5);
+        res.amount = Math.max(0, res.amount - parching);
+      } else {
+        const recharge = res.growthRate * (0.4 + climate.rainfall * 0.9);
+        res.amount = Math.min(res.maxAmount, res.amount + recharge);
+      }
     }
   }
 

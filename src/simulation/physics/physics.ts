@@ -16,6 +16,7 @@ export class SpatialHashGrid {
   public buckets: Map<number, OrganismState[]> = new Map();
   public foodBuckets: Map<number, ResourcePatch[]> = new Map();
   public carrionBuckets: Map<number, ResourcePatch[]> = new Map();
+  public waterBuckets: Map<number, ResourcePatch[]> = new Map();
 
   constructor(worldWidth: number, worldHeight: number, cellSize = 80) {
     this.cellSize = cellSize;
@@ -27,6 +28,7 @@ export class SpatialHashGrid {
     this.buckets.clear();
     this.foodBuckets.clear();
     this.carrionBuckets.clear();
+    this.waterBuckets.clear();
   }
 
   public populateOrganisms(organisms: OrganismState[]): void {
@@ -49,6 +51,7 @@ export class SpatialHashGrid {
   public populateFood(resources: ResourcePatch[]): void {
     this.foodBuckets.clear();
     this.carrionBuckets.clear();
+    this.waterBuckets.clear();
     for (let i = 0; i < resources.length; i++) {
       const res = resources[i];
       if (res.amount <= 1.0) continue;
@@ -68,6 +71,13 @@ export class SpatialHashGrid {
         if (!bucket) {
           bucket = [];
           this.carrionBuckets.set(key, bucket);
+        }
+        bucket.push(res);
+      } else if (res.type === 'water_spring') {
+        let bucket = this.waterBuckets.get(key);
+        if (!bucket) {
+          bucket = [];
+          this.waterBuckets.set(key, bucket);
         }
         bucket.push(res);
       }
@@ -147,6 +157,33 @@ export class SpatialHashGrid {
           const dy = carrion.y - y;
           if (dx * dx + dy * dy <= rSq) {
             results.push(carrion);
+          }
+        }
+      }
+    }
+
+    return results;
+  }
+
+  public queryWaterRadius(x: number, y: number, radius: number): ResourcePatch[] {
+    const minCx = Math.max(0, Math.floor((x - radius) / this.cellSize));
+    const maxCx = Math.min(this.cols - 1, Math.floor((x + radius) / this.cellSize));
+    const minCy = Math.max(0, Math.floor((y - radius) / this.cellSize));
+    const maxCy = Math.min(this.rows - 1, Math.floor((y + radius) / this.cellSize));
+
+    const results: ResourcePatch[] = [];
+    const rSq = radius * radius;
+
+    for (let cy = minCy; cy <= maxCy; cy++) {
+      for (let cx = minCx; cx <= maxCx; cx++) {
+        const bucket = this.waterBuckets.get(cy * this.cols + cx);
+        if (!bucket) continue;
+        for (let i = 0; i < bucket.length; i++) {
+          const water = bucket[i];
+          const dx = water.x - x;
+          const dy = water.y - y;
+          if (dx * dx + dy * dy <= rSq) {
+            results.push(water);
           }
         }
       }

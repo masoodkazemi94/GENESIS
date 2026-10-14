@@ -21,6 +21,7 @@ export interface BehaviorOutput {
   kills: HuntKillRecord[];
   plantBiomassConsumed: number;
   carrionBiomassConsumed: number;
+  waterConsumed: number;
   reproductionEnergyInvested: number;
   reproductionTaxDissipated: number;
 }
@@ -46,6 +47,7 @@ export function updateCreatureBehavior(
   const kills: HuntKillRecord[] = [];
   let plantBiomassConsumed = 0;
   let carrionBiomassConsumed = 0;
+  let waterConsumed = 0;
   let reproductionEnergyInvested = 0;
   let reproductionTaxDissipated = 0;
 
@@ -243,7 +245,84 @@ export function updateCreatureBehavior(
     }
 
     // =========================================================================
-    // 3. EXHAUSTION & REST EVALUATION
+    // 3. THIRST & WATER EVALUATION (Rivers, Lakes, Springs, Wetland Shores)
+    // =========================================================================
+    const thirstLevel = Math.max(0, (100 - org.hydration) / 100);
+    let utilityThirst = Math.pow(thirstLevel, 1.35) * 0.94;
+    if (org.hydration > 75) {
+      utilityThirst *= 0.15; // Satiated hydration
+    }
+
+    let nearestWaterTarget: {
+      x: number;
+      y: number;
+      id: string | null;
+      type: 'spring' | 'terrain_water';
+      entity: ResourcePatch | null;
+    } | null = null;
+    let minWaterDistSq = sensor * sensor;
+
+    // 1. Query water springs from spatial hash grid
+    const nearbySprings = grid.queryWaterRadius(org.x, org.y, sensor);
+    for (let s = 0; s < nearbySprings.length; s++) {
+      const spring = nearbySprings[s];
+      if (spring.amount <= 0.5) continue;
+      const dx = spring.x - org.x;
+      const dy = spring.y - org.y;
+      const distSq = dx * dx + dy * dy;
+      if (distSq < minWaterDistSq) {
+        minWaterDistSq = distSq;
+        nearestWaterTarget = {
+          x: spring.x,
+          y: spring.y,
+          id: spring.id,
+          type: 'spring',
+          entity: spring,
+        };
+      }
+    }
+
+    // 2. If no spring found within range, search nearby terrain cells for rivers, lakes, or beaches
+    if (!nearestWaterTarget) {
+      const cs = terrain.cellSize;
+      const orgGx = Math.floor(org.x / cs);
+      const orgGy = Math.floor(org.y / cs);
+      const cellRadius = Math.min(8, Math.ceil(sensor / cs));
+
+      for (let dgy = -cellRadius; dgy <= cellRadius; dgy += 2) {
+        const cgy = orgGy + dgy;
+        if (cgy < 0 || cgy >= terrain.height) continue;
+        for (let dgx = -cellRadius; dgx <= cellRadius; dgx += 2) {
+          const cgx = orgGx + dgx;
+          if (cgx < 0 || cgx >= terrain.width) continue;
+          const cell = terrain.cells[cgy * terrain.width + cgx];
+          if (cell && (cell.isRiver || cell.isLake || cell.isWater || cell.isFlooded)) {
+            const wx = (cgx + 0.5) * cs;
+            const wy = (cgy + 0.5) * cs;
+            const dx = wx - org.x;
+            const dy = wy - org.y;
+            const distSq = dx * dx + dy * dy;
+            if (distSq < minWaterDistSq) {
+              minWaterDistSq = distSq;
+              nearestWaterTarget = {
+                x: wx,
+                y: wy,
+                id: null,
+                type: 'terrain_water',
+                entity: null,
+              };
+            }
+          }
+        }
+      }
+    }
+
+    if (!nearestWaterTarget) {
+      utilityThirst *= 0.35; // Cannot locate water within sensory range
+    }
+
+    // =========================================================================
+    // 4. EXHAUSTION & REST EVALUATION
     // =========================================================================
     let utilityRest = 0;
     if (org.energy < 22 && utilityDanger < 0.3) {
@@ -251,7 +330,7 @@ export function updateCreatureBehavior(
     }
 
     // =========================================================================
-    // 4. REPRODUCTION & MATING EVALUATION
+    // 5. REPRODUCTION & MATING EVALUATION
     // =========================================================================
     let utilityMate = 0;
     let mateTarget: OrganismState | null = null;
@@ -291,9 +370,9 @@ export function updateCreatureBehavior(
     const utilityWander = 0.20;
 
     // =========================================================================
-    // 5. UTILITY ARBITRATION (Select Winner with Highest Score)
+    // 6. UTILITY ARBITRATION (Select Winner with Highest Score)
     // =========================================================================
-    const maxUtility = Math.max(utilityDanger, utilityFood, utilityRest, utilityMate, utilityWander);
+    const maxUtility = Math.max(utilityDanger, utilityFood, utilityThirst, utilityRest, utilityMate, utilityWander);
 
     if (maxUtility === utilityDanger && nearestPredator) {
       // -----------------------------------------------------------------------
@@ -442,6 +521,45 @@ export function updateCreatureBehavior(
           org.ay += Math.max(-maxSteeringForce * 1.3, Math.min(maxSteeringForce * 1.3, desiredVy - org.vy));
         }
       }
+    } else if (maxUtility === utilityThirst && nearestWaterTarget) {
+      // -----------------------------------------------------------------------
+      // BEHAVIOR: SEEK & CONSUME WATER (Rivers, Lakes, Springs, Wetland Shores)
+      // -----------------------------------------------------------------------
+      org.targetId = nearestWaterTarget.id;
+      org.targetType = 'water';
+      org.targetX = nearestWaterTarget.x;
+      org.targetY = nearestWaterTarget.y;
+
+      const dx = nearestWaterTarget.x - org.x;
+      const dy = nearestWaterTarget.y - org.y;
+      const dist = Math.hypot(dx, dy);
+      const drinkRange = org.collisionRadius + (nearestWaterTarget.type === 'spring' ? (nearestWaterTarget.entity?.radius || 18) * 0.7 : 14);
+
+      if (dist <= drinkRange) {
+        // ACTION: DRINK WATER
+        org.state = 'drinking';
+        const thirstDeficit = 100 - org.hydration;
+        let actualDrink = Math.min(thirstDeficit, 14.0);
+
+        if (nearestWaterTarget.type === 'spring' && nearestWaterTarget.entity) {
+          actualDrink = Math.min(actualDrink, nearestWaterTarget.entity.amount);
+          nearestWaterTarget.entity.amount -= actualDrink;
+        }
+
+        org.hydration = Math.min(100, org.hydration + actualDrink);
+        waterConsumed += actualDrink;
+
+        // Decelerate while drinking
+        org.ax -= org.vx * 0.45;
+        org.ay -= org.vy * 0.45;
+      } else {
+        // ACTION: PURSUE WATER
+        org.state = 'drinking';
+        const desiredVx = (dx / (dist || 1)) * maxSpeed;
+        const desiredVy = (dy / (dist || 1)) * maxSpeed;
+        org.ax += Math.max(-maxSteeringForce, Math.min(maxSteeringForce, desiredVx - org.vx));
+        org.ay += Math.max(-maxSteeringForce, Math.min(maxSteeringForce, desiredVy - org.vy));
+      }
     } else if (maxUtility === utilityMate && mateTarget) {
       // -----------------------------------------------------------------------
       // BEHAVIOR: LOCATE MATES & REPRODUCE
@@ -536,6 +654,7 @@ export function updateCreatureBehavior(
     kills,
     plantBiomassConsumed,
     carrionBiomassConsumed,
+    waterConsumed,
     reproductionEnergyInvested,
     reproductionTaxDissipated,
   };

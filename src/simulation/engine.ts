@@ -559,7 +559,13 @@ export class SimulationEngine {
 
     const targetCarryingBiomass = 3500;
     const resourceScarcity = Math.max(0, Math.min(1.0, 1.0 - plantBiomass / targetCarryingBiomass));
-    const activeSpeciesCount = Array.from(this.speciesMap.values()).filter((s) => !s.extinct).length;
+    const livingSpeciesIds = new Set<string>();
+    for (let i = 0; i < this.organisms.length; i++) {
+      if (this.organisms[i].state !== 'dead') {
+        livingSpeciesIds.add(this.organisms[i].speciesId);
+      }
+    }
+    const activeSpeciesCount = livingSpeciesIds.size;
 
     const diversity = this.speciesTree.computeGeneticDiversity(this.organisms, this.tick);
     const oldestLineage = this.speciesTree.getOldestSurvivingLineage(this.tick);

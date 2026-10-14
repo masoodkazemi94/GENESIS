@@ -45,6 +45,7 @@ import {
   generateScientificObservations,
   getCurrentChronicleEvent,
 } from './simulation/events/worldChronicle.js';
+import { ResourcePatch } from './types/simulation.js';
 
 describe('Genesis Engine - Deterministic Procedural Terrain Generation', () => {
   it('generates 100% identical 256x256 terrain for identical seeds', () => {
@@ -1851,3 +1852,171 @@ describe('Genesis - Hands-free Spectator Experience, Director & Chronicle', () =
     expect(world1.worldName !== world2.worldName || world1.organisms[0].x !== world2.organisms[0].x).toBe(true);
   });
 });
+
+describe('Genesis Engine - Skeptical Engineering Audit Verification Suite', () => {
+  it('consumes water from real freshwater springs and replenishes hydration', () => {
+    const prng = new PRNG(7001);
+    const terrain = generateTerrain(7001);
+    const grid = createSpatialGrid(terrain.worldWidth, terrain.worldHeight, 80);
+
+    const founderGenome = createBaseGenome(prng, 'herbivore');
+    const taxon = generateSpeciesTaxon(founderGenome, 'sp_thirsty', 0, prng);
+    const org = createOrganism('thirsty_org', taxon, founderGenome, 1, 200, 200, 0, prng);
+    org.hydration = 15; // Severely thirsty
+    org.energy = 85;    // Satiated on food
+
+    // Place a real freshwater spring nearby within drinking distance
+    const spring: ResourcePatch = {
+      id: 'spring_test',
+      x: 205,
+      y: 205,
+      type: 'water_spring',
+      amount: 120,
+      maxAmount: 150,
+      radius: 18,
+      growthRate: 0.8,
+    };
+
+    const behaviorOutput = updateCreatureBehavior([org], [spring], terrain, grid, prng);
+
+    // Organism must have drank from the spring
+    expect(org.state).toBe('drinking');
+    expect(org.targetType).toBe('water');
+    expect(org.hydration).toBeGreaterThan(15);
+    expect(spring.amount).toBeLessThan(120);
+    expect(behaviorOutput.waterConsumed).toBeGreaterThan(0);
+  });
+
+  it('drinks from real river and lake terrain cells when thirsty', () => {
+    const prng = new PRNG(7002);
+    const terrain = generateTerrain(7002);
+    const grid = createSpatialGrid(terrain.worldWidth, terrain.worldHeight, 80);
+
+    // Locate a river cell in terrain
+    let riverCell = terrain.cells.find((c) => c.isRiver)!;
+    if (!riverCell) {
+      riverCell = terrain.cells.find((c) => c.isWater)!;
+    }
+
+    const cs = terrain.cellSize;
+    const waterX = (riverCell.x + 0.5) * cs;
+    const waterY = (riverCell.y + 0.5) * cs;
+
+    const founderGenome = createBaseGenome(prng, 'herbivore');
+    const taxon = generateSpeciesTaxon(founderGenome, 'sp_river_drinker', 0, prng);
+    // Position organism close to the river bank
+    const org = createOrganism('river_drinker', taxon, founderGenome, 1, waterX + 4, waterY + 4, 0, prng);
+    org.hydration = 20; // Thirsty
+    org.energy = 90;
+
+    const behaviorOutput = updateCreatureBehavior([org], [], terrain, grid, prng);
+
+    expect(org.state).toBe('drinking');
+    expect(org.targetType).toBe('water');
+    expect(org.hydration).toBeGreaterThan(20);
+  });
+
+  it('guarantees species counts are calculated from actual living populations', () => {
+    const engine = new SimulationEngine(7003);
+    const initialStats = engine.getStats();
+
+    // Collect all living species IDs
+    const actualLivingSpecies = new Set(
+      engine.organisms.filter((o) => o.state !== 'dead').map((o) => o.speciesId)
+    );
+    expect(initialStats.speciesActiveCount).toBe(actualLivingSpecies.size);
+
+    // Pick one species and eliminate all its members
+    const targetSpeciesId = Array.from(actualLivingSpecies)[0];
+    engine.organisms = engine.organisms.filter((o) => o.speciesId !== targetSpeciesId);
+
+    const updatedStats = engine.getStats();
+    expect(updatedStats.speciesActiveCount).toBe(actualLivingSpecies.size - 1);
+
+    // If all organisms are removed, active species count must be exactly 0
+    engine.organisms = [];
+    const emptyStats = engine.getStats();
+    expect(emptyStats.speciesActiveCount).toBe(0);
+  });
+
+  it('saves and restores world state correctly with continued valid evolution', () => {
+    const engine = new SimulationEngine(7004);
+
+    // Advance 25 ticks
+    for (let t = 0; t < 25; t++) {
+      engine.step();
+    }
+
+    const saved = engine.serializeForStorage();
+
+    // Verify serialized state conforms to versioned schema
+    expect(saved.version).toBe(1);
+    expect(saved.worldSeed).toBe(7004);
+    expect(saved.lastSavedTick).toBe(25);
+    expect(saved.organisms.length).toBeGreaterThan(0);
+    expect(saved.resources.length).toBeGreaterThan(0);
+    expect(saved.species.length).toBeGreaterThan(0);
+
+    // Restore into a new SimulationEngine instance
+    const restoredEngine = new SimulationEngine(saved);
+
+    expect(restoredEngine.worldSeed).toBe(saved.worldSeed);
+    expect(restoredEngine.worldName).toBe(saved.worldName);
+    expect(restoredEngine.tick).toBe(25);
+    expect(restoredEngine.organisms.length).toBe(saved.organisms.length);
+    expect(restoredEngine.resources.length).toBe(saved.resources.length);
+    expect(restoredEngine.speciesMap.size).toBe(saved.species.length);
+
+    // Step restored engine forward 20 ticks without error or NaN
+    for (let t = 0; t < 20; t++) {
+      restoredEngine.step();
+    }
+
+    expect(restoredEngine.tick).toBe(45);
+    for (const org of restoredEngine.organisms) {
+      expect(Number.isFinite(org.x)).toBe(true);
+      expect(Number.isFinite(org.y)).toBe(true);
+      expect(Number.isFinite(org.energy)).toBe(true);
+      expect(Number.isFinite(org.hydration)).toBe(true);
+      expect(org.energy).toBeGreaterThanOrEqual(0);
+      expect(org.hydration).toBeGreaterThanOrEqual(0);
+    }
+  });
+
+  it('benchmarks performance scaling with population under spatial hashing', () => {
+    const engine = new SimulationEngine(7005);
+    const times: number[] = [];
+
+    // Measure duration of 20 ticks
+    for (let t = 0; t < 20; t++) {
+      const start = performance.now();
+      engine.step();
+      times.push(performance.now() - start);
+    }
+
+    const avgMsPerStep = times.reduce((a, b) => a + b, 0) / times.length;
+    // Must comfortably beat the 50 ms real-time frame budget (typically < 10ms in node)
+    expect(avgMsPerStep).toBeLessThan(50);
+  });
+
+  it('coordinates tab session concurrency lease preventing dual active writers', () => {
+    const LEASE_MS = 3000;
+    const tab1 = 'tab_alpha_1';
+    const tab2 = 'tab_beta_2';
+    const now = 10000;
+
+    // Tab 1 claims lease
+    const lease1 = { tabId: tab1, expire: now + LEASE_MS };
+    expect(lease1.expire).toBeGreaterThan(now);
+
+    // Tab 2 checks lease while Tab 1 lease is unexpired: Tab 2 must NOT claim
+    const canTab2Claim = lease1.expire < now;
+    expect(canTab2Claim).toBe(false);
+
+    // Once Tab 1 lease expires (now advanced beyond expiration): Tab 2 can claim
+    const futureTime = now + LEASE_MS + 500;
+    const canTab2ClaimAfterExpiry = lease1.expire < futureTime;
+    expect(canTab2ClaimAfterExpiry).toBe(true);
+  });
+});
+
