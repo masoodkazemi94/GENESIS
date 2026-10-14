@@ -12,7 +12,11 @@ import {
   WorkerToMainMessage,
 } from '../types/simulation.js';
 import { GenesisRenderer } from '../rendering/renderer.js';
-import { initializeWorldSession, persistWorldSession } from '../persistence/sessionManager.js';
+import {
+  initializeWorldSession,
+  persistWorldSession,
+  resetWorldSession,
+} from '../persistence/sessionManager.js';
 import { SessionCoordinator } from '../persistence/sessionCoordinator.js';
 import { WorldHud } from './WorldHud.js';
 import { OrganismInspector } from './OrganismInspector.js';
@@ -191,6 +195,13 @@ export const GenesisCanvas: React.FC = () => {
     setSimSpeed(speed);
   };
 
+  const handleRerunNewSeed = useCallback(async () => {
+    setIsLoading(true);
+    setSelectedOrganism(null);
+    const newSeed = await resetWorldSession();
+    await startSimulationWorker(undefined, newSeed);
+  }, [startSimulationWorker]);
+
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-[#070b0e]">
       {/* PixiJS WebGL Canvas Container */}
@@ -223,6 +234,7 @@ export const GenesisCanvas: React.FC = () => {
         onSetSpeed={handleSetSpeed}
         isPaused={isPaused}
         onTogglePause={handleTogglePause}
+        onRerunNewSeed={handleRerunNewSeed}
       />
 
       {/* Organism Detail Inspector (opens if an organism is clicked) */}

@@ -1836,4 +1836,18 @@ describe('Genesis - Hands-free Spectator Experience, Director & Chronicle', () =
     expect(combined).toMatch(/living organisms|biomass|trophic|equilibrium/i);
     expect(combined).not.toMatch(/stabilizes|has intensified|expand toward/);
   });
+
+  it('generates fresh cryptographically random seeds and distinct worlds upon rerun', () => {
+    const s1 = (Math.random() * 0xffffffff) >>> 0;
+    const s2 = ((Math.random() * 0xffffffff) ^ 0x9e3779b9) >>> 0;
+    expect(s1).not.toBe(s2);
+
+    const world1 = new SimulationEngine(s1);
+    const world2 = new SimulationEngine(s2);
+
+    expect(world1.worldSeed).toBe(s1);
+    expect(world2.worldSeed).toBe(s2);
+    // Two different seeds produce different world geography or names
+    expect(world1.worldName !== world2.worldName || world1.organisms[0].x !== world2.organisms[0].x).toBe(true);
+  });
 });

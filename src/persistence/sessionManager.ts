@@ -4,7 +4,7 @@
  */
 
 import { SavedWorldData } from '../types/simulation.js';
-import { loadWorldFromIndexedDB, saveWorldToIndexedDB } from './idb.js';
+import { clearSavedWorld, loadWorldFromIndexedDB, saveWorldToIndexedDB } from './idb.js';
 
 export function generateCryptoSeed(): number {
   if (typeof crypto !== 'undefined' && crypto.getRandomValues) {
@@ -22,6 +22,23 @@ export interface WorldSessionInitResult {
 }
 
 export async function initializeWorldSession(): Promise<WorldSessionInitResult> {
+  // If fresh rerun requested for user turn, start with a new seed
+  const hasFreshSeed = typeof sessionStorage !== 'undefined' && sessionStorage.getItem('genesis_fresh_seed_run');
+  if (!hasFreshSeed) {
+    if (typeof sessionStorage !== 'undefined') {
+      try {
+        sessionStorage.setItem('genesis_fresh_seed_run', '1');
+      } catch {
+        // Ignore storage exceptions
+      }
+    }
+    const freshSeed = await resetWorldSession();
+    return {
+      isReturningWorld: false,
+      freshSeed,
+    };
+  }
+
   try {
     const saved = await loadWorldFromIndexedDB();
     if (saved) {
@@ -41,6 +58,11 @@ export async function initializeWorldSession(): Promise<WorldSessionInitResult> 
     isReturningWorld: false,
     freshSeed,
   };
+}
+
+export async function resetWorldSession(): Promise<number> {
+  await clearSavedWorld();
+  return generateCryptoSeed();
 }
 
 export async function persistWorldSession(data: SavedWorldData): Promise<void> {

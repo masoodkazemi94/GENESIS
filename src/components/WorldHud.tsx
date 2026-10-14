@@ -29,6 +29,7 @@ interface WorldHudProps {
   onSetSpeed: (speed: number) => void;
   isPaused: boolean;
   onTogglePause: () => void;
+  onRerunNewSeed?: () => void;
 }
 
 export const WorldHud: React.FC<WorldHudProps> = ({
@@ -42,6 +43,7 @@ export const WorldHud: React.FC<WorldHudProps> = ({
   onSetSpeed,
   isPaused,
   onTogglePause,
+  onRerunNewSeed,
 }) => {
   const [observationIndex, setObservationIndex] = useState(0);
   const [isAudioMuted, setIsAudioMuted] = useState(ambientSound.muted);
@@ -211,6 +213,20 @@ export const WorldHud: React.FC<WorldHudProps> = ({
               </button>
             ))}
           </div>
+
+          {/* Rerun with New Seed Button */}
+          {onRerunNewSeed && (
+            <button
+              onClick={onRerunNewSeed}
+              title="Rerun world simulation with a brand-new random seed"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-emerald-950/60 hover:bg-emerald-900/80 border border-emerald-500/30 hover:border-emerald-400 text-xs font-mono text-emerald-200 transition-all cursor-pointer shadow-lg active:scale-95"
+            >
+              <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              <span>New Seed</span>
+            </button>
+          )}
         </div>
       </header>
 
