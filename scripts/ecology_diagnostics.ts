@@ -8,13 +8,13 @@ import type { EcologyObserver } from '../src/simulation/ecology/observer.js';
 import type { OrganismState } from '../src/types/simulation.js';
 import { resolveEcologyConfig } from '../src/simulation/ecology/config.js';
 
-const baseline = JSON.parse(readFileSync('benchmark_results.json', 'utf8'));
+const baseline = JSON.parse(readFileSync('docs/audits/data/benchmark_results.json', 'utf8'));
 const seeds: number[] = process.env.ECOLOGY_SEED
   ? [Number(process.env.ECOLOGY_SEED)]
   : baseline.all100k.results.slice(0, Number(process.env.ECOLOGY_SEEDS || 10)).map((r: {seed:number}) => r.seed);
 const ticks = Number(process.env.ECOLOGY_TICKS || 10000);
 const sampleEvery = Number(process.env.ECOLOGY_SAMPLE_EVERY || 100);
-const outputPath = process.env.ECOLOGY_OUTPUT || 'ecology_diagnostics.json';
+const outputPath = process.env.ECOLOGY_OUTPUT || 'docs/audits/data/ecology_diagnostics.json';
 const config = resolveEcologyConfig(process.env.ECOLOGY_CONFIG ? JSON.parse(process.env.ECOLOGY_CONFIG) : {});
 const round = (x: number) => Number(x.toFixed(3));
 const inc = (record: Record<string, number>, key: string, by = 1) => { record[key] = (record[key] || 0) + by; };

@@ -78,7 +78,7 @@ A direct-route test may reject a reachable food patch requiring a detour. The ex
 npx vitest run src/behavior_repair.test.ts
 npx tsx scripts/ecology_behavior_benchmark.ts baseline
 npx tsx scripts/ecology_behavior_benchmark.ts repair
-BEHAVIOR_MAX_TICKS=10000 BEHAVIOR_OUTPUT=ecology_behavior_short.json npx tsx scripts/ecology_behavior_benchmark.ts repair
+BEHAVIOR_MAX_TICKS=10000 BEHAVIOR_OUTPUT=docs/audits/data/ecology_behavior_short.json npx tsx scripts/ecology_behavior_benchmark.ts repair
 npm test
 npm run lint
 npm run build

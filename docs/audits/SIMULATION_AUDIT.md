@@ -1,6 +1,6 @@
 # GENESIS headless simulation audit
 
-Run date: 2026-10-14. Source data: [full benchmark](benchmark_results.json), [sensitivity runs](benchmark_sensitivity.json), [worker transfer runs](benchmark_transfer.json), and [storage probe](benchmark_storage_probe.json). The scripts in `scripts/benchmark_simulation.ts`, `scripts/benchmark_sensitivity.ts`, and `scripts/benchmark_transfer.ts` reproduce the main methods. All simulations used the real `SimulationEngine` without PixiJS.
+Run date: 2026-10-14. Source data: [full benchmark](data/benchmark_results.json), [sensitivity runs](data/benchmark_sensitivity.json), [worker transfer runs](data/benchmark_transfer.json), and [storage probe](data/benchmark_storage_probe.json). The scripts in `scripts/benchmark_simulation.ts`, `scripts/benchmark_sensitivity.ts`, and `scripts/benchmark_transfer.ts` reproduce the main methods. All simulations used the real `SimulationEngine` without PixiJS.
 
 ## Scope and environment
 

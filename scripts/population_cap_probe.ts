@@ -100,7 +100,7 @@ for (const model of [0, 1, 2] as const) for (const seed of seeds) {
   }
   results.push({ model, seed, ticks, elapsedMs: round(performance.now() - start),
     ...metrics, meanPopulation: round(metrics.populationIntegral / ticks) });
-  writeFileSync('population_cap_diagnostics.json', JSON.stringify({ schemaVersion: 1,
+  writeFileSync('docs/audits/data/population_cap_diagnostics.json', JSON.stringify({ schemaVersion: 1,
     experiment: 'matched fixed seeds, unchanged ecology parameters, observational samples',
     sampleEvery, ticks, results }, null, 2));
   console.log(`cap ${model} ${seed}`);

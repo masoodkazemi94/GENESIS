@@ -31,6 +31,8 @@ export interface Genome {
   visionRange: number;               // 40 - 240
   metabolicEfficiency: number;       // 0.5 - 1.6 (higher = lower basal energy waste)
   reproductiveInvestment: number;    // 0.25 - 0.75 (fraction of parents' surplus given to offspring)
+  /** Experimental litter potential; absent from legacy genomes. */
+  litterPotential?: number;            // 0 - 1
   camouflage: number;                // 0.0 - 1.0 (reduces predator detection radius)
   aggression: number;                // 0.0 - 1.0 (predatory drive, hunting tenacity vs fleeing)
   foodProcessingEfficiency: number;  // 0.6 - 1.6 (energy extracted per food biomass unit)

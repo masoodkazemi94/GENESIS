@@ -79,7 +79,7 @@ const output = { schemaVersion: 1, environment: { node: process.version, platfor
 for (const scenario of scenarios) {
   for (let repeat=0; repeat<repeats; repeat++) {
     output.results.push(run(scenario.model, scenario.population, scenario.resources, repeat));
-    writeFileSync('simulation_profile_results.json', JSON.stringify(output,null,2));
+    writeFileSync('docs/audits/data/simulation_profile_results.json', JSON.stringify(output,null,2));
   }
   console.log(`profile model=${scenario.model} organisms=${scenario.population} resources=${scenario.resources}`);
 }

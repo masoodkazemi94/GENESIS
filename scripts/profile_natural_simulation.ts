@@ -34,6 +34,6 @@ for (const model of [1, 2] as const) {
     heapDeltaMiB: round((process.memoryUsage().heapUsed-heapBefore)/1048576),
     entries: Object.fromEntries(Object.entries(probe.entries)
       .map(([key,value])=>[key,{calls:value.calls,milliseconds:round(value.milliseconds)}])) });
-  writeFileSync('simulation_natural_profile.json', JSON.stringify({schemaVersion:1,results},null,2));
+  writeFileSync('docs/audits/data/simulation_natural_profile.json', JSON.stringify({schemaVersion:1,results},null,2));
   console.log(`natural profile model=${model}`);
 }

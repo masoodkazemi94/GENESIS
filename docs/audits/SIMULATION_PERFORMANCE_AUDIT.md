@@ -100,16 +100,16 @@ Final validation passed `npm test` (**95 tests in two files**), `npm run lint` (
 node --expose-gc --import tsx scripts/profile_simulation.ts
 npx tsx scripts/profile_natural_simulation.ts
 npx tsx scripts/cpu_profile_steady.ts
-TRAJECTORY_OUTPUT=optimization_trajectory_final.json npx tsx scripts/verify_optimization_trajectory.ts
+TRAJECTORY_OUTPUT=docs/audits/data/optimization_trajectory_final.json npx tsx scripts/verify_optimization_trajectory.ts
 PREDATOR_TICKS=5000 npx tsx scripts/predator_ecology_probe.ts
-PREDATOR_PROFILE=1 PREDATOR_MODEL1_ONLY=1 PREDATOR_NATURAL_ONLY=1 PREDATOR_OUTPUT=predator_rejection_probe.json PREDATOR_TICKS=5000 npx tsx scripts/predator_ecology_probe.ts
+PREDATOR_PROFILE=1 PREDATOR_MODEL1_ONLY=1 PREDATOR_NATURAL_ONLY=1 PREDATOR_OUTPUT=docs/audits/data/predator_rejection_probe.json PREDATOR_TICKS=5000 npx tsx scripts/predator_ecology_probe.ts
 CAP_TICKS=10000 npx tsx scripts/population_cap_probe.ts
-BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=10000 BEHAVIOR_OUTPUT=optimization_20seed_10k.json npx tsx scripts/ecology_behavior_benchmark.ts repair
-BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=50000 BEHAVIOR_OUTPUT=optimization_20seed_50k.json npx tsx scripts/ecology_behavior_benchmark.ts repair
-BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=10000 BEHAVIOR_OUTPUT=ecology_shared_food_20seed_10k.json npx tsx scripts/ecology_behavior_benchmark.ts shared_food
-BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=50000 BEHAVIOR_OUTPUT=ecology_shared_food_20seed_50k.json npx tsx scripts/ecology_behavior_benchmark.ts shared_food
-BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=50000 BEHAVIOR_OUTPUT=optimization_model0_20seed_50k.json npx tsx scripts/ecology_behavior_benchmark.ts baseline
-BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=50000 BEHAVIOR_OUTPUT=optimization_model0_repeat_20seed_50k.json npx tsx scripts/ecology_behavior_benchmark.ts baseline
+BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=10000 BEHAVIOR_OUTPUT=docs/audits/data/optimization_20seed_10k.json npx tsx scripts/ecology_behavior_benchmark.ts repair
+BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=50000 BEHAVIOR_OUTPUT=docs/audits/data/optimization_20seed_50k.json npx tsx scripts/ecology_behavior_benchmark.ts repair
+BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=10000 BEHAVIOR_OUTPUT=docs/audits/data/ecology_shared_food_20seed_10k.json npx tsx scripts/ecology_behavior_benchmark.ts shared_food
+BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=50000 BEHAVIOR_OUTPUT=docs/audits/data/ecology_shared_food_20seed_50k.json npx tsx scripts/ecology_behavior_benchmark.ts shared_food
+BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=50000 BEHAVIOR_OUTPUT=docs/audits/data/optimization_model0_20seed_50k.json npx tsx scripts/ecology_behavior_benchmark.ts baseline
+BEHAVIOR_SEEDS=20 BEHAVIOR_MAX_TICKS=50000 BEHAVIOR_OUTPUT=docs/audits/data/optimization_model0_repeat_20seed_50k.json npx tsx scripts/ecology_behavior_benchmark.ts baseline
 npx tsx scripts/assemble_optimization_comparison.ts
 npx vitest run src/behavior_repair.test.ts
 npm test

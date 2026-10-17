@@ -12,7 +12,7 @@ const seeds = [691153, 260679, 10101];
 const ticks = Number(process.env.PREDATOR_TICKS || 5000);
 const sampleEvery = 100;
 const profileDecisions = process.env.PREDATOR_PROFILE === '1';
-const outputPath = process.env.PREDATOR_OUTPUT || 'predator_ecology_diagnostics.json';
+const outputPath = process.env.PREDATOR_OUTPUT || 'docs/audits/data/predator_ecology_diagnostics.json';
 const models = process.env.PREDATOR_MODEL1_ONLY === '1' ? [1] as const : [0, 1] as const;
 const scenarios = process.env.PREDATOR_NATURAL_ONLY === '1'
   ? ['natural'] as const : ['natural', 'prey_nearby', 'no_prey'] as const;

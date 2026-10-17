@@ -627,7 +627,7 @@ describe('Genesis Engine - Basic Resource Ecology & Trophic Roles', () => {
     expect(plantOnly.filter(r => r.type === 'plant').length).toBeGreaterThan(179);
   });
 
-  it('reproduction expends substantial energy from both parents and charges thermodynamic tax', () => {
+  it('reproduction expends substantial energy from both parents', () => {
     const world = generateNewWorld(4455);
     const prng = new PRNG(6677);
     const grid = createSpatialGrid(world.terrain.worldWidth, world.terrain.worldHeight, 80);
@@ -652,7 +652,7 @@ describe('Genesis Engine - Basic Resource Ecology & Trophic Roles', () => {
     expect(out.reproducedParents.length).toBeGreaterThan(0);
     expect(p1.energy).toBeLessThanOrEqual(90 - 35);
     expect(p2.energy).toBeLessThanOrEqual(90 - 35);
-    expect(out.reproductionTaxDissipated).toBeGreaterThan(0);
+    expect(out.reproducedParents[0].parentCost).toBeGreaterThan(0);
     expect(p1.reproductiveCooldown).toBeGreaterThan(50);
   });
 
@@ -672,7 +672,6 @@ describe('Genesis Engine - Basic Resource Ecology & Trophic Roles', () => {
     grid.populateOrganisms(organisms);
     const output = updateCreatureBehavior(organisms, [], world.terrain, grid, prng);
     expect(output.reproducedParents).toHaveLength(0);
-    expect(output.reproductionTaxDissipated).toBe(0);
     expect(p1.energy).toBe(90);
     expect(p2.energy).toBe(90);
     expect(p1.reproductiveCooldown).toBe(0);
@@ -681,6 +680,131 @@ describe('Genesis Engine - Basic Resource Ecology & Trophic Roles', () => {
 });
 
 describe('Genesis Engine - Energy Conservation Ledger & Stability', () => {
+  it('keeps an experimental litter within parent charges and replays from a saved state', () => {
+    const engine = new SimulationEngine(4455, { behaviorModel: 1 });
+    engine.experimentalReproductionVersion = 1;
+    const a = engine.organisms[0];
+    const b = engine.organisms.find(o => o.speciesId === a.speciesId && o.id !== a.id)!;
+    engine.organisms = [a, b];
+    a.isMature = b.isMature = true;
+    a.reproductiveCooldown = b.reproductiveCooldown = 0;
+    a.energy = b.energy = 100;
+    a.hydration = b.hydration = 90;
+    a.health = b.health = 100;
+    a.genome.litterPotential = b.genome.litterPotential = .6;
+    b.x = a.x + 2;
+    b.y = a.y;
+    engine.resources = [{ id: 'ample_food', x: a.x + 30, y: a.y, type: 'plant',
+      amount: 200, maxAmount: 200, radius: 5, growthRate: 0 }];
+    const children: number[] = [];
+    let parentCharges = 0;
+    engine.observer = { onBirth(child) {
+      children.push(child.energy);
+      parentCharges = 200 - a.energy - b.energy;
+    } };
+    const taxBefore = engine.energyLedger.dissipatedReproductionTax;
+    engine.step();
+    expect(children).toHaveLength(2);
+    expect(children.every(energy => energy >= 20)).toBe(true);
+    expect(parentCharges).toBe(children.reduce((sum, energy) => sum + energy, 0) +
+      engine.energyLedger.dissipatedReproductionTax - taxBefore);
+    expect(a.offspringCount).toBe(2);
+    expect(b.offspringCount).toBe(2);
+    const restored = new SimulationEngine(structuredClone(engine.serializeForStorage()));
+    restored.experimentalReproductionVersion = 1;
+    engine.observer = undefined;
+    for (let i = 0; i < 20; i++) { engine.step(); restored.step(); }
+    const { lastSavedTimestamp: _restoredTime, ...restoredState } = restored.serializeForStorage();
+    const { lastSavedTimestamp: _originalTime, ...originalState } = engine.serializeForStorage();
+    expect(restoredState).toEqual(originalState);
+  });
+
+  it('admits only one experimental offspring when one population slot remains', () => {
+    const engine = new SimulationEngine(4455, { behaviorModel: 1 });
+    engine.experimentalReproductionVersion = 1;
+    const a = engine.organisms[0];
+    const b = engine.organisms.find(o => o.speciesId === a.speciesId && o.id !== a.id)!;
+    a.isMature = b.isMature = true;
+    a.reproductiveCooldown = b.reproductiveCooldown = 0;
+    a.energy = b.energy = 100;
+    a.hydration = b.hydration = 90;
+    a.genome.litterPotential = b.genome.litterPotential = .6;
+    b.x = a.x + 2;
+    b.y = a.y;
+    engine.organisms = [a, b, ...Array.from({ length: 217 }, (_, i) =>
+      ({ ...a, id: `dead_filler_${i}`, state: 'dead' as const }))];
+    engine.resources = [{ id: 'ample_food', x: a.x + 30, y: a.y, type: 'plant',
+      amount: 200, maxAmount: 200, radius: 5, growthRate: 0 }];
+    const births: number[] = [];
+    engine.observer = { onBirth(child) { births.push(child.energy); } };
+    engine.step();
+    expect(births).toHaveLength(1);
+    expect(a.offspringCount).toBe(1);
+    expect(b.offspringCount).toBe(1);
+  });
+
+  it('books actual newborn energy as parent transfer and the remainder as overhead', () => {
+    const engine = new SimulationEngine(4455);
+    const parentA = engine.organisms[0];
+    const parentB = engine.organisms.find(o => o.speciesId === parentA.speciesId && o.id !== parentA.id)!;
+    engine.organisms = [parentA, parentB];
+    engine.resources = [];
+    parentA.isMature = parentB.isMature = true;
+    parentA.reproductiveCooldown = parentB.reproductiveCooldown = 0;
+    parentA.energy = parentB.energy = 95;
+    parentA.hydration = parentB.hydration = 85;
+    parentB.x = parentA.x + 2;
+    parentB.y = parentA.y;
+    let childEnergy = 0;
+    let chargedA = 0;
+    let chargedB = 0;
+    engine.observer = { onBirth(child) {
+      childEnergy = child.energy;
+      chargedA = 95 - parentA.energy;
+      chargedB = 95 - parentB.energy;
+    } };
+    const taxBefore = engine.energyLedger.dissipatedReproductionTax;
+    engine.step();
+    expect(childEnergy).toBeGreaterThan(0);
+    expect(chargedA).toBe(chargedB);
+    expect(chargedA + chargedB).toBe(childEnergy + engine.energyLedger.dissipatedReproductionTax - taxBefore);
+    expect(childEnergy).toBe(Math.round(34 + engine.organisms.find(o => o.parentAId === parentA.id)!.genome.reproductiveInvestment * 44));
+    const restored = new SimulationEngine(structuredClone(engine.serializeForStorage()));
+    for (let tick = 0; tick < 20; tick++) { engine.step(); restored.step(); }
+    const restoredState = restored.serializeForStorage();
+    const originalState = engine.serializeForStorage();
+    restoredState.lastSavedTimestamp = originalState.lastSavedTimestamp;
+    expect(restoredState).toEqual(originalState);
+  });
+
+  it('refunds a charged mating pair when its taxon is missing', () => {
+    const engine = new SimulationEngine(4455);
+    const parentA = engine.organisms[0];
+    const parentB = engine.organisms.find(o => o.speciesId === parentA.speciesId && o.id !== parentA.id)!;
+    engine.organisms = [parentA, parentB];
+    engine.resources = [];
+    engine.speciesMap.delete(parentA.speciesId);
+    parentA.isMature = parentB.isMature = true;
+    parentA.reproductiveCooldown = parentB.reproductiveCooldown = 0;
+    parentA.energy = parentB.energy = 95;
+    parentA.hydration = parentB.hydration = 85;
+    parentB.x = parentA.x + 2;
+    parentB.y = parentA.y;
+    let blocked = 0;
+    engine.observer = { onBirthBlocked(reason) { if (reason === 'missing_taxon') blocked++; } };
+    const taxBefore = engine.energyLedger.dissipatedReproductionTax;
+    engine.step();
+    expect(blocked).toBe(1);
+    expect(engine.totalBirths).toBe(0);
+    expect(parentA.offspringCount).toBe(0);
+    expect(parentB.offspringCount).toBe(0);
+    expect(parentA.reproductiveCooldown).toBe(0);
+    expect(parentB.reproductiveCooldown).toBe(0);
+    expect(parentA.state).toBe('locating_mate');
+    expect(parentB.state).toBe('locating_mate');
+    expect(engine.energyLedger.dissipatedReproductionTax).toBe(taxBefore);
+  });
+
   it('maintains non-negative, finite energy ledger values across simulation steps', () => {
     const engine = new SimulationEngine(876543);
 

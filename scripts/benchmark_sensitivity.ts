@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { SimulationEngine } from '../src/simulation/engine.js';
 
-const baseline = JSON.parse(readFileSync('benchmark_results.json','utf8'));
+const baseline = JSON.parse(readFileSync('docs/audits/data/benchmark_results.json','utf8'));
 const seeds: number[] = baseline.results.slice(0,20).map((row: {seed:number}) => row.seed);
 type ScenarioRow = { seed: number; final: number; peak: number; firstZero: number | null;
   herbivores: number; carnivores: number; scavengers: number; births: number;
@@ -58,5 +58,5 @@ for (const scenario of scenarios) {
     births: sum('births'), deaths: sum('deaths'), invalidNumericSeeds: rows.filter(row=>row.invalid).map(row=>row.seed), rows };
   output.push(result);
   console.log(`${scenario.name}: collapse ${result.finalZeroPercent}%, mean final ${result.meanFinalPopulation}; ${result.durationSeconds}s`);
-  writeFileSync('benchmark_sensitivity.json', JSON.stringify({ note: '20 fixed seeds, 10,000 ticks per scenario; interventions only alter specified starting values.', scenarios: output },null,2));
+  writeFileSync('docs/audits/data/benchmark_sensitivity.json', JSON.stringify({ note: '20 fixed seeds, 10,000 ticks per scenario; interventions only alter specified starting values.', scenarios: output },null,2));
 }

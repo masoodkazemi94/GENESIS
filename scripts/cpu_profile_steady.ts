@@ -25,7 +25,7 @@ const { profile } = await post<{ profile: {
   samples?: number[]; timeDeltas?: number[]; startTime: number; endTime: number;
 } }>('Profiler.stop');
 session.disconnect();
-writeFileSync('simulation_cpu_profile.cpuprofile', JSON.stringify(profile));
+writeFileSync('docs/audits/data/simulation_cpu_profile.cpuprofile', JSON.stringify(profile));
 const frames = new Map(profile.nodes.map(node=>[node.id,node.callFrame]));
 const byFrame = new Map<string,{samples:number;sampledMs:number}>();
 for (let i=0; i<(profile.samples?.length || 0); i++) {
@@ -43,5 +43,5 @@ const output = {schemaVersion:1,seed,model:1,warmupTicks,measuredTicks,
   meanPopulation:populationSum/measuredTicks,
   profileDurationMs:(profile.endTime-profile.startTime)/1000,
   sampleCount:profile.samples?.length || 0,topSelfFrames};
-writeFileSync('simulation_cpu_profile_summary.json',JSON.stringify(output,null,2));
-console.log('simulation_cpu_profile_summary.json',output.sampleCount);
+writeFileSync('docs/audits/data/simulation_cpu_profile_summary.json',JSON.stringify(output,null,2));
+console.log('docs/audits/data/simulation_cpu_profile_summary.json',output.sampleCount);

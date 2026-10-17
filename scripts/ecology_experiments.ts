@@ -1,11 +1,11 @@
-/** Controlled, headless ecology experiments. Commands in ECOLOGY_CALIBRATION.md. */
+/** Controlled, headless ecology experiments. Commands in docs/audits/ECOLOGY_CALIBRATION.md. */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { SimulationEngine } from '../src/simulation/engine.js';
 import { PRNG } from '../src/simulation/math/prng.js';
 import { LEGACY_ECOLOGY_CONFIG, resolveEcologyConfig, type EcologyConfig } from '../src/simulation/ecology/config.js';
 
-const baseline = JSON.parse(readFileSync('benchmark_results.json', 'utf8'));
+const baseline = JSON.parse(readFileSync('docs/audits/data/benchmark_results.json', 'utf8'));
 const originalSeeds: number[] = baseline.all100k.results.map((r: {seed:number}) => r.seed);
 const holdoutGenerator = new PRNG(20261014);
 const holdoutSeeds: number[] = [];
@@ -96,11 +96,11 @@ if (mode === 'screen') {
     const results: Result[] = [];
     for (const seed of seeds) results.push(run(seed, ticks, config));
     output.variants.push({ name, config, summary: summary(results), results });
-    writeFileSync('ecology_experiments.json', JSON.stringify(output, null, 2));
+    writeFileSync('docs/audits/data/ecology_experiments.json', JSON.stringify(output, null, 2));
     console.log(`${name}: ${JSON.stringify(output.variants.at(-1)?.summary)}`);
   }
 } else if (mode === 'followup') {
-  const output = JSON.parse(readFileSync('ecology_experiments.json', 'utf8'));
+  const output = JSON.parse(readFileSync('docs/audits/data/ecology_experiments.json', 'utf8'));
   const seeds: number[] = output.seeds;
   const ticks: number = output.ticksPerSeed;
   const variants: Array<[string, Partial<EcologyConfig>]> = [
@@ -114,7 +114,7 @@ if (mode === 'screen') {
     const config = resolveEcologyConfig(overrides);
     const results = seeds.map(seed => run(seed, ticks, config));
     output.variants.push({ name, config, summary: summary(results), results });
-    writeFileSync('ecology_experiments.json', JSON.stringify(output, null, 2));
+    writeFileSync('docs/audits/data/ecology_experiments.json', JSON.stringify(output, null, 2));
     console.log(`${name}: ${JSON.stringify(output.variants.at(-1)?.summary)}`);
   }
 } else if (mode === 'legacy-holdout') {
@@ -124,15 +124,15 @@ if (mode === 'screen') {
     results: [] as Result[], summary: null as ReturnType<typeof summary> | null };
   for (const seed of holdoutSeeds) {
     output.results.push(run(seed, ticks, config));
-    writeFileSync('ecology_legacy_holdout.json', JSON.stringify(output, null, 2));
+    writeFileSync('docs/audits/data/ecology_legacy_holdout.json', JSON.stringify(output, null, 2));
     if (output.results.length % 10 === 0) console.log(`legacy-holdout: ${output.results.length}/50`);
   }
   output.summary = summary(output.results);
-  writeFileSync('ecology_legacy_holdout.json', JSON.stringify(output, null, 2));
+  writeFileSync('docs/audits/data/ecology_legacy_holdout.json', JSON.stringify(output, null, 2));
 } else if (mode === 'verify') {
   const ticks = Number(process.env.ECOLOGY_VERIFY_TICKS || 100000);
   const candidate = resolveEcologyConfig(process.env.ECOLOGY_CONFIG ? JSON.parse(process.env.ECOLOGY_CONFIG) : {});
-  const outputPath = process.env.ECOLOGY_OUTPUT || 'ecology_holdout_results.json';
+  const outputPath = process.env.ECOLOGY_OUTPUT || 'docs/audits/data/ecology_holdout_results.json';
   const output = { schemaVersion: 1, mode, ticksPerSeed: ticks, originalSeeds, holdoutSeeds,
     configurations: [
       { name: 'baseline', config: LEGACY_ECOLOGY_CONFIG, results: [] as Result[] },

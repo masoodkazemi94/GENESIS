@@ -11,9 +11,9 @@ const mode = process.argv[2];
 if (mode !== 'baseline' && mode !== 'repair' && mode !== 'shared_food')
   throw new Error('Expected baseline, repair, or shared_food');
 const outputPath = process.env.BEHAVIOR_OUTPUT ||
-  (mode === 'baseline' ? 'ecology_behavior_baseline.json'
-    : mode === 'repair' ? 'ecology_behavior_experiments.json' : 'ecology_shared_food_experiments.json');
-const original = JSON.parse(readFileSync('benchmark_results.json', 'utf8'));
+  (mode === 'baseline' ? 'docs/audits/data/ecology_behavior_baseline.json'
+    : mode === 'repair' ? 'docs/audits/data/ecology_behavior_experiments.json' : 'docs/audits/data/ecology_shared_food_experiments.json');
+const original = JSON.parse(readFileSync('docs/audits/data/benchmark_results.json', 'utf8'));
 const seedCount = Number(process.env.BEHAVIOR_SEEDS || 30);
 const seeds: number[] = original.all100k.results.slice(0, seedCount).map((item: { seed: number }) => item.seed);
 const maxTicks = Number(process.env.BEHAVIOR_MAX_TICKS || 50000);

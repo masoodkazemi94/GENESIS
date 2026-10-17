@@ -3,7 +3,7 @@ import { writeFileSync } from 'node:fs';
 import { SimulationEngine } from '../src/simulation/engine.js';
 import { resolveEcologyConfig } from '../src/simulation/ecology/config.js';
 
-const output = process.env.TRAJECTORY_OUTPUT || 'optimization_trajectory.json';
+const output = process.env.TRAJECTORY_OUTPUT || 'docs/audits/data/optimization_trajectory.json';
 const results = [];
 for (const model of [0,1] as const) for (const seed of [10101,691153,260679]) {
   const engine = new SimulationEngine(seed, resolveEcologyConfig({ behaviorModel: model }));

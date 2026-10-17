@@ -43,7 +43,7 @@ async function measure(target: number) {
 }
 
 const results = await Promise.all([20,65,150].map(measure));
-writeFileSync('benchmark_transfer.json', JSON.stringify({
+writeFileSync('docs/audits/data/benchmark_transfer.json', JSON.stringify({
   method: 'Node worker thread -> main thread, 5 warmups and 30 measured round trips per population; small request plus snapshot payload.',
   results,
 },null,2));

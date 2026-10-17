@@ -182,7 +182,7 @@ function performanceBench(target: number) {
 
 async function main() {
   if (process.argv.includes('--very-deep-survivor')) {
-    const baseline = JSON.parse(readFileSync('benchmark_results.json', 'utf8'));
+    const baseline = JSON.parse(readFileSync('docs/audits/data/benchmark_results.json', 'utf8'));
     const survivors: SeedResult[] = baseline.all100k.results.filter((row: SeedResult) => row.finalPopulation > 0);
     if (survivors.length === 0) throw new Error('No 100,000-tick survivor exists to extend');
     const seed = survivors.sort((a,b)=>b.finalPopulation-a.finalPopulation)[0].seed;
@@ -190,24 +190,24 @@ async function main() {
     const result = runSeed(seed,500000,25000);
     baseline.survivor500k = { summary: summary([result]), result };
     baseline.totalTicksExecuted += 500000;
-    writeFileSync('benchmark_results.json', JSON.stringify(baseline,null,2));
+    writeFileSync('docs/audits/data/benchmark_results.json', JSON.stringify(baseline,null,2));
     console.log(JSON.stringify({ seed, finalPopulation: result.finalPopulation, firstZeroTick: result.firstZeroTick,
       births: result.births, newSpecies: result.newSpecies, durationSeconds: result.durationSeconds },null,2));
     return;
   }
   if (process.argv.includes('--refresh-deep')) {
-    const baseline = JSON.parse(readFileSync('benchmark_results.json', 'utf8'));
+    const baseline = JSON.parse(readFileSync('docs/audits/data/benchmark_results.json', 'utf8'));
     const deepSeeds: number[] = baseline.deep.map((entry: { result: SeedResult }) => entry.result.seed);
     baseline.deep = deepSeeds.map(seed => { const result = runSeed(seed,100000,10000); return { summary: summary([result]), result }; });
     const veryDeepSeed: number = baseline.veryDeep.result.seed;
     const veryDeepResult = runSeed(veryDeepSeed,500000,25000);
     baseline.veryDeep = { summary: summary([veryDeepResult]), result: veryDeepResult };
-    writeFileSync('benchmark_results.json', JSON.stringify(baseline,null,2));
+    writeFileSync('docs/audits/data/benchmark_results.json', JSON.stringify(baseline,null,2));
     console.log('Refreshed two 100,000-tick runs and one 500,000-tick run.');
     return;
   }
   if (process.argv.includes('--refresh-short')) {
-    const baseline = JSON.parse(readFileSync('benchmark_results.json', 'utf8'));
+    const baseline = JSON.parse(readFileSync('docs/audits/data/benchmark_results.json', 'utf8'));
     const seeds: number[] = baseline.results.map((result: SeedResult) => result.seed);
     if (seeds.length !== 100 || new Set(seeds).size !== 100) throw new Error('A completed, unique 100-seed baseline is required');
     const results: SeedResult[] = [];
@@ -217,11 +217,11 @@ async function main() {
     }
     baseline.results = results;
     baseline.summary100x10k = summary(results);
-    writeFileSync('benchmark_results.json', JSON.stringify(baseline,null,2));
+    writeFileSync('docs/audits/data/benchmark_results.json', JSON.stringify(baseline,null,2));
     return;
   }
   if (process.argv.includes('--extended')) {
-    const baseline = JSON.parse(readFileSync('benchmark_results.json', 'utf8'));
+    const baseline = JSON.parse(readFileSync('docs/audits/data/benchmark_results.json', 'utf8'));
     const seeds: number[] = baseline.results.map((result: SeedResult) => result.seed);
     if (seeds.length !== 100 || new Set(seeds).size !== 100) throw new Error('A completed, unique 100-seed baseline is required');
     const results: SeedResult[] = [];
@@ -230,13 +230,13 @@ async function main() {
       results.push(runSeed(seed, 100000, 10000));
       if (results.length % 10 === 0) {
         console.log(`${results.length}/100 at 100,000 ticks; elapsed ${round((performance.now()-start)/1000)} s`);
-        writeFileSync('benchmark_100k_partial.json', JSON.stringify({ completedSeeds: results.length, results }, null, 2));
+        writeFileSync('docs/audits/data/benchmark_100k_partial.json', JSON.stringify({ completedSeeds: results.length, results }, null, 2));
       }
     }
     baseline.all100k = { summary: summary(results), results };
     baseline.totalTicksExecuted += 10000000;
     baseline.extendedWallSeconds = round((performance.now()-start)/1000);
-    writeFileSync('benchmark_results.json', JSON.stringify(baseline,null,2));
+    writeFileSync('docs/audits/data/benchmark_results.json', JSON.stringify(baseline,null,2));
     console.log(JSON.stringify({ durationSeconds: baseline.extendedWallSeconds, summary: baseline.all100k.summary },null,2));
     return;
   }
@@ -264,7 +264,7 @@ async function main() {
     summary100x10k: summary(results), deep: deep.map(r => ({ summary: summary([r]), result: r })),
     veryDeep: { summary: summary([veryDeep]), result: veryDeep }, determinism: determinismResults,
     performance: performanceResults, results };
-  writeFileSync('benchmark_results.json', JSON.stringify(report,null,2));
+  writeFileSync('docs/audits/data/benchmark_results.json', JSON.stringify(report,null,2));
   console.log(JSON.stringify({ wallSeconds: report.wallSeconds, summary: report.summary100x10k,
     deep: deep.map(r=>({seed:r.seed, final:r.finalPopulation})), veryDeep:{seed:veryDeep.seed,final:veryDeep.finalPopulation},
     determinism: determinismResults.map(r=>({seed:r.seed,pass:r.pass,difference:r.difference})), performance: performanceResults },null,2));

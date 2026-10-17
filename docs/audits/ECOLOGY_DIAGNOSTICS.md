@@ -57,11 +57,11 @@ The diagnostics do not prove that low plant access alone causes extinction. Targ
 
 ```sh
 # Historical baseline is retained in benchmark_results.json.
-ECOLOGY_OUTPUT=ecology_diagnostics_corrected.json npx tsx scripts/ecology_diagnostics.ts
-ECOLOGY_SEED=691153 ECOLOGY_TICKS=500000 ECOLOGY_SAMPLE_EVERY=1000 ECOLOGY_OUTPUT=ecology_diagnostics_500k.json npx tsx scripts/ecology_diagnostics.ts
-ECOLOGY_CONFIG='{"scavengerCarrionRange":0.5555555555555556}' ECOLOGY_SEED=691153 ECOLOGY_TICKS=500000 ECOLOGY_SAMPLE_EVERY=5000 ECOLOGY_OUTPUT=ecology_diagnostics_legacy_reach_500k.json npx tsx scripts/ecology_diagnostics.ts
-ECOLOGY_SEED=691153 ECOLOGY_TICKS=10000 ECOLOGY_OUTPUT=ecology_seed_691153_corrected_10k.json npx tsx scripts/ecology_diagnostics.ts
-ECOLOGY_CONFIG='{"scavengerCarrionRange":0.5555555555555556}' ECOLOGY_SEED=691153 ECOLOGY_TICKS=10000 ECOLOGY_OUTPUT=ecology_seed_691153_legacy_reach_10k.json npx tsx scripts/ecology_diagnostics.ts
+ECOLOGY_OUTPUT=docs/audits/data/ecology_diagnostics_corrected.json npx tsx scripts/ecology_diagnostics.ts
+ECOLOGY_SEED=691153 ECOLOGY_TICKS=500000 ECOLOGY_SAMPLE_EVERY=1000 ECOLOGY_OUTPUT=docs/audits/data/ecology_diagnostics_500k.json npx tsx scripts/ecology_diagnostics.ts
+ECOLOGY_CONFIG='{"scavengerCarrionRange":0.5555555555555556}' ECOLOGY_SEED=691153 ECOLOGY_TICKS=500000 ECOLOGY_SAMPLE_EVERY=5000 ECOLOGY_OUTPUT=docs/audits/data/ecology_diagnostics_legacy_reach_500k.json npx tsx scripts/ecology_diagnostics.ts
+ECOLOGY_SEED=691153 ECOLOGY_TICKS=10000 ECOLOGY_OUTPUT=docs/audits/data/ecology_seed_691153_corrected_10k.json npx tsx scripts/ecology_diagnostics.ts
+ECOLOGY_CONFIG='{"scavengerCarrionRange":0.5555555555555556}' ECOLOGY_SEED=691153 ECOLOGY_TICKS=10000 ECOLOGY_OUTPUT=docs/audits/data/ecology_seed_691153_legacy_reach_10k.json npx tsx scripts/ecology_diagnostics.ts
 npx tsx scripts/assemble_ecology_diagnostics.ts
 ```
 

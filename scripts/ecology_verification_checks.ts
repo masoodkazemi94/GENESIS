@@ -50,5 +50,5 @@ function load(config: typeof configurations[number]['config'], target: number) {
 const results = configurations.map(({name,config})=>({name,config,
   replay:[10101,20202,30303].map(seed=>replay(config,seed)),
   load:[20,65,150].map(target=>load(config,target)) }));
-writeFileSync('ecology_verification_checks.json',JSON.stringify({schemaVersion:1,results},null,2));
+writeFileSync('docs/audits/data/ecology_verification_checks.json',JSON.stringify({schemaVersion:1,results},null,2));
 console.log(JSON.stringify(results.map(r=>({name:r.name,replayPass:r.replay.every(x=>x.equalAtRestore&&x.equalAfterReplay&&x.rngEqual),load:r.load})),null,2));

@@ -83,9 +83,13 @@ describe('experimental ecological behavior', () => {
   it('D: predator can strike and consume a nearby viable prey', () => {
     const predator = creature('carnivore', 'hunter'); const prey = creature('herbivore', 'prey', 104, 100);
     prey.health = 15; predator.energy = 25;
+    const expectedGain = Math.min(75, Math.min(prey.energy * .75 + prey.genome.bodySize * 20,
+      55 * prey.genome.bodySize) * predator.genome.foodProcessingEfficiency);
     const result = decide([predator, prey], [], terrain());
     expect(result.kills).toHaveLength(1);
-    expect(predator.energy).toBeGreaterThan(25);
+    expect(result.kills[0].energyGained).toBeCloseTo(expectedGain);
+    expect(predator.energy).toBeCloseTo(25 + expectedGain);
+    expect(prey.state).toBe('dead');
   });
   it('E: compatible predators can reproduce with local prey and stored energy', () => {
     const a = creature('carnivore', 'a'); const b = creature('carnivore', 'b', 104, 100);
@@ -94,6 +98,10 @@ describe('experimental ecological behavior', () => {
     a.isMature = b.isMature = true; a.reproductiveCooldown = b.reproductiveCooldown = 0;
     const result = decide([a, b, prey], [], terrain());
     expect(result.reproducedParents.length).toBeGreaterThan(0);
+    const parentCost = Math.round(26 + (a.genome.reproductiveInvestment + b.genome.reproductiveInvestment) * 10);
+    expect(result.reproducedParents[0].parentCost).toBe(parentCost);
+    expect(a.energy).toBe(95 - parentCost);
+    expect(b.energy).toBe(95 - parentCost);
   });
   it('well-fed predators can mate using stored energy after nearby prey leave', () => {
     const a = creature('carnivore', 'a'); const b = creature('carnivore', 'b', 104, 100);

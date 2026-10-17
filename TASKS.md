@@ -2,19 +2,20 @@
 
 ## Active task
 
-None after project-memory setup. Next development task: investigate predator viability in Models 1/2 without changing the production default.
+Rejected-prey counterfactuals and a paired litter-size development screen completed on three reused development seeds. Neither supports adoption. Keep the production default unchanged.
 
 ## Critical blockers
 
-- Carnivores do not persist to tick 10,000 in reported development seed sets; the three-seed probe found an energy deficit and rare nearby mates, but the dominant cause is unresolved.
+- Carnivores do not persist to tick 10,000 in reported development seed sets. The new three-seed controlled screen confirms a natural Model 1 energy deficit and rare reachable mates; a higher hunt-return intervention reached generation 5 in only one seed. General viability remains unproven.
 - Experimental survivors often depend on the 220-organism cap. Model 2 reduces, but does not remove, cap saturation.
 - No completed benchmark demonstrates population-level speciation or supports promotion of an experimental model.
+- The three-seed litter screen increased offspring counts without predator-lineage persistence; it did not establish a juvenile survival tradeoff and touched the cap in one seed.
 
 ## Next three tasks
 
-1. **Isolate predator losses.** Add focused deterministic scenarios for search, pursuit, capture economics, and mate access; compare a small paired seed set. Accept when measurements distinguish the mechanisms, replay remains exact, and results clearly state sample limits.
-2. **Test density regulation.** Trace local shared food, births, juvenile survival, and cap occupancy in representative Model 1/2 seeds. Accept when a proposed change reduces cap dependence without hiding starvation or harming save compatibility, with focused tests and paired checkpoints.
-3. **Validate any candidate before adoption.** Run a broader independent holdout only after the first two tasks produce a credible candidate. Accept only with documented survival, trophic roles, predator persistence, cap occupancy, runtime, and deterministic replay evidence. Keep Model 0 until those results support a decision.
+1. **Explain juvenile survival and parental interval effects.** In the litter screen, twin reserves were roughly half those of single newborns, yet nearly all offspring reached maturity by tick 5,000. Test scarcity and shorter versus longer reproductive intervals under controlled conditions before revising the litter rule.
+2. **Test density regulation and predator access.** Trace local food, mating eligibility, juvenile survival, and cap occupancy in representative Model 1/2 seeds. A future scoring candidate must distinguish profitable rejected prey without accepting the costly pursuits seen in cloned-state validation.
+3. **Validate a bounded candidate before adoption.** Use paired development seeds for mature offspring, later-generation reproduction, predator lineage replacement, prey and scavenger survival, cap occupancy, runtime, and deterministic replay. Expand to independent seeds or a holdout only after a credible candidate emerges. Keep Model 0 until evidence supports a decision.
 
 ## Deferred
 

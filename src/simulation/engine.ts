@@ -33,6 +33,7 @@ import { generateNewWorld } from './generation/worldGenerator.js';
 import { createSpatialGrid, populateSpatialGrid, updatePhysics, SpatialGrid } from './physics/physics.js';
 import { updateOrganismMetabolism, createOrganism } from './organism/organism.js';
 import { updateCreatureBehavior } from './behavior/behavior.js';
+import type { FoodCandidate } from './behavior/foraging.js';
 import { updateResourceEcosystem, spawnCarrion } from './ecosystem/ecosystem.js';
 import {
   calculateGeneticDistance,
@@ -64,7 +65,7 @@ export class SimulationEngine {
   public speciesTree: SpeciesAncestryTree;
   public chronicle: EventChronicle;
 
-  // Energy Accounting Ledger (Thermodynamic Conservation Model)
+  // Reserve-flow ledger; the wider ecology includes external energy and biomass conversions.
   public energyLedger: EnergyAccountingLedger = {
     solarEnergyInflow: 0,
     plantBiomassEnergy: 0,
@@ -102,6 +103,10 @@ export class SimulationEngine {
   private lastApexKills = 0;
   public observer?: EcologyObserver;
   public probe?: SimulationProbe;
+  /** Ephemeral audit hook. Never saved; production behavior leaves it unset. */
+  public experimentalFoodOverride?: (organism: OrganismState, choice: FoodCandidate | null) => FoodCandidate | null;
+  /** Versioned, unsaved development switch; not a selectable ecology model. */
+  public experimentalReproductionVersion: 0 | 1 = 0;
   public ecologyConfig: EcologyConfig;
 
   constructor(seedOrSaved?: number | SavedWorldData, config?: Partial<EcologyConfig>) {
@@ -310,30 +315,64 @@ export class SimulationEngine {
       this.observer,
       this.ecologyConfig,
       this.probe,
-      true
+      true,
+      this.experimentalFoodOverride
     );
     if (behaviorStarted !== undefined) this.probe?.end('engine.behavior', behaviorStarted);
 
     // Track energy accounting from behavioral outcomes
-    this.energyLedger.dissipatedReproductionTax += behaviorOutput.reproductionTaxDissipated;
-
     // 5. Handle Reproduction & Genetic Inheritance
     const reproductionStarted = this.probe?.start();
     for (let i = 0; i < behaviorOutput.reproducedParents.length; i++) {
       // Hard population ceiling for bounded real-time execution
-      if (this.organisms.length >= 220) {
-        this.observer?.onBirthBlocked?.('population_cap');
-        continue;
-      }
-
-      const { parentA, parentB } = behaviorOutput.reproducedParents[i];
+      const { parentA, parentB, parentCost } = behaviorOutput.reproducedParents[i];
       const parentTaxon = this.speciesMap.get(parentA.speciesId);
-
-      if (!parentTaxon) {
-        this.observer?.onBirthBlocked?.('missing_taxon');
+      if (this.organisms.length >= 220 || !parentTaxon) {
+        // The behavior pass charged both parents. Cancel the transaction if no child can be born.
+        parentA.energy += parentCost;
+        parentB.energy += parentCost;
+        parentA.reproductiveCooldown = 0;
+        parentB.reproductiveCooldown = 0;
+        parentA.offspringCount--;
+        parentB.offspringCount--;
+        parentA.state = 'locating_mate';
+        parentB.state = 'locating_mate';
+        this.observer?.onBirthBlocked?.(this.organisms.length >= 220 ? 'population_cap' : 'missing_taxon');
         continue;
       }
 
+      const litterLimit = parentA.genome.diet === 'herbivore' || parentA.genome.diet === 'omnivore' ? 3 : 2;
+      const rawPotentialA = parentA.genome.litterPotential ??
+        (parentA.genome.reproductiveInvestment - .22) / .56;
+      const rawPotentialB = parentB.genome.litterPotential ??
+        (parentB.genome.reproductiveInvestment - .22) / .56;
+      const potentialA = Number.isFinite(rawPotentialA) ? rawPotentialA : .5;
+      const potentialB = Number.isFinite(rawPotentialB) ? rawPotentialB : .5;
+      const inheritedPotential = Math.max(0, Math.min(1, (potentialA + potentialB) / 2));
+      let litterSize = 1;
+      if (this.experimentalReproductionVersion === 1) {
+        const local = this.organisms.filter(o => o.state !== 'dead' &&
+          Math.hypot(o.x - parentA.x, o.y - parentA.y) <= parentA.genome.sensoryRadius);
+        const consumers = Math.max(1, local.filter(o => o.genome.diet === parentA.genome.diet).length);
+        const localFood = parentA.genome.diet === 'carnivore'
+          ? local.filter(o => o.genome.diet !== 'carnivore').length * 35
+          : this.resources.filter(r => (r.type === 'plant' ||
+            (parentA.genome.diet === 'scavenger' && r.type === 'carrion')) && r.amount > 1.5 &&
+            Math.hypot(r.x - parentA.x, r.y - parentA.y) <= parentA.genome.sensoryRadius)
+            .reduce((sum, r) => sum + r.amount, 0);
+        const desired = Math.min(litterLimit, 1 + Math.floor(inheritedPotential * (litterLimit - 1) + .5));
+        for (let n = 2; n <= desired && this.organisms.length + n - 1 < 220; n++) {
+          const extraCost = 6 * (n - 1);
+          if (parentA.energy < 20 + extraCost || parentB.energy < 20 + extraCost ||
+            parentA.hydration < 60 || parentB.hydration < 60 ||
+            parentA.health < 65 || parentB.health < 65 ||
+            localFood / consumers < 25 * n) break;
+          litterSize = n;
+        }
+      }
+      const children: Array<{ child: OrganismState; divergence: number; mutations: MutationEvent[] }> = [];
+      let newbornBudget = 0;
+      for (let sibling = 0; sibling < litterSize; sibling++) {
       // Two-parent inheritance, genetic recombination, and mutation event logging
       const { childGenome, mutations } = crossoverGenomesWithLog(
         parentA.genome,
@@ -344,6 +383,10 @@ export class SimulationEngine {
         this.tick
       );
       this.probe?.count('genetics.crossover');
+      if (this.experimentalReproductionVersion === 1) {
+        childGenome.litterPotential = Math.max(0, Math.min(1,
+          inheritedPotential + this.prng.range(-.08, .08)));
+      }
 
       // Evaluate speciation criteria against founder and species centroid baseline
       const speciationResult = evaluateSpeciationCriteria(childGenome, parentTaxon);
@@ -428,8 +471,28 @@ export class SimulationEngine {
       );
 
       this.organisms.push(child);
+      if (sibling === 0) {
+        newbornBudget = child.energy;
+        while (litterSize > 1 && Math.floor(newbornBudget / litterSize) < 20) litterSize--;
+      }
       this.totalBirths += 1;
-      this.observer?.onBirth?.(child, speciationResult.divergenceScore, mutations);
+      children.push({ child, divergence: speciationResult.divergenceScore, mutations });
+      }
+      if (litterSize > 1) {
+        const extraCost = 6 * (litterSize - 1);
+        parentA.energy -= extraCost;
+        parentB.energy -= extraCost;
+        parentA.offspringCount += litterSize - 1;
+        parentB.offspringCount += litterSize - 1;
+        parentA.reproductiveCooldown += 80 * (litterSize - 1);
+        parentB.reproductiveCooldown += 80 * (litterSize - 1);
+        const each = Math.floor(newbornBudget / litterSize);
+        children.forEach(({ child }, index) => { child.energy = each + (index === 0 ? newbornBudget % litterSize : 0); });
+      }
+      // Exact transaction: all parental deductions = all newborn reserves + overhead.
+      const newbornEnergy = children.reduce((sum, entry) => sum + entry.child.energy, 0);
+      this.energyLedger.dissipatedReproductionTax += parentCost * 2 + 12 * (litterSize - 1) - newbornEnergy;
+      children.forEach(({ child, divergence, mutations }) => this.observer?.onBirth?.(child, divergence, mutations));
     }
     if (reproductionStarted !== undefined) this.probe?.end('engine.reproductionGenetics', reproductionStarted);
 

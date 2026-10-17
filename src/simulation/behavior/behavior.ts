@@ -11,6 +11,7 @@ import { getCellAt } from '../terrain/terrain.js';
 import type { EcologyObserver } from '../ecology/observer.js';
 import { LEGACY_ECOLOGY_CONFIG, type EcologyConfig } from '../ecology/config.js';
 import { chooseFoodTarget, directRouteOpen } from './foraging.js';
+import type { FoodCandidate } from './foraging.js';
 import type { SimulationProbe } from '../performance/probe.js';
 
 export interface HuntKillRecord {
@@ -21,13 +22,11 @@ export interface HuntKillRecord {
 }
 
 export interface BehaviorOutput {
-  reproducedParents: Array<{ parentA: OrganismState; parentB: OrganismState }>;
+  reproducedParents: Array<{ parentA: OrganismState; parentB: OrganismState; parentCost: number }>;
   kills: HuntKillRecord[];
   plantBiomassConsumed: number;
   carrionBiomassConsumed: number;
   waterConsumed: number;
-  reproductionEnergyInvested: number;
-  reproductionTaxDissipated: number;
 }
 
 /**
@@ -49,15 +48,14 @@ export function updateCreatureBehavior(
   observer?: EcologyObserver,
   config: EcologyConfig = LEGACY_ECOLOGY_CONFIG,
   probe?: SimulationProbe,
-  foodIndexReady = false
+  foodIndexReady = false,
+  experimentalFoodOverride?: (organism: OrganismState, choice: FoodCandidate | null) => FoodCandidate | null
 ): BehaviorOutput {
-  const reproducedParents: Array<{ parentA: OrganismState; parentB: OrganismState }> = [];
+  const reproducedParents: Array<{ parentA: OrganismState; parentB: OrganismState; parentCost: number }> = [];
   const kills: HuntKillRecord[] = [];
   let plantBiomassConsumed = 0;
   let carrionBiomassConsumed = 0;
   let waterConsumed = 0;
-  let reproductionEnergyInvested = 0;
-  let reproductionTaxDissipated = 0;
 
   // Populate spatial hash grid for fast food and carrion queries
   if (!foodIndexReady) grid.populateFood(resources);
@@ -254,10 +252,12 @@ export function updateCreatureBehavior(
     }
 
     if (enhancedBehavior) {
-      const choice = chooseFoodTarget(org, terrain, grid, config, pressureCache, probe, neighbors);
+      const scoredChoice = chooseFoodTarget(org, terrain, grid, config, pressureCache, probe, neighbors);
+      const choice = experimentalFoodOverride?.(org, scoredChoice) ?? scoredChoice;
       nearestFoodTarget = choice;
       minFoodDistSq = choice ? choice.distance ** 2 : sensor ** 2;
       if (choice) utilityFood *= Math.min(1, choice.score / 8);
+      if (experimentalFoodOverride && choice !== scoredChoice) utilityFood = 2;
     }
 
     if (!nearestFoodTarget) {
@@ -690,11 +690,6 @@ export function updateCreatureBehavior(
         org.energy -= parentCost;
         mateTarget.energy -= parentCost;
 
-        // Thermodynamic accounting: investment transfer with thermodynamic tax
-        const childEndowment = Math.round(parentCost * 1.45);
-        const taxDissipated = Math.max(8, (parentCost * 2) - childEndowment);
-        reproductionEnergyInvested += parentCost * 2;
-        reproductionTaxDissipated += taxDissipated;
 
         org.reproductiveCooldown = 180 + org.genome.gestationTicks;
         mateTarget.reproductiveCooldown = 180 + mateTarget.genome.gestationTicks;
@@ -703,7 +698,7 @@ export function updateCreatureBehavior(
         org.state = 'reproducing';
         mateTarget.state = 'reproducing';
 
-        reproducedParents.push({ parentA: org, parentB: mateTarget });
+        reproducedParents.push({ parentA: org, parentB: mateTarget, parentCost });
 
         org.ax -= org.vx * 0.5;
         org.ay -= org.vy * 0.5;
@@ -764,7 +759,5 @@ export function updateCreatureBehavior(
     plantBiomassConsumed,
     carrionBiomassConsumed,
     waterConsumed,
-    reproductionEnergyInvested,
-    reproductionTaxDissipated,
   };
 }
