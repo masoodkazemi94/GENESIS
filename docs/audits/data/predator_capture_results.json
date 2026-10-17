@@ -1,0 +1,928 @@
+{
+  "schemaVersion": 1,
+  "mechanism": "wounded-prey follow-through, 1.5x versus 1.15x retained target score within two contact radii",
+  "developmentOnly": true,
+  "seeds": [
+    691153,
+    260679,
+    10101
+  ],
+  "horizon": 120,
+  "baseline": {
+    "encounters": 22,
+    "successfulContact": 22,
+    "contactTicks": 26,
+    "strikes": 26,
+    "kills": 22,
+    "targetCaptures": 22,
+    "captureProbability": 1,
+    "strikesPerKill": 1.182,
+    "netEnergy": 1381.263,
+    "meanHuntDuration": 5.091,
+    "preyDeaths": 22,
+    "predatorDeaths": 0
+  },
+  "candidate": {
+    "encounters": 22,
+    "successfulContact": 22,
+    "contactTicks": 26,
+    "strikes": 26,
+    "kills": 22,
+    "targetCaptures": 22,
+    "captureProbability": 1,
+    "strikesPerKill": 1.182,
+    "netEnergy": 1381.263,
+    "meanHuntDuration": 5.091,
+    "preyDeaths": 22,
+    "predatorDeaths": 0
+  },
+  "bySeed": [
+    {
+      "seed": 691153,
+      "baseline": {
+        "encounters": 8,
+        "successfulContact": 8,
+        "contactTicks": 8,
+        "strikes": 8,
+        "kills": 8,
+        "targetCaptures": 8,
+        "captureProbability": 1,
+        "strikesPerKill": 1,
+        "netEnergy": 584.981,
+        "meanHuntDuration": 9.125,
+        "preyDeaths": 8,
+        "predatorDeaths": 0
+      },
+      "candidate": {
+        "encounters": 8,
+        "successfulContact": 8,
+        "contactTicks": 8,
+        "strikes": 8,
+        "kills": 8,
+        "targetCaptures": 8,
+        "captureProbability": 1,
+        "strikesPerKill": 1,
+        "netEnergy": 584.981,
+        "meanHuntDuration": 9.125,
+        "preyDeaths": 8,
+        "predatorDeaths": 0
+      }
+    },
+    {
+      "seed": 260679,
+      "baseline": {
+        "encounters": 6,
+        "successfulContact": 6,
+        "contactTicks": 10,
+        "strikes": 10,
+        "kills": 6,
+        "targetCaptures": 6,
+        "captureProbability": 1,
+        "strikesPerKill": 1.667,
+        "netEnergy": 332.95,
+        "meanHuntDuration": 3.667,
+        "preyDeaths": 6,
+        "predatorDeaths": 0
+      },
+      "candidate": {
+        "encounters": 6,
+        "successfulContact": 6,
+        "contactTicks": 10,
+        "strikes": 10,
+        "kills": 6,
+        "targetCaptures": 6,
+        "captureProbability": 1,
+        "strikesPerKill": 1.667,
+        "netEnergy": 332.95,
+        "meanHuntDuration": 3.667,
+        "preyDeaths": 6,
+        "predatorDeaths": 0
+      }
+    },
+    {
+      "seed": 10101,
+      "baseline": {
+        "encounters": 8,
+        "successfulContact": 8,
+        "contactTicks": 8,
+        "strikes": 8,
+        "kills": 8,
+        "targetCaptures": 8,
+        "captureProbability": 1,
+        "strikesPerKill": 1,
+        "netEnergy": 463.332,
+        "meanHuntDuration": 2.125,
+        "preyDeaths": 8,
+        "predatorDeaths": 0
+      },
+      "candidate": {
+        "encounters": 8,
+        "successfulContact": 8,
+        "contactTicks": 8,
+        "strikes": 8,
+        "kills": 8,
+        "targetCaptures": 8,
+        "captureProbability": 1,
+        "strikesPerKill": 1,
+        "netEnergy": 463.332,
+        "meanHuntDuration": 2.125,
+        "preyDeaths": 8,
+        "predatorDeaths": 0
+      }
+    }
+  ],
+  "trials": [
+    {
+      "seed": 691153,
+      "sourceTick": 356,
+      "predatorId": "org_gen0_3_7",
+      "preyId": "org_gen0_1_8",
+      "initialDistance": 17.934,
+      "preyHealth": 10.89,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 73.414,
+          "metabolism": 7.674,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 27,
+          "netEnergy": 65.74
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 73.414,
+          "metabolism": 7.674,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 27,
+          "netEnergy": 65.74
+        }
+      ]
+    },
+    {
+      "seed": 691153,
+      "sourceTick": 411,
+      "predatorId": "org_gen0_3_3",
+      "preyId": "org_59_2",
+      "initialDistance": 16.94,
+      "preyHealth": 17.823,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 72.453,
+          "metabolism": 0.269,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 72.184
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 72.453,
+          "metabolism": 0.269,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 72.184
+        }
+      ]
+    },
+    {
+      "seed": 691153,
+      "sourceTick": 440,
+      "predatorId": "org_gen0_3_6",
+      "preyId": "org_gen0_2_0",
+      "initialDistance": 17.537,
+      "preyHealth": 17.823,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 49.656,
+          "metabolism": 0.269,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 49.387
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 49.656,
+          "metabolism": 0.269,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 49.387
+        }
+      ]
+    },
+    {
+      "seed": 691153,
+      "sourceTick": 484,
+      "predatorId": "org_gen0_3_0",
+      "preyId": "org_gen0_0_6",
+      "initialDistance": 16.868,
+      "preyHealth": 25.093,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 87.124,
+          "metabolism": 0.252,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 86.872
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 87.124,
+          "metabolism": 0.252,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 86.872
+        }
+      ]
+    },
+    {
+      "seed": 691153,
+      "sourceTick": 486,
+      "predatorId": "org_gen0_3_8",
+      "preyId": "org_gen0_0_22",
+      "initialDistance": 14.6,
+      "preyHealth": 25.093,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 79.681,
+          "metabolism": 0.197,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 79.484
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 79.681,
+          "metabolism": 0.197,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 79.484
+        }
+      ]
+    },
+    {
+      "seed": 691153,
+      "sourceTick": 502,
+      "predatorId": "org_gen0_3_1",
+      "preyId": "org_gen0_0_19",
+      "initialDistance": 18.372,
+      "preyHealth": 24.913,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 85.917,
+          "metabolism": 2.431,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 8,
+          "netEnergy": 83.486
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 85.917,
+          "metabolism": 2.431,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 8,
+          "netEnergy": 83.486
+        }
+      ]
+    },
+    {
+      "seed": 691153,
+      "sourceTick": 734,
+      "predatorId": "org_gen0_3_6",
+      "preyId": "org_gen0_1_10",
+      "initialDistance": 17.856,
+      "preyHealth": 11.07,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 73.414,
+          "metabolism": 4.931,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 33,
+          "netEnergy": 68.482
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 73.414,
+          "metabolism": 4.931,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 33,
+          "netEnergy": 68.482
+        }
+      ]
+    },
+    {
+      "seed": 691153,
+      "sourceTick": 1030,
+      "predatorId": "org_gen0_3_1",
+      "preyId": "org_668_38",
+      "initialDistance": 16.939,
+      "preyHealth": 18.003,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 79.607,
+          "metabolism": 0.261,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 79.346
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 79.607,
+          "metabolism": 0.261,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 79.346
+        }
+      ]
+    },
+    {
+      "seed": 260679,
+      "sourceTick": 1020,
+      "predatorId": "org_gen0_3_0",
+      "preyId": "org_gen0_0_16",
+      "initialDistance": 15.535,
+      "preyHealth": 42.437,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 39.173,
+          "metabolism": 0.196,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 5,
+          "netEnergy": 38.977
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 39.173,
+          "metabolism": 0.196,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 5,
+          "netEnergy": 38.977
+        }
+      ]
+    },
+    {
+      "seed": 260679,
+      "sourceTick": 1035,
+      "predatorId": "org_gen0_3_4",
+      "preyId": "org_gen0_1_15",
+      "initialDistance": 13.462,
+      "preyHealth": 52.019,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 2,
+          "strikes": 2,
+          "kills": 1,
+          "foodGain": 71.156,
+          "metabolism": 0.281,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 2,
+          "netEnergy": 70.875
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 2,
+          "strikes": 2,
+          "kills": 1,
+          "foodGain": 71.156,
+          "metabolism": 0.281,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 2,
+          "netEnergy": 70.875
+        }
+      ]
+    },
+    {
+      "seed": 260679,
+      "sourceTick": 1426,
+      "predatorId": "org_gen0_3_0",
+      "preyId": "org_gen0_0_23",
+      "initialDistance": 12.275,
+      "preyHealth": 42.437,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.533,
+          "metabolism": 0.123,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 59.41
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.533,
+          "metabolism": 0.123,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 59.41
+        }
+      ]
+    },
+    {
+      "seed": 260679,
+      "sourceTick": 1629,
+      "predatorId": "org_gen0_3_5",
+      "preyId": "org_678_38",
+      "initialDistance": 15.33,
+      "preyHealth": 51.839,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 2,
+          "strikes": 2,
+          "kills": 1,
+          "foodGain": 50.189,
+          "metabolism": 0.127,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 2,
+          "netEnergy": 50.062
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 2,
+          "strikes": 2,
+          "kills": 1,
+          "foodGain": 50.189,
+          "metabolism": 0.127,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 2,
+          "netEnergy": 50.062
+        }
+      ]
+    },
+    {
+      "seed": 260679,
+      "sourceTick": 1808,
+      "predatorId": "org_gen0_3_4",
+      "preyId": "org_638_35",
+      "initialDistance": 15.98,
+      "preyHealth": 50.859,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 2,
+          "strikes": 2,
+          "kills": 1,
+          "foodGain": 62.778,
+          "metabolism": 1.775,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 10,
+          "netEnergy": 61.004
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 2,
+          "strikes": 2,
+          "kills": 1,
+          "foodGain": 62.778,
+          "metabolism": 1.775,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 10,
+          "netEnergy": 61.004
+        }
+      ]
+    },
+    {
+      "seed": 260679,
+      "sourceTick": 2067,
+      "predatorId": "org_gen0_3_0",
+      "preyId": "org_1514_102",
+      "initialDistance": 13.669,
+      "preyHealth": 51.839,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 2,
+          "strikes": 2,
+          "kills": 1,
+          "foodGain": 52.903,
+          "metabolism": 0.281,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 2,
+          "netEnergy": 52.622
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 2,
+          "strikes": 2,
+          "kills": 1,
+          "foodGain": 52.903,
+          "metabolism": 0.281,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 2,
+          "netEnergy": 52.622
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "sourceTick": 283,
+      "predatorId": "org_gen0_3_1",
+      "preyId": "org_gen0_1_9",
+      "initialDistance": 17.964,
+      "preyHealth": 21.446,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 58.828,
+          "metabolism": 3.092,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 10,
+          "netEnergy": 55.736
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 58.828,
+          "metabolism": 3.092,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 10,
+          "netEnergy": 55.736
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "sourceTick": 567,
+      "predatorId": "org_gen0_3_0",
+      "preyId": "org_gen0_0_18",
+      "initialDistance": 16.674,
+      "preyHealth": 16.424,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.835
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.835
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "sourceTick": 616,
+      "predatorId": "org_gen0_3_3",
+      "preyId": "org_gen0_2_13",
+      "initialDistance": 16.037,
+      "preyHealth": 5.072,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 50.86,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 50.601
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 50.86,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 50.601
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "sourceTick": 674,
+      "predatorId": "org_gen0_3_4",
+      "preyId": "org_gen0_0_4",
+      "initialDistance": 16.181,
+      "preyHealth": 16.424,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.835
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.835
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "sourceTick": 796,
+      "predatorId": "org_gen0_3_4",
+      "preyId": "org_gen0_0_9",
+      "initialDistance": 16.742,
+      "preyHealth": 16.424,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.258,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.836
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.258,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.836
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "sourceTick": 997,
+      "predatorId": "org_gen0_3_1",
+      "preyId": "org_gen0_1_2",
+      "initialDistance": 13.9,
+      "preyHealth": 21.626,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 63.007,
+          "metabolism": 0.187,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 62.819
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 63.007,
+          "metabolism": 0.187,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 62.819
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "sourceTick": 1039,
+      "predatorId": "org_gen0_3_7",
+      "preyId": "org_gen0_0_2",
+      "initialDistance": 16.939,
+      "preyHealth": 16.424,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.835
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.835
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "sourceTick": 1111,
+      "predatorId": "org_gen0_3_2",
+      "preyId": "org_gen0_0_13",
+      "initialDistance": 15.995,
+      "preyHealth": 16.424,
+      "branches": [
+        {
+          "scenario": "baseline",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.835
+        },
+        {
+          "scenario": "candidate",
+          "contacts": 1,
+          "strikes": 1,
+          "kills": 1,
+          "foodGain": 59.094,
+          "metabolism": 0.259,
+          "preyDeaths": 1,
+          "predatorDeaths": 0,
+          "targetKilled": true,
+          "huntDuration": 1,
+          "netEnergy": 58.835
+        }
+      ]
+    }
+  ]
+}

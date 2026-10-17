@@ -101,12 +101,13 @@ export function updateOrganismMetabolism(
   isDrought = false,
   isFlooded = false,
   config: EcologyConfig = LEGACY_ECOLOGY_CONFIG,
-  measuredCosts?: { basal: number; movement: number; thermal: number; flood: number }
+  measuredCosts?: { basal: number; movement: number; thermal: number; flood: number },
+  maturityCondition?: (organism: OrganismState) => boolean
 ): number {
   org.age += 1;
 
   // Check biological maturity
-  if (!org.isMature && org.age >= org.maturityAge) {
+  if (!org.isMature && org.age >= org.maturityAge && (!maturityCondition || maturityCondition(org))) {
     org.isMature = true;
   }
 

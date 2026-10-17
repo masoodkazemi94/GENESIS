@@ -1,0 +1,5628 @@
+{
+  "schemaVersion": 1,
+  "seeds": [
+    691153,
+    260679,
+    10101,
+    166064
+  ],
+  "horizon": 10000,
+  "mechanism": "Unsaved Model 2 renewable food mating gate, 180 plus gestation ticks; no litter or placement switch",
+  "results": [
+    {
+      "seed": 691153,
+      "condition": "model2",
+      "horizon": 10000,
+      "initialHash": "de1c33eba8d45e3adcbece6bff0245fa0ac5483bbfe6bd8d2c69839802fe9d81",
+      "finalPopulation": 17,
+      "finalRoles": {
+        "scavenger": 17
+      },
+      "peakPopulation": 176,
+      "capTicks": 0,
+      "capBlocks": 0,
+      "extinctionTick": null,
+      "births": {
+        "herbivore": 118,
+        "scavenger": 273,
+        "carnivore": 1
+      },
+      "deaths": {
+        "herbivore": 160,
+        "carnivore": 10,
+        "scavenger": 271
+      },
+      "eligible": {
+        "scavenger": 67746,
+        "herbivore": 43454,
+        "carnivore": 979
+      },
+      "decisions": {
+        "herbivore": 402060,
+        "scavenger": 759747,
+        "carnivore": 24190
+      },
+      "reproductiveDescendants": {
+        "herbivore": 78,
+        "scavenger": 203
+      },
+      "plantProduction": 37537.395,
+      "plantConsumption": 43477.681,
+      "carrionConsumption": 6140.305,
+      "elapsedMs": 11687.602,
+      "spatialQueries": 4204580,
+      "foodQueries": 1524918,
+      "routeChecks": 14563356,
+      "windows": [
+        {
+          "tick": 250,
+          "roles": {
+            "herbivore": 49,
+            "scavenger": 19,
+            "carnivore": 9
+          },
+          "population": 77,
+          "plantBiomass": 9861.419,
+          "plantProduction": 1177.837,
+          "plantConsumption": 824.5,
+          "localReachablePlantPerConsumerMean": 68.709,
+          "consumersBelow16": 2,
+          "consumersSampled": 68,
+          "eligibleDecisions": 6764,
+          "capTicks": 0
+        },
+        {
+          "tick": 500,
+          "roles": {
+            "herbivore": 55,
+            "scavenger": 23,
+            "carnivore": 8
+          },
+          "population": 86,
+          "plantBiomass": 10399.472,
+          "plantProduction": 1940.553,
+          "plantConsumption": 1402.5,
+          "localReachablePlantPerConsumerMean": 81.397,
+          "consumersBelow16": 8,
+          "consumersSampled": 78,
+          "eligibleDecisions": 6364,
+          "capTicks": 0
+        },
+        {
+          "tick": 750,
+          "roles": {
+            "herbivore": 64,
+            "scavenger": 28,
+            "carnivore": 8
+          },
+          "population": 100,
+          "plantBiomass": 10281.958,
+          "plantProduction": 1266.757,
+          "plantConsumption": 1384.271,
+          "localReachablePlantPerConsumerMean": 54.722,
+          "consumersBelow16": 16,
+          "consumersSampled": 92,
+          "eligibleDecisions": 6687,
+          "capTicks": 0
+        },
+        {
+          "tick": 1000,
+          "roles": {
+            "herbivore": 74,
+            "scavenger": 38,
+            "carnivore": 8
+          },
+          "population": 120,
+          "plantBiomass": 9360.073,
+          "plantProduction": 1047.081,
+          "plantConsumption": 1968.966,
+          "localReachablePlantPerConsumerMean": 48.083,
+          "consumersBelow16": 16,
+          "consumersSampled": 112,
+          "eligibleDecisions": 5982,
+          "capTicks": 0
+        },
+        {
+          "tick": 1250,
+          "roles": {
+            "herbivore": 79,
+            "scavenger": 44,
+            "carnivore": 8
+          },
+          "population": 131,
+          "plantBiomass": 7988.346,
+          "plantProduction": 394.698,
+          "plantConsumption": 1766.425,
+          "localReachablePlantPerConsumerMean": 36.079,
+          "consumersBelow16": 48,
+          "consumersSampled": 123,
+          "eligibleDecisions": 6028,
+          "capTicks": 0
+        },
+        {
+          "tick": 1500,
+          "roles": {
+            "herbivore": 88,
+            "scavenger": 53,
+            "carnivore": 7
+          },
+          "population": 148,
+          "plantBiomass": 5929.476,
+          "plantProduction": 72.979,
+          "plantConsumption": 2131.849,
+          "localReachablePlantPerConsumerMean": 26.6,
+          "consumersBelow16": 64,
+          "consumersSampled": 141,
+          "eligibleDecisions": 5257,
+          "capTicks": 0
+        },
+        {
+          "tick": 1750,
+          "roles": {
+            "herbivore": 97,
+            "scavenger": 64,
+            "carnivore": 7
+          },
+          "population": 168,
+          "plantBiomass": 4442.945,
+          "plantProduction": 212.51,
+          "plantConsumption": 1699.041,
+          "localReachablePlantPerConsumerMean": 16.862,
+          "consumersBelow16": 99,
+          "consumersSampled": 161,
+          "eligibleDecisions": 5064,
+          "capTicks": 0
+        },
+        {
+          "tick": 2000,
+          "roles": {
+            "herbivore": 95,
+            "scavenger": 70,
+            "carnivore": 7
+          },
+          "population": 172,
+          "plantBiomass": 3186.492,
+          "plantProduction": 301.737,
+          "plantConsumption": 1558.19,
+          "localReachablePlantPerConsumerMean": 10.981,
+          "consumersBelow16": 126,
+          "consumersSampled": 165,
+          "eligibleDecisions": 2338,
+          "capTicks": 0
+        },
+        {
+          "tick": 2250,
+          "roles": {
+            "herbivore": 87,
+            "scavenger": 73,
+            "carnivore": 6
+          },
+          "population": 166,
+          "plantBiomass": 2161.886,
+          "plantProduction": 281.87,
+          "plantConsumption": 1306.475,
+          "localReachablePlantPerConsumerMean": 8.068,
+          "consumersBelow16": 134,
+          "consumersSampled": 160,
+          "eligibleDecisions": 2236,
+          "capTicks": 0
+        },
+        {
+          "tick": 2500,
+          "roles": {
+            "herbivore": 81,
+            "scavenger": 71,
+            "carnivore": 5
+          },
+          "population": 157,
+          "plantBiomass": 1830.888,
+          "plantProduction": 325.034,
+          "plantConsumption": 656.032,
+          "localReachablePlantPerConsumerMean": 6.393,
+          "consumersBelow16": 121,
+          "consumersSampled": 152,
+          "eligibleDecisions": 1612,
+          "capTicks": 0
+        },
+        {
+          "tick": 2750,
+          "roles": {
+            "herbivore": 73,
+            "scavenger": 65,
+            "carnivore": 4
+          },
+          "population": 142,
+          "plantBiomass": 2372.033,
+          "plantProduction": 1599.214,
+          "plantConsumption": 1058.069,
+          "localReachablePlantPerConsumerMean": 11.073,
+          "consumersBelow16": 55,
+          "consumersSampled": 138,
+          "eligibleDecisions": 1847,
+          "capTicks": 0
+        },
+        {
+          "tick": 3000,
+          "roles": {
+            "herbivore": 65,
+            "scavenger": 68,
+            "carnivore": 4
+          },
+          "population": 137,
+          "plantBiomass": 3165.937,
+          "plantProduction": 2778.962,
+          "plantConsumption": 1985.058,
+          "localReachablePlantPerConsumerMean": 17.351,
+          "consumersBelow16": 31,
+          "consumersSampled": 133,
+          "eligibleDecisions": 3227,
+          "capTicks": 0
+        },
+        {
+          "tick": 3250,
+          "roles": {
+            "herbivore": 62,
+            "scavenger": 76,
+            "carnivore": 3
+          },
+          "population": 141,
+          "plantBiomass": 3948.4,
+          "plantProduction": 2850.54,
+          "plantConsumption": 2068.078,
+          "localReachablePlantPerConsumerMean": 24.567,
+          "consumersBelow16": 27,
+          "consumersSampled": 138,
+          "eligibleDecisions": 4681,
+          "capTicks": 0
+        },
+        {
+          "tick": 3500,
+          "roles": {
+            "herbivore": 66,
+            "scavenger": 81,
+            "carnivore": 3
+          },
+          "population": 150,
+          "plantBiomass": 3620.195,
+          "plantProduction": 1702.433,
+          "plantConsumption": 2030.637,
+          "localReachablePlantPerConsumerMean": 18.021,
+          "consumersBelow16": 58,
+          "consumersSampled": 147,
+          "eligibleDecisions": 4850,
+          "capTicks": 0
+        },
+        {
+          "tick": 3750,
+          "roles": {
+            "herbivore": 55,
+            "scavenger": 83,
+            "carnivore": 2
+          },
+          "population": 140,
+          "plantBiomass": 2433.373,
+          "plantProduction": 214.62,
+          "plantConsumption": 1401.442,
+          "localReachablePlantPerConsumerMean": 13.631,
+          "consumersBelow16": 88,
+          "consumersSampled": 138,
+          "eligibleDecisions": 3278,
+          "capTicks": 0
+        },
+        {
+          "tick": 4000,
+          "roles": {
+            "scavenger": 80,
+            "carnivore": 2,
+            "herbivore": 51
+          },
+          "population": 133,
+          "plantBiomass": 1798.98,
+          "plantProduction": 165.118,
+          "plantConsumption": 799.511,
+          "localReachablePlantPerConsumerMean": 9.067,
+          "consumersBelow16": 112,
+          "consumersSampled": 131,
+          "eligibleDecisions": 1621,
+          "capTicks": 0
+        },
+        {
+          "tick": 4250,
+          "roles": {
+            "scavenger": 76,
+            "herbivore": 43
+          },
+          "population": 119,
+          "plantBiomass": 1532.035,
+          "plantProduction": 275.835,
+          "plantConsumption": 542.78,
+          "localReachablePlantPerConsumerMean": 9.061,
+          "consumersBelow16": 98,
+          "consumersSampled": 119,
+          "eligibleDecisions": 1036,
+          "capTicks": 0
+        },
+        {
+          "tick": 4500,
+          "roles": {
+            "scavenger": 70,
+            "herbivore": 33
+          },
+          "population": 103,
+          "plantBiomass": 1357.288,
+          "plantProduction": 215.473,
+          "plantConsumption": 390.22,
+          "localReachablePlantPerConsumerMean": 7.01,
+          "consumersBelow16": 86,
+          "consumersSampled": 103,
+          "eligibleDecisions": 1685,
+          "capTicks": 0
+        },
+        {
+          "tick": 4750,
+          "roles": {
+            "scavenger": 63,
+            "herbivore": 29
+          },
+          "population": 92,
+          "plantBiomass": 1369.237,
+          "plantProduction": 302.748,
+          "plantConsumption": 290.799,
+          "localReachablePlantPerConsumerMean": 5.781,
+          "consumersBelow16": 82,
+          "consumersSampled": 92,
+          "eligibleDecisions": 923,
+          "capTicks": 0
+        },
+        {
+          "tick": 5000,
+          "roles": {
+            "scavenger": 60,
+            "herbivore": 21
+          },
+          "population": 81,
+          "plantBiomass": 1876.891,
+          "plantProduction": 882.162,
+          "plantConsumption": 374.508,
+          "localReachablePlantPerConsumerMean": 16.089,
+          "consumersBelow16": 27,
+          "consumersSampled": 81,
+          "eligibleDecisions": 1068,
+          "capTicks": 0
+        },
+        {
+          "tick": 5250,
+          "roles": {
+            "scavenger": 59,
+            "herbivore": 20
+          },
+          "population": 79,
+          "plantBiomass": 3759.98,
+          "plantProduction": 2866.171,
+          "plantConsumption": 983.082,
+          "localReachablePlantPerConsumerMean": 34.382,
+          "consumersBelow16": 16,
+          "consumersSampled": 79,
+          "eligibleDecisions": 3829,
+          "capTicks": 0
+        },
+        {
+          "tick": 5500,
+          "roles": {
+            "scavenger": 74,
+            "herbivore": 22
+          },
+          "population": 96,
+          "plantBiomass": 6101.973,
+          "plantProduction": 3813.18,
+          "plantConsumption": 1471.187,
+          "localReachablePlantPerConsumerMean": 46.078,
+          "consumersBelow16": 11,
+          "consumersSampled": 96,
+          "eligibleDecisions": 4582,
+          "capTicks": 0
+        },
+        {
+          "tick": 5750,
+          "roles": {
+            "scavenger": 91,
+            "herbivore": 26
+          },
+          "population": 117,
+          "plantBiomass": 6901.579,
+          "plantProduction": 2525.613,
+          "plantConsumption": 1726.007,
+          "localReachablePlantPerConsumerMean": 45.5,
+          "consumersBelow16": 7,
+          "consumersSampled": 117,
+          "eligibleDecisions": 4625,
+          "capTicks": 0
+        },
+        {
+          "tick": 6000,
+          "roles": {
+            "scavenger": 116,
+            "herbivore": 28
+          },
+          "population": 144,
+          "plantBiomass": 5885.236,
+          "plantProduction": 986.596,
+          "plantConsumption": 2002.94,
+          "localReachablePlantPerConsumerMean": 29.498,
+          "consumersBelow16": 38,
+          "consumersSampled": 144,
+          "eligibleDecisions": 5862,
+          "capTicks": 0
+        },
+        {
+          "tick": 6250,
+          "roles": {
+            "scavenger": 134,
+            "herbivore": 29
+          },
+          "population": 163,
+          "plantBiomass": 4197.02,
+          "plantProduction": 110.319,
+          "plantConsumption": 1798.535,
+          "localReachablePlantPerConsumerMean": 18.219,
+          "consumersBelow16": 88,
+          "consumersSampled": 163,
+          "eligibleDecisions": 5207,
+          "capTicks": 0
+        },
+        {
+          "tick": 6500,
+          "roles": {
+            "scavenger": 139,
+            "herbivore": 28
+          },
+          "population": 167,
+          "plantBiomass": 2825.045,
+          "plantProduction": 108.744,
+          "plantConsumption": 1480.718,
+          "localReachablePlantPerConsumerMean": 10.908,
+          "consumersBelow16": 128,
+          "consumersSampled": 167,
+          "eligibleDecisions": 1983,
+          "capTicks": 0
+        },
+        {
+          "tick": 6750,
+          "roles": {
+            "scavenger": 136,
+            "herbivore": 25
+          },
+          "population": 161,
+          "plantBiomass": 2132.383,
+          "plantProduction": 104.566,
+          "plantConsumption": 797.228,
+          "localReachablePlantPerConsumerMean": 8.222,
+          "consumersBelow16": 137,
+          "consumersSampled": 161,
+          "eligibleDecisions": 1108,
+          "capTicks": 0
+        },
+        {
+          "tick": 7000,
+          "roles": {
+            "scavenger": 134,
+            "herbivore": 20
+          },
+          "population": 154,
+          "plantBiomass": 1734.077,
+          "plantProduction": 104.147,
+          "plantConsumption": 502.453,
+          "localReachablePlantPerConsumerMean": 6.701,
+          "consumersBelow16": 138,
+          "consumersSampled": 154,
+          "eligibleDecisions": 747,
+          "capTicks": 0
+        },
+        {
+          "tick": 7250,
+          "roles": {
+            "scavenger": 136,
+            "herbivore": 18
+          },
+          "population": 154,
+          "plantBiomass": 1383.529,
+          "plantProduction": 143.174,
+          "plantConsumption": 481.726,
+          "localReachablePlantPerConsumerMean": 5.788,
+          "consumersBelow16": 135,
+          "consumersSampled": 154,
+          "eligibleDecisions": 1060,
+          "capTicks": 0
+        },
+        {
+          "tick": 7500,
+          "roles": {
+            "scavenger": 114,
+            "herbivore": 16
+          },
+          "population": 130,
+          "plantBiomass": 1412.433,
+          "plantProduction": 843.226,
+          "plantConsumption": 765.149,
+          "localReachablePlantPerConsumerMean": 8.058,
+          "consumersBelow16": 71,
+          "consumersSampled": 130,
+          "eligibleDecisions": 1062,
+          "capTicks": 0
+        },
+        {
+          "tick": 7750,
+          "roles": {
+            "scavenger": 105,
+            "herbivore": 15
+          },
+          "population": 120,
+          "plantBiomass": 1735.214,
+          "plantProduction": 1654.362,
+          "plantConsumption": 1318.942,
+          "localReachablePlantPerConsumerMean": 9.135,
+          "consumersBelow16": 31,
+          "consumersSampled": 120,
+          "eligibleDecisions": 1162,
+          "capTicks": 0
+        },
+        {
+          "tick": 8000,
+          "roles": {
+            "scavenger": 95,
+            "herbivore": 14
+          },
+          "population": 109,
+          "plantBiomass": 2312.487,
+          "plantProduction": 1815.636,
+          "plantConsumption": 1238.363,
+          "localReachablePlantPerConsumerMean": 13.319,
+          "consumersBelow16": 14,
+          "consumersSampled": 109,
+          "eligibleDecisions": 1773,
+          "capTicks": 0
+        },
+        {
+          "tick": 8250,
+          "roles": {
+            "scavenger": 100,
+            "herbivore": 12
+          },
+          "population": 112,
+          "plantBiomass": 2382.641,
+          "plantProduction": 1269.996,
+          "plantConsumption": 1199.843,
+          "localReachablePlantPerConsumerMean": 15.389,
+          "consumersBelow16": 28,
+          "consumersSampled": 112,
+          "eligibleDecisions": 1745,
+          "capTicks": 0
+        },
+        {
+          "tick": 8500,
+          "roles": {
+            "scavenger": 101,
+            "herbivore": 12
+          },
+          "population": 113,
+          "plantBiomass": 1858.759,
+          "plantProduction": 245.719,
+          "plantConsumption": 769.601,
+          "localReachablePlantPerConsumerMean": 10.076,
+          "consumersBelow16": 91,
+          "consumersSampled": 113,
+          "eligibleDecisions": 1058,
+          "capTicks": 0
+        },
+        {
+          "tick": 8750,
+          "roles": {
+            "scavenger": 94,
+            "herbivore": 9
+          },
+          "population": 103,
+          "plantBiomass": 1457.957,
+          "plantProduction": 59.565,
+          "plantConsumption": 460.367,
+          "localReachablePlantPerConsumerMean": 7.448,
+          "consumersBelow16": 90,
+          "consumersSampled": 103,
+          "eligibleDecisions": 1104,
+          "capTicks": 0
+        },
+        {
+          "tick": 9000,
+          "roles": {
+            "scavenger": 85,
+            "herbivore": 7
+          },
+          "population": 92,
+          "plantBiomass": 1179.838,
+          "plantProduction": 97.811,
+          "plantConsumption": 375.931,
+          "localReachablePlantPerConsumerMean": 6.702,
+          "consumersBelow16": 80,
+          "consumersSampled": 92,
+          "eligibleDecisions": 441,
+          "capTicks": 0
+        },
+        {
+          "tick": 9250,
+          "roles": {
+            "herbivore": 6,
+            "scavenger": 58
+          },
+          "population": 64,
+          "plantBiomass": 800.612,
+          "plantProduction": 131.025,
+          "plantConsumption": 268.569,
+          "localReachablePlantPerConsumerMean": 4.955,
+          "consumersBelow16": 54,
+          "consumersSampled": 64,
+          "eligibleDecisions": 546,
+          "capTicks": 0
+        },
+        {
+          "tick": 9500,
+          "roles": {
+            "herbivore": 3,
+            "scavenger": 21
+          },
+          "population": 24,
+          "plantBiomass": 598.432,
+          "plantProduction": 105.188,
+          "plantConsumption": 36.384,
+          "localReachablePlantPerConsumerMean": 5.795,
+          "consumersBelow16": 16,
+          "consumersSampled": 24,
+          "eligibleDecisions": 283,
+          "capTicks": 0
+        },
+        {
+          "tick": 9750,
+          "roles": {
+            "scavenger": 15
+          },
+          "population": 15,
+          "plantBiomass": 830.117,
+          "plantProduction": 349.502,
+          "plantConsumption": 32.172,
+          "localReachablePlantPerConsumerMean": 17.492,
+          "consumersBelow16": 3,
+          "consumersSampled": 15,
+          "eligibleDecisions": 416,
+          "capTicks": 0
+        },
+        {
+          "tick": 10000,
+          "roles": {
+            "scavenger": 17
+          },
+          "population": 17,
+          "plantBiomass": 2888.764,
+          "plantProduction": 2194.692,
+          "plantConsumption": 129.132,
+          "localReachablePlantPerConsumerMean": 68.104,
+          "consumersBelow16": 0,
+          "consumersSampled": 17,
+          "eligibleDecisions": 1038,
+          "capTicks": 0
+        }
+      ]
+    },
+    {
+      "seed": 691153,
+      "condition": "renewable",
+      "horizon": 10000,
+      "initialHash": "de1c33eba8d45e3adcbece6bff0245fa0ac5483bbfe6bd8d2c69839802fe9d81",
+      "finalPopulation": 63,
+      "finalRoles": {
+        "scavenger": 62,
+        "omnivore": 1
+      },
+      "peakPopulation": 179,
+      "capTicks": 0,
+      "capBlocks": 0,
+      "extinctionTick": null,
+      "births": {
+        "herbivore": 84,
+        "scavenger": 342,
+        "omnivore": 4
+      },
+      "deaths": {
+        "scavenger": 295,
+        "herbivore": 126,
+        "carnivore": 9,
+        "omnivore": 3
+      },
+      "eligible": {
+        "scavenger": 83001,
+        "herbivore": 36589,
+        "carnivore": 566,
+        "omnivore": 589
+      },
+      "decisions": {
+        "herbivore": 293858,
+        "scavenger": 966284,
+        "carnivore": 20170,
+        "omnivore": 11504
+      },
+      "reproductiveDescendants": {
+        "scavenger": 258,
+        "herbivore": 54,
+        "omnivore": 3
+      },
+      "plantProduction": 36889.428,
+      "plantConsumption": 43598.794,
+      "carrionConsumption": 8377.259,
+      "elapsedMs": 13144.538,
+      "spatialQueries": 4420835,
+      "foodQueries": 1875700,
+      "routeChecks": 18339079,
+      "windows": [
+        {
+          "tick": 250,
+          "roles": {
+            "herbivore": 47,
+            "scavenger": 18,
+            "carnivore": 9
+          },
+          "population": 74,
+          "plantBiomass": 9898.875,
+          "plantProduction": 1179.912,
+          "plantConsumption": 789.118,
+          "localReachablePlantPerConsumerMean": 74.39,
+          "consumersBelow16": 8,
+          "consumersSampled": 65,
+          "eligibleDecisions": 7016,
+          "capTicks": 0
+        },
+        {
+          "tick": 500,
+          "roles": {
+            "herbivore": 58,
+            "scavenger": 24,
+            "carnivore": 9
+          },
+          "population": 91,
+          "plantBiomass": 10192.413,
+          "plantProduction": 1846.946,
+          "plantConsumption": 1553.408,
+          "localReachablePlantPerConsumerMean": 67.012,
+          "consumersBelow16": 9,
+          "consumersSampled": 82,
+          "eligibleDecisions": 5977,
+          "capTicks": 0
+        },
+        {
+          "tick": 750,
+          "roles": {
+            "herbivore": 61,
+            "scavenger": 31,
+            "carnivore": 9
+          },
+          "population": 101,
+          "plantBiomass": 10002.792,
+          "plantProduction": 1297.879,
+          "plantConsumption": 1487.5,
+          "localReachablePlantPerConsumerMean": 59.345,
+          "consumersBelow16": 12,
+          "consumersSampled": 92,
+          "eligibleDecisions": 6823,
+          "capTicks": 0
+        },
+        {
+          "tick": 1000,
+          "roles": {
+            "herbivore": 70,
+            "scavenger": 38,
+            "carnivore": 8
+          },
+          "population": 116,
+          "plantBiomass": 9310.674,
+          "plantProduction": 990.998,
+          "plantConsumption": 1683.116,
+          "localReachablePlantPerConsumerMean": 44.844,
+          "consumersBelow16": 33,
+          "consumersSampled": 108,
+          "eligibleDecisions": 7335,
+          "capTicks": 0
+        },
+        {
+          "tick": 1250,
+          "roles": {
+            "herbivore": 78,
+            "scavenger": 50,
+            "carnivore": 8
+          },
+          "population": 136,
+          "plantBiomass": 7564.493,
+          "plantProduction": 347.254,
+          "plantConsumption": 2093.435,
+          "localReachablePlantPerConsumerMean": 34.426,
+          "consumersBelow16": 61,
+          "consumersSampled": 128,
+          "eligibleDecisions": 5622,
+          "capTicks": 0
+        },
+        {
+          "tick": 1500,
+          "roles": {
+            "herbivore": 84,
+            "scavenger": 61,
+            "carnivore": 7
+          },
+          "population": 152,
+          "plantBiomass": 5922.594,
+          "plantProduction": 73.748,
+          "plantConsumption": 1715.647,
+          "localReachablePlantPerConsumerMean": 21.729,
+          "consumersBelow16": 82,
+          "consumersSampled": 145,
+          "eligibleDecisions": 4928,
+          "capTicks": 0
+        },
+        {
+          "tick": 1750,
+          "roles": {
+            "herbivore": 83,
+            "scavenger": 68,
+            "carnivore": 7
+          },
+          "population": 158,
+          "plantBiomass": 4560.605,
+          "plantProduction": 135.509,
+          "plantConsumption": 1497.498,
+          "localReachablePlantPerConsumerMean": 17.259,
+          "consumersBelow16": 103,
+          "consumersSampled": 151,
+          "eligibleDecisions": 4201,
+          "capTicks": 0
+        },
+        {
+          "tick": 2000,
+          "roles": {
+            "herbivore": 88,
+            "scavenger": 71,
+            "carnivore": 6
+          },
+          "population": 165,
+          "plantBiomass": 3475.355,
+          "plantProduction": 284.602,
+          "plantConsumption": 1369.852,
+          "localReachablePlantPerConsumerMean": 11.924,
+          "consumersBelow16": 135,
+          "consumersSampled": 159,
+          "eligibleDecisions": 2773,
+          "capTicks": 0
+        },
+        {
+          "tick": 2250,
+          "roles": {
+            "herbivore": 78,
+            "scavenger": 72,
+            "carnivore": 5
+          },
+          "population": 155,
+          "plantBiomass": 2812.364,
+          "plantProduction": 395.166,
+          "plantConsumption": 1058.156,
+          "localReachablePlantPerConsumerMean": 8.939,
+          "consumersBelow16": 126,
+          "consumersSampled": 150,
+          "eligibleDecisions": 1714,
+          "capTicks": 0
+        },
+        {
+          "tick": 2500,
+          "roles": {
+            "herbivore": 69,
+            "scavenger": 75,
+            "carnivore": 3
+          },
+          "population": 147,
+          "plantBiomass": 2482.373,
+          "plantProduction": 320.016,
+          "plantConsumption": 650.008,
+          "localReachablePlantPerConsumerMean": 11.655,
+          "consumersBelow16": 108,
+          "consumersSampled": 144,
+          "eligibleDecisions": 2305,
+          "capTicks": 0
+        },
+        {
+          "tick": 2750,
+          "roles": {
+            "herbivore": 61,
+            "scavenger": 72,
+            "carnivore": 3
+          },
+          "population": 136,
+          "plantBiomass": 2827.745,
+          "plantProduction": 1533.146,
+          "plantConsumption": 1187.774,
+          "localReachablePlantPerConsumerMean": 15.706,
+          "consumersBelow16": 51,
+          "consumersSampled": 133,
+          "eligibleDecisions": 3774,
+          "capTicks": 0
+        },
+        {
+          "tick": 3000,
+          "roles": {
+            "herbivore": 56,
+            "scavenger": 81,
+            "carnivore": 1
+          },
+          "population": 138,
+          "plantBiomass": 3360.062,
+          "plantProduction": 2622.89,
+          "plantConsumption": 2090.573,
+          "localReachablePlantPerConsumerMean": 19.25,
+          "consumersBelow16": 28,
+          "consumersSampled": 137,
+          "eligibleDecisions": 4784,
+          "capTicks": 0
+        },
+        {
+          "tick": 3250,
+          "roles": {
+            "herbivore": 51,
+            "scavenger": 96
+          },
+          "population": 147,
+          "plantBiomass": 3613.166,
+          "plantProduction": 2618.07,
+          "plantConsumption": 2364.966,
+          "localReachablePlantPerConsumerMean": 17.331,
+          "consumersBelow16": 36,
+          "consumersSampled": 147,
+          "eligibleDecisions": 6808,
+          "capTicks": 0
+        },
+        {
+          "tick": 3500,
+          "roles": {
+            "herbivore": 45,
+            "scavenger": 115
+          },
+          "population": 160,
+          "plantBiomass": 3107.855,
+          "plantProduction": 1541.4,
+          "plantConsumption": 2046.71,
+          "localReachablePlantPerConsumerMean": 11.915,
+          "consumersBelow16": 102,
+          "consumersSampled": 160,
+          "eligibleDecisions": 5503,
+          "capTicks": 0
+        },
+        {
+          "tick": 3750,
+          "roles": {
+            "herbivore": 40,
+            "scavenger": 107
+          },
+          "population": 147,
+          "plantBiomass": 2128.667,
+          "plantProduction": 189.184,
+          "plantConsumption": 1168.373,
+          "localReachablePlantPerConsumerMean": 6.756,
+          "consumersBelow16": 130,
+          "consumersSampled": 147,
+          "eligibleDecisions": 1669,
+          "capTicks": 0
+        },
+        {
+          "tick": 4000,
+          "roles": {
+            "scavenger": 107,
+            "herbivore": 35
+          },
+          "population": 142,
+          "plantBiomass": 1647.394,
+          "plantProduction": 162.841,
+          "plantConsumption": 644.113,
+          "localReachablePlantPerConsumerMean": 7.106,
+          "consumersBelow16": 126,
+          "consumersSampled": 142,
+          "eligibleDecisions": 1111,
+          "capTicks": 0
+        },
+        {
+          "tick": 4250,
+          "roles": {
+            "scavenger": 102,
+            "herbivore": 31
+          },
+          "population": 133,
+          "plantBiomass": 1432.995,
+          "plantProduction": 212.587,
+          "plantConsumption": 426.987,
+          "localReachablePlantPerConsumerMean": 6.812,
+          "consumersBelow16": 125,
+          "consumersSampled": 133,
+          "eligibleDecisions": 1046,
+          "capTicks": 0
+        },
+        {
+          "tick": 4500,
+          "roles": {
+            "scavenger": 87,
+            "herbivore": 26
+          },
+          "population": 113,
+          "plantBiomass": 1261.33,
+          "plantProduction": 204.229,
+          "plantConsumption": 375.894,
+          "localReachablePlantPerConsumerMean": 7.279,
+          "consumersBelow16": 98,
+          "consumersSampled": 113,
+          "eligibleDecisions": 801,
+          "capTicks": 0
+        },
+        {
+          "tick": 4750,
+          "roles": {
+            "scavenger": 85,
+            "herbivore": 22
+          },
+          "population": 107,
+          "plantBiomass": 1160.259,
+          "plantProduction": 190.146,
+          "plantConsumption": 291.217,
+          "localReachablePlantPerConsumerMean": 7.944,
+          "consumersBelow16": 92,
+          "consumersSampled": 107,
+          "eligibleDecisions": 731,
+          "capTicks": 0
+        },
+        {
+          "tick": 5000,
+          "roles": {
+            "scavenger": 80,
+            "herbivore": 16
+          },
+          "population": 96,
+          "plantBiomass": 1496.677,
+          "plantProduction": 719.393,
+          "plantConsumption": 382.975,
+          "localReachablePlantPerConsumerMean": 9.768,
+          "consumersBelow16": 48,
+          "consumersSampled": 96,
+          "eligibleDecisions": 1179,
+          "capTicks": 0
+        },
+        {
+          "tick": 5250,
+          "roles": {
+            "scavenger": 82,
+            "herbivore": 10
+          },
+          "population": 92,
+          "plantBiomass": 2968.932,
+          "plantProduction": 2470.957,
+          "plantConsumption": 998.702,
+          "localReachablePlantPerConsumerMean": 24.387,
+          "consumersBelow16": 16,
+          "consumersSampled": 92,
+          "eligibleDecisions": 2768,
+          "capTicks": 0
+        },
+        {
+          "tick": 5500,
+          "roles": {
+            "scavenger": 97,
+            "herbivore": 10
+          },
+          "population": 107,
+          "plantBiomass": 4775.173,
+          "plantProduction": 3425.479,
+          "plantConsumption": 1619.238,
+          "localReachablePlantPerConsumerMean": 35.271,
+          "consumersBelow16": 10,
+          "consumersSampled": 107,
+          "eligibleDecisions": 5694,
+          "capTicks": 0
+        },
+        {
+          "tick": 5750,
+          "roles": {
+            "scavenger": 125,
+            "herbivore": 8,
+            "omnivore": 2
+          },
+          "population": 135,
+          "plantBiomass": 5373.36,
+          "plantProduction": 2704.102,
+          "plantConsumption": 2105.916,
+          "localReachablePlantPerConsumerMean": 29.233,
+          "consumersBelow16": 22,
+          "consumersSampled": 135,
+          "eligibleDecisions": 7290,
+          "capTicks": 0
+        },
+        {
+          "tick": 6000,
+          "roles": {
+            "scavenger": 162,
+            "herbivore": 7,
+            "omnivore": 2
+          },
+          "population": 171,
+          "plantBiomass": 4038.5,
+          "plantProduction": 974.891,
+          "plantConsumption": 2309.751,
+          "localReachablePlantPerConsumerMean": 18.003,
+          "consumersBelow16": 102,
+          "consumersSampled": 171,
+          "eligibleDecisions": 5697,
+          "capTicks": 0
+        },
+        {
+          "tick": 6250,
+          "roles": {
+            "scavenger": 172,
+            "herbivore": 5,
+            "omnivore": 2
+          },
+          "population": 179,
+          "plantBiomass": 2468.322,
+          "plantProduction": 101.671,
+          "plantConsumption": 1671.849,
+          "localReachablePlantPerConsumerMean": 13.479,
+          "consumersBelow16": 134,
+          "consumersSampled": 179,
+          "eligibleDecisions": 3070,
+          "capTicks": 0
+        },
+        {
+          "tick": 6500,
+          "roles": {
+            "scavenger": 169,
+            "herbivore": 5,
+            "omnivore": 2
+          },
+          "population": 176,
+          "plantBiomass": 1367.338,
+          "plantProduction": 96.95,
+          "plantConsumption": 1197.933,
+          "localReachablePlantPerConsumerMean": 8.347,
+          "consumersBelow16": 146,
+          "consumersSampled": 176,
+          "eligibleDecisions": 2200,
+          "capTicks": 0
+        },
+        {
+          "tick": 6750,
+          "roles": {
+            "scavenger": 169,
+            "herbivore": 2,
+            "omnivore": 2
+          },
+          "population": 173,
+          "plantBiomass": 783.791,
+          "plantProduction": 143.967,
+          "plantConsumption": 727.514,
+          "localReachablePlantPerConsumerMean": 4.307,
+          "consumersBelow16": 162,
+          "consumersSampled": 173,
+          "eligibleDecisions": 868,
+          "capTicks": 0
+        },
+        {
+          "tick": 7000,
+          "roles": {
+            "scavenger": 165,
+            "herbivore": 1,
+            "omnivore": 2
+          },
+          "population": 168,
+          "plantBiomass": 586.295,
+          "plantProduction": 250.088,
+          "plantConsumption": 447.583,
+          "localReachablePlantPerConsumerMean": 2.953,
+          "consumersBelow16": 165,
+          "consumersSampled": 168,
+          "eligibleDecisions": 720,
+          "capTicks": 0
+        },
+        {
+          "tick": 7250,
+          "roles": {
+            "scavenger": 157,
+            "herbivore": 1,
+            "omnivore": 2
+          },
+          "population": 160,
+          "plantBiomass": 539.17,
+          "plantProduction": 290.758,
+          "plantConsumption": 333.369,
+          "localReachablePlantPerConsumerMean": 3.034,
+          "consumersBelow16": 157,
+          "consumersSampled": 160,
+          "eligibleDecisions": 113,
+          "capTicks": 0
+        },
+        {
+          "tick": 7500,
+          "roles": {
+            "scavenger": 126,
+            "herbivore": 1,
+            "omnivore": 2
+          },
+          "population": 129,
+          "plantBiomass": 841.907,
+          "plantProduction": 881.072,
+          "plantConsumption": 560.027,
+          "localReachablePlantPerConsumerMean": 6.015,
+          "consumersBelow16": 82,
+          "consumersSampled": 129,
+          "eligibleDecisions": 564,
+          "capTicks": 0
+        },
+        {
+          "tick": 7750,
+          "roles": {
+            "scavenger": 121,
+            "herbivore": 1,
+            "omnivore": 2
+          },
+          "population": 124,
+          "plantBiomass": 1138.089,
+          "plantProduction": 1646.454,
+          "plantConsumption": 1341.522,
+          "localReachablePlantPerConsumerMean": 7.321,
+          "consumersBelow16": 39,
+          "consumersSampled": 124,
+          "eligibleDecisions": 3280,
+          "capTicks": 0
+        },
+        {
+          "tick": 8000,
+          "roles": {
+            "scavenger": 131,
+            "herbivore": 1,
+            "omnivore": 4
+          },
+          "population": 136,
+          "plantBiomass": 1334.947,
+          "plantProduction": 1798.069,
+          "plantConsumption": 1601.122,
+          "localReachablePlantPerConsumerMean": 8.456,
+          "consumersBelow16": 50,
+          "consumersSampled": 136,
+          "eligibleDecisions": 4638,
+          "capTicks": 0
+        },
+        {
+          "tick": 8250,
+          "roles": {
+            "scavenger": 137,
+            "herbivore": 1,
+            "omnivore": 4
+          },
+          "population": 142,
+          "plantBiomass": 1164.46,
+          "plantProduction": 1199.903,
+          "plantConsumption": 1370.39,
+          "localReachablePlantPerConsumerMean": 5.962,
+          "consumersBelow16": 124,
+          "consumersSampled": 142,
+          "eligibleDecisions": 2731,
+          "capTicks": 0
+        },
+        {
+          "tick": 8500,
+          "roles": {
+            "scavenger": 127,
+            "omnivore": 4
+          },
+          "population": 131,
+          "plantBiomass": 804.496,
+          "plantProduction": 295.899,
+          "plantConsumption": 655.863,
+          "localReachablePlantPerConsumerMean": 4.695,
+          "consumersBelow16": 125,
+          "consumersSampled": 131,
+          "eligibleDecisions": 1052,
+          "capTicks": 0
+        },
+        {
+          "tick": 8750,
+          "roles": {
+            "scavenger": 113,
+            "omnivore": 4
+          },
+          "population": 117,
+          "plantBiomass": 708.137,
+          "plantProduction": 155.519,
+          "plantConsumption": 251.877,
+          "localReachablePlantPerConsumerMean": 4.443,
+          "consumersBelow16": 107,
+          "consumersSampled": 117,
+          "eligibleDecisions": 609,
+          "capTicks": 0
+        },
+        {
+          "tick": 9000,
+          "roles": {
+            "scavenger": 105,
+            "omnivore": 4
+          },
+          "population": 109,
+          "plantBiomass": 640.511,
+          "plantProduction": 218.001,
+          "plantConsumption": 285.628,
+          "localReachablePlantPerConsumerMean": 3.983,
+          "consumersBelow16": 105,
+          "consumersSampled": 109,
+          "eligibleDecisions": 486,
+          "capTicks": 0
+        },
+        {
+          "tick": 9250,
+          "roles": {
+            "scavenger": 94,
+            "omnivore": 3
+          },
+          "population": 97,
+          "plantBiomass": 631.663,
+          "plantProduction": 218.525,
+          "plantConsumption": 227.373,
+          "localReachablePlantPerConsumerMean": 3.87,
+          "consumersBelow16": 93,
+          "consumersSampled": 97,
+          "eligibleDecisions": 294,
+          "capTicks": 0
+        },
+        {
+          "tick": 9500,
+          "roles": {
+            "scavenger": 73,
+            "omnivore": 3
+          },
+          "population": 76,
+          "plantBiomass": 663.22,
+          "plantProduction": 147.954,
+          "plantConsumption": 116.398,
+          "localReachablePlantPerConsumerMean": 4.557,
+          "consumersBelow16": 70,
+          "consumersSampled": 76,
+          "eligibleDecisions": 563,
+          "capTicks": 0
+        },
+        {
+          "tick": 9750,
+          "roles": {
+            "scavenger": 63,
+            "omnivore": 1
+          },
+          "population": 64,
+          "plantBiomass": 1048.334,
+          "plantProduction": 516.892,
+          "plantConsumption": 131.777,
+          "localReachablePlantPerConsumerMean": 9.961,
+          "consumersBelow16": 29,
+          "consumersSampled": 64,
+          "eligibleDecisions": 345,
+          "capTicks": 0
+        },
+        {
+          "tick": 10000,
+          "roles": {
+            "scavenger": 62,
+            "omnivore": 1
+          },
+          "population": 63,
+          "plantBiomass": 2767.052,
+          "plantProduction": 2486.362,
+          "plantConsumption": 767.644,
+          "localReachablePlantPerConsumerMean": 24.486,
+          "consumersBelow16": 4,
+          "consumersSampled": 63,
+          "eligibleDecisions": 1663,
+          "capTicks": 0
+        }
+      ]
+    },
+    {
+      "seed": 260679,
+      "condition": "model2",
+      "horizon": 10000,
+      "initialHash": "1667f5d254e330f91936e4c200429c3e11a8e434b837d1773fad892530d609f1",
+      "finalPopulation": 0,
+      "finalRoles": {},
+      "peakPopulation": 176,
+      "capTicks": 0,
+      "capBlocks": 0,
+      "extinctionTick": 7465,
+      "births": {
+        "herbivore": 78,
+        "scavenger": 96,
+        "omnivore": 2
+      },
+      "deaths": {
+        "herbivore": 120,
+        "carnivore": 9,
+        "scavenger": 111,
+        "omnivore": 2
+      },
+      "eligible": {
+        "herbivore": 35969,
+        "carnivore": 585,
+        "scavenger": 26364,
+        "omnivore": 401
+      },
+      "decisions": {
+        "herbivore": 310862,
+        "scavenger": 290301,
+        "carnivore": 21890,
+        "omnivore": 6113
+      },
+      "reproductiveDescendants": {
+        "scavenger": 70,
+        "herbivore": 46,
+        "omnivore": 2
+      },
+      "plantProduction": 28328.92,
+      "plantConsumption": 25958.453,
+      "carrionConsumption": 3155.61,
+      "elapsedMs": 4505.651,
+      "spatialQueries": 2150715,
+      "foodQueries": 714907,
+      "routeChecks": 4721628,
+      "windows": [
+        {
+          "tick": 250,
+          "roles": {
+            "herbivore": 52,
+            "scavenger": 20,
+            "carnivore": 9
+          },
+          "population": 81,
+          "plantBiomass": 10239.662,
+          "plantProduction": 1347.254,
+          "plantConsumption": 1096.5,
+          "localReachablePlantPerConsumerMean": 75.26,
+          "consumersBelow16": 6,
+          "consumersSampled": 72,
+          "eligibleDecisions": 6828,
+          "capTicks": 0
+        },
+        {
+          "tick": 500,
+          "roles": {
+            "herbivore": 58,
+            "scavenger": 24,
+            "carnivore": 9
+          },
+          "population": 91,
+          "plantBiomass": 10794.537,
+          "plantProduction": 2041.486,
+          "plantConsumption": 1486.612,
+          "localReachablePlantPerConsumerMean": 79.221,
+          "consumersBelow16": 14,
+          "consumersSampled": 82,
+          "eligibleDecisions": 6748,
+          "capTicks": 0
+        },
+        {
+          "tick": 750,
+          "roles": {
+            "herbivore": 68,
+            "scavenger": 29,
+            "carnivore": 9
+          },
+          "population": 106,
+          "plantBiomass": 10490.62,
+          "plantProduction": 1604.162,
+          "plantConsumption": 1908.079,
+          "localReachablePlantPerConsumerMean": 76.054,
+          "consumersBelow16": 11,
+          "consumersSampled": 97,
+          "eligibleDecisions": 6703,
+          "capTicks": 0
+        },
+        {
+          "tick": 1000,
+          "roles": {
+            "herbivore": 79,
+            "scavenger": 36,
+            "carnivore": 9
+          },
+          "population": 124,
+          "plantBiomass": 9729.885,
+          "plantProduction": 1243.033,
+          "plantConsumption": 2003.768,
+          "localReachablePlantPerConsumerMean": 68.594,
+          "consumersBelow16": 14,
+          "consumersSampled": 115,
+          "eligibleDecisions": 7586,
+          "capTicks": 0
+        },
+        {
+          "tick": 1250,
+          "roles": {
+            "herbivore": 88,
+            "scavenger": 45,
+            "carnivore": 9
+          },
+          "population": 142,
+          "plantBiomass": 7646.055,
+          "plantProduction": 454.426,
+          "plantConsumption": 2538.256,
+          "localReachablePlantPerConsumerMean": 38.291,
+          "consumersBelow16": 54,
+          "consumersSampled": 133,
+          "eligibleDecisions": 6392,
+          "capTicks": 0
+        },
+        {
+          "tick": 1500,
+          "roles": {
+            "herbivore": 93,
+            "scavenger": 53,
+            "carnivore": 9,
+            "omnivore": 1
+          },
+          "population": 156,
+          "plantBiomass": 5885.018,
+          "plantProduction": 86.531,
+          "plantConsumption": 1847.568,
+          "localReachablePlantPerConsumerMean": 30.995,
+          "consumersBelow16": 71,
+          "consumersSampled": 147,
+          "eligibleDecisions": 5096,
+          "capTicks": 0
+        },
+        {
+          "tick": 1750,
+          "roles": {
+            "herbivore": 98,
+            "scavenger": 63,
+            "carnivore": 8,
+            "omnivore": 1
+          },
+          "population": 170,
+          "plantBiomass": 3763.369,
+          "plantProduction": 190.743,
+          "plantConsumption": 2312.392,
+          "localReachablePlantPerConsumerMean": 19.988,
+          "consumersBelow16": 99,
+          "consumersSampled": 162,
+          "eligibleDecisions": 3725,
+          "capTicks": 0
+        },
+        {
+          "tick": 2000,
+          "roles": {
+            "herbivore": 98,
+            "scavenger": 69,
+            "carnivore": 8,
+            "omnivore": 1
+          },
+          "population": 176,
+          "plantBiomass": 2550.531,
+          "plantProduction": 262.398,
+          "plantConsumption": 1475.236,
+          "localReachablePlantPerConsumerMean": 12.006,
+          "consumersBelow16": 134,
+          "consumersSampled": 168,
+          "eligibleDecisions": 3023,
+          "capTicks": 0
+        },
+        {
+          "tick": 2250,
+          "roles": {
+            "herbivore": 96,
+            "scavenger": 71,
+            "carnivore": 6,
+            "omnivore": 2
+          },
+          "population": 175,
+          "plantBiomass": 1872.425,
+          "plantProduction": 327.825,
+          "plantConsumption": 1005.93,
+          "localReachablePlantPerConsumerMean": 8.732,
+          "consumersBelow16": 134,
+          "consumersSampled": 169,
+          "eligibleDecisions": 1554,
+          "capTicks": 0
+        },
+        {
+          "tick": 2500,
+          "roles": {
+            "herbivore": 87,
+            "scavenger": 65,
+            "carnivore": 4,
+            "omnivore": 2
+          },
+          "population": 158,
+          "plantBiomass": 1420.019,
+          "plantProduction": 367.189,
+          "plantConsumption": 819.595,
+          "localReachablePlantPerConsumerMean": 7.215,
+          "consumersBelow16": 117,
+          "consumersSampled": 154,
+          "eligibleDecisions": 717,
+          "capTicks": 0
+        },
+        {
+          "tick": 2750,
+          "roles": {
+            "herbivore": 68,
+            "scavenger": 62,
+            "carnivore": 2,
+            "omnivore": 2
+          },
+          "population": 134,
+          "plantBiomass": 2082.91,
+          "plantProduction": 1705.675,
+          "plantConsumption": 1042.784,
+          "localReachablePlantPerConsumerMean": 13.92,
+          "consumersBelow16": 47,
+          "consumersSampled": 132,
+          "eligibleDecisions": 933,
+          "capTicks": 0
+        },
+        {
+          "tick": 3000,
+          "roles": {
+            "herbivore": 60,
+            "scavenger": 58,
+            "carnivore": 1,
+            "omnivore": 2
+          },
+          "population": 121,
+          "plantBiomass": 3299.561,
+          "plantProduction": 2986.38,
+          "plantConsumption": 1769.729,
+          "localReachablePlantPerConsumerMean": 27.004,
+          "consumersBelow16": 19,
+          "consumersSampled": 120,
+          "eligibleDecisions": 1679,
+          "capTicks": 0
+        },
+        {
+          "tick": 3250,
+          "roles": {
+            "herbivore": 55,
+            "scavenger": 63,
+            "omnivore": 2
+          },
+          "population": 120,
+          "plantBiomass": 4231.588,
+          "plantProduction": 3170.361,
+          "plantConsumption": 2238.334,
+          "localReachablePlantPerConsumerMean": 29.083,
+          "consumersBelow16": 13,
+          "consumersSampled": 120,
+          "eligibleDecisions": 3409,
+          "capTicks": 0
+        },
+        {
+          "tick": 3500,
+          "roles": {
+            "herbivore": 52,
+            "scavenger": 70,
+            "omnivore": 2
+          },
+          "population": 124,
+          "plantBiomass": 4282.81,
+          "plantProduction": 1803.096,
+          "plantConsumption": 1751.874,
+          "localReachablePlantPerConsumerMean": 29.038,
+          "consumersBelow16": 32,
+          "consumersSampled": 124,
+          "eligibleDecisions": 3712,
+          "capTicks": 0
+        },
+        {
+          "tick": 3750,
+          "roles": {
+            "herbivore": 48,
+            "scavenger": 76,
+            "omnivore": 2
+          },
+          "population": 126,
+          "plantBiomass": 2948.962,
+          "plantProduction": 231.585,
+          "plantConsumption": 1565.433,
+          "localReachablePlantPerConsumerMean": 19.291,
+          "consumersBelow16": 73,
+          "consumersSampled": 126,
+          "eligibleDecisions": 3377,
+          "capTicks": 0
+        },
+        {
+          "tick": 4000,
+          "roles": {
+            "herbivore": 39,
+            "scavenger": 72,
+            "omnivore": 2
+          },
+          "population": 113,
+          "plantBiomass": 1010.7,
+          "plantProduction": 55.977,
+          "plantConsumption": 882.808,
+          "localReachablePlantPerConsumerMean": 7.218,
+          "consumersBelow16": 88,
+          "consumersSampled": 113,
+          "eligibleDecisions": 1628,
+          "capTicks": 0
+        },
+        {
+          "tick": 4250,
+          "roles": {
+            "herbivore": 32,
+            "scavenger": 66,
+            "omnivore": 2
+          },
+          "population": 100,
+          "plantBiomass": 281.532,
+          "plantProduction": 0,
+          "plantConsumption": 161.5,
+          "localReachablePlantPerConsumerMean": 0.305,
+          "consumersBelow16": 95,
+          "consumersSampled": 100,
+          "eligibleDecisions": 51,
+          "capTicks": 0
+        },
+        {
+          "tick": 4500,
+          "roles": {
+            "herbivore": 27,
+            "scavenger": 51,
+            "omnivore": 2
+          },
+          "population": 80,
+          "plantBiomass": 211.546,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 75,
+          "consumersSampled": 80,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 4750,
+          "roles": {
+            "herbivore": 16,
+            "scavenger": 41,
+            "omnivore": 1
+          },
+          "population": 58,
+          "plantBiomass": 208.8,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 53,
+          "consumersSampled": 58,
+          "eligibleDecisions": 17,
+          "capTicks": 0
+        },
+        {
+          "tick": 5000,
+          "roles": {
+            "herbivore": 7,
+            "scavenger": 32,
+            "omnivore": 1
+          },
+          "population": 40,
+          "plantBiomass": 208.8,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 34,
+          "consumersSampled": 40,
+          "eligibleDecisions": 75,
+          "capTicks": 0
+        },
+        {
+          "tick": 5250,
+          "roles": {
+            "scavenger": 26,
+            "herbivore": 1
+          },
+          "population": 27,
+          "plantBiomass": 208.8,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 20,
+          "consumersSampled": 27,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 5500,
+          "roles": {
+            "scavenger": 19,
+            "herbivore": 1
+          },
+          "population": 20,
+          "plantBiomass": 208.8,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 18,
+          "consumersSampled": 20,
+          "eligibleDecisions": 28,
+          "capTicks": 0
+        },
+        {
+          "tick": 5750,
+          "roles": {
+            "scavenger": 15
+          },
+          "population": 15,
+          "plantBiomass": 208.8,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 11,
+          "consumersSampled": 15,
+          "eligibleDecisions": 38,
+          "capTicks": 0
+        },
+        {
+          "tick": 6000,
+          "roles": {
+            "scavenger": 11
+          },
+          "population": 11,
+          "plantBiomass": 208.8,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 8,
+          "consumersSampled": 11,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 6250,
+          "roles": {
+            "scavenger": 6
+          },
+          "population": 6,
+          "plantBiomass": 430.298,
+          "plantProduction": 245.26,
+          "plantConsumption": 23.762,
+          "localReachablePlantPerConsumerMean": 10.463,
+          "consumersBelow16": 5,
+          "consumersSampled": 6,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 6500,
+          "roles": {
+            "scavenger": 5
+          },
+          "population": 5,
+          "plantBiomass": 761.668,
+          "plantProduction": 333.333,
+          "plantConsumption": 1.963,
+          "localReachablePlantPerConsumerMean": 20.443,
+          "consumersBelow16": 2,
+          "consumersSampled": 5,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 6750,
+          "roles": {
+            "scavenger": 4
+          },
+          "population": 4,
+          "plantBiomass": 908.775,
+          "plantProduction": 164.108,
+          "plantConsumption": 17,
+          "localReachablePlantPerConsumerMean": 25.952,
+          "consumersBelow16": 1,
+          "consumersSampled": 4,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 7000,
+          "roles": {
+            "scavenger": 1
+          },
+          "population": 1,
+          "plantBiomass": 1045.895,
+          "plantProduction": 146.449,
+          "plantConsumption": 9.329,
+          "localReachablePlantPerConsumerMean": 24.271,
+          "consumersBelow16": 0,
+          "consumersSampled": 1,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 7250,
+          "roles": {
+            "scavenger": 1
+          },
+          "population": 1,
+          "plantBiomass": 1201.364,
+          "plantProduction": 155.469,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 28.353,
+          "consumersBelow16": 0,
+          "consumersSampled": 1,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 7500,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 2441.52,
+          "plantProduction": 1240.156,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 7750,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 5105.403,
+          "plantProduction": 2663.883,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 8000,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 7287.803,
+          "plantProduction": 2182.4,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 8250,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8468.829,
+          "plantProduction": 1181.027,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 8500,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8658.218,
+          "plantProduction": 189.389,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 8750,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8704.463,
+          "plantProduction": 46.244,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 9000,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8749.772,
+          "plantProduction": 45.31,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 9250,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8794.045,
+          "plantProduction": 44.273,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 9500,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8836.99,
+          "plantProduction": 42.945,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 9750,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 9169.792,
+          "plantProduction": 332.801,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 10000,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 10607.544,
+          "plantProduction": 1437.752,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        }
+      ]
+    },
+    {
+      "seed": 260679,
+      "condition": "renewable",
+      "horizon": 10000,
+      "initialHash": "1667f5d254e330f91936e4c200429c3e11a8e434b837d1773fad892530d609f1",
+      "finalPopulation": 0,
+      "finalRoles": {},
+      "peakPopulation": 153,
+      "capTicks": 0,
+      "capBlocks": 0,
+      "extinctionTick": 7839,
+      "births": {
+        "herbivore": 98,
+        "scavenger": 85,
+        "omnivore": 1
+      },
+      "deaths": {
+        "herbivore": 140,
+        "scavenger": 100,
+        "carnivore": 9,
+        "omnivore": 1
+      },
+      "eligible": {
+        "herbivore": 45779,
+        "carnivore": 1560,
+        "scavenger": 29784,
+        "omnivore": 49
+      },
+      "decisions": {
+        "herbivore": 354646,
+        "scavenger": 262167,
+        "carnivore": 22070,
+        "omnivore": 2982
+      },
+      "reproductiveDescendants": {
+        "herbivore": 63,
+        "scavenger": 62,
+        "omnivore": 1
+      },
+      "plantProduction": 28965.127,
+      "plantConsumption": 27026.464,
+      "carrionConsumption": 3359.277,
+      "elapsedMs": 4642.484,
+      "spatialQueries": 2289255,
+      "foodQueries": 839546,
+      "routeChecks": 5359568,
+      "windows": [
+        {
+          "tick": 250,
+          "roles": {
+            "herbivore": 52,
+            "scavenger": 19,
+            "carnivore": 9
+          },
+          "population": 80,
+          "plantBiomass": 10179.44,
+          "plantProduction": 1338.031,
+          "plantConsumption": 1147.5,
+          "localReachablePlantPerConsumerMean": 81.487,
+          "consumersBelow16": 11,
+          "consumersSampled": 71,
+          "eligibleDecisions": 6952,
+          "capTicks": 0
+        },
+        {
+          "tick": 500,
+          "roles": {
+            "herbivore": 57,
+            "scavenger": 23,
+            "carnivore": 9
+          },
+          "population": 89,
+          "plantBiomass": 10700.921,
+          "plantProduction": 1898.481,
+          "plantConsumption": 1377,
+          "localReachablePlantPerConsumerMean": 84.964,
+          "consumersBelow16": 4,
+          "consumersSampled": 80,
+          "eligibleDecisions": 6741,
+          "capTicks": 0
+        },
+        {
+          "tick": 750,
+          "roles": {
+            "herbivore": 68,
+            "scavenger": 27,
+            "carnivore": 9
+          },
+          "population": 104,
+          "plantBiomass": 10521.393,
+          "plantProduction": 1452.798,
+          "plantConsumption": 1632.326,
+          "localReachablePlantPerConsumerMean": 74.063,
+          "consumersBelow16": 21,
+          "consumersSampled": 95,
+          "eligibleDecisions": 7263,
+          "capTicks": 0
+        },
+        {
+          "tick": 1000,
+          "roles": {
+            "herbivore": 72,
+            "scavenger": 30,
+            "carnivore": 9
+          },
+          "population": 111,
+          "plantBiomass": 9861.191,
+          "plantProduction": 1047.172,
+          "plantConsumption": 1707.374,
+          "localReachablePlantPerConsumerMean": 67.314,
+          "consumersBelow16": 37,
+          "consumersSampled": 102,
+          "eligibleDecisions": 6890,
+          "capTicks": 0
+        },
+        {
+          "tick": 1250,
+          "roles": {
+            "herbivore": 79,
+            "scavenger": 34,
+            "carnivore": 9
+          },
+          "population": 122,
+          "plantBiomass": 8590.19,
+          "plantProduction": 385.678,
+          "plantConsumption": 1656.679,
+          "localReachablePlantPerConsumerMean": 42.977,
+          "consumersBelow16": 58,
+          "consumersSampled": 113,
+          "eligibleDecisions": 5413,
+          "capTicks": 0
+        },
+        {
+          "tick": 1500,
+          "roles": {
+            "herbivore": 83,
+            "scavenger": 37,
+            "carnivore": 9
+          },
+          "population": 129,
+          "plantBiomass": 6943.376,
+          "plantProduction": 76.131,
+          "plantConsumption": 1722.945,
+          "localReachablePlantPerConsumerMean": 45.419,
+          "consumersBelow16": 61,
+          "consumersSampled": 120,
+          "eligibleDecisions": 5187,
+          "capTicks": 0
+        },
+        {
+          "tick": 1750,
+          "roles": {
+            "herbivore": 90,
+            "scavenger": 40,
+            "carnivore": 9
+          },
+          "population": 139,
+          "plantBiomass": 5542.099,
+          "plantProduction": 214.577,
+          "plantConsumption": 1615.855,
+          "localReachablePlantPerConsumerMean": 34.46,
+          "consumersBelow16": 79,
+          "consumersSampled": 130,
+          "eligibleDecisions": 5209,
+          "capTicks": 0
+        },
+        {
+          "tick": 2000,
+          "roles": {
+            "herbivore": 98,
+            "scavenger": 45,
+            "carnivore": 7
+          },
+          "population": 150,
+          "plantBiomass": 4022.041,
+          "plantProduction": 301.801,
+          "plantConsumption": 1821.858,
+          "localReachablePlantPerConsumerMean": 22.563,
+          "consumersBelow16": 98,
+          "consumersSampled": 143,
+          "eligibleDecisions": 3721,
+          "capTicks": 0
+        },
+        {
+          "tick": 2250,
+          "roles": {
+            "herbivore": 98,
+            "scavenger": 45,
+            "carnivore": 5
+          },
+          "population": 148,
+          "plantBiomass": 2915.38,
+          "plantProduction": 313.048,
+          "plantConsumption": 1419.71,
+          "localReachablePlantPerConsumerMean": 12.852,
+          "consumersBelow16": 110,
+          "consumersSampled": 143,
+          "eligibleDecisions": 2670,
+          "capTicks": 0
+        },
+        {
+          "tick": 2500,
+          "roles": {
+            "herbivore": 93,
+            "scavenger": 42,
+            "carnivore": 5
+          },
+          "population": 140,
+          "plantBiomass": 2223.923,
+          "plantProduction": 279.629,
+          "plantConsumption": 971.086,
+          "localReachablePlantPerConsumerMean": 8.758,
+          "consumersBelow16": 99,
+          "consumersSampled": 135,
+          "eligibleDecisions": 1966,
+          "capTicks": 0
+        },
+        {
+          "tick": 2750,
+          "roles": {
+            "herbivore": 75,
+            "scavenger": 44,
+            "carnivore": 3
+          },
+          "population": 122,
+          "plantBiomass": 2690.378,
+          "plantProduction": 1607.221,
+          "plantConsumption": 1140.767,
+          "localReachablePlantPerConsumerMean": 13.322,
+          "consumersBelow16": 35,
+          "consumersSampled": 119,
+          "eligibleDecisions": 2217,
+          "capTicks": 0
+        },
+        {
+          "tick": 3000,
+          "roles": {
+            "herbivore": 71,
+            "scavenger": 50,
+            "carnivore": 1,
+            "omnivore": 1
+          },
+          "population": 123,
+          "plantBiomass": 3238.545,
+          "plantProduction": 2738.971,
+          "plantConsumption": 2190.804,
+          "localReachablePlantPerConsumerMean": 26.218,
+          "consumersBelow16": 21,
+          "consumersSampled": 122,
+          "eligibleDecisions": 4171,
+          "capTicks": 0
+        },
+        {
+          "tick": 3250,
+          "roles": {
+            "herbivore": 72,
+            "scavenger": 61,
+            "omnivore": 1
+          },
+          "population": 134,
+          "plantBiomass": 3430.283,
+          "plantProduction": 2770.821,
+          "plantConsumption": 2579.082,
+          "localReachablePlantPerConsumerMean": 23.632,
+          "consumersBelow16": 13,
+          "consumersSampled": 134,
+          "eligibleDecisions": 6588,
+          "capTicks": 0
+        },
+        {
+          "tick": 3500,
+          "roles": {
+            "herbivore": 70,
+            "scavenger": 66,
+            "omnivore": 1
+          },
+          "population": 137,
+          "plantBiomass": 3006.507,
+          "plantProduction": 1735.141,
+          "plantConsumption": 2158.917,
+          "localReachablePlantPerConsumerMean": 18.341,
+          "consumersBelow16": 65,
+          "consumersSampled": 137,
+          "eligibleDecisions": 4884,
+          "capTicks": 0
+        },
+        {
+          "tick": 3750,
+          "roles": {
+            "herbivore": 67,
+            "scavenger": 64,
+            "omnivore": 1
+          },
+          "population": 132,
+          "plantBiomass": 1515.808,
+          "plantProduction": 220.523,
+          "plantConsumption": 1711.222,
+          "localReachablePlantPerConsumerMean": 8.791,
+          "consumersBelow16": 99,
+          "consumersSampled": 132,
+          "eligibleDecisions": 2499,
+          "capTicks": 0
+        },
+        {
+          "tick": 4000,
+          "roles": {
+            "herbivore": 55,
+            "scavenger": 62,
+            "omnivore": 1
+          },
+          "population": 118,
+          "plantBiomass": 960.854,
+          "plantProduction": 264.351,
+          "plantConsumption": 819.304,
+          "localReachablePlantPerConsumerMean": 5.141,
+          "consumersBelow16": 104,
+          "consumersSampled": 118,
+          "eligibleDecisions": 1269,
+          "capTicks": 0
+        },
+        {
+          "tick": 4250,
+          "roles": {
+            "herbivore": 49,
+            "scavenger": 59,
+            "omnivore": 1
+          },
+          "population": 109,
+          "plantBiomass": 889.245,
+          "plantProduction": 298.431,
+          "plantConsumption": 370.041,
+          "localReachablePlantPerConsumerMean": 6.087,
+          "consumersBelow16": 94,
+          "consumersSampled": 109,
+          "eligibleDecisions": 525,
+          "capTicks": 0
+        },
+        {
+          "tick": 4500,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 53,
+            "omnivore": 1
+          },
+          "population": 96,
+          "plantBiomass": 809.929,
+          "plantProduction": 339.388,
+          "plantConsumption": 418.704,
+          "localReachablePlantPerConsumerMean": 4.758,
+          "consumersBelow16": 86,
+          "consumersSampled": 96,
+          "eligibleDecisions": 649,
+          "capTicks": 0
+        },
+        {
+          "tick": 4750,
+          "roles": {
+            "herbivore": 35,
+            "scavenger": 51,
+            "omnivore": 1
+          },
+          "population": 87,
+          "plantBiomass": 820.038,
+          "plantProduction": 240.206,
+          "plantConsumption": 230.097,
+          "localReachablePlantPerConsumerMean": 6.854,
+          "consumersBelow16": 77,
+          "consumersSampled": 87,
+          "eligibleDecisions": 501,
+          "capTicks": 0
+        },
+        {
+          "tick": 5000,
+          "roles": {
+            "herbivore": 26,
+            "scavenger": 42,
+            "omnivore": 1
+          },
+          "population": 69,
+          "plantBiomass": 1462.672,
+          "plantProduction": 852.921,
+          "plantConsumption": 210.287,
+          "localReachablePlantPerConsumerMean": 17.579,
+          "consumersBelow16": 10,
+          "consumersSampled": 69,
+          "eligibleDecisions": 1129,
+          "capTicks": 0
+        },
+        {
+          "tick": 5250,
+          "roles": {
+            "herbivore": 20,
+            "scavenger": 40,
+            "omnivore": 1
+          },
+          "population": 61,
+          "plantBiomass": 238.829,
+          "plantProduction": 0,
+          "plantConsumption": 87.934,
+          "localReachablePlantPerConsumerMean": 0.033,
+          "consumersBelow16": 58,
+          "consumersSampled": 61,
+          "eligibleDecisions": 429,
+          "capTicks": 0
+        },
+        {
+          "tick": 5500,
+          "roles": {
+            "herbivore": 10,
+            "scavenger": 33,
+            "omnivore": 1
+          },
+          "population": 44,
+          "plantBiomass": 237.6,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 41,
+          "consumersSampled": 44,
+          "eligibleDecisions": 18,
+          "capTicks": 0
+        },
+        {
+          "tick": 5750,
+          "roles": {
+            "herbivore": 4,
+            "scavenger": 24,
+            "omnivore": 1
+          },
+          "population": 29,
+          "plantBiomass": 237.6,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 26,
+          "consumersSampled": 29,
+          "eligibleDecisions": 91,
+          "capTicks": 0
+        },
+        {
+          "tick": 6000,
+          "roles": {
+            "scavenger": 18,
+            "herbivore": 2
+          },
+          "population": 20,
+          "plantBiomass": 237.6,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 18,
+          "consumersSampled": 20,
+          "eligibleDecisions": 146,
+          "capTicks": 0
+        },
+        {
+          "tick": 6250,
+          "roles": {
+            "scavenger": 14
+          },
+          "population": 14,
+          "plantBiomass": 237.6,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 13,
+          "consumersSampled": 14,
+          "eligibleDecisions": 44,
+          "capTicks": 0
+        },
+        {
+          "tick": 6500,
+          "roles": {
+            "scavenger": 9
+          },
+          "population": 9,
+          "plantBiomass": 237.6,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 9,
+          "consumersSampled": 9,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 6750,
+          "roles": {
+            "scavenger": 6
+          },
+          "population": 6,
+          "plantBiomass": 237.6,
+          "plantProduction": 0,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 0,
+          "consumersBelow16": 6,
+          "consumersSampled": 6,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 7000,
+          "roles": {
+            "scavenger": 2
+          },
+          "population": 2,
+          "plantBiomass": 375.751,
+          "plantProduction": 138.151,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 4.173,
+          "consumersBelow16": 2,
+          "consumersSampled": 2,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 7250,
+          "roles": {
+            "scavenger": 2
+          },
+          "population": 2,
+          "plantBiomass": 699.243,
+          "plantProduction": 323.492,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": 10.716,
+          "consumersBelow16": 1,
+          "consumersSampled": 2,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 7500,
+          "roles": {
+            "scavenger": 1
+          },
+          "population": 1,
+          "plantBiomass": 1925.98,
+          "plantProduction": 1229.709,
+          "plantConsumption": 2.972,
+          "localReachablePlantPerConsumerMean": 77.654,
+          "consumersBelow16": 0,
+          "consumersSampled": 1,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 7750,
+          "roles": {
+            "scavenger": 1
+          },
+          "population": 1,
+          "plantBiomass": 4576.914,
+          "plantProduction": 2684.935,
+          "plantConsumption": 34,
+          "localReachablePlantPerConsumerMean": 140.352,
+          "consumersBelow16": 0,
+          "consumersSampled": 1,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 8000,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 7038.154,
+          "plantProduction": 2461.239,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 8250,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8381.449,
+          "plantProduction": 1343.295,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 8500,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8599.036,
+          "plantProduction": 217.587,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 8750,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8651.724,
+          "plantProduction": 52.688,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 9000,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8703.662,
+          "plantProduction": 51.938,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 9250,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8754.435,
+          "plantProduction": 50.773,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 9500,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 8804.889,
+          "plantProduction": 50.454,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 9750,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 9183.132,
+          "plantProduction": 378.243,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 10000,
+          "roles": {},
+          "population": 0,
+          "plantBiomass": 10790.434,
+          "plantProduction": 1607.302,
+          "plantConsumption": 0,
+          "localReachablePlantPerConsumerMean": null,
+          "consumersBelow16": 0,
+          "consumersSampled": 0,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "condition": "model2",
+      "horizon": 10000,
+      "initialHash": "36c49f84b392d54fec7110b9f28437a7902c5d0e5cce25b32c3ad1b0fa55d68d",
+      "finalPopulation": 56,
+      "finalRoles": {
+        "scavenger": 54,
+        "omnivore": 1,
+        "herbivore": 1
+      },
+      "peakPopulation": 174,
+      "capTicks": 0,
+      "capBlocks": 0,
+      "extinctionTick": null,
+      "births": {
+        "scavenger": 291,
+        "herbivore": 10,
+        "omnivore": 2
+      },
+      "deaths": {
+        "herbivore": 51,
+        "carnivore": 9,
+        "scavenger": 252,
+        "omnivore": 1
+      },
+      "eligible": {
+        "herbivore": 12761,
+        "scavenger": 62299,
+        "carnivore": 83,
+        "omnivore": 473
+      },
+      "decisions": {
+        "herbivore": 136032,
+        "scavenger": 1004403,
+        "carnivore": 16297,
+        "omnivore": 9073
+      },
+      "reproductiveDescendants": {
+        "scavenger": 222,
+        "herbivore": 7,
+        "omnivore": 2
+      },
+      "plantProduction": 30681.453,
+      "plantConsumption": 38147.96,
+      "carrionConsumption": 5071.331,
+      "elapsedMs": 8730.665,
+      "spatialQueries": 3903144,
+      "foodQueries": 1449393,
+      "routeChecks": 9423221,
+      "windows": [
+        {
+          "tick": 250,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 17,
+            "carnivore": 9
+          },
+          "population": 68,
+          "plantBiomass": 10605.478,
+          "plantProduction": 1186.455,
+          "plantConsumption": 425,
+          "localReachablePlantPerConsumerMean": 107.347,
+          "consumersBelow16": 7,
+          "consumersSampled": 59,
+          "eligibleDecisions": 4457,
+          "capTicks": 0
+        },
+        {
+          "tick": 500,
+          "roles": {
+            "herbivore": 40,
+            "scavenger": 23,
+            "carnivore": 9
+          },
+          "population": 72,
+          "plantBiomass": 11419.44,
+          "plantProduction": 1693.972,
+          "plantConsumption": 880.01,
+          "localReachablePlantPerConsumerMean": 100.902,
+          "consumersBelow16": 8,
+          "consumersSampled": 63,
+          "eligibleDecisions": 3340,
+          "capTicks": 0
+        },
+        {
+          "tick": 750,
+          "roles": {
+            "herbivore": 39,
+            "scavenger": 31,
+            "carnivore": 9
+          },
+          "population": 79,
+          "plantBiomass": 11350.592,
+          "plantProduction": 1061.652,
+          "plantConsumption": 1130.5,
+          "localReachablePlantPerConsumerMean": 90.37,
+          "consumersBelow16": 5,
+          "consumersSampled": 70,
+          "eligibleDecisions": 3444,
+          "capTicks": 0
+        },
+        {
+          "tick": 1000,
+          "roles": {
+            "herbivore": 40,
+            "scavenger": 38,
+            "carnivore": 8
+          },
+          "population": 86,
+          "plantBiomass": 11093.661,
+          "plantProduction": 830.977,
+          "plantConsumption": 1087.908,
+          "localReachablePlantPerConsumerMean": 88.745,
+          "consumersBelow16": 6,
+          "consumersSampled": 78,
+          "eligibleDecisions": 3216,
+          "capTicks": 0
+        },
+        {
+          "tick": 1250,
+          "roles": {
+            "herbivore": 38,
+            "scavenger": 48,
+            "carnivore": 8
+          },
+          "population": 94,
+          "plantBiomass": 10124.567,
+          "plantProduction": 236.43,
+          "plantConsumption": 1205.524,
+          "localReachablePlantPerConsumerMean": 55.549,
+          "consumersBelow16": 26,
+          "consumersSampled": 86,
+          "eligibleDecisions": 4256,
+          "capTicks": 0
+        },
+        {
+          "tick": 1500,
+          "roles": {
+            "herbivore": 38,
+            "scavenger": 59,
+            "carnivore": 5
+          },
+          "population": 102,
+          "plantBiomass": 9056.996,
+          "plantProduction": 51.982,
+          "plantConsumption": 1119.553,
+          "localReachablePlantPerConsumerMean": 48.111,
+          "consumersBelow16": 45,
+          "consumersSampled": 97,
+          "eligibleDecisions": 2740,
+          "capTicks": 0
+        },
+        {
+          "tick": 1750,
+          "roles": {
+            "herbivore": 35,
+            "scavenger": 71,
+            "carnivore": 4
+          },
+          "population": 110,
+          "plantBiomass": 7774.412,
+          "plantProduction": 59.683,
+          "plantConsumption": 1342.266,
+          "localReachablePlantPerConsumerMean": 38.624,
+          "consumersBelow16": 65,
+          "consumersSampled": 106,
+          "eligibleDecisions": 3132,
+          "capTicks": 0
+        },
+        {
+          "tick": 2000,
+          "roles": {
+            "herbivore": 35,
+            "scavenger": 79,
+            "carnivore": 2
+          },
+          "population": 116,
+          "plantBiomass": 6709.085,
+          "plantProduction": 63.004,
+          "plantConsumption": 1128.332,
+          "localReachablePlantPerConsumerMean": 35.548,
+          "consumersBelow16": 74,
+          "consumersSampled": 114,
+          "eligibleDecisions": 2279,
+          "capTicks": 0
+        },
+        {
+          "tick": 2250,
+          "roles": {
+            "herbivore": 35,
+            "scavenger": 85,
+            "carnivore": 2
+          },
+          "population": 122,
+          "plantBiomass": 5945.351,
+          "plantProduction": 137.702,
+          "plantConsumption": 901.435,
+          "localReachablePlantPerConsumerMean": 24.158,
+          "consumersBelow16": 97,
+          "consumersSampled": 120,
+          "eligibleDecisions": 1982,
+          "capTicks": 0
+        },
+        {
+          "tick": 2500,
+          "roles": {
+            "herbivore": 32,
+            "scavenger": 88,
+            "carnivore": 2
+          },
+          "population": 122,
+          "plantBiomass": 5471.711,
+          "plantProduction": 336.168,
+          "plantConsumption": 809.809,
+          "localReachablePlantPerConsumerMean": 23.292,
+          "consumersBelow16": 97,
+          "consumersSampled": 120,
+          "eligibleDecisions": 1214,
+          "capTicks": 0
+        },
+        {
+          "tick": 2750,
+          "roles": {
+            "herbivore": 29,
+            "scavenger": 94,
+            "carnivore": 1
+          },
+          "population": 124,
+          "plantBiomass": 5768.408,
+          "plantProduction": 1152.833,
+          "plantConsumption": 856.136,
+          "localReachablePlantPerConsumerMean": 20.883,
+          "consumersBelow16": 57,
+          "consumersSampled": 123,
+          "eligibleDecisions": 1318,
+          "capTicks": 0
+        },
+        {
+          "tick": 3000,
+          "roles": {
+            "herbivore": 25,
+            "scavenger": 101,
+            "carnivore": 1
+          },
+          "population": 127,
+          "plantBiomass": 5944.712,
+          "plantProduction": 1678.817,
+          "plantConsumption": 1502.513,
+          "localReachablePlantPerConsumerMean": 22.142,
+          "consumersBelow16": 41,
+          "consumersSampled": 126,
+          "eligibleDecisions": 1773,
+          "capTicks": 0
+        },
+        {
+          "tick": 3250,
+          "roles": {
+            "herbivore": 21,
+            "scavenger": 103
+          },
+          "population": 124,
+          "plantBiomass": 6154.856,
+          "plantProduction": 1670.106,
+          "plantConsumption": 1459.962,
+          "localReachablePlantPerConsumerMean": 24.798,
+          "consumersBelow16": 42,
+          "consumersSampled": 124,
+          "eligibleDecisions": 2582,
+          "capTicks": 0
+        },
+        {
+          "tick": 3500,
+          "roles": {
+            "herbivore": 18,
+            "scavenger": 109,
+            "omnivore": 1
+          },
+          "population": 128,
+          "plantBiomass": 5833.524,
+          "plantProduction": 963.295,
+          "plantConsumption": 1284.627,
+          "localReachablePlantPerConsumerMean": 23.419,
+          "consumersBelow16": 79,
+          "consumersSampled": 128,
+          "eligibleDecisions": 2254,
+          "capTicks": 0
+        },
+        {
+          "tick": 3750,
+          "roles": {
+            "herbivore": 14,
+            "scavenger": 112,
+            "omnivore": 1
+          },
+          "population": 127,
+          "plantBiomass": 5067.685,
+          "plantProduction": 130.991,
+          "plantConsumption": 896.83,
+          "localReachablePlantPerConsumerMean": 17.908,
+          "consumersBelow16": 105,
+          "consumersSampled": 127,
+          "eligibleDecisions": 1277,
+          "capTicks": 0
+        },
+        {
+          "tick": 4000,
+          "roles": {
+            "herbivore": 7,
+            "scavenger": 115,
+            "omnivore": 1
+          },
+          "population": 123,
+          "plantBiomass": 4463.896,
+          "plantProduction": 113.439,
+          "plantConsumption": 717.228,
+          "localReachablePlantPerConsumerMean": 12.859,
+          "consumersBelow16": 105,
+          "consumersSampled": 123,
+          "eligibleDecisions": 843,
+          "capTicks": 0
+        },
+        {
+          "tick": 4250,
+          "roles": {
+            "herbivore": 6,
+            "scavenger": 112,
+            "omnivore": 1
+          },
+          "population": 119,
+          "plantBiomass": 4279.844,
+          "plantProduction": 172.748,
+          "plantConsumption": 356.8,
+          "localReachablePlantPerConsumerMean": 15.252,
+          "consumersBelow16": 101,
+          "consumersSampled": 119,
+          "eligibleDecisions": 932,
+          "capTicks": 0
+        },
+        {
+          "tick": 4500,
+          "roles": {
+            "scavenger": 117,
+            "herbivore": 4,
+            "omnivore": 1
+          },
+          "population": 122,
+          "plantBiomass": 3825.084,
+          "plantProduction": 182.165,
+          "plantConsumption": 636.925,
+          "localReachablePlantPerConsumerMean": 16.933,
+          "consumersBelow16": 97,
+          "consumersSampled": 122,
+          "eligibleDecisions": 1264,
+          "capTicks": 0
+        },
+        {
+          "tick": 4750,
+          "roles": {
+            "scavenger": 107,
+            "herbivore": 4,
+            "omnivore": 1
+          },
+          "population": 112,
+          "plantBiomass": 3452.377,
+          "plantProduction": 213.619,
+          "plantConsumption": 586.326,
+          "localReachablePlantPerConsumerMean": 18.955,
+          "consumersBelow16": 78,
+          "consumersSampled": 112,
+          "eligibleDecisions": 1262,
+          "capTicks": 0
+        },
+        {
+          "tick": 5000,
+          "roles": {
+            "scavenger": 99,
+            "herbivore": 4,
+            "omnivore": 1
+          },
+          "population": 104,
+          "plantBiomass": 3445.681,
+          "plantProduction": 627.428,
+          "plantConsumption": 634.125,
+          "localReachablePlantPerConsumerMean": 17.668,
+          "consumersBelow16": 43,
+          "consumersSampled": 104,
+          "eligibleDecisions": 1604,
+          "capTicks": 0
+        },
+        {
+          "tick": 5250,
+          "roles": {
+            "scavenger": 106,
+            "herbivore": 4,
+            "omnivore": 1
+          },
+          "population": 111,
+          "plantBiomass": 3963.036,
+          "plantProduction": 2118.81,
+          "plantConsumption": 1601.454,
+          "localReachablePlantPerConsumerMean": 25.157,
+          "consumersBelow16": 11,
+          "consumersSampled": 111,
+          "eligibleDecisions": 2107,
+          "capTicks": 0
+        },
+        {
+          "tick": 5500,
+          "roles": {
+            "scavenger": 127,
+            "herbivore": 4,
+            "omnivore": 1
+          },
+          "population": 132,
+          "plantBiomass": 4837.578,
+          "plantProduction": 2878.676,
+          "plantConsumption": 2004.135,
+          "localReachablePlantPerConsumerMean": 25.254,
+          "consumersBelow16": 6,
+          "consumersSampled": 132,
+          "eligibleDecisions": 4693,
+          "capTicks": 0
+        },
+        {
+          "tick": 5750,
+          "roles": {
+            "scavenger": 147,
+            "herbivore": 2,
+            "omnivore": 2
+          },
+          "population": 151,
+          "plantBiomass": 5066.963,
+          "plantProduction": 2452.296,
+          "plantConsumption": 2222.911,
+          "localReachablePlantPerConsumerMean": 20.771,
+          "consumersBelow16": 15,
+          "consumersSampled": 151,
+          "eligibleDecisions": 4309,
+          "capTicks": 0
+        },
+        {
+          "tick": 6000,
+          "roles": {
+            "scavenger": 166,
+            "herbivore": 2,
+            "omnivore": 2
+          },
+          "population": 170,
+          "plantBiomass": 3932.468,
+          "plantProduction": 979.543,
+          "plantConsumption": 2114.039,
+          "localReachablePlantPerConsumerMean": 17.062,
+          "consumersBelow16": 115,
+          "consumersSampled": 170,
+          "eligibleDecisions": 3371,
+          "capTicks": 0
+        },
+        {
+          "tick": 6250,
+          "roles": {
+            "scavenger": 169,
+            "herbivore": 1,
+            "omnivore": 2
+          },
+          "population": 172,
+          "plantBiomass": 2643.859,
+          "plantProduction": 95.874,
+          "plantConsumption": 1384.483,
+          "localReachablePlantPerConsumerMean": 12.105,
+          "consumersBelow16": 129,
+          "consumersSampled": 172,
+          "eligibleDecisions": 1947,
+          "capTicks": 0
+        },
+        {
+          "tick": 6500,
+          "roles": {
+            "scavenger": 171,
+            "omnivore": 2
+          },
+          "population": 173,
+          "plantBiomass": 1782.827,
+          "plantProduction": 125.567,
+          "plantConsumption": 986.599,
+          "localReachablePlantPerConsumerMean": 6.993,
+          "consumersBelow16": 143,
+          "consumersSampled": 173,
+          "eligibleDecisions": 1892,
+          "capTicks": 0
+        },
+        {
+          "tick": 6750,
+          "roles": {
+            "scavenger": 168,
+            "omnivore": 2
+          },
+          "population": 170,
+          "plantBiomass": 1295.855,
+          "plantProduction": 267.191,
+          "plantConsumption": 754.163,
+          "localReachablePlantPerConsumerMean": 5.685,
+          "consumersBelow16": 152,
+          "consumersSampled": 170,
+          "eligibleDecisions": 1926,
+          "capTicks": 0
+        },
+        {
+          "tick": 7000,
+          "roles": {
+            "scavenger": 163,
+            "omnivore": 2
+          },
+          "population": 165,
+          "plantBiomass": 909.192,
+          "plantProduction": 203.934,
+          "plantConsumption": 590.597,
+          "localReachablePlantPerConsumerMean": 3.594,
+          "consumersBelow16": 151,
+          "consumersSampled": 165,
+          "eligibleDecisions": 848,
+          "capTicks": 0
+        },
+        {
+          "tick": 7250,
+          "roles": {
+            "scavenger": 155,
+            "omnivore": 2
+          },
+          "population": 157,
+          "plantBiomass": 811.686,
+          "plantProduction": 152.408,
+          "plantConsumption": 240.998,
+          "localReachablePlantPerConsumerMean": 2.926,
+          "consumersBelow16": 152,
+          "consumersSampled": 157,
+          "eligibleDecisions": 465,
+          "capTicks": 0
+        },
+        {
+          "tick": 7500,
+          "roles": {
+            "scavenger": 128,
+            "omnivore": 2
+          },
+          "population": 130,
+          "plantBiomass": 994.122,
+          "plantProduction": 834.416,
+          "plantConsumption": 621.286,
+          "localReachablePlantPerConsumerMean": 5.722,
+          "consumersBelow16": 73,
+          "consumersSampled": 130,
+          "eligibleDecisions": 212,
+          "capTicks": 0
+        },
+        {
+          "tick": 7750,
+          "roles": {
+            "scavenger": 114,
+            "omnivore": 2
+          },
+          "population": 116,
+          "plantBiomass": 1269.563,
+          "plantProduction": 1524.198,
+          "plantConsumption": 1242.117,
+          "localReachablePlantPerConsumerMean": 8.728,
+          "consumersBelow16": 47,
+          "consumersSampled": 116,
+          "eligibleDecisions": 766,
+          "capTicks": 0
+        },
+        {
+          "tick": 8000,
+          "roles": {
+            "scavenger": 114,
+            "omnivore": 2
+          },
+          "population": 116,
+          "plantBiomass": 1715.733,
+          "plantProduction": 1727.06,
+          "plantConsumption": 1280.891,
+          "localReachablePlantPerConsumerMean": 11.439,
+          "consumersBelow16": 38,
+          "consumersSampled": 116,
+          "eligibleDecisions": 1495,
+          "capTicks": 0
+        },
+        {
+          "tick": 8250,
+          "roles": {
+            "scavenger": 109,
+            "omnivore": 1
+          },
+          "population": 110,
+          "plantBiomass": 1683.904,
+          "plantProduction": 1171.814,
+          "plantConsumption": 1203.643,
+          "localReachablePlantPerConsumerMean": 12.684,
+          "consumersBelow16": 49,
+          "consumersSampled": 110,
+          "eligibleDecisions": 2133,
+          "capTicks": 0
+        },
+        {
+          "tick": 8500,
+          "roles": {
+            "scavenger": 109,
+            "omnivore": 1,
+            "herbivore": 1
+          },
+          "population": 111,
+          "plantBiomass": 1001.944,
+          "plantProduction": 295.216,
+          "plantConsumption": 977.176,
+          "localReachablePlantPerConsumerMean": 5.146,
+          "consumersBelow16": 101,
+          "consumersSampled": 111,
+          "eligibleDecisions": 1138,
+          "capTicks": 0
+        },
+        {
+          "tick": 8750,
+          "roles": {
+            "scavenger": 99,
+            "omnivore": 1,
+            "herbivore": 1
+          },
+          "population": 101,
+          "plantBiomass": 881.239,
+          "plantProduction": 150.186,
+          "plantConsumption": 270.891,
+          "localReachablePlantPerConsumerMean": 4.724,
+          "consumersBelow16": 95,
+          "consumersSampled": 101,
+          "eligibleDecisions": 484,
+          "capTicks": 0
+        },
+        {
+          "tick": 9000,
+          "roles": {
+            "scavenger": 93,
+            "omnivore": 1,
+            "herbivore": 1
+          },
+          "population": 95,
+          "plantBiomass": 758.022,
+          "plantProduction": 156.618,
+          "plantConsumption": 279.834,
+          "localReachablePlantPerConsumerMean": 4.43,
+          "consumersBelow16": 89,
+          "consumersSampled": 95,
+          "eligibleDecisions": 539,
+          "capTicks": 0
+        },
+        {
+          "tick": 9250,
+          "roles": {
+            "scavenger": 87,
+            "omnivore": 1,
+            "herbivore": 1
+          },
+          "population": 89,
+          "plantBiomass": 687.059,
+          "plantProduction": 190.243,
+          "plantConsumption": 261.207,
+          "localReachablePlantPerConsumerMean": 4.114,
+          "consumersBelow16": 85,
+          "consumersSampled": 89,
+          "eligibleDecisions": 372,
+          "capTicks": 0
+        },
+        {
+          "tick": 9500,
+          "roles": {
+            "scavenger": 78,
+            "omnivore": 1,
+            "herbivore": 1
+          },
+          "population": 80,
+          "plantBiomass": 684.117,
+          "plantProduction": 105.899,
+          "plantConsumption": 107.616,
+          "localReachablePlantPerConsumerMean": 3.577,
+          "consumersBelow16": 78,
+          "consumersSampled": 80,
+          "eligibleDecisions": 316,
+          "capTicks": 0
+        },
+        {
+          "tick": 9750,
+          "roles": {
+            "scavenger": 68,
+            "omnivore": 1,
+            "herbivore": 1
+          },
+          "population": 70,
+          "plantBiomass": 1013.475,
+          "plantProduction": 489.665,
+          "plantConsumption": 156.842,
+          "localReachablePlantPerConsumerMean": 8.25,
+          "consumersBelow16": 26,
+          "consumersSampled": 70,
+          "eligibleDecisions": 134,
+          "capTicks": 0
+        },
+        {
+          "tick": 10000,
+          "roles": {
+            "scavenger": 54,
+            "omnivore": 1,
+            "herbivore": 1
+          },
+          "population": 56,
+          "plantBiomass": 2326.577,
+          "plantProduction": 2198.372,
+          "plantConsumption": 885.27,
+          "localReachablePlantPerConsumerMean": 23.432,
+          "consumersBelow16": 1,
+          "consumersSampled": 56,
+          "eligibleDecisions": 1300,
+          "capTicks": 0
+        }
+      ]
+    },
+    {
+      "seed": 10101,
+      "condition": "renewable",
+      "horizon": 10000,
+      "initialHash": "36c49f84b392d54fec7110b9f28437a7902c5d0e5cce25b32c3ad1b0fa55d68d",
+      "finalPopulation": 68,
+      "finalRoles": {
+        "scavenger": 67,
+        "herbivore": 1
+      },
+      "peakPopulation": 190,
+      "capTicks": 0,
+      "capBlocks": 0,
+      "extinctionTick": null,
+      "births": {
+        "scavenger": 337,
+        "herbivore": 4
+      },
+      "deaths": {
+        "herbivore": 45,
+        "carnivore": 9,
+        "scavenger": 285
+      },
+      "eligible": {
+        "herbivore": 12259,
+        "scavenger": 77409,
+        "carnivore": 524
+      },
+      "decisions": {
+        "herbivore": 112255,
+        "scavenger": 1031450,
+        "carnivore": 19145
+      },
+      "reproductiveDescendants": {
+        "scavenger": 266,
+        "herbivore": 1
+      },
+      "plantProduction": 28942.211,
+      "plantConsumption": 36318.524,
+      "carrionConsumption": 5442.161,
+      "elapsedMs": 11004.503,
+      "spatialQueries": 3822414,
+      "foodQueries": 1672535,
+      "routeChecks": 12582661,
+      "windows": [
+        {
+          "tick": 250,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 17,
+            "carnivore": 9
+          },
+          "population": 68,
+          "plantBiomass": 10586.228,
+          "plantProduction": 1184.205,
+          "plantConsumption": 442,
+          "localReachablePlantPerConsumerMean": 103.184,
+          "consumersBelow16": 9,
+          "consumersSampled": 59,
+          "eligibleDecisions": 4435,
+          "capTicks": 0
+        },
+        {
+          "tick": 500,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 21,
+            "carnivore": 9
+          },
+          "population": 72,
+          "plantBiomass": 11406.853,
+          "plantProduction": 1666.73,
+          "plantConsumption": 846.105,
+          "localReachablePlantPerConsumerMean": 116.421,
+          "consumersBelow16": 10,
+          "consumersSampled": 63,
+          "eligibleDecisions": 4090,
+          "capTicks": 0
+        },
+        {
+          "tick": 750,
+          "roles": {
+            "herbivore": 38,
+            "scavenger": 27,
+            "carnivore": 9
+          },
+          "population": 74,
+          "plantBiomass": 11590.512,
+          "plantProduction": 1091.332,
+          "plantConsumption": 907.673,
+          "localReachablePlantPerConsumerMean": 98.899,
+          "consumersBelow16": 9,
+          "consumersSampled": 65,
+          "eligibleDecisions": 3955,
+          "capTicks": 0
+        },
+        {
+          "tick": 1000,
+          "roles": {
+            "herbivore": 37,
+            "scavenger": 34,
+            "carnivore": 7
+          },
+          "population": 78,
+          "plantBiomass": 11350.697,
+          "plantProduction": 767.416,
+          "plantConsumption": 1007.231,
+          "localReachablePlantPerConsumerMean": 87.786,
+          "consumersBelow16": 11,
+          "consumersSampled": 71,
+          "eligibleDecisions": 3195,
+          "capTicks": 0
+        },
+        {
+          "tick": 1250,
+          "roles": {
+            "herbivore": 38,
+            "scavenger": 40,
+            "carnivore": 7
+          },
+          "population": 85,
+          "plantBiomass": 10589.44,
+          "plantProduction": 264.984,
+          "plantConsumption": 1026.241,
+          "localReachablePlantPerConsumerMean": 71.704,
+          "consumersBelow16": 28,
+          "consumersSampled": 78,
+          "eligibleDecisions": 3432,
+          "capTicks": 0
+        },
+        {
+          "tick": 1500,
+          "roles": {
+            "herbivore": 35,
+            "scavenger": 47,
+            "carnivore": 6
+          },
+          "population": 88,
+          "plantBiomass": 9705.124,
+          "plantProduction": 52.707,
+          "plantConsumption": 937.024,
+          "localReachablePlantPerConsumerMean": 54.601,
+          "consumersBelow16": 35,
+          "consumersSampled": 82,
+          "eligibleDecisions": 2880,
+          "capTicks": 0
+        },
+        {
+          "tick": 1750,
+          "roles": {
+            "herbivore": 32,
+            "scavenger": 54,
+            "carnivore": 6
+          },
+          "population": 92,
+          "plantBiomass": 8955.244,
+          "plantProduction": 57.704,
+          "plantConsumption": 807.584,
+          "localReachablePlantPerConsumerMean": 54.036,
+          "consumersBelow16": 36,
+          "consumersSampled": 86,
+          "eligibleDecisions": 2703,
+          "capTicks": 0
+        },
+        {
+          "tick": 2000,
+          "roles": {
+            "herbivore": 30,
+            "scavenger": 60,
+            "carnivore": 5
+          },
+          "population": 95,
+          "plantBiomass": 8016.878,
+          "plantProduction": 64.279,
+          "plantConsumption": 1002.645,
+          "localReachablePlantPerConsumerMean": 40.913,
+          "consumersBelow16": 46,
+          "consumersSampled": 90,
+          "eligibleDecisions": 3073,
+          "capTicks": 0
+        },
+        {
+          "tick": 2250,
+          "roles": {
+            "herbivore": 28,
+            "scavenger": 62,
+            "carnivore": 4
+          },
+          "population": 94,
+          "plantBiomass": 7215.489,
+          "plantProduction": 64.784,
+          "plantConsumption": 866.174,
+          "localReachablePlantPerConsumerMean": 43.32,
+          "consumersBelow16": 58,
+          "consumersSampled": 90,
+          "eligibleDecisions": 2240,
+          "capTicks": 0
+        },
+        {
+          "tick": 2500,
+          "roles": {
+            "herbivore": 26,
+            "scavenger": 67,
+            "carnivore": 4
+          },
+          "population": 97,
+          "plantBiomass": 6662.616,
+          "plantProduction": 150.13,
+          "plantConsumption": 703.002,
+          "localReachablePlantPerConsumerMean": 38.526,
+          "consumersBelow16": 57,
+          "consumersSampled": 93,
+          "eligibleDecisions": 1856,
+          "capTicks": 0
+        },
+        {
+          "tick": 2750,
+          "roles": {
+            "herbivore": 23,
+            "scavenger": 73,
+            "carnivore": 2
+          },
+          "population": 98,
+          "plantBiomass": 6651.229,
+          "plantProduction": 992.994,
+          "plantConsumption": 1004.38,
+          "localReachablePlantPerConsumerMean": 35.342,
+          "consumersBelow16": 32,
+          "consumersSampled": 96,
+          "eligibleDecisions": 2619,
+          "capTicks": 0
+        },
+        {
+          "tick": 3000,
+          "roles": {
+            "herbivore": 19,
+            "scavenger": 89,
+            "carnivore": 2
+          },
+          "population": 110,
+          "plantBiomass": 6728.222,
+          "plantProduction": 1434.868,
+          "plantConsumption": 1357.875,
+          "localReachablePlantPerConsumerMean": 28.048,
+          "consumersBelow16": 35,
+          "consumersSampled": 108,
+          "eligibleDecisions": 3179,
+          "capTicks": 0
+        },
+        {
+          "tick": 3250,
+          "roles": {
+            "herbivore": 13,
+            "scavenger": 105,
+            "carnivore": 1
+          },
+          "population": 119,
+          "plantBiomass": 6592.609,
+          "plantProduction": 1350.536,
+          "plantConsumption": 1486.149,
+          "localReachablePlantPerConsumerMean": 28.064,
+          "consumersBelow16": 58,
+          "consumersSampled": 118,
+          "eligibleDecisions": 3418,
+          "capTicks": 0
+        },
+        {
+          "tick": 3500,
+          "roles": {
+            "herbivore": 10,
+            "scavenger": 116,
+            "carnivore": 1
+          },
+          "population": 127,
+          "plantBiomass": 6343.454,
+          "plantProduction": 773.118,
+          "plantConsumption": 1022.273,
+          "localReachablePlantPerConsumerMean": 21.175,
+          "consumersBelow16": 94,
+          "consumersSampled": 126,
+          "eligibleDecisions": 2438,
+          "capTicks": 0
+        },
+        {
+          "tick": 3750,
+          "roles": {
+            "herbivore": 5,
+            "scavenger": 117
+          },
+          "population": 122,
+          "plantBiomass": 5764.273,
+          "plantProduction": 118.632,
+          "plantConsumption": 697.813,
+          "localReachablePlantPerConsumerMean": 10.558,
+          "consumersBelow16": 110,
+          "consumersSampled": 122,
+          "eligibleDecisions": 1334,
+          "capTicks": 0
+        },
+        {
+          "tick": 4000,
+          "roles": {
+            "herbivore": 1,
+            "scavenger": 115
+          },
+          "population": 116,
+          "plantBiomass": 5652.94,
+          "plantProduction": 166.851,
+          "plantConsumption": 278.183,
+          "localReachablePlantPerConsumerMean": 10.31,
+          "consumersBelow16": 102,
+          "consumersSampled": 116,
+          "eligibleDecisions": 965,
+          "capTicks": 0
+        },
+        {
+          "tick": 4250,
+          "roles": {
+            "scavenger": 115
+          },
+          "population": 115,
+          "plantBiomass": 5286.927,
+          "plantProduction": 179.348,
+          "plantConsumption": 545.362,
+          "localReachablePlantPerConsumerMean": 12.718,
+          "consumersBelow16": 98,
+          "consumersSampled": 115,
+          "eligibleDecisions": 854,
+          "capTicks": 0
+        },
+        {
+          "tick": 4500,
+          "roles": {
+            "scavenger": 118
+          },
+          "population": 118,
+          "plantBiomass": 5036.613,
+          "plantProduction": 174.555,
+          "plantConsumption": 424.869,
+          "localReachablePlantPerConsumerMean": 9.981,
+          "consumersBelow16": 95,
+          "consumersSampled": 118,
+          "eligibleDecisions": 1246,
+          "capTicks": 0
+        },
+        {
+          "tick": 4750,
+          "roles": {
+            "scavenger": 114
+          },
+          "population": 114,
+          "plantBiomass": 4653.356,
+          "plantProduction": 224.289,
+          "plantConsumption": 607.545,
+          "localReachablePlantPerConsumerMean": 9.263,
+          "consumersBelow16": 94,
+          "consumersSampled": 114,
+          "eligibleDecisions": 1162,
+          "capTicks": 0
+        },
+        {
+          "tick": 5000,
+          "roles": {
+            "scavenger": 111
+          },
+          "population": 111,
+          "plantBiomass": 4517.122,
+          "plantProduction": 578.508,
+          "plantConsumption": 714.742,
+          "localReachablePlantPerConsumerMean": 11.578,
+          "consumersBelow16": 64,
+          "consumersSampled": 111,
+          "eligibleDecisions": 1410,
+          "capTicks": 0
+        },
+        {
+          "tick": 5250,
+          "roles": {
+            "scavenger": 123
+          },
+          "population": 123,
+          "plantBiomass": 4881.342,
+          "plantProduction": 1775.943,
+          "plantConsumption": 1411.723,
+          "localReachablePlantPerConsumerMean": 14.496,
+          "consumersBelow16": 45,
+          "consumersSampled": 123,
+          "eligibleDecisions": 3146,
+          "capTicks": 0
+        },
+        {
+          "tick": 5500,
+          "roles": {
+            "scavenger": 146
+          },
+          "population": 146,
+          "plantBiomass": 5367.461,
+          "plantProduction": 2407.803,
+          "plantConsumption": 1921.683,
+          "localReachablePlantPerConsumerMean": 20.541,
+          "consumersBelow16": 32,
+          "consumersSampled": 146,
+          "eligibleDecisions": 5102,
+          "capTicks": 0
+        },
+        {
+          "tick": 5750,
+          "roles": {
+            "scavenger": 176
+          },
+          "population": 176,
+          "plantBiomass": 5010.343,
+          "plantProduction": 2202.49,
+          "plantConsumption": 2559.608,
+          "localReachablePlantPerConsumerMean": 21.203,
+          "consumersBelow16": 81,
+          "consumersSampled": 176,
+          "eligibleDecisions": 5253,
+          "capTicks": 0
+        },
+        {
+          "tick": 6000,
+          "roles": {
+            "scavenger": 180
+          },
+          "population": 180,
+          "plantBiomass": 4083.892,
+          "plantProduction": 887.605,
+          "plantConsumption": 1814.056,
+          "localReachablePlantPerConsumerMean": 12.678,
+          "consumersBelow16": 141,
+          "consumersSampled": 180,
+          "eligibleDecisions": 3425,
+          "capTicks": 0
+        },
+        {
+          "tick": 6250,
+          "roles": {
+            "scavenger": 189
+          },
+          "population": 189,
+          "plantBiomass": 2855.673,
+          "plantProduction": 88.39,
+          "plantConsumption": 1316.609,
+          "localReachablePlantPerConsumerMean": 8.696,
+          "consumersBelow16": 162,
+          "consumersSampled": 189,
+          "eligibleDecisions": 2505,
+          "capTicks": 0
+        },
+        {
+          "tick": 6500,
+          "roles": {
+            "scavenger": 189
+          },
+          "population": 189,
+          "plantBiomass": 2058.193,
+          "plantProduction": 144.487,
+          "plantConsumption": 941.966,
+          "localReachablePlantPerConsumerMean": 7.556,
+          "consumersBelow16": 165,
+          "consumersSampled": 189,
+          "eligibleDecisions": 1387,
+          "capTicks": 0
+        },
+        {
+          "tick": 6750,
+          "roles": {
+            "scavenger": 181,
+            "herbivore": 1
+          },
+          "population": 182,
+          "plantBiomass": 1239.623,
+          "plantProduction": 208.751,
+          "plantConsumption": 1027.321,
+          "localReachablePlantPerConsumerMean": 4.673,
+          "consumersBelow16": 162,
+          "consumersSampled": 182,
+          "eligibleDecisions": 1087,
+          "capTicks": 0
+        },
+        {
+          "tick": 7000,
+          "roles": {
+            "scavenger": 173,
+            "herbivore": 1
+          },
+          "population": 174,
+          "plantBiomass": 914.057,
+          "plantProduction": 222.798,
+          "plantConsumption": 548.364,
+          "localReachablePlantPerConsumerMean": 3.337,
+          "consumersBelow16": 170,
+          "consumersSampled": 174,
+          "eligibleDecisions": 822,
+          "capTicks": 0
+        },
+        {
+          "tick": 7250,
+          "roles": {
+            "scavenger": 170,
+            "herbivore": 1
+          },
+          "population": 171,
+          "plantBiomass": 641.975,
+          "plantProduction": 215.493,
+          "plantConsumption": 485.513,
+          "localReachablePlantPerConsumerMean": 2.592,
+          "consumersBelow16": 168,
+          "consumersSampled": 171,
+          "eligibleDecisions": 411,
+          "capTicks": 0
+        },
+        {
+          "tick": 7500,
+          "roles": {
+            "scavenger": 125,
+            "herbivore": 1
+          },
+          "population": 126,
+          "plantBiomass": 863.814,
+          "plantProduction": 957.407,
+          "plantConsumption": 735.202,
+          "localReachablePlantPerConsumerMean": 4.705,
+          "consumersBelow16": 90,
+          "consumersSampled": 126,
+          "eligibleDecisions": 727,
+          "capTicks": 0
+        },
+        {
+          "tick": 7750,
+          "roles": {
+            "scavenger": 119
+          },
+          "population": 119,
+          "plantBiomass": 1303.275,
+          "plantProduction": 1625.5,
+          "plantConsumption": 1186.039,
+          "localReachablePlantPerConsumerMean": 8.235,
+          "consumersBelow16": 44,
+          "consumersSampled": 119,
+          "eligibleDecisions": 2749,
+          "capTicks": 0
+        },
+        {
+          "tick": 8000,
+          "roles": {
+            "scavenger": 119,
+            "herbivore": 1
+          },
+          "population": 120,
+          "plantBiomass": 1546.107,
+          "plantProduction": 1810.618,
+          "plantConsumption": 1567.786,
+          "localReachablePlantPerConsumerMean": 11.085,
+          "consumersBelow16": 51,
+          "consumersSampled": 120,
+          "eligibleDecisions": 4189,
+          "capTicks": 0
+        },
+        {
+          "tick": 8250,
+          "roles": {
+            "scavenger": 127,
+            "herbivore": 1
+          },
+          "population": 128,
+          "plantBiomass": 1520.104,
+          "plantProduction": 1252.472,
+          "plantConsumption": 1278.475,
+          "localReachablePlantPerConsumerMean": 9.141,
+          "consumersBelow16": 79,
+          "consumersSampled": 128,
+          "eligibleDecisions": 3640,
+          "capTicks": 0
+        },
+        {
+          "tick": 8500,
+          "roles": {
+            "scavenger": 122,
+            "herbivore": 1
+          },
+          "population": 123,
+          "plantBiomass": 935.872,
+          "plantProduction": 268.216,
+          "plantConsumption": 852.449,
+          "localReachablePlantPerConsumerMean": 4.222,
+          "consumersBelow16": 114,
+          "consumersSampled": 123,
+          "eligibleDecisions": 1222,
+          "capTicks": 0
+        },
+        {
+          "tick": 8750,
+          "roles": {
+            "scavenger": 112,
+            "herbivore": 1
+          },
+          "population": 113,
+          "plantBiomass": 715.194,
+          "plantProduction": 157.851,
+          "plantConsumption": 372.719,
+          "localReachablePlantPerConsumerMean": 3.25,
+          "consumersBelow16": 105,
+          "consumersSampled": 113,
+          "eligibleDecisions": 749,
+          "capTicks": 0
+        },
+        {
+          "tick": 9000,
+          "roles": {
+            "scavenger": 100,
+            "herbivore": 1
+          },
+          "population": 101,
+          "plantBiomass": 642.972,
+          "plantProduction": 168.835,
+          "plantConsumption": 232.306,
+          "localReachablePlantPerConsumerMean": 2.689,
+          "consumersBelow16": 99,
+          "consumersSampled": 101,
+          "eligibleDecisions": 296,
+          "capTicks": 0
+        },
+        {
+          "tick": 9250,
+          "roles": {
+            "scavenger": 87,
+            "herbivore": 1
+          },
+          "population": 88,
+          "plantBiomass": 721.682,
+          "plantProduction": 180.258,
+          "plantConsumption": 100.706,
+          "localReachablePlantPerConsumerMean": 3.053,
+          "consumersBelow16": 86,
+          "consumersSampled": 88,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 9500,
+          "roles": {
+            "scavenger": 78,
+            "herbivore": 1
+          },
+          "population": 79,
+          "plantBiomass": 726.671,
+          "plantProduction": 108.252,
+          "plantConsumption": 103.264,
+          "localReachablePlantPerConsumerMean": 3.737,
+          "consumersBelow16": 74,
+          "consumersSampled": 79,
+          "eligibleDecisions": 91,
+          "capTicks": 0
+        },
+        {
+          "tick": 9750,
+          "roles": {
+            "scavenger": 65,
+            "herbivore": 1
+          },
+          "population": 66,
+          "plantBiomass": 1088.947,
+          "plantProduction": 535.213,
+          "plantConsumption": 172.936,
+          "localReachablePlantPerConsumerMean": 9.336,
+          "consumersBelow16": 21,
+          "consumersSampled": 66,
+          "eligibleDecisions": 508,
+          "capTicks": 0
+        },
+        {
+          "tick": 10000,
+          "roles": {
+            "scavenger": 67,
+            "herbivore": 1
+          },
+          "population": 68,
+          "plantBiomass": 2449.88,
+          "plantProduction": 2365.86,
+          "plantConsumption": 1004.927,
+          "localReachablePlantPerConsumerMean": 22.815,
+          "consumersBelow16": 6,
+          "consumersSampled": 68,
+          "eligibleDecisions": 2399,
+          "capTicks": 0
+        }
+      ]
+    },
+    {
+      "seed": 166064,
+      "condition": "model2",
+      "horizon": 10000,
+      "initialHash": "12ccddbdcc9f258f6c6df733030c019916cc263d76dea971d0a201d381ffcfec",
+      "finalPopulation": 55,
+      "finalRoles": {
+        "scavenger": 55
+      },
+      "peakPopulation": 217,
+      "capTicks": 0,
+      "capBlocks": 0,
+      "extinctionTick": null,
+      "births": {
+        "scavenger": 354,
+        "herbivore": 32,
+        "omnivore": 3
+      },
+      "deaths": {
+        "herbivore": 74,
+        "scavenger": 314,
+        "carnivore": 9,
+        "omnivore": 3
+      },
+      "eligible": {
+        "herbivore": 29436,
+        "scavenger": 61645,
+        "carnivore": 1200,
+        "omnivore": 130
+      },
+      "decisions": {
+        "herbivore": 204766,
+        "scavenger": 1091405,
+        "carnivore": 17042,
+        "omnivore": 11719
+      },
+      "reproductiveDescendants": {
+        "herbivore": 20,
+        "scavenger": 285,
+        "omnivore": 2
+      },
+      "plantProduction": 36532.985,
+      "plantConsumption": 43423.081,
+      "carrionConsumption": 4799.221,
+      "elapsedMs": 20211.735,
+      "spatialQueries": 4589878,
+      "foodQueries": 1577319,
+      "routeChecks": 21418790,
+      "windows": [
+        {
+          "tick": 250,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 16,
+            "carnivore": 9
+          },
+          "population": 67,
+          "plantBiomass": 11138.031,
+          "plantProduction": 1392.322,
+          "plantConsumption": 433.5,
+          "localReachablePlantPerConsumerMean": 121.641,
+          "consumersBelow16": 5,
+          "consumersSampled": 58,
+          "eligibleDecisions": 4903,
+          "capTicks": 0
+        },
+        {
+          "tick": 500,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 21,
+            "carnivore": 9
+          },
+          "population": 72,
+          "plantBiomass": 12312.709,
+          "plantProduction": 1931.179,
+          "plantConsumption": 756.5,
+          "localReachablePlantPerConsumerMean": 127.091,
+          "consumersBelow16": 0,
+          "consumersSampled": 63,
+          "eligibleDecisions": 5411,
+          "capTicks": 0
+        },
+        {
+          "tick": 750,
+          "roles": {
+            "herbivore": 45,
+            "scavenger": 30,
+            "carnivore": 9
+          },
+          "population": 84,
+          "plantBiomass": 12548.262,
+          "plantProduction": 1272.553,
+          "plantConsumption": 1037,
+          "localReachablePlantPerConsumerMean": 98.335,
+          "consumersBelow16": 4,
+          "consumersSampled": 75,
+          "eligibleDecisions": 4670,
+          "capTicks": 0
+        },
+        {
+          "tick": 1000,
+          "roles": {
+            "herbivore": 48,
+            "scavenger": 38,
+            "carnivore": 9
+          },
+          "population": 95,
+          "plantBiomass": 12328.371,
+          "plantProduction": 817.109,
+          "plantConsumption": 1037,
+          "localReachablePlantPerConsumerMean": 99.183,
+          "consumersBelow16": 3,
+          "consumersSampled": 86,
+          "eligibleDecisions": 4762,
+          "capTicks": 0
+        },
+        {
+          "tick": 1250,
+          "roles": {
+            "herbivore": 51,
+            "scavenger": 47,
+            "carnivore": 9
+          },
+          "population": 107,
+          "plantBiomass": 11450.164,
+          "plantProduction": 311.793,
+          "plantConsumption": 1190,
+          "localReachablePlantPerConsumerMean": 80.26,
+          "consumersBelow16": 10,
+          "consumersSampled": 98,
+          "eligibleDecisions": 4725,
+          "capTicks": 0
+        },
+        {
+          "tick": 1500,
+          "roles": {
+            "herbivore": 50,
+            "scavenger": 62,
+            "carnivore": 9
+          },
+          "population": 121,
+          "plantBiomass": 10213.35,
+          "plantProduction": 66,
+          "plantConsumption": 1302.814,
+          "localReachablePlantPerConsumerMean": 62.637,
+          "consumersBelow16": 15,
+          "consumersSampled": 112,
+          "eligibleDecisions": 5046,
+          "capTicks": 0
+        },
+        {
+          "tick": 1750,
+          "roles": {
+            "herbivore": 54,
+            "scavenger": 78,
+            "carnivore": 6
+          },
+          "population": 138,
+          "plantBiomass": 8897.446,
+          "plantProduction": 76.799,
+          "plantConsumption": 1392.703,
+          "localReachablePlantPerConsumerMean": 47.908,
+          "consumersBelow16": 36,
+          "consumersSampled": 132,
+          "eligibleDecisions": 5036,
+          "capTicks": 0
+        },
+        {
+          "tick": 2000,
+          "roles": {
+            "herbivore": 55,
+            "scavenger": 88,
+            "carnivore": 2,
+            "omnivore": 1
+          },
+          "population": 146,
+          "plantBiomass": 7322.192,
+          "plantProduction": 84.859,
+          "plantConsumption": 1660.113,
+          "localReachablePlantPerConsumerMean": 38.14,
+          "consumersBelow16": 63,
+          "consumersSampled": 144,
+          "eligibleDecisions": 3814,
+          "capTicks": 0
+        },
+        {
+          "tick": 2250,
+          "roles": {
+            "herbivore": 52,
+            "scavenger": 100,
+            "carnivore": 2,
+            "omnivore": 1
+          },
+          "population": 155,
+          "plantBiomass": 6108.856,
+          "plantProduction": 85.916,
+          "plantConsumption": 1299.252,
+          "localReachablePlantPerConsumerMean": 21.879,
+          "consumersBelow16": 93,
+          "consumersSampled": 153,
+          "eligibleDecisions": 3118,
+          "capTicks": 0
+        },
+        {
+          "tick": 2500,
+          "roles": {
+            "herbivore": 46,
+            "scavenger": 110,
+            "carnivore": 1,
+            "omnivore": 1
+          },
+          "population": 158,
+          "plantBiomass": 5083.611,
+          "plantProduction": 303.891,
+          "plantConsumption": 1329.137,
+          "localReachablePlantPerConsumerMean": 18.573,
+          "consumersBelow16": 88,
+          "consumersSampled": 157,
+          "eligibleDecisions": 2000,
+          "capTicks": 0
+        },
+        {
+          "tick": 2750,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 120,
+            "omnivore": 1
+          },
+          "population": 163,
+          "plantBiomass": 5109.441,
+          "plantProduction": 1507.404,
+          "plantConsumption": 1481.574,
+          "localReachablePlantPerConsumerMean": 21.18,
+          "consumersBelow16": 40,
+          "consumersSampled": 163,
+          "eligibleDecisions": 2173,
+          "capTicks": 0
+        },
+        {
+          "tick": 3000,
+          "roles": {
+            "herbivore": 39,
+            "scavenger": 134,
+            "omnivore": 1
+          },
+          "population": 174,
+          "plantBiomass": 6044.135,
+          "plantProduction": 2566.926,
+          "plantConsumption": 1632.232,
+          "localReachablePlantPerConsumerMean": 26.994,
+          "consumersBelow16": 21,
+          "consumersSampled": 174,
+          "eligibleDecisions": 3953,
+          "capTicks": 0
+        },
+        {
+          "tick": 3250,
+          "roles": {
+            "herbivore": 35,
+            "scavenger": 154,
+            "omnivore": 2
+          },
+          "population": 191,
+          "plantBiomass": 6471.434,
+          "plantProduction": 2616.204,
+          "plantConsumption": 2188.905,
+          "localReachablePlantPerConsumerMean": 29.573,
+          "consumersBelow16": 26,
+          "consumersSampled": 191,
+          "eligibleDecisions": 4169,
+          "capTicks": 0
+        },
+        {
+          "tick": 3500,
+          "roles": {
+            "herbivore": 30,
+            "scavenger": 175,
+            "omnivore": 3
+          },
+          "population": 208,
+          "plantBiomass": 5907.581,
+          "plantProduction": 1459.077,
+          "plantConsumption": 2022.93,
+          "localReachablePlantPerConsumerMean": 24.272,
+          "consumersBelow16": 80,
+          "consumersSampled": 208,
+          "eligibleDecisions": 4296,
+          "capTicks": 0
+        },
+        {
+          "tick": 3750,
+          "roles": {
+            "herbivore": 26,
+            "scavenger": 185,
+            "omnivore": 3
+          },
+          "population": 214,
+          "plantBiomass": 4267.257,
+          "plantProduction": 192.807,
+          "plantConsumption": 1833.131,
+          "localReachablePlantPerConsumerMean": 16.25,
+          "consumersBelow16": 139,
+          "consumersSampled": 214,
+          "eligibleDecisions": 2965,
+          "capTicks": 0
+        },
+        {
+          "tick": 4000,
+          "roles": {
+            "herbivore": 21,
+            "scavenger": 188,
+            "omnivore": 3
+          },
+          "population": 212,
+          "plantBiomass": 3027.084,
+          "plantProduction": 88.746,
+          "plantConsumption": 1328.92,
+          "localReachablePlantPerConsumerMean": 12.95,
+          "consumersBelow16": 175,
+          "consumersSampled": 212,
+          "eligibleDecisions": 2872,
+          "capTicks": 0
+        },
+        {
+          "tick": 4250,
+          "roles": {
+            "herbivore": 21,
+            "scavenger": 183,
+            "omnivore": 3
+          },
+          "population": 207,
+          "plantBiomass": 2200.155,
+          "plantProduction": 152.864,
+          "plantConsumption": 979.793,
+          "localReachablePlantPerConsumerMean": 8.889,
+          "consumersBelow16": 181,
+          "consumersSampled": 207,
+          "eligibleDecisions": 1200,
+          "capTicks": 0
+        },
+        {
+          "tick": 4500,
+          "roles": {
+            "herbivore": 18,
+            "scavenger": 179,
+            "omnivore": 3
+          },
+          "population": 200,
+          "plantBiomass": 1518.261,
+          "plantProduction": 234.297,
+          "plantConsumption": 916.191,
+          "localReachablePlantPerConsumerMean": 6.821,
+          "consumersBelow16": 172,
+          "consumersSampled": 200,
+          "eligibleDecisions": 772,
+          "capTicks": 0
+        },
+        {
+          "tick": 4750,
+          "roles": {
+            "herbivore": 18,
+            "scavenger": 172,
+            "omnivore": 3
+          },
+          "population": 193,
+          "plantBiomass": 1073.64,
+          "plantProduction": 264.418,
+          "plantConsumption": 709.039,
+          "localReachablePlantPerConsumerMean": 5.095,
+          "consumersBelow16": 170,
+          "consumersSampled": 193,
+          "eligibleDecisions": 382,
+          "capTicks": 0
+        },
+        {
+          "tick": 5000,
+          "roles": {
+            "herbivore": 14,
+            "scavenger": 161,
+            "omnivore": 3
+          },
+          "population": 178,
+          "plantBiomass": 1163.777,
+          "plantProduction": 782.3,
+          "plantConsumption": 692.163,
+          "localReachablePlantPerConsumerMean": 6.177,
+          "consumersBelow16": 107,
+          "consumersSampled": 178,
+          "eligibleDecisions": 121,
+          "capTicks": 0
+        },
+        {
+          "tick": 5250,
+          "roles": {
+            "scavenger": 154,
+            "herbivore": 12,
+            "omnivore": 3
+          },
+          "population": 169,
+          "plantBiomass": 1922.303,
+          "plantProduction": 2331.015,
+          "plantConsumption": 1572.489,
+          "localReachablePlantPerConsumerMean": 11.162,
+          "consumersBelow16": 59,
+          "consumersSampled": 169,
+          "eligibleDecisions": 1156,
+          "capTicks": 0
+        },
+        {
+          "tick": 5500,
+          "roles": {
+            "herbivore": 9,
+            "scavenger": 154,
+            "omnivore": 3
+          },
+          "population": 166,
+          "plantBiomass": 3314.008,
+          "plantProduction": 3285.199,
+          "plantConsumption": 1893.494,
+          "localReachablePlantPerConsumerMean": 18.298,
+          "consumersBelow16": 23,
+          "consumersSampled": 166,
+          "eligibleDecisions": 2366,
+          "capTicks": 0
+        },
+        {
+          "tick": 5750,
+          "roles": {
+            "scavenger": 170,
+            "herbivore": 7,
+            "omnivore": 3
+          },
+          "population": 180,
+          "plantBiomass": 4251.269,
+          "plantProduction": 2950.987,
+          "plantConsumption": 2013.726,
+          "localReachablePlantPerConsumerMean": 22.201,
+          "consumersBelow16": 19,
+          "consumersSampled": 180,
+          "eligibleDecisions": 4305,
+          "capTicks": 0
+        },
+        {
+          "tick": 6000,
+          "roles": {
+            "scavenger": 190,
+            "herbivore": 6,
+            "omnivore": 3
+          },
+          "population": 199,
+          "plantBiomass": 3092.077,
+          "plantProduction": 1139.47,
+          "plantConsumption": 2298.662,
+          "localReachablePlantPerConsumerMean": 15.077,
+          "consumersBelow16": 119,
+          "consumersSampled": 199,
+          "eligibleDecisions": 3184,
+          "capTicks": 0
+        },
+        {
+          "tick": 6250,
+          "roles": {
+            "herbivore": 5,
+            "scavenger": 182,
+            "omnivore": 2
+          },
+          "population": 189,
+          "plantBiomass": 1764.069,
+          "plantProduction": 107.963,
+          "plantConsumption": 1435.971,
+          "localReachablePlantPerConsumerMean": 8.734,
+          "consumersBelow16": 162,
+          "consumersSampled": 189,
+          "eligibleDecisions": 1545,
+          "capTicks": 0
+        },
+        {
+          "tick": 6500,
+          "roles": {
+            "herbivore": 5,
+            "omnivore": 2,
+            "scavenger": 169
+          },
+          "population": 176,
+          "plantBiomass": 1200.254,
+          "plantProduction": 203.385,
+          "plantConsumption": 767.2,
+          "localReachablePlantPerConsumerMean": 6.236,
+          "consumersBelow16": 161,
+          "consumersSampled": 176,
+          "eligibleDecisions": 280,
+          "capTicks": 0
+        },
+        {
+          "tick": 6750,
+          "roles": {
+            "omnivore": 2,
+            "scavenger": 145,
+            "herbivore": 2
+          },
+          "population": 149,
+          "plantBiomass": 769.074,
+          "plantProduction": 220.718,
+          "plantConsumption": 651.899,
+          "localReachablePlantPerConsumerMean": 4.657,
+          "consumersBelow16": 134,
+          "consumersSampled": 149,
+          "eligibleDecisions": 269,
+          "capTicks": 0
+        },
+        {
+          "tick": 7000,
+          "roles": {
+            "scavenger": 133,
+            "herbivore": 2,
+            "omnivore": 1
+          },
+          "population": 136,
+          "plantBiomass": 639.14,
+          "plantProduction": 203.827,
+          "plantConsumption": 333.761,
+          "localReachablePlantPerConsumerMean": 3.785,
+          "consumersBelow16": 133,
+          "consumersSampled": 136,
+          "eligibleDecisions": 87,
+          "capTicks": 0
+        },
+        {
+          "tick": 7250,
+          "roles": {
+            "scavenger": 115,
+            "herbivore": 1
+          },
+          "population": 116,
+          "plantBiomass": 550.819,
+          "plantProduction": 210.475,
+          "plantConsumption": 298.796,
+          "localReachablePlantPerConsumerMean": 4.334,
+          "consumersBelow16": 112,
+          "consumersSampled": 116,
+          "eligibleDecisions": 0,
+          "capTicks": 0
+        },
+        {
+          "tick": 7500,
+          "roles": {
+            "scavenger": 83,
+            "herbivore": 1
+          },
+          "population": 84,
+          "plantBiomass": 1108.037,
+          "plantProduction": 905.043,
+          "plantConsumption": 347.826,
+          "localReachablePlantPerConsumerMean": 10.604,
+          "consumersBelow16": 20,
+          "consumersSampled": 84,
+          "eligibleDecisions": 65,
+          "capTicks": 0
+        },
+        {
+          "tick": 7750,
+          "roles": {
+            "scavenger": 61
+          },
+          "population": 61,
+          "plantBiomass": 2060.336,
+          "plantProduction": 1774.297,
+          "plantConsumption": 821.998,
+          "localReachablePlantPerConsumerMean": 20.903,
+          "consumersBelow16": 3,
+          "consumersSampled": 61,
+          "eligibleDecisions": 1085,
+          "capTicks": 0
+        },
+        {
+          "tick": 8000,
+          "roles": {
+            "scavenger": 66
+          },
+          "population": 66,
+          "plantBiomass": 3180.505,
+          "plantProduction": 2057.384,
+          "plantConsumption": 937.216,
+          "localReachablePlantPerConsumerMean": 26.903,
+          "consumersBelow16": 0,
+          "consumersSampled": 66,
+          "eligibleDecisions": 1560,
+          "capTicks": 0
+        },
+        {
+          "tick": 8250,
+          "roles": {
+            "scavenger": 76
+          },
+          "population": 76,
+          "plantBiomass": 3383.782,
+          "plantProduction": 1365.686,
+          "plantConsumption": 1162.408,
+          "localReachablePlantPerConsumerMean": 24.644,
+          "consumersBelow16": 4,
+          "consumersSampled": 76,
+          "eligibleDecisions": 2417,
+          "capTicks": 0
+        },
+        {
+          "tick": 8500,
+          "roles": {
+            "scavenger": 74
+          },
+          "population": 74,
+          "plantBiomass": 2805.193,
+          "plantProduction": 263.319,
+          "plantConsumption": 841.909,
+          "localReachablePlantPerConsumerMean": 20.024,
+          "consumersBelow16": 48,
+          "consumersSampled": 74,
+          "eligibleDecisions": 1827,
+          "capTicks": 0
+        },
+        {
+          "tick": 8750,
+          "roles": {
+            "scavenger": 74
+          },
+          "population": 74,
+          "plantBiomass": 2243.737,
+          "plantProduction": 63.446,
+          "plantConsumption": 624.901,
+          "localReachablePlantPerConsumerMean": 22.14,
+          "consumersBelow16": 45,
+          "consumersSampled": 74,
+          "eligibleDecisions": 1130,
+          "capTicks": 0
+        },
+        {
+          "tick": 9000,
+          "roles": {
+            "scavenger": 71
+          },
+          "population": 71,
+          "plantBiomass": 1757.511,
+          "plantProduction": 61.891,
+          "plantConsumption": 548.117,
+          "localReachablePlantPerConsumerMean": 14.076,
+          "consumersBelow16": 48,
+          "consumersSampled": 71,
+          "eligibleDecisions": 1065,
+          "capTicks": 0
+        },
+        {
+          "tick": 9250,
+          "roles": {
+            "scavenger": 62
+          },
+          "population": 62,
+          "plantBiomass": 1410.038,
+          "plantProduction": 124.35,
+          "plantConsumption": 471.823,
+          "localReachablePlantPerConsumerMean": 9.36,
+          "consumersBelow16": 45,
+          "consumersSampled": 62,
+          "eligibleDecisions": 826,
+          "capTicks": 0
+        },
+        {
+          "tick": 9500,
+          "roles": {
+            "scavenger": 58
+          },
+          "population": 58,
+          "plantBiomass": 1341.06,
+          "plantProduction": 167.942,
+          "plantConsumption": 236.92,
+          "localReachablePlantPerConsumerMean": 12.018,
+          "consumersBelow16": 46,
+          "consumersSampled": 58,
+          "eligibleDecisions": 535,
+          "capTicks": 0
+        },
+        {
+          "tick": 9750,
+          "roles": {
+            "scavenger": 52
+          },
+          "population": 52,
+          "plantBiomass": 1595.401,
+          "plantProduction": 511.657,
+          "plantConsumption": 257.316,
+          "localReachablePlantPerConsumerMean": 17.093,
+          "consumersBelow16": 11,
+          "consumersSampled": 52,
+          "eligibleDecisions": 730,
+          "capTicks": 0
+        },
+        {
+          "tick": 10000,
+          "roles": {
+            "scavenger": 55
+          },
+          "population": 55,
+          "plantBiomass": 3289.112,
+          "plantProduction": 2377.463,
+          "plantConsumption": 683.752,
+          "localReachablePlantPerConsumerMean": 43.957,
+          "consumersBelow16": 1,
+          "consumersSampled": 55,
+          "eligibleDecisions": 1591,
+          "capTicks": 0
+        }
+      ]
+    },
+    {
+      "seed": 166064,
+      "condition": "renewable",
+      "horizon": 10000,
+      "initialHash": "12ccddbdcc9f258f6c6df733030c019916cc263d76dea971d0a201d381ffcfec",
+      "finalPopulation": 57,
+      "finalRoles": {
+        "herbivore": 4,
+        "scavenger": 52,
+        "omnivore": 1
+      },
+      "peakPopulation": 220,
+      "capTicks": 594,
+      "capBlocks": 2221,
+      "extinctionTick": null,
+      "births": {
+        "scavenger": 390,
+        "herbivore": 42,
+        "omnivore": 2
+      },
+      "deaths": {
+        "herbivore": 80,
+        "scavenger": 353,
+        "carnivore": 9,
+        "omnivore": 1
+      },
+      "eligible": {
+        "herbivore": 30989,
+        "scavenger": 77270,
+        "carnivore": 665,
+        "omnivore": 625
+      },
+      "decisions": {
+        "herbivore": 232626,
+        "scavenger": 1172223,
+        "carnivore": 18641,
+        "omnivore": 3498
+      },
+      "reproductiveDescendants": {
+        "herbivore": 24,
+        "scavenger": 310,
+        "omnivore": 1
+      },
+      "plantProduction": 37556.801,
+      "plantConsumption": 44495.126,
+      "carrionConsumption": 6339.891,
+      "elapsedMs": 20689.594,
+      "spatialQueries": 4777946,
+      "foodQueries": 1867608,
+      "routeChecks": 26233349,
+      "windows": [
+        {
+          "tick": 250,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 16,
+            "carnivore": 9
+          },
+          "population": 67,
+          "plantBiomass": 11138.031,
+          "plantProduction": 1392.322,
+          "plantConsumption": 433.5,
+          "localReachablePlantPerConsumerMean": 121.641,
+          "consumersBelow16": 5,
+          "consumersSampled": 58,
+          "eligibleDecisions": 4955,
+          "capTicks": 0
+        },
+        {
+          "tick": 500,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 21,
+            "carnivore": 9
+          },
+          "population": 72,
+          "plantBiomass": 12312.709,
+          "plantProduction": 1931.179,
+          "plantConsumption": 756.5,
+          "localReachablePlantPerConsumerMean": 127.091,
+          "consumersBelow16": 0,
+          "consumersSampled": 63,
+          "eligibleDecisions": 5411,
+          "capTicks": 0
+        },
+        {
+          "tick": 750,
+          "roles": {
+            "herbivore": 45,
+            "scavenger": 30,
+            "carnivore": 9
+          },
+          "population": 84,
+          "plantBiomass": 12548.262,
+          "plantProduction": 1272.553,
+          "plantConsumption": 1037,
+          "localReachablePlantPerConsumerMean": 98.335,
+          "consumersBelow16": 4,
+          "consumersSampled": 75,
+          "eligibleDecisions": 4688,
+          "capTicks": 0
+        },
+        {
+          "tick": 1000,
+          "roles": {
+            "herbivore": 48,
+            "scavenger": 38,
+            "carnivore": 9
+          },
+          "population": 95,
+          "plantBiomass": 12328.371,
+          "plantProduction": 817.109,
+          "plantConsumption": 1037,
+          "localReachablePlantPerConsumerMean": 99.183,
+          "consumersBelow16": 3,
+          "consumersSampled": 86,
+          "eligibleDecisions": 4789,
+          "capTicks": 0
+        },
+        {
+          "tick": 1250,
+          "roles": {
+            "herbivore": 51,
+            "scavenger": 47,
+            "carnivore": 9
+          },
+          "population": 107,
+          "plantBiomass": 11450.164,
+          "plantProduction": 311.793,
+          "plantConsumption": 1190,
+          "localReachablePlantPerConsumerMean": 80.245,
+          "consumersBelow16": 10,
+          "consumersSampled": 98,
+          "eligibleDecisions": 4751,
+          "capTicks": 0
+        },
+        {
+          "tick": 1500,
+          "roles": {
+            "herbivore": 52,
+            "scavenger": 61,
+            "carnivore": 9
+          },
+          "population": 122,
+          "plantBiomass": 10401.146,
+          "plantProduction": 67.538,
+          "plantConsumption": 1116.556,
+          "localReachablePlantPerConsumerMean": 64.899,
+          "consumersBelow16": 14,
+          "consumersSampled": 113,
+          "eligibleDecisions": 5307,
+          "capTicks": 0
+        },
+        {
+          "tick": 1750,
+          "roles": {
+            "herbivore": 54,
+            "scavenger": 72,
+            "carnivore": 6
+          },
+          "population": 132,
+          "plantBiomass": 8972.615,
+          "plantProduction": 81.031,
+          "plantConsumption": 1509.563,
+          "localReachablePlantPerConsumerMean": 49.46,
+          "consumersBelow16": 30,
+          "consumersSampled": 126,
+          "eligibleDecisions": 4684,
+          "capTicks": 0
+        },
+        {
+          "tick": 2000,
+          "roles": {
+            "herbivore": 59,
+            "scavenger": 91,
+            "carnivore": 4
+          },
+          "population": 154,
+          "plantBiomass": 7360.468,
+          "plantProduction": 83.164,
+          "plantConsumption": 1695.31,
+          "localReachablePlantPerConsumerMean": 33.472,
+          "consumersBelow16": 76,
+          "consumersSampled": 150,
+          "eligibleDecisions": 4315,
+          "capTicks": 0
+        },
+        {
+          "tick": 2250,
+          "roles": {
+            "herbivore": 58,
+            "scavenger": 99,
+            "carnivore": 4
+          },
+          "population": 161,
+          "plantBiomass": 5996.229,
+          "plantProduction": 82.853,
+          "plantConsumption": 1447.093,
+          "localReachablePlantPerConsumerMean": 22.923,
+          "consumersBelow16": 101,
+          "consumersSampled": 157,
+          "eligibleDecisions": 2948,
+          "capTicks": 0
+        },
+        {
+          "tick": 2500,
+          "roles": {
+            "herbivore": 52,
+            "scavenger": 106,
+            "carnivore": 3
+          },
+          "population": 161,
+          "plantBiomass": 5138.119,
+          "plantProduction": 344.079,
+          "plantConsumption": 1202.189,
+          "localReachablePlantPerConsumerMean": 17.167,
+          "consumersBelow16": 105,
+          "consumersSampled": 158,
+          "eligibleDecisions": 2568,
+          "capTicks": 0
+        },
+        {
+          "tick": 2750,
+          "roles": {
+            "herbivore": 49,
+            "scavenger": 118,
+            "carnivore": 1
+          },
+          "population": 168,
+          "plantBiomass": 5202.624,
+          "plantProduction": 1486.272,
+          "plantConsumption": 1421.767,
+          "localReachablePlantPerConsumerMean": 21.021,
+          "consumersBelow16": 54,
+          "consumersSampled": 167,
+          "eligibleDecisions": 4191,
+          "capTicks": 0
+        },
+        {
+          "tick": 3000,
+          "roles": {
+            "herbivore": 47,
+            "scavenger": 145
+          },
+          "population": 192,
+          "plantBiomass": 5262.105,
+          "plantProduction": 2454.839,
+          "plantConsumption": 2395.357,
+          "localReachablePlantPerConsumerMean": 20.806,
+          "consumersBelow16": 35,
+          "consumersSampled": 192,
+          "eligibleDecisions": 5582,
+          "capTicks": 0
+        },
+        {
+          "tick": 3250,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 177,
+            "omnivore": 1
+          },
+          "population": 220,
+          "plantBiomass": 5035.255,
+          "plantProduction": 2471.393,
+          "plantConsumption": 2698.244,
+          "localReachablePlantPerConsumerMean": 15.718,
+          "consumersBelow16": 78,
+          "consumersSampled": 220,
+          "eligibleDecisions": 5529,
+          "capTicks": 29
+        },
+        {
+          "tick": 3500,
+          "roles": {
+            "herbivore": 35,
+            "scavenger": 184,
+            "omnivore": 1
+          },
+          "population": 220,
+          "plantBiomass": 4539.781,
+          "plantProduction": 1419.96,
+          "plantConsumption": 1915.434,
+          "localReachablePlantPerConsumerMean": 14.254,
+          "consumersBelow16": 147,
+          "consumersSampled": 220,
+          "eligibleDecisions": 8146,
+          "capTicks": 271
+        },
+        {
+          "tick": 3750,
+          "roles": {
+            "herbivore": 31,
+            "scavenger": 187,
+            "omnivore": 1
+          },
+          "population": 219,
+          "plantBiomass": 3315.925,
+          "plantProduction": 193.414,
+          "plantConsumption": 1417.27,
+          "localReachablePlantPerConsumerMean": 10.738,
+          "consumersBelow16": 177,
+          "consumersSampled": 219,
+          "eligibleDecisions": 3602,
+          "capTicks": 452
+        },
+        {
+          "tick": 4000,
+          "roles": {
+            "herbivore": 24,
+            "scavenger": 187,
+            "omnivore": 1
+          },
+          "population": 212,
+          "plantBiomass": 2402.623,
+          "plantProduction": 247.95,
+          "plantConsumption": 1161.252,
+          "localReachablePlantPerConsumerMean": 8.424,
+          "consumersBelow16": 172,
+          "consumersSampled": 212,
+          "eligibleDecisions": 1261,
+          "capTicks": 452
+        },
+        {
+          "tick": 4250,
+          "roles": {
+            "herbivore": 20,
+            "scavenger": 190,
+            "omnivore": 1
+          },
+          "population": 211,
+          "plantBiomass": 1604.162,
+          "plantProduction": 184.309,
+          "plantConsumption": 982.769,
+          "localReachablePlantPerConsumerMean": 5.754,
+          "consumersBelow16": 190,
+          "consumersSampled": 211,
+          "eligibleDecisions": 1056,
+          "capTicks": 452
+        },
+        {
+          "tick": 4500,
+          "roles": {
+            "herbivore": 19,
+            "scavenger": 178,
+            "omnivore": 1
+          },
+          "population": 198,
+          "plantBiomass": 1140.669,
+          "plantProduction": 127.445,
+          "plantConsumption": 590.938,
+          "localReachablePlantPerConsumerMean": 5.678,
+          "consumersBelow16": 187,
+          "consumersSampled": 198,
+          "eligibleDecisions": 740,
+          "capTicks": 452
+        },
+        {
+          "tick": 4750,
+          "roles": {
+            "herbivore": 16,
+            "scavenger": 171,
+            "omnivore": 1
+          },
+          "population": 188,
+          "plantBiomass": 922.4,
+          "plantProduction": 290.867,
+          "plantConsumption": 509.136,
+          "localReachablePlantPerConsumerMean": 4.639,
+          "consumersBelow16": 175,
+          "consumersSampled": 188,
+          "eligibleDecisions": 458,
+          "capTicks": 452
+        },
+        {
+          "tick": 5000,
+          "roles": {
+            "scavenger": 163,
+            "herbivore": 13,
+            "omnivore": 1
+          },
+          "population": 177,
+          "plantBiomass": 1079.085,
+          "plantProduction": 901.794,
+          "plantConsumption": 745.109,
+          "localReachablePlantPerConsumerMean": 6.383,
+          "consumersBelow16": 95,
+          "consumersSampled": 177,
+          "eligibleDecisions": 631,
+          "capTicks": 452
+        },
+        {
+          "tick": 5250,
+          "roles": {
+            "scavenger": 163,
+            "herbivore": 12,
+            "omnivore": 1
+          },
+          "population": 176,
+          "plantBiomass": 1611.545,
+          "plantProduction": 2499.151,
+          "plantConsumption": 1966.69,
+          "localReachablePlantPerConsumerMean": 8.36,
+          "consumersBelow16": 51,
+          "consumersSampled": 176,
+          "eligibleDecisions": 2430,
+          "capTicks": 452
+        },
+        {
+          "tick": 5500,
+          "roles": {
+            "scavenger": 182,
+            "herbivore": 13,
+            "omnivore": 1
+          },
+          "population": 196,
+          "plantBiomass": 2638.83,
+          "plantProduction": 3407.308,
+          "plantConsumption": 2380.022,
+          "localReachablePlantPerConsumerMean": 12.663,
+          "consumersBelow16": 48,
+          "consumersSampled": 196,
+          "eligibleDecisions": 4745,
+          "capTicks": 452
+        },
+        {
+          "tick": 5750,
+          "roles": {
+            "herbivore": 12,
+            "scavenger": 206,
+            "omnivore": 1
+          },
+          "population": 219,
+          "plantBiomass": 2881.463,
+          "plantProduction": 2951.282,
+          "plantConsumption": 2708.65,
+          "localReachablePlantPerConsumerMean": 12.209,
+          "consumersBelow16": 78,
+          "consumersSampled": 219,
+          "eligibleDecisions": 5708,
+          "capTicks": 461
+        },
+        {
+          "tick": 6000,
+          "roles": {
+            "herbivore": 10,
+            "scavenger": 205,
+            "omnivore": 1
+          },
+          "population": 216,
+          "plantBiomass": 1834.526,
+          "plantProduction": 1083.867,
+          "plantConsumption": 2130.804,
+          "localReachablePlantPerConsumerMean": 8.079,
+          "consumersBelow16": 187,
+          "consumersSampled": 216,
+          "eligibleDecisions": 2370,
+          "capTicks": 594
+        },
+        {
+          "tick": 6250,
+          "roles": {
+            "herbivore": 8,
+            "scavenger": 192
+          },
+          "population": 200,
+          "plantBiomass": 1099.262,
+          "plantProduction": 129.277,
+          "plantConsumption": 864.541,
+          "localReachablePlantPerConsumerMean": 4.894,
+          "consumersBelow16": 188,
+          "consumersSampled": 200,
+          "eligibleDecisions": 880,
+          "capTicks": 594
+        },
+        {
+          "tick": 6500,
+          "roles": {
+            "herbivore": 7,
+            "scavenger": 181
+          },
+          "population": 188,
+          "plantBiomass": 794.043,
+          "plantProduction": 265.483,
+          "plantConsumption": 570.702,
+          "localReachablePlantPerConsumerMean": 3.614,
+          "consumersBelow16": 182,
+          "consumersSampled": 188,
+          "eligibleDecisions": 580,
+          "capTicks": 594
+        },
+        {
+          "tick": 6750,
+          "roles": {
+            "herbivore": 6,
+            "scavenger": 168
+          },
+          "population": 174,
+          "plantBiomass": 610.536,
+          "plantProduction": 198.58,
+          "plantConsumption": 382.087,
+          "localReachablePlantPerConsumerMean": 2.855,
+          "consumersBelow16": 170,
+          "consumersSampled": 174,
+          "eligibleDecisions": 358,
+          "capTicks": 594
+        },
+        {
+          "tick": 7000,
+          "roles": {
+            "herbivore": 5,
+            "scavenger": 147
+          },
+          "population": 152,
+          "plantBiomass": 539.824,
+          "plantProduction": 191.09,
+          "plantConsumption": 261.802,
+          "localReachablePlantPerConsumerMean": 3.119,
+          "consumersBelow16": 146,
+          "consumersSampled": 152,
+          "eligibleDecisions": 219,
+          "capTicks": 594
+        },
+        {
+          "tick": 7250,
+          "roles": {
+            "scavenger": 134,
+            "herbivore": 3
+          },
+          "population": 137,
+          "plantBiomass": 536.066,
+          "plantProduction": 269.414,
+          "plantConsumption": 273.171,
+          "localReachablePlantPerConsumerMean": 3.886,
+          "consumersBelow16": 131,
+          "consumersSampled": 137,
+          "eligibleDecisions": 96,
+          "capTicks": 594
+        },
+        {
+          "tick": 7500,
+          "roles": {
+            "scavenger": 96,
+            "herbivore": 2
+          },
+          "population": 98,
+          "plantBiomass": 1056.365,
+          "plantProduction": 958.052,
+          "plantConsumption": 437.753,
+          "localReachablePlantPerConsumerMean": 8.753,
+          "consumersBelow16": 39,
+          "consumersSampled": 98,
+          "eligibleDecisions": 445,
+          "capTicks": 594
+        },
+        {
+          "tick": 7750,
+          "roles": {
+            "scavenger": 73,
+            "herbivore": 2
+          },
+          "population": 75,
+          "plantBiomass": 2033.953,
+          "plantProduction": 1882.181,
+          "plantConsumption": 904.593,
+          "localReachablePlantPerConsumerMean": 24.427,
+          "consumersBelow16": 5,
+          "consumersSampled": 75,
+          "eligibleDecisions": 2027,
+          "capTicks": 594
+        },
+        {
+          "tick": 8000,
+          "roles": {
+            "scavenger": 83,
+            "herbivore": 2
+          },
+          "population": 85,
+          "plantBiomass": 2918.56,
+          "plantProduction": 2133.213,
+          "plantConsumption": 1248.606,
+          "localReachablePlantPerConsumerMean": 29.453,
+          "consumersBelow16": 7,
+          "consumersSampled": 85,
+          "eligibleDecisions": 3275,
+          "capTicks": 594
+        },
+        {
+          "tick": 8250,
+          "roles": {
+            "scavenger": 99,
+            "herbivore": 3
+          },
+          "population": 102,
+          "plantBiomass": 3008.497,
+          "plantProduction": 1453.724,
+          "plantConsumption": 1363.787,
+          "localReachablePlantPerConsumerMean": 24.095,
+          "consumersBelow16": 30,
+          "consumersSampled": 102,
+          "eligibleDecisions": 2777,
+          "capTicks": 594
+        },
+        {
+          "tick": 8500,
+          "roles": {
+            "scavenger": 100,
+            "herbivore": 3
+          },
+          "population": 103,
+          "plantBiomass": 2043.228,
+          "plantProduction": 282.396,
+          "plantConsumption": 1247.665,
+          "localReachablePlantPerConsumerMean": 13.02,
+          "consumersBelow16": 67,
+          "consumersSampled": 103,
+          "eligibleDecisions": 1752,
+          "capTicks": 594
+        },
+        {
+          "tick": 8750,
+          "roles": {
+            "scavenger": 92,
+            "herbivore": 3
+          },
+          "population": 95,
+          "plantBiomass": 1485.995,
+          "plantProduction": 65.69,
+          "plantConsumption": 622.922,
+          "localReachablePlantPerConsumerMean": 10.074,
+          "consumersBelow16": 77,
+          "consumersSampled": 95,
+          "eligibleDecisions": 1225,
+          "capTicks": 594
+        },
+        {
+          "tick": 9000,
+          "roles": {
+            "scavenger": 80,
+            "herbivore": 4
+          },
+          "population": 84,
+          "plantBiomass": 1171.461,
+          "plantProduction": 65.553,
+          "plantConsumption": 380.086,
+          "localReachablePlantPerConsumerMean": 9.082,
+          "consumersBelow16": 70,
+          "consumersSampled": 84,
+          "eligibleDecisions": 852,
+          "capTicks": 594
+        },
+        {
+          "tick": 9250,
+          "roles": {
+            "scavenger": 70,
+            "herbivore": 4
+          },
+          "population": 74,
+          "plantBiomass": 1008.089,
+          "plantProduction": 106.296,
+          "plantConsumption": 269.668,
+          "localReachablePlantPerConsumerMean": 8.297,
+          "consumersBelow16": 62,
+          "consumersSampled": 74,
+          "eligibleDecisions": 605,
+          "capTicks": 594
+        },
+        {
+          "tick": 9500,
+          "roles": {
+            "scavenger": 61,
+            "herbivore": 3
+          },
+          "population": 64,
+          "plantBiomass": 1033.968,
+          "plantProduction": 250.685,
+          "plantConsumption": 224.806,
+          "localReachablePlantPerConsumerMean": 10.092,
+          "consumersBelow16": 55,
+          "consumersSampled": 64,
+          "eligibleDecisions": 629,
+          "capTicks": 594
+        },
+        {
+          "tick": 9750,
+          "roles": {
+            "scavenger": 52,
+            "herbivore": 3,
+            "omnivore": 1
+          },
+          "population": 56,
+          "plantBiomass": 1360.113,
+          "plantProduction": 508.69,
+          "plantConsumption": 182.544,
+          "localReachablePlantPerConsumerMean": 15.283,
+          "consumersBelow16": 13,
+          "consumersSampled": 56,
+          "eligibleDecisions": 910,
+          "capTicks": 594
+        },
+        {
+          "tick": 10000,
+          "roles": {
+            "herbivore": 4,
+            "scavenger": 52,
+            "omnivore": 1
+          },
+          "population": 57,
+          "plantBiomass": 3240.882,
+          "plantProduction": 2693.009,
+          "plantConsumption": 812.24,
+          "localReachablePlantPerConsumerMean": 39.537,
+          "consumersBelow16": 2,
+          "consumersSampled": 57,
+          "eligibleDecisions": 2054,
+          "capTicks": 594
+        }
+      ]
+    }
+  ]
+}

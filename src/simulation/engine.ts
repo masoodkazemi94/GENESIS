@@ -29,7 +29,7 @@ import {
   DisasterCooldowns,
 } from './terrain/climate.js';
 import { findValidSpawnLocation, getCellAt } from './terrain/terrain.js';
-import { generateNewWorld } from './generation/worldGenerator.js';
+import { generateNewWorld, placePredatorFounders } from './generation/worldGenerator.js';
 import { createSpatialGrid, populateSpatialGrid, updatePhysics, SpatialGrid } from './physics/physics.js';
 import { updateOrganismMetabolism, createOrganism } from './organism/organism.js';
 import { updateCreatureBehavior } from './behavior/behavior.js';
@@ -107,10 +107,21 @@ export class SimulationEngine {
   public experimentalFoodOverride?: (organism: OrganismState, choice: FoodCandidate | null) => FoodCandidate | null;
   /** Versioned, unsaved development switch; not a selectable ecology model. */
   public experimentalReproductionVersion: 0 | 1 = 0;
+  /** Unsaved development probe. Copy intake alongside a saved world for experimental replay. */
+  public experimentalJuvenileDevelopment = false;
+  public experimentalJuvenileIntake = new Map<string, number>();
+  /** Unsaved Model 1 capture probe; explicitly re-enable after restoring a test save. */
+  public experimentalWoundedPreyFollowThrough = false;
+  /** Unsaved Model 2 renewable-food mating probe. */
+  public experimentalRenewableFoodFeedback = false;
   public ecologyConfig: EcologyConfig;
 
-  constructor(seedOrSaved?: number | SavedWorldData, config?: Partial<EcologyConfig>) {
+  constructor(seedOrSaved?: number | SavedWorldData, config?: Partial<EcologyConfig>,
+    development?: { predatorEncounterPlacement?: boolean; woundedPreyFollowThrough?: boolean;
+      renewableFoodFeedback?: boolean }) {
     this.speciesTree = new SpeciesAncestryTree();
+    this.experimentalWoundedPreyFollowThrough = !!development?.woundedPreyFollowThrough;
+    this.experimentalRenewableFoodFeedback = !!development?.renewableFoodFeedback;
     this.chronicle = new EventChronicle(60, 200);
 
     if (typeof seedOrSaved === 'object' && seedOrSaved !== null && 'version' in seedOrSaved) {
@@ -202,6 +213,9 @@ export class SimulationEngine {
       this.climate = createInitialClimate();
 
       const gen = generateNewWorld(seed, this.ecologyConfig);
+      if (development?.predatorEncounterPlacement && this.ecologyConfig.behaviorModel === 1) {
+        placePredatorFounders(gen, seed);
+      }
       this.worldName = gen.worldName;
       this.terrain = gen.terrain;
       this.organisms = gen.organisms;
@@ -306,17 +320,28 @@ export class SimulationEngine {
 
     // 4. Autonomous Decision Engine (Utility-based AI with genuine consequence)
     const behaviorStarted = this.probe?.start();
+    const behaviorObserver: EcologyObserver | undefined = this.experimentalJuvenileDevelopment
+      ? { ...this.observer, onFeeding: (organism, food, success, gain, consumed) => {
+          if (success && gain > 0 && !organism.isMature)
+            this.experimentalJuvenileIntake.set(organism.id,
+              (this.experimentalJuvenileIntake.get(organism.id) ?? 0) + gain);
+          this.observer?.onFeeding?.(organism, food, success, gain, consumed);
+        } } : this.observer;
     const behaviorOutput = updateCreatureBehavior(
       this.organisms,
       this.resources,
       this.terrain,
       this.spatialGrid,
       this.prng,
-      this.observer,
+      behaviorObserver,
       this.ecologyConfig,
       this.probe,
       true,
-      this.experimentalFoodOverride
+      this.experimentalFoodOverride,
+      this.experimentalWoundedPreyFollowThrough && this.ecologyConfig.behaviorModel === 1,
+      this.experimentalRenewableFoodFeedback && this.ecologyConfig.behaviorModel === 2
+        ? { climate: this.climate, soilNutrients: this.energyLedger.soilNutrientEnergy,
+          growthMultiplier: this.ecologyConfig.plantGrowth } : undefined
     );
     if (behaviorStarted !== undefined) this.probe?.end('engine.behavior', behaviorStarted);
 
@@ -529,7 +554,10 @@ export class SimulationEngine {
       const measuredCosts = this.observer?.onMetabolism
         ? { basal: 0, movement: 0, thermal: 0, flood: 0 } : undefined;
       const energyBurned = updateOrganismMetabolism(org, localTemp, this.climate.isDrought,
-        isFlooded, this.ecologyConfig, measuredCosts);
+        isFlooded, this.ecologyConfig, measuredCosts,
+        this.experimentalJuvenileDevelopment
+          ? juvenile => (this.experimentalJuvenileIntake.get(juvenile.id) ?? 0) >= 8 &&
+            juvenile.energy >= 30 && juvenile.health >= 70 : undefined);
       if (measuredCosts) this.observer?.onMetabolism?.(org, energyBurned, measuredCosts);
       this.energyLedger.dissipatedMetabolicHeat += energyBurned;
 
@@ -598,6 +626,7 @@ export class SimulationEngine {
         }
 
         this.organisms.splice(i, 1);
+        if (this.experimentalJuvenileDevelopment) this.experimentalJuvenileIntake.delete(org.id);
       }
     }
     if (metabolismStarted !== undefined) this.probe?.end('engine.metabolismDeaths', metabolismStarted);

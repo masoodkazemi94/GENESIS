@@ -14,7 +14,7 @@ export interface EcologyObserver {
     action: string;
   }): void;
   onFeeding?(organism: OrganismState, food: 'plant' | 'prey' | 'carrion',
-    success: boolean, energyGained: number): void;
+    success: boolean, energyGained: number, biomassConsumed?: number): void;
   onBirth?(child: OrganismState, divergence: number, mutations: readonly MutationEvent[]): void;
   onBirthBlocked?(reason: 'population_cap' | 'missing_taxon'): void;
   onDeath?(organism: OrganismState, cause: string): void;

@@ -16,6 +16,26 @@ export interface EcosystemUpdateResult {
   carrionBiomass: number;
 }
 
+/** Current potential photosynthesis per tick before the patch capacity clips it. */
+export function projectedPlantGrowth(res: ResourcePatch, terrain: TerrainMap, climate: ClimateState,
+  soilNutrientReserve: number, growthMultiplier: number): number {
+  const cell = getCellAt(terrain, res.x, res.y);
+  const localTemp = getEffectiveLocalTemperature(terrain, res.x, res.y, climate);
+  const localMoist = getEffectiveLocalMoisture(terrain, res.x, res.y, climate);
+  if (climate.isDrought || localMoist < .16 || localTemp < -4 || cell?.isFlooded) return 0;
+  let tempPhotoCurve = 1;
+  if (localTemp < 2) tempPhotoCurve = Math.max(0, (localTemp + 5) / 7 * .25);
+  else if (localTemp < 14) tempPhotoCurve = .3 + (localTemp - 2) / 12 * .7;
+  else if (localTemp > 38) tempPhotoCurve = Math.max(.1, (46 - localTemp) / 8);
+  const habitatFertility = cell
+    ? Math.max(.1, cell.fertility * .7 + cell.plantSuitability * .3 + (cell.ashFertilityBoost || 0) * .3)
+    : .4;
+  const healthRatio = Math.max(.15, res.amount / res.maxAmount);
+  return res.growthRate * growthMultiplier * Math.max(.04, climate.solarRadiation * 1.25) *
+    tempPhotoCurve * Math.max(.1, localMoist * 1.2) * habitatFertility *
+    (.35 + healthRatio * .65) * (1 + Math.min(.4, soilNutrientReserve / 1000 * .2));
+}
+
 export function createInitialResources(terrain: TerrainMap, prng: PRNG, count = 200, capacityMultiplier = 1): ResourcePatch[] {
   const patches: ResourcePatch[] = [];
   let attempts = 0;

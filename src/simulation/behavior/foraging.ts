@@ -35,7 +35,7 @@ export function directRouteOpen(terrain: TerrainMap, x: number, y: number, tx: n
 /** Expected short-horizon net energy. This is a choice model, not guaranteed prey capture. */
 export function chooseFoodTarget(org: OrganismState, terrain: TerrainMap, grid: SpatialHashGrid,
   config: EcologyConfig, pressureCache: Map<ResourcePatch, { consumers: number; predators: number }>,
-  probe?: SimulationProbe, nearbyOrganisms?: OrganismState[]): FoodCandidate | null {
+  probe?: SimulationProbe, nearbyOrganisms?: OrganismState[], woundedPreyFollowThrough = false): FoodCandidate | null {
   const started = probe?.start();
   try {
   const sensor = org.genome.sensoryRadius;
@@ -109,8 +109,13 @@ export function chooseFoodTarget(org: OrganismState, terrain: TerrainMap, grid: 
       return;
     }
     if (type === 'prey') probe?.count('predator.positiveValueCandidates');
-    const retained = org.targetId === entity.id &&
-      (org.targetType === 'food' || org.targetType === 'carrion') ? score * 1.15 : score;
+    const sameTarget = org.targetId === entity.id &&
+      (org.targetType === 'food' || org.targetType === 'carrion');
+    // Development probe: finish a close, already accepted hunt after a nonlethal strike.
+    // The normal route, speed, and positive-return gates above still apply.
+    const woundedClosePrey = woundedPreyFollowThrough && type === 'prey' && sameTarget &&
+      (entity as OrganismState).health < 100 && distance <= contact * 2;
+    const retained = sameTarget ? score * (woundedClosePrey ? 1.5 : 1.15) : score;
     if (!best || retained > best.score) best = { x: entity.x, y: entity.y, id: entity.id,
       type, entity, score: retained, distance };
     } finally {

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { OrganismState, ResourcePatch, TerrainMap } from '../../types/simulation.js';
+import { ClimateState, OrganismState, ResourcePatch, TerrainMap } from '../../types/simulation.js';
 import { checkMatingCompatibility } from '../genetics/genetics.js';
 import { PRNG } from '../math/prng.js';
 import { SpatialHashGrid } from '../physics/physics.js';
@@ -13,6 +13,37 @@ import { LEGACY_ECOLOGY_CONFIG, type EcologyConfig } from '../ecology/config.js'
 import { chooseFoodTarget, directRouteOpen } from './foraging.js';
 import type { FoodCandidate } from './foraging.js';
 import type { SimulationProbe } from '../performance/probe.js';
+import { projectedPlantGrowth } from '../ecosystem/ecosystem.js';
+
+/** Development-only Model 2 estimate. Each patch and each nearby consumer is counted once. */
+export function estimateRenewableFood(org: OrganismState, neighbors: OrganismState[],
+  terrain: TerrainMap, grid: SpatialHashGrid, climate: ClimateState, soilNutrients: number,
+  growthMultiplier: number, growthCache = new Map<ResourcePatch, number>(), probe?: SimulationProbe) {
+  const reachable = (x: number, y: number) => directRouteOpen(terrain, org.x, org.y, x, y, probe);
+  const connected = neighbors.filter(other => other.state !== 'dead' &&
+    other.genome.diet !== 'carnivore' && (other.id === org.id || reachable(other.x, other.y)));
+  const plantConsumers = Math.max(1, connected.length);
+  const scavengers = Math.max(1, connected.filter(other => other.genome.diet === 'scavenger').length);
+  const interval = 180 + org.genome.gestationTicks;
+  let plantStock = 0, plantProduction = 0, carrionStock = 0;
+  for (const patch of grid.queryFoodRadius(org.x, org.y, org.genome.sensoryRadius)) {
+    if (patch.amount <= 1 || !reachable(patch.x, patch.y)) continue;
+    plantStock += patch.amount;
+    let growth = growthCache.get(patch);
+    if (growth === undefined) {
+      growth = projectedPlantGrowth(patch, terrain, climate, soilNutrients, growthMultiplier);
+      growthCache.set(patch, growth);
+    }
+    plantProduction += growth * interval;
+  }
+  if (org.genome.diet === 'scavenger') {
+    for (const patch of grid.queryCarrionRadius(org.x, org.y, org.genome.sensoryRadius)) {
+      if (patch.amount > .5 && reachable(patch.x, patch.y)) carrionStock += patch.amount;
+    }
+  }
+  return { plantStock, plantProduction, plantConsumers, carrionStock, scavengers,
+    perConsumer: (plantStock + plantProduction) / plantConsumers + carrionStock / scavengers };
+}
 
 export interface HuntKillRecord {
   predator: OrganismState;
@@ -49,7 +80,9 @@ export function updateCreatureBehavior(
   config: EcologyConfig = LEGACY_ECOLOGY_CONFIG,
   probe?: SimulationProbe,
   foodIndexReady = false,
-  experimentalFoodOverride?: (organism: OrganismState, choice: FoodCandidate | null) => FoodCandidate | null
+  experimentalFoodOverride?: (organism: OrganismState, choice: FoodCandidate | null) => FoodCandidate | null,
+  woundedPreyFollowThrough = false,
+  renewableFood?: { climate: ClimateState; soilNutrients: number; growthMultiplier: number }
 ): BehaviorOutput {
   const reproducedParents: Array<{ parentA: OrganismState; parentB: OrganismState; parentCost: number }> = [];
   const kills: HuntKillRecord[] = [];
@@ -61,6 +94,7 @@ export function updateCreatureBehavior(
   if (!foodIndexReady) grid.populateFood(resources);
   const enhancedBehavior = config.behaviorModel === 1 || config.behaviorModel === 2;
   const pressureCache = new Map<ResourcePatch, { consumers: number; predators: number }>();
+  const growthCache = new Map<ResourcePatch, number>();
 
   for (let i = 0; i < organisms.length; i++) {
     const org = organisms[i];
@@ -252,7 +286,8 @@ export function updateCreatureBehavior(
     }
 
     if (enhancedBehavior) {
-      const scoredChoice = chooseFoodTarget(org, terrain, grid, config, pressureCache, probe, neighbors);
+      const scoredChoice = chooseFoodTarget(org, terrain, grid, config, pressureCache, probe, neighbors,
+        woundedPreyFollowThrough);
       const choice = experimentalFoodOverride?.(org, scoredChoice) ?? scoredChoice;
       nearestFoodTarget = choice;
       minFoodDistSq = choice ? choice.distance ** 2 : sensor ** 2;
@@ -403,7 +438,11 @@ export function updateCreatureBehavior(
       }
       sufficientLocalFood = localFood / consumers >= 16 ||
         (org.genome.diet === 'carnivore' && org.energy >= 85);
-      if (config.behaviorModel === 2 && org.genome.diet !== 'carnivore') {
+      if (config.behaviorModel === 2 && org.genome.diet !== 'carnivore' && renewableFood) {
+        sufficientLocalFood = estimateRenewableFood(org, neighbors, terrain, grid,
+          renewableFood.climate, renewableFood.soilNutrients, renewableFood.growthMultiplier,
+          growthCache, probe).perConsumer >= 16;
+      } else if (config.behaviorModel === 2 && org.genome.diet !== 'carnivore') {
         const plantConsumers = Math.max(1, neighbors.filter(other => other.state !== 'dead' &&
           other.genome.diet !== 'carnivore').length);
         sufficientLocalFood = plantFood / plantConsumers + carrionFood / consumers >= 16;
@@ -534,7 +573,7 @@ export function updateCreatureBehavior(
           const energyGained = bite * 1.85 * (org.genome.foodProcessingEfficiency || 1.0) * config.feedingEfficiency;
           const beforeEnergy = org.energy;
           org.energy = Math.min(100, org.energy + energyGained);
-          observer?.onFeeding?.(org, 'plant', bite > 0, org.energy - beforeEnergy);
+          observer?.onFeeding?.(org, 'plant', bite > 0, org.energy - beforeEnergy, bite);
 
           // Decelerate while grazing
           org.ax -= org.vx * 0.35;
@@ -563,7 +602,7 @@ export function updateCreatureBehavior(
           const energyGained = bite * 1.95 * (org.genome.foodProcessingEfficiency || 1.0) * config.feedingEfficiency;
           const beforeEnergy = org.energy;
           org.energy = Math.min(100, org.energy + energyGained);
-          observer?.onFeeding?.(org, 'carrion', bite > 0, org.energy - beforeEnergy);
+          observer?.onFeeding?.(org, 'carrion', bite > 0, org.energy - beforeEnergy, bite);
 
           org.ax -= org.vx * 0.35;
           org.ay -= org.vy * 0.35;

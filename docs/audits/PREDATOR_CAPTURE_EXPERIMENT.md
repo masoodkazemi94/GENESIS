@@ -1,0 +1,33 @@
+# Predator capture and feeding-return experiment
+
+## Mechanism and scope
+
+This focused development experiment examined accepted Model 1 hunts on reused seeds **691153, 260679, 10101**. Production Model 0 and Model 2 are unchanged. The sole candidate is wounded-prey follow-through: if an already selected target has health below 100 and remains within two contact radii, its existing target-retention score is 1.5× rather than 1.15×. The ordinary sight, open-route, speed, and positive expected-return gates still run first; the animal can choose water, rest, flight, or mating. The candidate is available only through an unsaved development option and only affects Model 1. It adds no reserve, damage, prey, or carrion.
+
+The mechanism was suggested by 56 nonlethal strikes among 78 observed Model 1 hunt episodes. However, the archived trace does **not** tie any nonlethal strike to an interrupted hunt. Of 23 abandoned or switched episodes, none ended within 20 distance units of its target (mean final distance 49.7 for switches, 49.8 for abandonments across the combined trace), so short wounded-prey follow-through was only a hypothesis. The candidate is retained solely as a reproducible, isolated negative probe; it is **rejected**, not adopted as a behavior model.
+
+## Execution stages and economics
+
+`chooseFoodTarget` scores visible prey and rejects blocked routes, prey faster than the configured ratio at distance, and nonpositive expected-return candidates. `behavior.ts` then compares food utility with danger, thirst, rest, mate, and wander utilities each tick. A pursuing predator steers at 1.12× its normal speed and 1.3× steering force; physics moves animals after decisions and metabolism. Prey keeps its flee response and movement. At current-position contact, a predator strikes once per decision tick. Damage is 36 times predator damage configuration, body-size ratio, and aggression factor. Nonlethal strikes yield no predator reserve; prey health can recover slowly when well fed and hydrated. A lethal strike grants a headroom-limited transfer based on prey reserve, body size, predator processing, and feeding efficiency, then creates residual carrion. Movement and basal costs continue during pursuit; hunting motion carries the configured pursuit multiplier.
+
+The earlier three-seed, 5,000-tick episode trace separates the failure stages: **23 failed approaches** (15 switches, eight abandonments) spent 194.575 reserve units and produced no kill; **55 completed kills** spent 952.976 active-hunt units and returned 3,383.922. There were 56 nonlethal strikes, but the archived per-episode histories lack strike-to-target attribution, so they cannot establish how many separate contacts failed to kill. The 55 kills were profitable relative to their attributed active-hunt expenditure, while total predator food gain (3,384) was below total predator expenditure (5,353). Most expenditure occurred outside active hunts. All three natural Model 1 worlds had zero predator births, so even successful feeding did not establish reproductive replacement. The reserve cap discarded only 90 possible transfer units across those kills.
+
+Post-kill biomass allocation is **unchanged** by this candidate. The existing rule grants predator reserve `min(headroom, transferCap)` and creates carrion `max(12, preySize × 26 − actualGain × 0.35)`. It does not use one conserved edible-mass budget; the present reserve and carrion units are abstract and cannot be summed as a biomass balance. This probe neither modifies nor double-counts that allocation. A feeding redesign would need an explicit common biomass budget before implementation.
+
+## Matched encounter result and decision
+
+`scripts/predator_capture_experiment.ts` ran ordinary Model 1 worlds until up to eight distinct, genuine nonlethal-strike predator/prey pairs per seed appeared. It cloned the complete tick-end save immediately after each strike, then continued baseline and candidate for up to 120 ticks or until target/predator death. The resulting 22 encounters are natural selected encounters, not independent population replicates. Positive net energy below is focal predator food gain less its metabolism during the branch, not lifetime net energy.
+
+| Seed | Matched encounters | Target captures, baseline → candidate | Strikes / kills, both | Net energy, both | Mean duration, both | Prey / predator deaths, both |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 691153 | 8 | 8 → 8 | 8 / 8 | 584.981 | 9.125 | 8 / 0 |
+| 260679 | 6 | 6 → 6 | 10 / 6 | 332.950 | 3.667 | 6 / 0 |
+| 10101 | 8 | 8 → 8 | 8 / 8 | 463.332 | 2.125 | 8 / 0 |
+
+All 22 branches made contact and captured the original target in both conditions. Combined capture probability was 22/22 in each, strikes per kill 26/22 = 1.182, and net energy 1,381.263 in each. The candidate yielded **zero measured improvement** in contact, capture, duration, prey mortality, predator mortality, or net economics. Selection after an already successful strike is too late to address the observed deficit in these encounters. This saturated, selected sample does not estimate capture probability for every accepted hunt.
+
+**Decision: reject the mechanism.** No paired 5,000-tick population screen, holdout, or long horizon was run because the controlled development gate failed. Consequently no candidate population values for predator reproduction, mature offspring, generation-3+ births, surviving descendants, prey/scavenger populations, or cap occupancy exist. The natural Model 1 baselines had zero predator births and zero predators at tick 5,000 on all three seeds; lineage replacement remains unmet. Do not retune this rule on the same seeds. A future capture hypothesis needs evidence of profitable accepted hunts specifically lost between first contact and kill, or a separately justified finite feeding allocation.
+
+## Determinism and verification
+
+The encounter script asserts exact repeated 30-tick continuation from a candidate save for the first encounter in each seed and verifies that the development flag is absent from saved data. The unchanged version-2 determinism verifier passed all nine Model 0–2 trajectories through tick 2,000, including fresh repeats and save/restore. The full suite passed **106/106** tests, including an existing replay test after an actual predator birth; TypeScript check, lint, and build passed. No candidate predator birth occurred in this controlled test, and no population run was made, so candidate post-birth replay is untested. No ordinary baseline hash differed. See [raw results](data/predator_capture_results.json) for each encounter and per-seed totals.

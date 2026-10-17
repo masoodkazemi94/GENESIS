@@ -1,0 +1,728 @@
+{
+  "schemaVersion": 1,
+  "seeds": [
+    691153,
+    260679,
+    10101
+  ],
+  "ticks": 5000,
+  "sampleEvery": 100,
+  "comparison": "Model 1 ordinary generation vs Model 1 predator-coordinate-only placement",
+  "measurementNotes": "Accessible prey and reachable structurally compatible mates sampled every 100 ticks per living predator; transient cooldown and reserve normalized for mate compatibility. Net energy is feeding gain minus all predator metabolism. Offspring alive at 5000 include immature censored offspring. Runtime includes observer and sampling overhead; candidate runs with births also include a 20-tick replay check.",
+  "results": [
+    {
+      "seed": 691153,
+      "scenario": "baseline",
+      "movedPredators": 0,
+      "initialRoles": {
+        "herbivore": 42,
+        "scavenger": 15,
+        "carnivore": 9
+      },
+      "initialPrngState": 691153,
+      "predatorSamples": 208,
+      "accessiblePrey": 73,
+      "reachableCompatibleMate": 12,
+      "kills": 28,
+      "predatorFoodEnergy": 1908.89,
+      "predatorMetabolicExpenditure": 2520.137,
+      "predatorBirths": 0,
+      "generation3PlusBirths": 0,
+      "herbivoreDeaths": 123,
+      "scavengerDeaths": 90,
+      "preyPredationDeaths": 28,
+      "capTicks": 0,
+      "capBlockedBirths": 0,
+      "minimumPrey": 57,
+      "predatorNetEnergy": -611.246,
+      "accessiblePreyFraction": 0.351,
+      "reachableMateFraction": 0.058,
+      "offspringMature": 0,
+      "offspringReproduced": 0,
+      "descendantsAlive": 0,
+      "offspringCensoredBeforeMaturity": 0,
+      "founderSurvivors": {
+        "herbivore": 0,
+        "scavenger": 0,
+        "carnivore": 0
+      },
+      "finalRoles": {
+        "herbivore": 15,
+        "scavenger": 55,
+        "carnivore": 0
+      },
+      "finalPrey": 70,
+      "preyDepletionFromInitial": -13,
+      "snapshots": [
+        {
+          "tick": 500,
+          "herbivore": 51,
+          "scavenger": 22,
+          "carnivore": 8,
+          "prey": 74
+        },
+        {
+          "tick": 1000,
+          "herbivore": 73,
+          "scavenger": 42,
+          "carnivore": 8,
+          "prey": 116
+        },
+        {
+          "tick": 1500,
+          "herbivore": 88,
+          "scavenger": 61,
+          "carnivore": 6,
+          "prey": 150
+        },
+        {
+          "tick": 2000,
+          "herbivore": 102,
+          "scavenger": 75,
+          "carnivore": 5,
+          "prey": 178
+        },
+        {
+          "tick": 2500,
+          "herbivore": 88,
+          "scavenger": 79,
+          "carnivore": 3,
+          "prey": 168
+        },
+        {
+          "tick": 3000,
+          "herbivore": 66,
+          "scavenger": 67,
+          "carnivore": 3,
+          "prey": 133
+        },
+        {
+          "tick": 3500,
+          "herbivore": 49,
+          "scavenger": 83,
+          "carnivore": 2,
+          "prey": 132
+        },
+        {
+          "tick": 4000,
+          "herbivore": 34,
+          "scavenger": 93,
+          "carnivore": 2,
+          "prey": 127
+        },
+        {
+          "tick": 4500,
+          "herbivore": 21,
+          "scavenger": 74,
+          "carnivore": 0,
+          "prey": 95
+        },
+        {
+          "tick": 5000,
+          "herbivore": 15,
+          "scavenger": 55,
+          "carnivore": 0,
+          "prey": 70
+        }
+      ],
+      "runtimeMs": 3662.546,
+      "postBirthReplay": null
+    },
+    {
+      "seed": 691153,
+      "scenario": "candidate",
+      "movedPredators": 9,
+      "initialRoles": {
+        "herbivore": 42,
+        "scavenger": 15,
+        "carnivore": 9
+      },
+      "initialPrngState": 691153,
+      "predatorSamples": 258,
+      "accessiblePrey": 90,
+      "reachableCompatibleMate": 74,
+      "kills": 39,
+      "predatorFoodEnergy": 2543.032,
+      "predatorMetabolicExpenditure": 3088.991,
+      "predatorBirths": 0,
+      "generation3PlusBirths": 0,
+      "herbivoreDeaths": 111,
+      "scavengerDeaths": 76,
+      "preyPredationDeaths": 39,
+      "capTicks": 0,
+      "capBlockedBirths": 0,
+      "minimumPrey": 57,
+      "predatorNetEnergy": -545.958,
+      "accessiblePreyFraction": 0.349,
+      "reachableMateFraction": 0.287,
+      "offspringMature": 0,
+      "offspringReproduced": 0,
+      "descendantsAlive": 0,
+      "offspringCensoredBeforeMaturity": 0,
+      "founderSurvivors": {
+        "herbivore": 0,
+        "scavenger": 0,
+        "carnivore": 0
+      },
+      "finalRoles": {
+        "herbivore": 12,
+        "scavenger": 102,
+        "carnivore": 0
+      },
+      "finalPrey": 114,
+      "preyDepletionFromInitial": -57,
+      "snapshots": [
+        {
+          "tick": 500,
+          "herbivore": 57,
+          "scavenger": 22,
+          "carnivore": 9,
+          "prey": 79
+        },
+        {
+          "tick": 1000,
+          "herbivore": 72,
+          "scavenger": 37,
+          "carnivore": 9,
+          "prey": 109
+        },
+        {
+          "tick": 1500,
+          "herbivore": 84,
+          "scavenger": 55,
+          "carnivore": 9,
+          "prey": 139
+        },
+        {
+          "tick": 2000,
+          "herbivore": 83,
+          "scavenger": 65,
+          "carnivore": 9,
+          "prey": 148
+        },
+        {
+          "tick": 2500,
+          "herbivore": 67,
+          "scavenger": 70,
+          "carnivore": 7,
+          "prey": 137
+        },
+        {
+          "tick": 3000,
+          "herbivore": 48,
+          "scavenger": 71,
+          "carnivore": 3,
+          "prey": 119
+        },
+        {
+          "tick": 3500,
+          "herbivore": 36,
+          "scavenger": 95,
+          "carnivore": 2,
+          "prey": 131
+        },
+        {
+          "tick": 4000,
+          "herbivore": 23,
+          "scavenger": 120,
+          "carnivore": 1,
+          "prey": 143
+        },
+        {
+          "tick": 4500,
+          "herbivore": 18,
+          "scavenger": 117,
+          "carnivore": 0,
+          "prey": 135
+        },
+        {
+          "tick": 5000,
+          "herbivore": 12,
+          "scavenger": 102,
+          "carnivore": 0,
+          "prey": 114
+        }
+      ],
+      "runtimeMs": 3810.985,
+      "postBirthReplay": null
+    },
+    {
+      "seed": 260679,
+      "scenario": "baseline",
+      "movedPredators": 0,
+      "initialRoles": {
+        "herbivore": 42,
+        "scavenger": 15,
+        "carnivore": 9
+      },
+      "initialPrngState": 260679,
+      "predatorSamples": 200,
+      "accessiblePrey": 141,
+      "reachableCompatibleMate": 63,
+      "kills": 6,
+      "predatorFoodEnergy": 335.733,
+      "predatorMetabolicExpenditure": 1040.516,
+      "predatorBirths": 0,
+      "generation3PlusBirths": 0,
+      "herbivoreDeaths": 111,
+      "scavengerDeaths": 78,
+      "preyPredationDeaths": 6,
+      "capTicks": 0,
+      "capBlockedBirths": 0,
+      "minimumPrey": 57,
+      "predatorNetEnergy": -704.783,
+      "accessiblePreyFraction": 0.705,
+      "reachableMateFraction": 0.315,
+      "offspringMature": 0,
+      "offspringReproduced": 0,
+      "descendantsAlive": 0,
+      "offspringCensoredBeforeMaturity": 0,
+      "founderSurvivors": {
+        "herbivore": 0,
+        "scavenger": 0,
+        "carnivore": 0
+      },
+      "finalRoles": {
+        "herbivore": 15,
+        "scavenger": 67,
+        "carnivore": 0
+      },
+      "finalPrey": 82,
+      "preyDepletionFromInitial": -25,
+      "snapshots": [
+        {
+          "tick": 500,
+          "herbivore": 61,
+          "scavenger": 23,
+          "carnivore": 9,
+          "prey": 84
+        },
+        {
+          "tick": 1000,
+          "herbivore": 81,
+          "scavenger": 38,
+          "carnivore": 9,
+          "prey": 119
+        },
+        {
+          "tick": 1500,
+          "herbivore": 100,
+          "scavenger": 55,
+          "carnivore": 9,
+          "prey": 155
+        },
+        {
+          "tick": 2000,
+          "herbivore": 108,
+          "scavenger": 68,
+          "carnivore": 6,
+          "prey": 176
+        },
+        {
+          "tick": 2500,
+          "herbivore": 93,
+          "scavenger": 65,
+          "carnivore": 3,
+          "prey": 158
+        },
+        {
+          "tick": 3000,
+          "herbivore": 65,
+          "scavenger": 77,
+          "carnivore": 0,
+          "prey": 142
+        },
+        {
+          "tick": 3500,
+          "herbivore": 46,
+          "scavenger": 99,
+          "carnivore": 0,
+          "prey": 145
+        },
+        {
+          "tick": 4000,
+          "herbivore": 35,
+          "scavenger": 94,
+          "carnivore": 0,
+          "prey": 129
+        },
+        {
+          "tick": 4500,
+          "herbivore": 23,
+          "scavenger": 82,
+          "carnivore": 0,
+          "prey": 105
+        },
+        {
+          "tick": 5000,
+          "herbivore": 15,
+          "scavenger": 67,
+          "carnivore": 0,
+          "prey": 82
+        }
+      ],
+      "runtimeMs": 3695.437,
+      "postBirthReplay": null
+    },
+    {
+      "seed": 260679,
+      "scenario": "candidate",
+      "movedPredators": 9,
+      "initialRoles": {
+        "herbivore": 42,
+        "scavenger": 15,
+        "carnivore": 9
+      },
+      "initialPrngState": 260679,
+      "predatorSamples": 236,
+      "accessiblePrey": 167,
+      "reachableCompatibleMate": 171,
+      "kills": 12,
+      "predatorFoodEnergy": 634.16,
+      "predatorMetabolicExpenditure": 1351.367,
+      "predatorBirths": 1,
+      "generation3PlusBirths": 0,
+      "herbivoreDeaths": 125,
+      "scavengerDeaths": 49,
+      "preyPredationDeaths": 12,
+      "capTicks": 0,
+      "capBlockedBirths": 0,
+      "minimumPrey": 57,
+      "predatorNetEnergy": -717.206,
+      "accessiblePreyFraction": 0.708,
+      "reachableMateFraction": 0.725,
+      "offspringMature": 1,
+      "offspringReproduced": 0,
+      "descendantsAlive": 0,
+      "offspringCensoredBeforeMaturity": 0,
+      "founderSurvivors": {
+        "herbivore": 0,
+        "scavenger": 0,
+        "carnivore": 0
+      },
+      "finalRoles": {
+        "herbivore": 22,
+        "scavenger": 35,
+        "carnivore": 0
+      },
+      "finalPrey": 57,
+      "preyDepletionFromInitial": 0,
+      "snapshots": [
+        {
+          "tick": 500,
+          "herbivore": 55,
+          "scavenger": 20,
+          "carnivore": 10,
+          "prey": 75
+        },
+        {
+          "tick": 1000,
+          "herbivore": 83,
+          "scavenger": 29,
+          "carnivore": 10,
+          "prey": 112
+        },
+        {
+          "tick": 1500,
+          "herbivore": 103,
+          "scavenger": 42,
+          "carnivore": 10,
+          "prey": 145
+        },
+        {
+          "tick": 2000,
+          "herbivore": 112,
+          "scavenger": 46,
+          "carnivore": 6,
+          "prey": 158
+        },
+        {
+          "tick": 2500,
+          "herbivore": 109,
+          "scavenger": 38,
+          "carnivore": 4,
+          "prey": 147
+        },
+        {
+          "tick": 3000,
+          "herbivore": 88,
+          "scavenger": 39,
+          "carnivore": 2,
+          "prey": 127
+        },
+        {
+          "tick": 3500,
+          "herbivore": 76,
+          "scavenger": 39,
+          "carnivore": 1,
+          "prey": 115
+        },
+        {
+          "tick": 4000,
+          "herbivore": 61,
+          "scavenger": 40,
+          "carnivore": 0,
+          "prey": 101
+        },
+        {
+          "tick": 4500,
+          "herbivore": 44,
+          "scavenger": 37,
+          "carnivore": 0,
+          "prey": 81
+        },
+        {
+          "tick": 5000,
+          "herbivore": 22,
+          "scavenger": 35,
+          "carnivore": 0,
+          "prey": 57
+        }
+      ],
+      "runtimeMs": 3125.773,
+      "postBirthReplay": {
+        "birthTick": 35,
+        "identical": true
+      }
+    },
+    {
+      "seed": 10101,
+      "scenario": "baseline",
+      "movedPredators": 0,
+      "initialRoles": {
+        "herbivore": 42,
+        "scavenger": 15,
+        "carnivore": 9
+      },
+      "initialPrngState": 10101,
+      "predatorSamples": 177,
+      "accessiblePrey": 69,
+      "reachableCompatibleMate": 47,
+      "kills": 21,
+      "predatorFoodEnergy": 1139.294,
+      "predatorMetabolicExpenditure": 1792.765,
+      "predatorBirths": 0,
+      "generation3PlusBirths": 0,
+      "herbivoreDeaths": 43,
+      "scavengerDeaths": 46,
+      "preyPredationDeaths": 21,
+      "capTicks": 0,
+      "capBlockedBirths": 0,
+      "minimumPrey": 57,
+      "predatorNetEnergy": -653.471,
+      "accessiblePreyFraction": 0.39,
+      "reachableMateFraction": 0.266,
+      "offspringMature": 0,
+      "offspringReproduced": 0,
+      "descendantsAlive": 0,
+      "offspringCensoredBeforeMaturity": 0,
+      "founderSurvivors": {
+        "herbivore": 0,
+        "scavenger": 0,
+        "carnivore": 0
+      },
+      "finalRoles": {
+        "herbivore": 0,
+        "scavenger": 132,
+        "carnivore": 0
+      },
+      "finalPrey": 132,
+      "preyDepletionFromInitial": -75,
+      "snapshots": [
+        {
+          "tick": 500,
+          "herbivore": 41,
+          "scavenger": 23,
+          "carnivore": 9,
+          "prey": 64
+        },
+        {
+          "tick": 1000,
+          "herbivore": 37,
+          "scavenger": 32,
+          "carnivore": 9,
+          "prey": 69
+        },
+        {
+          "tick": 1500,
+          "herbivore": 31,
+          "scavenger": 53,
+          "carnivore": 6,
+          "prey": 84
+        },
+        {
+          "tick": 2000,
+          "herbivore": 28,
+          "scavenger": 67,
+          "carnivore": 4,
+          "prey": 95
+        },
+        {
+          "tick": 2500,
+          "herbivore": 23,
+          "scavenger": 76,
+          "carnivore": 2,
+          "prey": 99
+        },
+        {
+          "tick": 3000,
+          "herbivore": 15,
+          "scavenger": 84,
+          "carnivore": 1,
+          "prey": 99
+        },
+        {
+          "tick": 3500,
+          "herbivore": 7,
+          "scavenger": 116,
+          "carnivore": 0,
+          "prey": 123
+        },
+        {
+          "tick": 4000,
+          "herbivore": 0,
+          "scavenger": 124,
+          "carnivore": 0,
+          "prey": 124
+        },
+        {
+          "tick": 4500,
+          "herbivore": 0,
+          "scavenger": 129,
+          "carnivore": 0,
+          "prey": 129
+        },
+        {
+          "tick": 5000,
+          "herbivore": 0,
+          "scavenger": 132,
+          "carnivore": 0,
+          "prey": 132
+        }
+      ],
+      "runtimeMs": 3495.44,
+      "postBirthReplay": null
+    },
+    {
+      "seed": 10101,
+      "scenario": "candidate",
+      "movedPredators": 9,
+      "initialRoles": {
+        "herbivore": 42,
+        "scavenger": 15,
+        "carnivore": 9
+      },
+      "initialPrngState": 10101,
+      "predatorSamples": 187,
+      "accessiblePrey": 89,
+      "reachableCompatibleMate": 81,
+      "kills": 25,
+      "predatorFoodEnergy": 1269.386,
+      "predatorMetabolicExpenditure": 1918.466,
+      "predatorBirths": 2,
+      "generation3PlusBirths": 0,
+      "herbivoreDeaths": 43,
+      "scavengerDeaths": 47,
+      "preyPredationDeaths": 25,
+      "capTicks": 0,
+      "capBlockedBirths": 0,
+      "minimumPrey": 55,
+      "predatorNetEnergy": -649.08,
+      "accessiblePreyFraction": 0.476,
+      "reachableMateFraction": 0.433,
+      "offspringMature": 2,
+      "offspringReproduced": 0,
+      "descendantsAlive": 0,
+      "offspringCensoredBeforeMaturity": 0,
+      "founderSurvivors": {
+        "herbivore": 0,
+        "scavenger": 0,
+        "carnivore": 0
+      },
+      "finalRoles": {
+        "herbivore": 2,
+        "scavenger": 78,
+        "carnivore": 0
+      },
+      "finalPrey": 81,
+      "preyDepletionFromInitial": -24,
+      "snapshots": [
+        {
+          "tick": 500,
+          "herbivore": 38,
+          "scavenger": 17,
+          "carnivore": 11,
+          "prey": 55
+        },
+        {
+          "tick": 1000,
+          "herbivore": 36,
+          "scavenger": 27,
+          "carnivore": 10,
+          "prey": 63
+        },
+        {
+          "tick": 1500,
+          "herbivore": 30,
+          "scavenger": 39,
+          "carnivore": 5,
+          "prey": 69
+        },
+        {
+          "tick": 2000,
+          "herbivore": 26,
+          "scavenger": 53,
+          "carnivore": 4,
+          "prey": 79
+        },
+        {
+          "tick": 2500,
+          "herbivore": 23,
+          "scavenger": 59,
+          "carnivore": 1,
+          "prey": 82
+        },
+        {
+          "tick": 3000,
+          "herbivore": 17,
+          "scavenger": 68,
+          "carnivore": 1,
+          "prey": 85
+        },
+        {
+          "tick": 3500,
+          "herbivore": 9,
+          "scavenger": 87,
+          "carnivore": 0,
+          "prey": 97
+        },
+        {
+          "tick": 4000,
+          "herbivore": 5,
+          "scavenger": 93,
+          "carnivore": 0,
+          "prey": 99
+        },
+        {
+          "tick": 4500,
+          "herbivore": 3,
+          "scavenger": 92,
+          "carnivore": 0,
+          "prey": 96
+        },
+        {
+          "tick": 5000,
+          "herbivore": 2,
+          "scavenger": 78,
+          "carnivore": 0,
+          "prey": 81
+        }
+      ],
+      "runtimeMs": 2127.06,
+      "postBirthReplay": {
+        "birthTick": 127,
+        "identical": true
+      }
+    }
+  ]
+}

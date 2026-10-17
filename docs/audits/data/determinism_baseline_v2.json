@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 2,
+  "sourceRevision": "054e9e1",
+  "ticks": 2000,
+  "results": [
+    {
+      "model": 0,
+      "seed": 10101,
+      "tick": 2000,
+      "population": 32,
+      "sha256": "2be62d1e1f80da8a8812ebdd568a1e57d3641565062de50b5754fded639938aa"
+    },
+    {
+      "model": 0,
+      "seed": 691153,
+      "tick": 2000,
+      "population": 82,
+      "sha256": "0dc1152eb04cd57cafa8f86abc10f20f2d09e1cc8fbf358063e897e013b11bb6"
+    },
+    {
+      "model": 0,
+      "seed": 260679,
+      "tick": 2000,
+      "population": 89,
+      "sha256": "a9ed054a2f79f3786318c40659bc16fe46d98dd33a7fee2e4f6cafce7bb7ad31"
+    },
+    {
+      "model": 1,
+      "seed": 10101,
+      "tick": 2000,
+      "population": 99,
+      "sha256": "f00fd8670c1205cf915ff3688911fa7f3331effafa0c213f0fb7829a10c4656d"
+    },
+    {
+      "model": 1,
+      "seed": 691153,
+      "tick": 2000,
+      "population": 183,
+      "sha256": "fde3e639060fa668421c1655bdb176a1847217a6457ce6d2ecc79871a3e02506"
+    },
+    {
+      "model": 1,
+      "seed": 260679,
+      "tick": 2000,
+      "population": 182,
+      "sha256": "2816b5917f5e68c801e4553f8ef304fc748ad5a82f69417c646e3802e31ec17d"
+    },
+    {
+      "model": 2,
+      "seed": 10101,
+      "tick": 2000,
+      "population": 116,
+      "sha256": "58861f5f63cf00f00dd50ef0852abf8a7d2bdf671daeb614c8be009b98c68ee3"
+    },
+    {
+      "model": 2,
+      "seed": 691153,
+      "tick": 2000,
+      "population": 172,
+      "sha256": "39fae070d7d812cee495deaa6405bfef511822dfaa479f373db24ba26678d44f"
+    },
+    {
+      "model": 2,
+      "seed": 260679,
+      "tick": 2000,
+      "population": 176,
+      "sha256": "15748bcc4ba1ddd40eeaaea94ed984f0378c3aa420e543d1a35781dfa0c0df6b"
+    }
+  ]
+}

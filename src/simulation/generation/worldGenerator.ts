@@ -13,9 +13,11 @@ import { PRNG } from '../math/prng.js';
 import { createBaseGenome } from '../genetics/genetics.js';
 import { generateSpeciesTaxon } from '../species/species.js';
 import { createOrganism } from '../organism/organism.js';
-import { generateTerrain, findValidSpawnLocation, isValidSpawnCell, WORLD_WIDTH, WORLD_HEIGHT } from '../terrain/terrain.js';
+import { generateTerrain, findValidSpawnLocation, getCellAt, isValidSpawnCell } from '../terrain/terrain.js';
 import { createInitialResources } from '../ecosystem/ecosystem.js';
 import type { EcologyConfig } from '../ecology/config.js';
+import { directRouteOpen } from '../behavior/foraging.js';
+import { checkMatingCompatibility } from '../genetics/genetics.js';
 
 const PLANET_PREFIXES = [
   'Aethel', 'Sylva', 'Oasis', 'Vesper', 'Borea', 'Nyx', 'Kael', 'Thala',
@@ -41,6 +43,83 @@ export interface GeneratedWorld {
   species: SpeciesTaxon[];
   organisms: OrganismState[];
   resources: ResourcePatch[];
+}
+
+/** Development-only, transactional relocation. Failure leaves every founder at its original position. */
+export function placePredatorFounders(world: GeneratedWorld, seed: number): boolean {
+  const predators = world.organisms.filter(o => o.genome.diet === 'carnivore');
+  const prey = world.organisms.filter(o => o.genome.diet !== 'carnivore');
+  if (predators.length < 2 || !prey.length) return false;
+  // Founder cooldowns are transient; evaluate partner compatibility once they expire.
+  const compatible = (a: OrganismState, b: OrganismState) => checkMatingCompatibility(
+    { ...a, reproductiveCooldown: 0, energy: 100 },
+    { ...b, reproductiveCooldown: 0, energy: 100 }).compatible;
+  // The constant separates placement draws from both world generation and simulation draws.
+  const rng = new PRNG((seed ^ 0x706c6163) >>> 0);
+  const occupied = world.organisms.map(o => ({ x: o.x, y: o.y }));
+  const sites: { x: number; y: number; food: number; tie: number }[] = [];
+  const seen = new Set<string>();
+  for (const animal of prey) {
+    for (const [dx, dy] of [[-5, 0], [5, 0], [0, -5], [0, 5], [-4, -4], [4, -4], [-4, 4], [4, 4]]) {
+      const gx = Math.floor(animal.x / world.terrain.cellSize) + dx;
+      const gy = Math.floor(animal.y / world.terrain.cellSize) + dy;
+      const key = `${gx},${gy}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const x = (gx + .5) * world.terrain.cellSize;
+      const y = (gy + .5) * world.terrain.cellSize;
+      const cell = getCellAt(world.terrain, x, y);
+      if (!cell || !isValidSpawnCell(cell) || cell.isFlooded ||
+        occupied.some(o => Math.hypot(o.x - x, o.y - y) < 20)) continue;
+      // Exclude tiny walkable pockets; founders need room to start ordinary movement.
+      const openDirections = [[20, 0], [-20, 0], [0, 20], [0, -20]]
+        .filter(([ox, oy]) => directRouteOpen(world.terrain, x, y, x + ox, y + oy)).length;
+      if (openDirections < 3) continue;
+      const food = prey.filter(o => {
+        const distance = Math.hypot(o.x - x, o.y - y);
+        return distance <= predators[0].genome.sensoryRadius * Math.max(.25, 1 - o.genome.camouflage * .65) &&
+          directRouteOpen(world.terrain, x, y, o.x, o.y);
+      }).length;
+      if (food) sites.push({ x, y, food, tie: rng.next() });
+    }
+  }
+  const chosen: typeof sites = [];
+  const candidates = sites.sort((a, b) => b.food - a.food || b.tie - a.tie).slice(0, 180);
+  for (let index = 0; index + 1 < predators.length; index += 2) {
+    const first = predators[index];
+    const second = predators[index + 1];
+    const pairs: { a: typeof sites[number]; b: typeof sites[number]; score: number }[] = [];
+    if (!compatible(first, second)) return false;
+    const range = Math.min(first.genome.sensoryRadius, second.genome.sensoryRadius) * 1.5;
+    for (const a of candidates) {
+      if (chosen.some(c => Math.hypot(c.x - a.x, c.y - a.y) < 40)) continue;
+      for (const b of candidates) {
+        const distance = Math.hypot(a.x - b.x, a.y - b.y);
+        if (distance < 30 || distance > Math.min(range, 95) ||
+          chosen.some(c => Math.hypot(c.x - b.x, c.y - b.y) < 40) ||
+          !directRouteOpen(world.terrain, a.x, a.y, b.x, b.y)) continue;
+        const spread = chosen.length ? Math.min(...chosen.map(c => Math.hypot(c.x - a.x, c.y - a.y))) : 250;
+        pairs.push({ a, b, score: (a.food + b.food) * 20 + Math.min(spread, 500) * .5 + a.tie + b.tie });
+      }
+    }
+    if (!pairs.length) return false;
+    pairs.sort((a, b) => b.score - a.score);
+    chosen.push(pairs[0].a, pairs[0].b);
+  }
+  // Odd founder counts need a compatible partner in an already selected pair.
+  if (predators.length % 2) {
+    const last = predators[predators.length - 1];
+    const site = candidates.filter(a => chosen.every(c => Math.hypot(c.x - a.x, c.y - a.y) >= 30) &&
+      chosen.some((c, i) => compatible(last, predators[i]) &&
+        Math.hypot(c.x - a.x, c.y - a.y) <= Math.min(last.genome.sensoryRadius,
+          predators[i].genome.sensoryRadius) * 1.5 &&
+        directRouteOpen(world.terrain, a.x, a.y, c.x, c.y)))
+      .sort((a, b) => b.food - a.food || b.tie - a.tie)[0];
+    if (!site) return false;
+    chosen.push(site);
+  }
+  chosen.forEach((site, i) => { predators[i].x = site.x; predators[i].y = site.y; });
+  return true;
 }
 
 export function generateNewWorld(seed: number, config?: EcologyConfig): GeneratedWorld {
