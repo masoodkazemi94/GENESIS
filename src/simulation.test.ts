@@ -47,7 +47,7 @@ import {
 import { createSpatialGrid, populateSpatialGrid, queryNeighbors, updatePhysics } from './simulation/physics/physics.js';
 import { updateCreatureBehavior } from './simulation/behavior/behavior.js';
 import { updateOrganismMetabolism, createOrganism } from './simulation/organism/organism.js';
-import { spawnCarrion, updateResourceEcosystem } from './simulation/ecosystem/ecosystem.js';
+import { createInitialResources, spawnCarrion, updateResourceEcosystem } from './simulation/ecosystem/ecosystem.js';
 import { SpeciesAncestryTree } from './simulation/species/lineageTree.js';
 import { generateSpeciesTaxon } from './simulation/species/species.js';
 import { EventChronicle } from './simulation/events/events.js';
@@ -249,9 +249,32 @@ describe('Genesis Engine - Persistence Validation', () => {
     const serialized = engine.serializeForStorage();
 
     expect(isValidSavedWorld(serialized)).toBe(true);
+    expect(isValidSavedWorld({ ...serialized, ecologyConfig: { ...serialized.ecologyConfig, plantGrowth: NaN } })).toBe(false);
     expect(isValidSavedWorld(null)).toBe(false);
     expect(isValidSavedWorld({})).toBe(false);
     expect(isValidSavedWorld({ version: 1, worldSeed: 'invalid' })).toBe(false);
+  });
+
+  it('restores legacy saves with explicit old carrion reach and complete death counters', () => {
+    const original = new SimulationEngine(12345).serializeForStorage();
+    delete original.ecologyConfig;
+    delete (original.stats.causesOfDeath as Partial<typeof original.stats.causesOfDeath>).thermal;
+    delete (original.stats.causesOfDeath as Partial<typeof original.stats.causesOfDeath>).disaster;
+    const restored = new SimulationEngine(original);
+    expect(restored.ecologyConfig.scavengerCarrionRange).toBeCloseTo(1 / 1.8);
+    expect(restored.causesOfDeath.thermal).toBe(0);
+    expect(restored.causesOfDeath.disaster).toBe(0);
+  });
+
+  it('attributes direct lethal temperature damage to thermal stress', () => {
+    const world = generateNewWorld(12345);
+    const organism = world.organisms[0];
+    organism.health = 1;
+    organism.energy = 80;
+    organism.hydration = 80;
+    updateOrganismMetabolism(organism, organism.genome.heatTolerance + 20);
+    expect(organism.state).toBe('dead');
+    expect(organism.deathCause).toBe('thermal');
   });
 });
 
@@ -538,6 +561,22 @@ describe('Genesis Engine - Basic Resource Ecology & Trophic Roles', () => {
     expect(out.carrionBiomassConsumed).toBeGreaterThan(0);
   });
 
+  it('scavengers detect carrion beyond vision range through their scent range', () => {
+    const world = generateNewWorld(1234);
+    const prng = new PRNG(5678);
+    const scavenger = world.organisms.find(o => o.genome.diet === 'scavenger')!;
+    scavenger.energy = 20;
+    scavenger.hydration = 90;
+    const distance = scavenger.genome.sensoryRadius * 1.4;
+    const carrion: ResourcePatch = { id: 'distant_carrion', x: scavenger.x + distance,
+      y: scavenger.y, type: 'carrion', amount: 40, maxAmount: 40, radius: 15, growthRate: 0 };
+    const grid = createSpatialGrid(world.terrain.worldWidth, world.terrain.worldHeight, 80);
+    grid.populateOrganisms([scavenger]);
+    updateCreatureBehavior([scavenger], [carrion], world.terrain, grid, prng);
+    expect(scavenger.targetId).toBe(carrion.id);
+    expect(scavenger.state).toBe('scavenging');
+  });
+
   it('carrion decomposes over time and recycles nutrients back into the soil', () => {
     const terrain = generateTerrain(998877);
     const prng = new PRNG(112233);
@@ -570,6 +609,24 @@ describe('Genesis Engine - Basic Resource Ecology & Trophic Roles', () => {
     expect(result.recycledSoilNutrients).toBeGreaterThan(0);
   });
 
+  it('plant-only reseeding can restore plants when springs occupy resource slots', () => {
+    const terrain = generateTerrain(998877);
+    const initial = createInitialResources(terrain, new PRNG(112233), 179);
+    const legacy = structuredClone(initial);
+    const plantOnly = structuredClone(initial);
+    const legacyRng = new PRNG(665544);
+    const plantRng = new PRNG(665544);
+    const climate = createInitialClimate();
+    expect(initial.filter(r => r.type === 'plant')).toHaveLength(179);
+    expect(initial.length).toBeGreaterThan(180);
+    for (let i = 0; i < 200; i++) {
+      updateResourceEcosystem(legacy, terrain, climate, 120, legacyRng);
+      updateResourceEcosystem(plantOnly, terrain, climate, 120, plantRng, 1, true);
+    }
+    expect(legacy.filter(r => r.type === 'plant')).toHaveLength(179);
+    expect(plantOnly.filter(r => r.type === 'plant').length).toBeGreaterThan(179);
+  });
+
   it('reproduction expends substantial energy from both parents and charges thermodynamic tax', () => {
     const world = generateNewWorld(4455);
     const prng = new PRNG(6677);
@@ -597,6 +654,29 @@ describe('Genesis Engine - Basic Resource Ecology & Trophic Roles', () => {
     expect(p2.energy).toBeLessThanOrEqual(90 - 35);
     expect(out.reproductionTaxDissipated).toBeGreaterThan(0);
     expect(p1.reproductiveCooldown).toBeGreaterThan(50);
+  });
+
+  it('does not charge parents for a birth blocked by the population cap', () => {
+    const world = generateNewWorld(4455);
+    const prng = new PRNG(6677);
+    const [p1, p2] = world.organisms;
+    p1.isMature = p2.isMature = true;
+    p1.reproductiveCooldown = p2.reproductiveCooldown = 0;
+    p1.energy = p2.energy = 90;
+    p1.hydration = p2.hydration = 80;
+    p2.x = p1.x + 2;
+    p2.y = p1.y;
+    const fillers = Array.from({ length: 218 }, (_, i) => ({ ...p1, id: `dead_${i}`, state: 'dead' as const }));
+    const organisms = [p1, p2, ...fillers];
+    const grid = createSpatialGrid(world.terrain.worldWidth, world.terrain.worldHeight, 80);
+    grid.populateOrganisms(organisms);
+    const output = updateCreatureBehavior(organisms, [], world.terrain, grid, prng);
+    expect(output.reproducedParents).toHaveLength(0);
+    expect(output.reproductionTaxDissipated).toBe(0);
+    expect(p1.energy).toBe(90);
+    expect(p2.energy).toBe(90);
+    expect(p1.reproductiveCooldown).toBe(0);
+    expect(p2.reproductiveCooldown).toBe(0);
   });
 });
 
@@ -1565,6 +1645,7 @@ describe('Genesis Engine - Interconnected Climate & Environmental System', () =>
     targetCell.deterioration = 0.003; // Almost fully healed
     targetCell.burnedCooldown = 0;   // Cooldown expired
     targetCell.ashFertilityBoost = 0.6; // High ash mineral fertility
+    terrain.deterioratedIndices = new Set([100]);
 
     const resources: any[] = [];
     const initialFertility = targetCell.fertility;
@@ -2140,6 +2221,55 @@ describe('Genesis Engine - Architectural Quality Assurance Suite', () => {
       expect(orgB.hydration).toBeCloseTo(orgA.hydration, 3);
       expect(orgB.age).toBe(orgA.age);
     }
+  });
+
+  it('preserves disaster terrain and RNG state across a save', () => {
+    const engine = new SimulationEngine(777334);
+    const cell = engine.terrain.cells[100];
+    cell.deterioration = 0.4;
+    cell.burnedCooldown = 50;
+    cell.ashFertilityBoost = 0.3;
+    cell.fertility = 0.2;
+    engine.terrain.deterioratedIndices = new Set([100]);
+    engine.terrain.modifiedIndices = new Set([100]);
+    for (let tick = 0; tick < 20; tick++) engine.step();
+
+    const saved = structuredClone(engine.serializeForStorage());
+    const restored = new SimulationEngine(saved);
+    expect(restored.terrain.cells[100]).toEqual(engine.terrain.cells[100]);
+    expect(restored.terrain.deterioratedIndices?.has(100)).toBe(true);
+    expect(restored.serializeForStorage().prngState).toBe(saved.prngState);
+
+    for (let tick = 0; tick < 100; tick++) {
+      engine.step();
+      restored.step();
+    }
+    const originalState = engine.serializeForStorage();
+    const restoredState = restored.serializeForStorage();
+    originalState.lastSavedTimestamp = 0;
+    restoredState.lastSavedTimestamp = 0;
+    expect(restoredState).toEqual(originalState);
+  });
+
+  it('records biological generation in taxon and ancestry history', () => {
+    const engine = new SimulationEngine(486400);
+    for (let tick = 0; tick < 2000; tick++) engine.step();
+    const taxonPeak = Math.max(...[...engine.speciesMap.values()].map(species => species.generationPeak));
+    const ancestryPeak = Math.max(...engine.speciesTree.getAllNodes().map(node => node.generationPeak));
+    expect(engine.totalBirths).toBeGreaterThan(0);
+    expect(taxonPeak).toBeGreaterThan(1);
+    expect(ancestryPeak).toBe(taxonPeak);
+    expect(taxonPeak).toBeLessThan(engine.tick);
+  });
+
+  it('retains the complete bounded mutation log in a save', () => {
+    const engine = new SimulationEngine(333777);
+    engine.mutationEvents = Array.from({ length: 120 }, (_, index) => ({
+      id: `mutation_${index}`, tick: index, parentAId: 'parent', offspringId: 'child',
+      speciesId: 'species', traitName: 'speed', oldValue: 1, newValue: 1.1, delta: 0.1,
+    }));
+    const restored = new SimulationEngine(structuredClone(engine.serializeForStorage()));
+    expect(restored.mutationEvents).toEqual(engine.mutationEvents);
   });
 
   it('5. Calendar calculations are consistent', () => {

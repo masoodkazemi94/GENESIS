@@ -8,6 +8,10 @@ import { checkMatingCompatibility } from '../genetics/genetics.js';
 import { PRNG } from '../math/prng.js';
 import { SpatialHashGrid } from '../physics/physics.js';
 import { getCellAt } from '../terrain/terrain.js';
+import type { EcologyObserver } from '../ecology/observer.js';
+import { LEGACY_ECOLOGY_CONFIG, type EcologyConfig } from '../ecology/config.js';
+import { chooseFoodTarget, directRouteOpen } from './foraging.js';
+import type { SimulationProbe } from '../performance/probe.js';
 
 export interface HuntKillRecord {
   predator: OrganismState;
@@ -41,7 +45,11 @@ export function updateCreatureBehavior(
   resources: ResourcePatch[],
   terrain: TerrainMap,
   grid: SpatialHashGrid,
-  prng: PRNG
+  prng: PRNG,
+  observer?: EcologyObserver,
+  config: EcologyConfig = LEGACY_ECOLOGY_CONFIG,
+  probe?: SimulationProbe,
+  foodIndexReady = false
 ): BehaviorOutput {
   const reproducedParents: Array<{ parentA: OrganismState; parentB: OrganismState }> = [];
   const kills: HuntKillRecord[] = [];
@@ -52,11 +60,14 @@ export function updateCreatureBehavior(
   let reproductionTaxDissipated = 0;
 
   // Populate spatial hash grid for fast food and carrion queries
-  grid.populateFood(resources);
+  if (!foodIndexReady) grid.populateFood(resources);
+  const enhancedBehavior = config.behaviorModel === 1 || config.behaviorModel === 2;
+  const pressureCache = new Map<ResourcePatch, { consumers: number; predators: number }>();
 
   for (let i = 0; i < organisms.length; i++) {
     const org = organisms[i];
     if (org.state === 'dead') continue;
+    const decisionStarted = probe?.start();
 
     const sensor = org.genome.sensoryRadius;
     const maxSpeed = org.genome.maxSpeed;
@@ -100,6 +111,7 @@ export function updateCreatureBehavior(
     // =========================================================================
     // 2. HUNGER & FOOD EVALUATION (Differentiated by Trophic Role)
     // =========================================================================
+    const foodStarted = probe?.start();
     const hungerLevel = Math.max(0, (100 - org.energy) / 100);
     let utilityFood = Math.pow(hungerLevel, 1.35) * 0.90;
 
@@ -112,16 +124,15 @@ export function updateCreatureBehavior(
     } | null = null;
     let minFoodDistSq = sensor * sensor;
 
-    if (org.genome.diet === 'carnivore') {
+    if (org.genome.diet === 'carnivore' && org.energy > 74) {
+      utilityFood *= 0.18;
+    }
+
+    if (!enhancedBehavior && org.genome.diet === 'carnivore') {
       // -----------------------------------------------------------------------
       // CARNIVORE: Hunt prey only when energy demand justifies it
       // Predators do not hunt endlessly when satiated!
       // -----------------------------------------------------------------------
-      if (org.energy > 74) {
-        // Satiated predator: hunting utility is heavily discounted
-        utilityFood *= 0.18;
-      }
-
       for (let j = 0; j < neighbors.length; j++) {
         const candidate = neighbors[j];
         if (candidate.state === 'dead' || candidate.id === org.id) continue;
@@ -147,11 +158,13 @@ export function updateCreatureBehavior(
           }
         }
       }
-    } else if (org.genome.diet === 'scavenger') {
+    } else if (!enhancedBehavior && org.genome.diet === 'scavenger') {
       // -----------------------------------------------------------------------
       // SCAVENGER: Prioritize decomposing carrion via keen olfactory sensing (1.8x range)
       // -----------------------------------------------------------------------
-      const nearbyCarrion = grid.queryCarrionRadius(org.x, org.y, sensor * 1.8);
+      const carrionRange = sensor * 1.8 * config.scavengerCarrionRange;
+      minFoodDistSq = carrionRange * carrionRange;
+      const nearbyCarrion = grid.queryCarrionRadius(org.x, org.y, carrionRange);
       for (let c = 0; c < nearbyCarrion.length; c++) {
         const carrion = nearbyCarrion[c];
         if (carrion.amount <= 0.5) continue;
@@ -190,7 +203,7 @@ export function updateCreatureBehavior(
           }
         }
       }
-    } else {
+    } else if (!enhancedBehavior) {
       // -----------------------------------------------------------------------
       // HERBIVORE & OMNIVORE: Graze plant biomass from flora patches
       // -----------------------------------------------------------------------
@@ -240,9 +253,17 @@ export function updateCreatureBehavior(
       }
     }
 
+    if (enhancedBehavior) {
+      const choice = chooseFoodTarget(org, terrain, grid, config, pressureCache, probe, neighbors);
+      nearestFoodTarget = choice;
+      minFoodDistSq = choice ? choice.distance ** 2 : sensor ** 2;
+      if (choice) utilityFood *= Math.min(1, choice.score / 8);
+    }
+
     if (!nearestFoodTarget) {
       utilityFood *= 0.38; // Can't satisfy hunger without nearby target
     }
+    if (foodStarted !== undefined) probe?.end('behavior.foodDiscovery', foodStarted);
 
     // =========================================================================
     // 3. THIRST & WATER EVALUATION (Rivers, Lakes, Springs, Wetland Shores)
@@ -328,33 +349,86 @@ export function updateCreatureBehavior(
     if (org.energy < 22 && utilityDanger < 0.3) {
       utilityRest = (1.0 - org.energy / 100) * 0.80;
     }
+    if (enhancedBehavior && org.genome.diet === 'carnivore' &&
+      !nearestFoodTarget && org.energy < 70) {
+      // Wait instead of burning movement energy on an unfavorable chase.
+      utilityRest = Math.max(utilityRest, (.75 - org.energy / 100) * .9);
+    }
 
     // =========================================================================
     // 5. REPRODUCTION & MATING EVALUATION
     // =========================================================================
+    const mateStarted = probe?.start();
     let utilityMate = 0;
     let mateTarget: OrganismState | null = null;
-    let minMateDistSq = sensor * sensor;
+    const mateRange = sensor * config.mateDetectionRange * (enhancedBehavior ? 1.5 : 1);
+    let minMateDistSq = mateRange ** 2;
+    let bestMateScore = minMateDistSq;
 
-    const canMate =
+    const effectiveFertilityThreshold = org.genome.fertilityThreshold *
+      (org.genome.diet === 'herbivore' ? config.herbivoreFertilityThreshold : 1);
+    const basicCanMate =
       org.isMature &&
       org.reproductiveCooldown === 0 &&
-      org.energy >= org.genome.fertilityThreshold &&
+      org.energy >= effectiveFertilityThreshold &&
       org.hydration >= 35 &&
       org.age < org.maxAge * 0.88;
+    let sufficientLocalFood = true;
+    if (enhancedBehavior && basicCanMate) {
+      const densityStarted = probe?.start();
+      const consumers = Math.max(1, neighbors.filter(other => other.state !== 'dead' &&
+        other.genome.diet === org.genome.diet).length);
+      const plants = grid.queryFoodRadius(org.x, org.y, sensor);
+      let localFood = 0;
+      let plantFood = 0;
+      let carrionFood = 0;
+      if (org.genome.diet === 'carnivore') {
+        localFood = neighbors.filter(other => other.state !== 'dead' && other.genome.diet !== 'carnivore' &&
+          directRouteOpen(terrain, org.x, org.y, other.x, other.y, probe)).length * 35;
+      } else {
+        for (const patch of plants) {
+          if (patch.amount > 1.5 && directRouteOpen(terrain, org.x, org.y, patch.x, patch.y, probe)) {
+            localFood += patch.amount;
+            plantFood += patch.amount;
+          }
+        }
+        if (org.genome.diet === 'scavenger') {
+          for (const patch of grid.queryCarrionRadius(org.x, org.y, sensor)) {
+            if (patch.amount > .5 && directRouteOpen(terrain, org.x, org.y, patch.x, patch.y, probe)) {
+              localFood += patch.amount;
+              carrionFood += patch.amount;
+            }
+          }
+        }
+      }
+      sufficientLocalFood = localFood / consumers >= 16 ||
+        (org.genome.diet === 'carnivore' && org.energy >= 85);
+      if (config.behaviorModel === 2 && org.genome.diet !== 'carnivore') {
+        const plantConsumers = Math.max(1, neighbors.filter(other => other.state !== 'dead' &&
+          other.genome.diet !== 'carnivore').length);
+        sufficientLocalFood = plantFood / plantConsumers + carrionFood / consumers >= 16;
+      }
+      if (densityStarted !== undefined) probe?.end('behavior.localFoodDensity', densityStarted);
+    }
+    const canMate = basicCanMate && sufficientLocalFood;
 
     if (canMate) {
-      const fertilitySurplus = (org.energy - org.genome.fertilityThreshold) / (100 - org.genome.fertilityThreshold);
+      const fertilitySurplus = (org.energy - effectiveFertilityThreshold) / (100 - effectiveFertilityThreshold);
       utilityMate = Math.max(0, fertilitySurplus) * 0.82;
 
-      for (let j = 0; j < neighbors.length; j++) {
-        const candidate = neighbors[j];
+      const mateNeighbors = mateRange === sensor ? neighbors : grid.queryRadius(org.x, org.y, mateRange);
+      for (let j = 0; j < mateNeighbors.length; j++) {
+        const candidate = mateNeighbors[j];
         if (candidate.state === 'dead' || candidate.id === org.id) continue;
         if (checkMatingCompatibility(org, candidate).compatible) {
           const dx = candidate.x - org.x;
           const dy = candidate.y - org.y;
           const distSq = dx * dx + dy * dy;
-          if (distSq < minMateDistSq) {
+          if (enhancedBehavior && !directRouteOpen(terrain, org.x, org.y, candidate.x, candidate.y, probe)) continue;
+          const retainedDistSq = enhancedBehavior && org.targetType === 'mate' && org.targetId === candidate.id
+            ? distSq * .82 : distSq;
+          if (retainedDistSq < bestMateScore) {
+            bestMateScore = retainedDistSq;
             minMateDistSq = distSq;
             mateTarget = candidate;
           }
@@ -365,6 +439,7 @@ export function updateCreatureBehavior(
         utilityMate *= 0.35;
       }
     }
+    if (mateStarted !== undefined) probe?.end('behavior.mateSearch', mateStarted);
 
     // Baseline exploration/wander utility
     const utilityWander = 0.20;
@@ -373,6 +448,26 @@ export function updateCreatureBehavior(
     // 6. UTILITY ARBITRATION (Select Winner with Highest Score)
     // =========================================================================
     const maxUtility = Math.max(utilityDanger, utilityFood, utilityThirst, utilityRest, utilityMate, utilityWander);
+
+    observer?.onDecision?.(org, {
+      foodType: nearestFoodTarget?.type ?? null,
+      foodTargetId: nearestFoodTarget?.id ?? null,
+      foodDistance: nearestFoodTarget ? Math.sqrt(minFoodDistSq) : null,
+      foodContactRange: nearestFoodTarget?.type === 'prey'
+        ? org.collisionRadius + (nearestFoodTarget.entity as OrganismState).collisionRadius + 3.5
+        : nearestFoodTarget?.entity
+        ? org.collisionRadius + (nearestFoodTarget.entity as ResourcePatch).radius * 0.6 + 4
+        : null,
+      waterType: nearestWaterTarget?.type ?? null,
+      waterDistance: nearestWaterTarget ? Math.sqrt(minWaterDistSq) : null,
+      mateDistance: mateTarget ? Math.sqrt(minMateDistSq) : null,
+      canMate,
+      action: maxUtility === utilityDanger && nearestPredator ? 'flee'
+        : maxUtility === utilityRest ? 'rest'
+        : maxUtility === utilityFood && nearestFoodTarget ? 'food'
+        : maxUtility === utilityThirst && nearestWaterTarget ? 'water'
+        : maxUtility === utilityMate && mateTarget ? 'mate' : 'wander',
+    });
 
     if (maxUtility === utilityDanger && nearestPredator) {
       // -----------------------------------------------------------------------
@@ -436,8 +531,10 @@ export function updateCreatureBehavior(
           plantBiomassConsumed += bite;
 
           // Herbivore assimilation efficiency scaled by foodProcessingEfficiency
-          const energyGained = bite * 1.85 * (org.genome.foodProcessingEfficiency || 1.0);
+          const energyGained = bite * 1.85 * (org.genome.foodProcessingEfficiency || 1.0) * config.feedingEfficiency;
+          const beforeEnergy = org.energy;
           org.energy = Math.min(100, org.energy + energyGained);
+          observer?.onFeeding?.(org, 'plant', bite > 0, org.energy - beforeEnergy);
 
           // Decelerate while grazing
           org.ax -= org.vx * 0.35;
@@ -463,8 +560,10 @@ export function updateCreatureBehavior(
           carrionBiomassConsumed += bite;
 
           // High detritivore digestive efficiency scaled by foodProcessingEfficiency
-          const energyGained = bite * 1.95 * (org.genome.foodProcessingEfficiency || 1.0);
+          const energyGained = bite * 1.95 * (org.genome.foodProcessingEfficiency || 1.0) * config.feedingEfficiency;
+          const beforeEnergy = org.energy;
           org.energy = Math.min(100, org.energy + energyGained);
+          observer?.onFeeding?.(org, 'carrion', bite > 0, org.energy - beforeEnergy);
 
           org.ax -= org.vx * 0.35;
           org.ay -= org.vy * 0.35;
@@ -484,7 +583,7 @@ export function updateCreatureBehavior(
         if (dist <= strikeRange) {
           // ACTION: STRIKE PREY (scaled by body size and aggression)
           org.state = 'hunting';
-          const damage = 36 * (org.genome.bodySize / (prey.genome.bodySize || 1)) * (1 + org.genome.aggression * 0.35);
+          const damage = 36 * config.predatorDamage * (org.genome.bodySize / (prey.genome.bodySize || 1)) * (1 + org.genome.aggression * 0.35);
           prey.health -= damage;
 
           if (prey.health <= 0) {
@@ -494,9 +593,10 @@ export function updateCreatureBehavior(
             // Predator energy transfer scaled by food processing efficiency
             const transferCap =
               Math.min(prey.energy * 0.75 + prey.genome.bodySize * 20, 55 * prey.genome.bodySize) *
-              (org.genome.foodProcessingEfficiency || 1.0);
+              (org.genome.foodProcessingEfficiency || 1.0) * config.feedingEfficiency;
             const actualGain = Math.min(100 - org.energy, transferCap);
             org.energy += actualGain;
+            observer?.onFeeding?.(org, 'prey', true, actualGain);
             org.kills += 1;
 
             // Residual carcass mass that remains as carrion for scavengers
@@ -508,6 +608,8 @@ export function updateCreatureBehavior(
               energyGained: actualGain,
               residualCarrionMass: residualMass,
             });
+          } else {
+            observer?.onFeeding?.(org, 'prey', false, 0);
           }
 
           org.ax -= org.vx * 0.3;
@@ -574,7 +676,13 @@ export function updateCreatureBehavior(
       const dist = Math.hypot(dx, dy);
       const contactDist = org.collisionRadius + mateTarget.collisionRadius + 4;
 
-      if (dist <= contactDist) {
+      if (dist <= contactDist && organisms.length + reproducedParents.length >= 220) {
+        // A failed capacity check must not charge either parent or start gestation.
+        observer?.onBirthBlocked?.('population_cap');
+        org.state = 'locating_mate';
+        org.ax -= org.vx * 0.5;
+        org.ay -= org.vy * 0.5;
+      } else if (dist <= contactDist) {
         // ACTION: REPRODUCE
         // Both parents pay an actual energy cost based on reproductive investment
         const avgReproInvestment = (org.genome.reproductiveInvestment + mateTarget.genome.reproductiveInvestment) / 2;
@@ -647,6 +755,7 @@ export function updateCreatureBehavior(
         org.ay += Math.sin(repelAngle) * repelForce;
       }
     }
+    if (decisionStarted !== undefined) probe?.end('behavior.organismDecision', decisionStarted);
   }
 
   return {

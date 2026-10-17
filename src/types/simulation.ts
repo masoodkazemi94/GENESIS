@@ -80,13 +80,15 @@ export interface PopulationTraitAverages {
   avgColdTolerance: number;
 }
 
-export type CauseOfDeath = 'starvation' | 'dehydration' | 'predation' | 'senescence';
+export type CauseOfDeath = 'starvation' | 'dehydration' | 'predation' | 'senescence' | 'thermal' | 'disaster';
 
 export interface CauseOfDeathStats {
   starvation: number;
   dehydration: number;
   predation: number;
   senescence: number;
+  thermal: number;
+  disaster: number;
 }
 
 export interface EnergyAccountingLedger {
@@ -312,6 +314,7 @@ export interface TerrainMap {
   cellSize: number;          // 10
   cells: TerrainCell[];      // flat 1D array of 65536 cells
   deterioratedIndices?: Set<number>;
+  modifiedIndices?: Set<number>;
 }
 
 export interface SimulationEvent {
@@ -398,6 +401,7 @@ export interface SimulationSnapshot {
 
 export interface SavedWorldData {
   version: number;
+  ecologyConfig?: import('../simulation/ecology/config.js').EcologyConfig;
   worldSeed: number;
   worldName: string;
   createdTimestamp: number;
@@ -415,6 +419,11 @@ export interface SavedWorldData {
   maxObservedAge?: number;
   totalHabitatDeterioration?: number;
   biosphereExtinctLogged?: boolean;
+  lastApexKills?: number;
+  totalDeathAgeTicks?: number;
+  archivedEventsCount?: number;
+  nextEventId?: number;
+  terrainPatches?: Array<{ index: number; fertility: number; plantSuitability: number; isFlooded?: boolean; deterioration?: number; ashFertilityBoost?: number; burnedCooldown?: number }>;
   calendar?: {
     year: number;
     dayOfYear: number;

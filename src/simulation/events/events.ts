@@ -33,6 +33,7 @@ export class EventChronicle {
   private maxEphemeral: number;
   private maxMilestones: number;
   private archivedEventsCount = 0;
+  private nextEventId = 0;
 
   constructor(maxEphemeral = 60, maxMilestones = 180) {
     this.maxEphemeral = maxEphemeral;
@@ -55,9 +56,9 @@ export class EventChronicle {
     const isMilestone = extra?.isMilestone ?? MILESTONE_TYPES.has(type);
 
     const event: SimulationEvent = {
-      id: `evt_${tick}_${Math.random().toString(36).slice(2, 7)}`,
+      id: `evt_${tick}_${this.nextEventId++}`,
       tick,
-      timestamp: Date.now(),
+      timestamp: tick * 50,
       type,
       title,
       description,
@@ -141,8 +142,14 @@ export class EventChronicle {
     return this.archivedEventsCount;
   }
 
-  restoreEvents(events: SimulationEvent[]): void {
+  getNextEventId(): number {
+    return this.nextEventId;
+  }
+
+  restoreEvents(events: SimulationEvent[], archivedEventsCount = 0, nextEventId?: number): void {
     this.events = events.slice();
+    this.archivedEventsCount = archivedEventsCount;
+    this.nextEventId = nextEventId ?? events.length + archivedEventsCount;
     this.compactHistory();
   }
 }

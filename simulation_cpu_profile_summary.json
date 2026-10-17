@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "seed": 166064,
+  "model": 1,
+  "warmupTicks": 3500,
+  "measuredTicks": 2000,
+  "meanPopulation": 198.2085,
+  "profileDurationMs": 3589.125,
+  "sampleCount": 2850,
+  "topSelfFrames": [
+    {
+      "frame": "(anonymous) @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/behavior/foraging.ts:1",
+      "samples": 1348,
+      "sampledMs": 1689.2079999999949
+    },
+    {
+      "frame": "updateCreatureBehavior @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/behavior/behavior.ts:4",
+      "samples": 355,
+      "sampledMs": 442.5789999999996
+    },
+    {
+      "frame": "queryRadius @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/physics/physics.ts:4",
+      "samples": 229,
+      "sampledMs": 283.33699999999993
+    },
+    {
+      "frame": "queryCarrionRadius @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/physics/physics.ts:4",
+      "samples": 219,
+      "sampledMs": 273.709
+    },
+    {
+      "frame": "directRouteOpen @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/behavior/foraging.ts:1",
+      "samples": 191,
+      "sampledMs": 238.335
+    },
+    {
+      "frame": "chooseFoodTarget @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/behavior/foraging.ts:1",
+      "samples": 148,
+      "sampledMs": 184.99699999999999
+    },
+    {
+      "frame": "queryWaterRadius @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/physics/physics.ts:4",
+      "samples": 70,
+      "sampledMs": 87.499
+    },
+    {
+      "frame": "step @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/engine.ts:4",
+      "samples": 53,
+      "sampledMs": 63.791
+    },
+    {
+      "frame": "__name @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/behavior/foraging.ts:1",
+      "samples": 45,
+      "sampledMs": 56.041999999999994
+    },
+    {
+      "frame": "updatePhysics @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/physics/physics.ts:4",
+      "samples": 42,
+      "sampledMs": 51.834
+    },
+    {
+      "frame": "updateOrganismMetabolism @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/organism/organism.ts:4",
+      "samples": 32,
+      "sampledMs": 39
+    },
+    {
+      "frame": "set filename @ :0",
+      "samples": 29,
+      "sampledMs": 38.209
+    },
+    {
+      "frame": "post @ node:inspector:115",
+      "samples": 1,
+      "sampledMs": 31.625
+    },
+    {
+      "frame": "queryFoodRadius @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/physics/physics.ts:4",
+      "samples": 26,
+      "sampledMs": 31.33300000000001
+    },
+    {
+      "frame": "updateResourceEcosystem @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/ecosystem/ecosystem.ts:4",
+      "samples": 15,
+      "sampledMs": 18.834000000000003
+    },
+    {
+      "frame": "(garbage collector) @ :0",
+      "samples": 15,
+      "sampledMs": 18.792
+    },
+    {
+      "frame": "populateFood @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/physics/physics.ts:4",
+      "samples": 11,
+      "sampledMs": 13.792
+    },
+    {
+      "frame": "populateOrganisms @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/physics/physics.ts:4",
+      "samples": 6,
+      "sampledMs": 7.5
+    },
+    {
+      "frame": "(anonymous) @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/scripts/cpu_profile_steady.ts:0",
+      "samples": 4,
+      "sampledMs": 5.042
+    },
+    {
+      "frame": "gaussian @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/math/prng.ts:4",
+      "samples": 3,
+      "sampledMs": 3.75
+    },
+    {
+      "frame": "getEffectiveLocalTemperature @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/terrain/environment.ts:4",
+      "samples": 3,
+      "sampledMs": 3.75
+    },
+    {
+      "frame": "populateSpatialGrid @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/physics/physics.ts:4",
+      "samples": 2,
+      "sampledMs": 2.5
+    },
+    {
+      "frame": "calculateGeneticDistance @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/genetics/genetics.ts:4",
+      "samples": 1,
+      "sampledMs": 1.25
+    },
+    {
+      "frame": "checkMatingCompatibility @ file:///Users/mohammadgarmabi/Documents/workspace/GENESIS/src/simulation/genetics/genetics.ts:4",
+      "samples": 1,
+      "sampledMs": 1.25
+    },
+    {
+      "frame": "(program) @ :0",
+      "samples": 1,
+      "sampledMs": 0
+    }
+  ]
+}

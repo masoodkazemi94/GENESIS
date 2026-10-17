@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "experiment": "fixed seeds; natural, colocated prey, and prey removal; no parameter retune",
+  "sampleEvery": 100,
+  "ticks": 5000,
+  "results": [
+    {
+      "model": 1,
+      "scenario": "natural",
+      "seed": 691153,
+      "ticks": 5000,
+      "elapsedMs": 4320.475,
+      "finalPredators": 0,
+      "finalPrey": 70,
+      "initialPredators": 9,
+      "initialPrey": 57,
+      "predatorDecisions": 21377,
+      "preyTargets": 3963,
+      "pursuits": 2492,
+      "restDecisions": 11905,
+      "strikeAttempts": 54,
+      "kills": 28,
+      "killEnergy": 1908.8903488756832,
+      "foodEnergy": 1908.8903488756832,
+      "births": 0,
+      "deaths": {
+        "starvation": 4,
+        "senescence": 5
+      },
+      "deathAgeSum": 24017,
+      "energySpent": {
+        "basal": 1664.951878018318,
+        "movement": 829.1489030059518,
+        "thermal": 26.036025610654004,
+        "flood": 0
+      },
+      "energyByState": {
+        "wandering": 1207.194880449835,
+        "resting": 557.9541840565266,
+        "hunting": 637.719712347395,
+        "dead": 0.2433629819464329,
+        "drinking": 116.30194172021044,
+        "locating_mate": 0.7227250787817212
+      },
+      "preyEncounterSamples": 76,
+      "predatorSamples": 208,
+      "accessiblePreySamples": 73,
+      "compatibleMateSamples": 38,
+      "nearbyCompatibleMateSamples": 0,
+      "preyDensitySum": 6164,
+      "predatorCountSum": 208,
+      "captureSuccessRate": 0.519,
+      "energyPerKill": 68.175,
+      "meanDeathAge": 2668.556,
+      "rejectionCounts": {
+        "predator.preyEvaluations": 11199,
+        "predator.rejectNegativeValue": 5392,
+        "predator.rejectOutOfRange": 20534,
+        "predator.positiveValueCandidates": 5807,
+        "predator.rejectBlockedRoute": 673
+      }
+    },
+    {
+      "model": 1,
+      "scenario": "natural",
+      "seed": 260679,
+      "ticks": 5000,
+      "elapsedMs": 4410.697,
+      "finalPredators": 0,
+      "finalPrey": 82,
+      "initialPredators": 9,
+      "initialPrey": 57,
+      "predatorDecisions": 20376,
+      "preyTargets": 3389,
+      "pursuits": 1051,
+      "restDecisions": 15768,
+      "strikeAttempts": 16,
+      "kills": 6,
+      "killEnergy": 335.73302965216755,
+      "foodEnergy": 335.73302965216755,
+      "births": 0,
+      "deaths": {
+        "starvation": 7,
+        "senescence": 2
+      },
+      "deathAgeSum": 22267,
+      "energySpent": {
+        "basal": 824.993506512467,
+        "movement": 215.52217336245798,
+        "thermal": 0,
+        "flood": 0
+      },
+      "energyByState": {
+        "wandering": 406.0927794083211,
+        "locating_mate": 3.2861941866084834,
+        "resting": 482.00342763214974,
+        "hunting": 123.51985099963476,
+        "drinking": 25.548115045997804,
+        "dead": 0.0653126023455961
+      },
+      "preyEncounterSamples": 144,
+      "predatorSamples": 200,
+      "accessiblePreySamples": 141,
+      "compatibleMateSamples": 18,
+      "nearbyCompatibleMateSamples": 8,
+      "preyDensitySum": 6464,
+      "predatorCountSum": 200,
+      "captureSuccessRate": 0.375,
+      "energyPerKill": 55.956,
+      "meanDeathAge": 2474.111,
+      "rejectionCounts": {
+        "predator.rejectOutOfRange": 58600,
+        "predator.preyEvaluations": 34551,
+        "predator.rejectNegativeValue": 24073,
+        "predator.rejectTooFast": 5727,
+        "predator.rejectBlockedRoute": 1386,
+        "predator.positiveValueCandidates": 4751
+      }
+    },
+    {
+      "model": 1,
+      "scenario": "natural",
+      "seed": 10101,
+      "ticks": 5000,
+      "elapsedMs": 2950.045,
+      "finalPredators": 0,
+      "finalPrey": 132,
+      "initialPredators": 9,
+      "initialPrey": 57,
+      "predatorDecisions": 18253,
+      "preyTargets": 2830,
+      "pursuits": 1567,
+      "restDecisions": 13349,
+      "strikeAttempts": 41,
+      "kills": 21,
+      "killEnergy": 1139.2938525411544,
+      "foodEnergy": 1139.2938525411544,
+      "births": 0,
+      "deaths": {
+        "starvation": 6,
+        "thermal": 1,
+        "senescence": 2
+      },
+      "deathAgeSum": 20889,
+      "energySpent": {
+        "basal": 1214.7231312363972,
+        "movement": 470.16847258695987,
+        "thermal": 107.87302613608172,
+        "flood": 0
+      },
+      "energyByState": {
+        "wandering": 565.8468273167974,
+        "resting": 669.6420351239104,
+        "hunting": 400.8982631899248,
+        "drinking": 155.9445309665565,
+        "dead": 0.4329733623718113
+      },
+      "preyEncounterSamples": 74,
+      "predatorSamples": 177,
+      "accessiblePreySamples": 69,
+      "compatibleMateSamples": 9,
+      "nearbyCompatibleMateSamples": 2,
+      "preyDensitySum": 4962,
+      "predatorCountSum": 177,
+      "captureSuccessRate": 0.512,
+      "energyPerKill": 54.252,
+      "meanDeathAge": 2321,
+      "rejectionCounts": {
+        "predator.preyEvaluations": 13007,
+        "predator.rejectNegativeValue": 8551,
+        "predator.rejectOutOfRange": 27866,
+        "predator.rejectBlockedRoute": 761,
+        "predator.positiveValueCandidates": 4456
+      }
+    }
+  ]
+}

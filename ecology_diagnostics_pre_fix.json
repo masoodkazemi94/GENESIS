@@ -1,0 +1,1376 @@
+{
+  "schemaVersion": 1,
+  "method": "observer hooks plus 100-tick spatial samples",
+  "seeds": [
+    691297,
+    260679,
+    853895,
+    486400,
+    497022,
+    166064,
+    875922,
+    615480,
+    159286,
+    954366
+  ],
+  "ticksPerSeed": 10000,
+  "totalTicks": 100000,
+  "results": [
+    {
+      "seed": 691297,
+      "ticks": 10000,
+      "elapsedSeconds": 0.544,
+      "finalPopulation": 0,
+      "births": 0,
+      "deathsTotal": 66,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 86636,
+        "flee": 2879,
+        "food": 25569,
+        "rest": 9980,
+        "water": 20272
+      },
+      "feeding": {
+        "prey_failed": 20,
+        "prey_success": 20,
+        "plant_success": 761,
+        "carrion_success": 59
+      },
+      "deaths": {
+        "sp_0_5130:predation": 3,
+        "sp_0_1464:predation": 10,
+        "sp_0_8711:predation": 7,
+        "sp_0_2198:starvation": 9,
+        "sp_0_1464:starvation": 3,
+        "sp_0_8711:starvation": 5,
+        "sp_0_1464:senescence": 5,
+        "sp_0_8711:senescence": 12,
+        "sp_0_5130:senescence": 11,
+        "sp_0_5130:starvation": 1
+      },
+      "deathGenerations": {
+        "1:predation": 20,
+        "1:starvation": 18,
+        "1:senescence": 28
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 80713,
+          "visibleFood": 73409,
+          "foodSelected": 14020,
+          "mateReady": 7616,
+          "mateFound": 2539
+        },
+        "scavenger": {
+          "total": 47608,
+          "visibleFood": 18058,
+          "foodSelected": 10226,
+          "mateReady": 297,
+          "mateFound": 3
+        },
+        "carnivore": {
+          "total": 17015,
+          "visibleFood": 1978,
+          "foodSelected": 1323,
+          "mateReady": 4133,
+          "mateFound": 0
+        }
+      },
+      "foodVisible": 93445,
+      "foodDecisions": 25569,
+      "travel": {
+        "started": 1161,
+        "reached": 840,
+        "abandoned": 321,
+        "elapsedTicks": 14755,
+        "initialDistance": 72732.49207289112,
+        "successRate": 0.724,
+        "meanTimeToFeedTicks": 17.565,
+        "meanStartingDistance": 62.646
+      },
+      "energy": {
+        "gainedFromFood": 13735.962,
+        "metabolicSpent": 16587.444,
+        "ratio": 0.828
+      },
+      "reproduction": {
+        "births": 0,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 0,
+        "mutationsPerBirth": null
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 215.04,
+        "meanGlobalPlantBiomass": 11772.646,
+        "sampledOrganisms": 1416,
+        "meanLocalPlantPatches": 5.359,
+        "meanLocalPlantBiomass": 273.762,
+        "meanLocalCarrionPatches": 0.138,
+        "meanLocalSpringPatches": 0.172,
+        "meanPlantNearestNeighborDistance": 50.665
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 992,
+        "matesWithinSensor": 138,
+        "meanNearestCompatibleMateDistance": 302.691
+      },
+      "genetics": {
+        "maxChildDivergence": 0,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0,
+        "isolatedPairSamples": 0,
+        "pairSamples": 17124
+      }
+    },
+    {
+      "seed": 260679,
+      "ticks": 10000,
+      "elapsedSeconds": 0.908,
+      "finalPopulation": 10,
+      "births": 114,
+      "deathsTotal": 170,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 185821,
+        "flee": 8231,
+        "mate": 5780,
+        "food": 109031,
+        "water": 48543,
+        "rest": 69230
+      },
+      "feeding": {
+        "plant_success": 4148,
+        "prey_failed": 40,
+        "prey_success": 28,
+        "carrion_success": 57
+      },
+      "deaths": {
+        "sp_0_5427:predation": 7,
+        "sp_0_1124:predation": 4,
+        "sp_0_9572:predation": 17,
+        "sp_0_8430:starvation": 8,
+        "sp_0_9572:starvation": 35,
+        "sp_0_5427:starvation": 24,
+        "sp_0_8430:dehydration": 1,
+        "sp_0_5427:senescence": 14,
+        "sp_0_1124:senescence": 12,
+        "sp_0_8430:senescence": 2,
+        "sp_0_9572:senescence": 39,
+        "sp_0_1124:starvation": 1,
+        "sp_0_1124:dehydration": 1,
+        "sp_0_9572:dehydration": 3,
+        "sp_0_5427:dehydration": 2
+      },
+      "deathGenerations": {
+        "1:predation": 15,
+        "2:predation": 8,
+        "2:starvation": 11,
+        "4:predation": 2,
+        "1:starvation": 17,
+        "1:dehydration": 2,
+        "1:senescence": 32,
+        "7:predation": 1,
+        "3:predation": 1,
+        "3:starvation": 6,
+        "4:starvation": 8,
+        "2:senescence": 8,
+        "6:starvation": 9,
+        "5:predation": 1,
+        "5:starvation": 6,
+        "5:senescence": 6,
+        "6:dehydration": 3,
+        "3:senescence": 9,
+        "5:dehydration": 2,
+        "4:senescence": 6,
+        "7:senescence": 4,
+        "9:starvation": 2,
+        "10:starvation": 2,
+        "11:starvation": 1,
+        "8:senescence": 1,
+        "7:starvation": 4,
+        "6:senescence": 1,
+        "8:starvation": 2
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 365644,
+          "visibleFood": 246030,
+          "foodSelected": 89328,
+          "mateReady": 68581,
+          "mateFound": 25863
+        },
+        "scavenger": {
+          "total": 41979,
+          "visibleFood": 18758,
+          "foodSelected": 12465,
+          "mateReady": 4857,
+          "mateFound": 1786
+        },
+        "carnivore": {
+          "total": 19013,
+          "visibleFood": 11009,
+          "foodSelected": 7238,
+          "mateReady": 1955,
+          "mateFound": 257
+        }
+      },
+      "foodVisible": 275797,
+      "foodDecisions": 109031,
+      "travel": {
+        "started": 7052,
+        "reached": 4233,
+        "abandoned": 2811,
+        "elapsedTicks": 64843,
+        "initialDistance": 391776.7053423039,
+        "successRate": 0.6,
+        "meanTimeToFeedTicks": 15.318,
+        "meanStartingDistance": 55.555
+      },
+      "energy": {
+        "gainedFromFood": 44405.381,
+        "metabolicSpent": 43402.668,
+        "ratio": 1.023
+      },
+      "reproduction": {
+        "births": 114,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 168,
+        "mutationsPerBirth": 1.474
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 155.21,
+        "meanGlobalPlantBiomass": 6240.37,
+        "sampledOrganisms": 4230,
+        "meanLocalPlantPatches": 2.84,
+        "meanLocalPlantBiomass": 116.612,
+        "meanLocalCarrionPatches": 0.279,
+        "meanLocalSpringPatches": 0.159,
+        "meanPlantNearestNeighborDistance": 53.294
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1851,
+        "matesWithinSensor": 662,
+        "meanNearestCompatibleMateDistance": 223.801
+      },
+      "genetics": {
+        "maxChildDivergence": 0.07,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.088,
+        "isolatedPairSamples": 0,
+        "pairSamples": 113624
+      }
+    },
+    {
+      "seed": 853895,
+      "ticks": 10000,
+      "elapsedSeconds": 0.41,
+      "finalPopulation": 0,
+      "births": 19,
+      "deathsTotal": 85,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 90483,
+        "flee": 2943,
+        "mate": 984,
+        "food": 19359,
+        "water": 21267,
+        "rest": 11458
+      },
+      "feeding": {
+        "plant_success": 943,
+        "prey_failed": 56,
+        "prey_success": 38,
+        "carrion_success": 6
+      },
+      "deaths": {
+        "sp_0_6592:predation": 20,
+        "sp_0_4555:predation": 10,
+        "sp_0_1202:predation": 8,
+        "sp_0_1202:dehydration": 4,
+        "sp_0_5547:starvation": 9,
+        "sp_0_6592:starvation": 6,
+        "sp_0_1202:starvation": 1,
+        "sp_0_6592:senescence": 13,
+        "sp_0_4555:starvation": 2,
+        "sp_0_4555:senescence": 6,
+        "sp_0_1202:senescence": 2,
+        "sp_0_5547:senescence": 2,
+        "sp_0_6592:dehydration": 2
+      },
+      "deathGenerations": {
+        "1:predation": 32,
+        "1:dehydration": 4,
+        "1:starvation": 12,
+        "2:predation": 3,
+        "3:predation": 1,
+        "4:predation": 2,
+        "1:senescence": 18,
+        "2:starvation": 4,
+        "6:dehydration": 1,
+        "3:senescence": 2,
+        "4:senescence": 1,
+        "5:dehydration": 1,
+        "7:senescence": 1,
+        "8:starvation": 2,
+        "2:senescence": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 106423,
+          "visibleFood": 91042,
+          "foodSelected": 14341,
+          "mateReady": 21553,
+          "mateFound": 5795
+        },
+        "scavenger": {
+          "total": 16961,
+          "visibleFood": 4278,
+          "foodSelected": 1921,
+          "mateReady": 861,
+          "mateFound": 146
+        },
+        "carnivore": {
+          "total": 23110,
+          "visibleFood": 5826,
+          "foodSelected": 3097,
+          "mateReady": 3146,
+          "mateFound": 126
+        }
+      },
+      "foodVisible": 101146,
+      "foodDecisions": 19359,
+      "travel": {
+        "started": 1182,
+        "reached": 987,
+        "abandoned": 195,
+        "elapsedTicks": 14114,
+        "initialDistance": 54851.87337669206,
+        "successRate": 0.835,
+        "meanTimeToFeedTicks": 14.3,
+        "meanStartingDistance": 46.406
+      },
+      "energy": {
+        "gainedFromFood": 15310.426,
+        "metabolicSpent": 16896.124,
+        "ratio": 0.906
+      },
+      "reproduction": {
+        "births": 19,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 30,
+        "mutationsPerBirth": 1.579
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 184.57,
+        "meanGlobalPlantBiomass": 9271.274,
+        "sampledOrganisms": 1434,
+        "meanLocalPlantPatches": 3.136,
+        "meanLocalPlantBiomass": 146.679,
+        "meanLocalCarrionPatches": 0.232,
+        "meanLocalSpringPatches": 0.091,
+        "meanPlantNearestNeighborDistance": 50.05
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 939,
+        "matesWithinSensor": 137,
+        "meanNearestCompatibleMateDistance": 276.554
+      },
+      "genetics": {
+        "maxChildDivergence": 0.056,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.065,
+        "isolatedPairSamples": 0,
+        "pairSamples": 17940
+      }
+    },
+    {
+      "seed": 486400,
+      "ticks": 10000,
+      "elapsedSeconds": 0.734,
+      "finalPopulation": 15,
+      "births": 100,
+      "deathsTotal": 151,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 198120,
+        "flee": 1964,
+        "mate": 4559,
+        "food": 98649,
+        "rest": 71014,
+        "water": 67880
+      },
+      "feeding": {
+        "plant_success": 3843,
+        "prey_failed": 22,
+        "prey_success": 22,
+        "carrion_success": 30
+      },
+      "deaths": {
+        "sp_0_1318:predation": 12,
+        "sp_0_3401:predation": 4,
+        "sp_0_2487:predation": 6,
+        "sp_0_5428:starvation": 12,
+        "sp_0_2487:starvation": 2,
+        "sp_0_1318:starvation": 35,
+        "sp_0_3401:senescence": 12,
+        "sp_0_2487:senescence": 9,
+        "sp_0_1318:dehydration": 7,
+        "sp_0_2487:dehydration": 1,
+        "sp_0_1318:senescence": 51
+      },
+      "deathGenerations": {
+        "1:predation": 18,
+        "2:predation": 2,
+        "3:predation": 2,
+        "1:starvation": 13,
+        "2:starvation": 8,
+        "1:senescence": 32,
+        "2:dehydration": 2,
+        "1:dehydration": 3,
+        "4:starvation": 5,
+        "2:senescence": 8,
+        "3:dehydration": 2,
+        "3:senescence": 6,
+        "3:starvation": 7,
+        "4:senescence": 5,
+        "5:starvation": 4,
+        "8:starvation": 3,
+        "5:senescence": 2,
+        "6:starvation": 3,
+        "6:senescence": 5,
+        "7:senescence": 4,
+        "5:dehydration": 1,
+        "9:senescence": 4,
+        "10:starvation": 1,
+        "7:starvation": 2,
+        "8:senescence": 3,
+        "11:senescence": 1,
+        "10:senescence": 2,
+        "9:starvation": 1,
+        "12:starvation": 1,
+        "13:starvation": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 387893,
+          "visibleFood": 266402,
+          "foodSelected": 91450,
+          "mateReady": 62977,
+          "mateFound": 23219
+        },
+        "scavenger": {
+          "total": 35098,
+          "visibleFood": 8775,
+          "foodSelected": 5856,
+          "mateReady": 8300,
+          "mateFound": 1427
+        },
+        "carnivore": {
+          "total": 19195,
+          "visibleFood": 2811,
+          "foodSelected": 1343,
+          "mateReady": 1861,
+          "mateFound": 206
+        }
+      },
+      "foodVisible": 277988,
+      "foodDecisions": 98649,
+      "travel": {
+        "started": 6335,
+        "reached": 3895,
+        "abandoned": 2430,
+        "elapsedTicks": 55516,
+        "initialDistance": 322854.1652399946,
+        "successRate": 0.615,
+        "meanTimeToFeedTicks": 14.253,
+        "meanStartingDistance": 50.964
+      },
+      "energy": {
+        "gainedFromFood": 38736.427,
+        "metabolicSpent": 37362.935,
+        "ratio": 1.037
+      },
+      "reproduction": {
+        "births": 100,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 145,
+        "mutationsPerBirth": 1.45
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 181.59,
+        "meanGlobalPlantBiomass": 8854.815,
+        "sampledOrganisms": 4400,
+        "meanLocalPlantPatches": 2.377,
+        "meanLocalPlantBiomass": 94.179,
+        "meanLocalCarrionPatches": 0.259,
+        "meanLocalSpringPatches": 0.231,
+        "meanPlantNearestNeighborDistance": 55.429
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 2091,
+        "matesWithinSensor": 784,
+        "meanNearestCompatibleMateDistance": 201.967
+      },
+      "genetics": {
+        "maxChildDivergence": 0.066,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.096,
+        "isolatedPairSamples": 0,
+        "pairSamples": 140350
+      }
+    },
+    {
+      "seed": 497022,
+      "ticks": 10000,
+      "elapsedSeconds": 0.74,
+      "finalPopulation": 0,
+      "births": 46,
+      "deathsTotal": 112,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 117427,
+        "flee": 5293,
+        "mate": 2461,
+        "food": 46165,
+        "rest": 25171,
+        "water": 20279
+      },
+      "feeding": {
+        "plant_success": 1910,
+        "prey_failed": 37,
+        "prey_success": 38,
+        "carrion_success": 40,
+        "plant_failed": 2
+      },
+      "deaths": {
+        "sp_0_7626:predation": 10,
+        "sp_0_7739:predation": 20,
+        "sp_0_1024:predation": 8,
+        "sp_0_9090:starvation": 10,
+        "sp_0_7739:starvation": 23,
+        "sp_0_1024:starvation": 3,
+        "sp_0_7626:starvation": 2,
+        "sp_0_7626:senescence": 6,
+        "sp_0_1024:senescence": 7,
+        "sp_0_7739:senescence": 21,
+        "sp_0_9090:senescence": 1,
+        "sp_0_7739:dehydration": 1
+      },
+      "deathGenerations": {
+        "1:predation": 24,
+        "2:predation": 7,
+        "1:starvation": 23,
+        "4:predation": 2,
+        "3:predation": 5,
+        "2:starvation": 4,
+        "1:senescence": 19,
+        "4:starvation": 2,
+        "2:senescence": 5,
+        "3:starvation": 3,
+        "3:senescence": 4,
+        "4:dehydration": 1,
+        "5:starvation": 1,
+        "5:senescence": 2,
+        "6:senescence": 1,
+        "4:senescence": 1,
+        "7:senescence": 1,
+        "7:starvation": 2,
+        "8:starvation": 1,
+        "8:senescence": 2,
+        "9:starvation": 2
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 161315,
+          "visibleFood": 125775,
+          "foodSelected": 30916,
+          "mateReady": 50026,
+          "mateFound": 10812
+        },
+        "scavenger": {
+          "total": 35244,
+          "visibleFood": 15245,
+          "foodSelected": 11248,
+          "mateReady": 8428,
+          "mateFound": 757
+        },
+        "carnivore": {
+          "total": 20237,
+          "visibleFood": 6855,
+          "foodSelected": 4001,
+          "mateReady": 4148,
+          "mateFound": 349
+        }
+      },
+      "foodVisible": 147875,
+      "foodDecisions": 46165,
+      "travel": {
+        "started": 2947,
+        "reached": 1988,
+        "abandoned": 959,
+        "elapsedTicks": 29580,
+        "initialDistance": 158097.11506207846,
+        "successRate": 0.675,
+        "meanTimeToFeedTicks": 14.879,
+        "meanStartingDistance": 53.647
+      },
+      "energy": {
+        "gainedFromFood": 24483.798,
+        "metabolicSpent": 25437.058,
+        "ratio": 0.963
+      },
+      "reproduction": {
+        "births": 46,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 77,
+        "mutationsPerBirth": 1.674
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 198.59,
+        "meanGlobalPlantBiomass": 10159.247,
+        "sampledOrganisms": 2134,
+        "meanLocalPlantPatches": 3.263,
+        "meanLocalPlantBiomass": 153.212,
+        "meanLocalCarrionPatches": 0.229,
+        "meanLocalSpringPatches": 0.119,
+        "meanPlantNearestNeighborDistance": 50.054
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1247,
+        "matesWithinSensor": 262,
+        "meanNearestCompatibleMateDistance": 292.45
+      },
+      "genetics": {
+        "maxChildDivergence": 0.049,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.079,
+        "isolatedPairSamples": 0,
+        "pairSamples": 33578
+      }
+    },
+    {
+      "seed": 166064,
+      "ticks": 10000,
+      "elapsedSeconds": 0.87,
+      "finalPopulation": 47,
+      "births": 140,
+      "deathsTotal": 159,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 253510,
+        "flee": 3158,
+        "mate": 6332,
+        "food": 88570,
+        "rest": 54809,
+        "water": 96367
+      },
+      "feeding": {
+        "plant_success": 3273,
+        "prey_failed": 20,
+        "prey_success": 25,
+        "carrion_success": 28
+      },
+      "deaths": {
+        "sp_0_3884:predation": 13,
+        "sp_0_3192:predation": 7,
+        "sp_0_2127:predation": 5,
+        "sp_0_3105:starvation": 9,
+        "sp_0_3192:starvation": 2,
+        "sp_0_3884:starvation": 46,
+        "sp_0_2127:starvation": 1,
+        "sp_0_3192:senescence": 9,
+        "sp_0_3884:dehydration": 13,
+        "sp_0_2127:senescence": 8,
+        "sp_0_3105:senescence": 1,
+        "sp_0_3884:senescence": 41,
+        "sp_0_2127:dehydration": 2,
+        "sp_0_3192:dehydration": 2
+      },
+      "deathGenerations": {
+        "1:predation": 21,
+        "2:predation": 3,
+        "1:starvation": 17,
+        "2:starvation": 6,
+        "4:predation": 1,
+        "1:senescence": 25,
+        "4:starvation": 3,
+        "3:dehydration": 4,
+        "1:dehydration": 3,
+        "3:starvation": 2,
+        "2:dehydration": 2,
+        "3:senescence": 7,
+        "5:senescence": 6,
+        "4:dehydration": 4,
+        "2:senescence": 7,
+        "5:dehydration": 3,
+        "6:starvation": 4,
+        "6:dehydration": 1,
+        "4:senescence": 6,
+        "5:starvation": 2,
+        "7:starvation": 8,
+        "6:senescence": 5,
+        "9:starvation": 4,
+        "8:starvation": 5,
+        "7:senescence": 1,
+        "8:senescence": 1,
+        "14:starvation": 2,
+        "9:senescence": 1,
+        "15:starvation": 1,
+        "10:starvation": 2,
+        "13:starvation": 1,
+        "11:starvation": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 443060,
+          "visibleFood": 324556,
+          "foodSelected": 79048,
+          "mateReady": 57943,
+          "mateFound": 24872
+        },
+        "scavenger": {
+          "total": 45337,
+          "visibleFood": 16464,
+          "foodSelected": 7328,
+          "mateReady": 6158,
+          "mateFound": 2876
+        },
+        "carnivore": {
+          "total": 14349,
+          "visibleFood": 4892,
+          "foodSelected": 2194,
+          "mateReady": 3017,
+          "mateFound": 31
+        }
+      },
+      "foodVisible": 345912,
+      "foodDecisions": 88570,
+      "travel": {
+        "started": 5792,
+        "reached": 3326,
+        "abandoned": 2453,
+        "elapsedTicks": 49030,
+        "initialDistance": 292562.055258757,
+        "successRate": 0.574,
+        "meanTimeToFeedTicks": 14.741,
+        "meanStartingDistance": 50.511
+      },
+      "energy": {
+        "gainedFromFood": 44266.489,
+        "metabolicSpent": 39848.983,
+        "ratio": 1.111
+      },
+      "reproduction": {
+        "births": 140,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 240,
+        "mutationsPerBirth": 1.714
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 188.12,
+        "meanGlobalPlantBiomass": 9907.329,
+        "sampledOrganisms": 5018,
+        "meanLocalPlantPatches": 3.175,
+        "meanLocalPlantBiomass": 152.22,
+        "meanLocalCarrionPatches": 0.331,
+        "meanLocalSpringPatches": 0.095,
+        "meanPlantNearestNeighborDistance": 52.068
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 2419,
+        "matesWithinSensor": 1064,
+        "meanNearestCompatibleMateDistance": 164.28
+      },
+      "genetics": {
+        "maxChildDivergence": 0.14,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.165,
+        "isolatedPairSamples": 0,
+        "pairSamples": 177672
+      }
+    },
+    {
+      "seed": 875922,
+      "ticks": 10000,
+      "elapsedSeconds": 0.807,
+      "finalPopulation": 15,
+      "births": 161,
+      "deathsTotal": 212,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 197312,
+        "flee": 6431,
+        "mate": 7284,
+        "food": 111115,
+        "rest": 65089,
+        "water": 39893
+      },
+      "feeding": {
+        "plant_success": 3406,
+        "prey_failed": 36,
+        "prey_success": 39,
+        "carrion_success": 228,
+        "plant_failed": 1
+      },
+      "deaths": {
+        "sp_0_2827:predation": 18,
+        "sp_0_3855:predation": 8,
+        "sp_0_1902:predation": 13,
+        "sp_0_3855:dehydration": 2,
+        "sp_0_2827:dehydration": 28,
+        "sp_0_2827:starvation": 79,
+        "sp_0_9409:starvation": 9,
+        "sp_0_3855:starvation": 3,
+        "sp_0_9409:senescence": 1,
+        "sp_0_2827:senescence": 12,
+        "sp_0_1902:starvation": 7,
+        "sp_0_1902:senescence": 13,
+        "sp_0_3855:senescence": 6,
+        "sp_0_1902:dehydration": 13
+      },
+      "deathGenerations": {
+        "2:predation": 8,
+        "1:predation": 28,
+        "1:dehydration": 3,
+        "1:starvation": 22,
+        "3:predation": 3,
+        "2:starvation": 7,
+        "3:starvation": 3,
+        "1:senescence": 13,
+        "2:senescence": 4,
+        "3:dehydration": 2,
+        "5:dehydration": 2,
+        "7:starvation": 3,
+        "11:starvation": 7,
+        "9:dehydration": 3,
+        "6:starvation": 3,
+        "4:starvation": 2,
+        "4:senescence": 5,
+        "7:dehydration": 4,
+        "6:dehydration": 3,
+        "5:starvation": 3,
+        "12:starvation": 6,
+        "11:dehydration": 4,
+        "3:senescence": 1,
+        "8:starvation": 3,
+        "12:dehydration": 5,
+        "10:dehydration": 2,
+        "9:senescence": 1,
+        "10:starvation": 9,
+        "8:senescence": 1,
+        "9:starvation": 3,
+        "14:starvation": 3,
+        "15:starvation": 2,
+        "15:dehydration": 1,
+        "13:starvation": 7,
+        "18:starvation": 4,
+        "19:dehydration": 3,
+        "17:dehydration": 1,
+        "21:dehydration": 3,
+        "5:senescence": 1,
+        "24:dehydration": 1,
+        "23:dehydration": 1,
+        "22:starvation": 1,
+        "20:starvation": 5,
+        "11:senescence": 1,
+        "8:dehydration": 2,
+        "19:starvation": 2,
+        "22:dehydration": 1,
+        "18:dehydration": 1,
+        "17:starvation": 1,
+        "4:dehydration": 1,
+        "16:starvation": 1,
+        "21:starvation": 1,
+        "6:senescence": 1,
+        "7:senescence": 1,
+        "17:senescence": 1,
+        "12:senescence": 1,
+        "13:senescence": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 302706,
+          "visibleFood": 195368,
+          "foodSelected": 73699,
+          "mateReady": 55739,
+          "mateFound": 18227
+        },
+        "scavenger": {
+          "total": 106573,
+          "visibleFood": 47895,
+          "foodSelected": 33294,
+          "mateReady": 20344,
+          "mateFound": 11306
+        },
+        "carnivore": {
+          "total": 17845,
+          "visibleFood": 6713,
+          "foodSelected": 4122,
+          "mateReady": 3751,
+          "mateFound": 257
+        }
+      },
+      "foodVisible": 249976,
+      "foodDecisions": 111115,
+      "travel": {
+        "started": 6761,
+        "reached": 3673,
+        "abandoned": 3081,
+        "elapsedTicks": 58224,
+        "initialDistance": 408485.1161436312,
+        "successRate": 0.543,
+        "meanTimeToFeedTicks": 15.852,
+        "meanStartingDistance": 60.418
+      },
+      "energy": {
+        "gainedFromFood": 47708.87,
+        "metabolicSpent": 45181.416,
+        "ratio": 1.056
+      },
+      "reproduction": {
+        "births": 161,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 287,
+        "mutationsPerBirth": 1.783
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 168.36,
+        "meanGlobalPlantBiomass": 7363.212,
+        "sampledOrganisms": 4251,
+        "meanLocalPlantPatches": 4.059,
+        "meanLocalPlantBiomass": 164.969,
+        "meanLocalCarrionPatches": 0.351,
+        "meanLocalSpringPatches": 0.377,
+        "meanPlantNearestNeighborDistance": 51.643
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1850,
+        "matesWithinSensor": 740,
+        "meanNearestCompatibleMateDistance": 253.49
+      },
+      "genetics": {
+        "maxChildDivergence": 0.106,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.138,
+        "isolatedPairSamples": 0,
+        "pairSamples": 108972
+      }
+    },
+    {
+      "seed": 615480,
+      "ticks": 10000,
+      "elapsedSeconds": 0.871,
+      "finalPopulation": 36,
+      "births": 203,
+      "deathsTotal": 233,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 184758,
+        "flee": 6024,
+        "mate": 9338,
+        "food": 177946,
+        "water": 45543,
+        "rest": 83315
+      },
+      "feeding": {
+        "plant_success": 5981,
+        "prey_failed": 25,
+        "prey_success": 27,
+        "carrion_success": 77
+      },
+      "deaths": {
+        "sp_0_4416:predation": 9,
+        "sp_0_8232:dehydration": 6,
+        "sp_0_3085:predation": 17,
+        "sp_0_8232:predation": 1,
+        "sp_0_7239:starvation": 8,
+        "sp_0_8232:starvation": 2,
+        "sp_0_3085:starvation": 66,
+        "sp_0_4416:starvation": 67,
+        "sp_0_3085:senescence": 29,
+        "sp_0_4416:senescence": 15,
+        "sp_0_7239:senescence": 2,
+        "sp_0_8232:senescence": 6,
+        "sp_0_3085:dehydration": 5
+      },
+      "deathGenerations": {
+        "1:predation": 15,
+        "1:dehydration": 6,
+        "2:predation": 4,
+        "1:starvation": 29,
+        "2:starvation": 19,
+        "3:predation": 3,
+        "3:starvation": 19,
+        "1:senescence": 16,
+        "4:starvation": 19,
+        "6:starvation": 11,
+        "5:predation": 2,
+        "2:senescence": 7,
+        "5:starvation": 15,
+        "6:predation": 2,
+        "7:starvation": 7,
+        "4:predation": 1,
+        "4:dehydration": 1,
+        "4:senescence": 6,
+        "3:senescence": 6,
+        "5:senescence": 3,
+        "6:dehydration": 1,
+        "5:dehydration": 3,
+        "8:starvation": 2,
+        "9:starvation": 2,
+        "10:starvation": 2,
+        "7:senescence": 2,
+        "6:senescence": 1,
+        "8:senescence": 3,
+        "9:senescence": 2,
+        "10:senescence": 2,
+        "11:senescence": 3,
+        "11:starvation": 2,
+        "17:starvation": 2,
+        "15:starvation": 5,
+        "14:starvation": 2,
+        "13:starvation": 2,
+        "12:starvation": 1,
+        "16:starvation": 3,
+        "14:senescence": 1,
+        "18:starvation": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 460713,
+          "visibleFood": 332405,
+          "foodSelected": 164808,
+          "mateReady": 69561,
+          "mateFound": 33441
+        },
+        "scavenger": {
+          "total": 28651,
+          "visibleFood": 14767,
+          "foodSelected": 9070,
+          "mateReady": 1304,
+          "mateFound": 363
+        },
+        "carnivore": {
+          "total": 17560,
+          "visibleFood": 6112,
+          "foodSelected": 4068,
+          "mateReady": 2891,
+          "mateFound": 48
+        }
+      },
+      "foodVisible": 353284,
+      "foodDecisions": 177946,
+      "travel": {
+        "started": 12354,
+        "reached": 6085,
+        "abandoned": 6258,
+        "elapsedTicks": 87628,
+        "initialDistance": 735740.9589096252,
+        "successRate": 0.493,
+        "meanTimeToFeedTicks": 14.401,
+        "meanStartingDistance": 59.555
+      },
+      "energy": {
+        "gainedFromFood": 62312.161,
+        "metabolicSpent": 58597.129,
+        "ratio": 1.063
+      },
+      "reproduction": {
+        "births": 203,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 314,
+        "mutationsPerBirth": 1.547
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 153.61,
+        "meanGlobalPlantBiomass": 5764.679,
+        "sampledOrganisms": 5056,
+        "meanLocalPlantPatches": 2.964,
+        "meanLocalPlantBiomass": 106.792,
+        "meanLocalCarrionPatches": 0.515,
+        "meanLocalSpringPatches": 0.394,
+        "meanPlantNearestNeighborDistance": 53.89
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1640,
+        "matesWithinSensor": 567,
+        "meanNearestCompatibleMateDistance": 233.971
+      },
+      "genetics": {
+        "maxChildDivergence": 0.099,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.113,
+        "isolatedPairSamples": 0,
+        "pairSamples": 159402
+      }
+    },
+    {
+      "seed": 159286,
+      "ticks": 10000,
+      "elapsedSeconds": 0.855,
+      "finalPopulation": 0,
+      "births": 25,
+      "deathsTotal": 91,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 109893,
+        "flee": 3531,
+        "mate": 1316,
+        "food": 35323,
+        "rest": 21880,
+        "water": 24985
+      },
+      "feeding": {
+        "plant_success": 1234,
+        "prey_failed": 28,
+        "prey_success": 28,
+        "carrion_success": 52
+      },
+      "deaths": {
+        "sp_0_2192:predation": 6,
+        "sp_0_2601:predation": 12,
+        "sp_0_1220:predation": 10,
+        "sp_0_3524:starvation": 9,
+        "sp_0_2601:starvation": 13,
+        "sp_0_3524:senescence": 1,
+        "sp_0_1220:senescence": 12,
+        "sp_0_2192:starvation": 5,
+        "sp_0_2601:dehydration": 7,
+        "sp_0_1220:dehydration": 1,
+        "sp_0_1220:starvation": 1,
+        "sp_0_2601:senescence": 8,
+        "sp_0_2192:senescence": 6
+      },
+      "deathGenerations": {
+        "1:predation": 25,
+        "1:starvation": 14,
+        "2:predation": 2,
+        "2:starvation": 3,
+        "4:predation": 1,
+        "3:starvation": 4,
+        "1:senescence": 23,
+        "2:dehydration": 1,
+        "1:dehydration": 4,
+        "2:senescence": 3,
+        "3:dehydration": 3,
+        "4:starvation": 3,
+        "5:starvation": 3,
+        "3:senescence": 1,
+        "6:starvation": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 137597,
+          "visibleFood": 109415,
+          "foodSelected": 22336,
+          "mateReady": 26728,
+          "mateFound": 10846
+        },
+        "scavenger": {
+          "total": 41857,
+          "visibleFood": 15297,
+          "foodSelected": 10325,
+          "mateReady": 3944,
+          "mateFound": 1125
+        },
+        "carnivore": {
+          "total": 16123,
+          "visibleFood": 4408,
+          "foodSelected": 2582,
+          "mateReady": 2205,
+          "mateFound": 77
+        },
+        "omnivore": {
+          "total": 1351,
+          "visibleFood": 253,
+          "foodSelected": 80,
+          "mateReady": 50,
+          "mateFound": 0
+        }
+      },
+      "foodVisible": 129373,
+      "foodDecisions": 35323,
+      "travel": {
+        "started": 1954,
+        "reached": 1314,
+        "abandoned": 640,
+        "elapsedTicks": 22235,
+        "initialDistance": 106552.54325035813,
+        "successRate": 0.672,
+        "meanTimeToFeedTicks": 16.922,
+        "meanStartingDistance": 54.53
+      },
+      "energy": {
+        "gainedFromFood": 18665.426,
+        "metabolicSpent": 20671.921,
+        "ratio": 0.903
+      },
+      "reproduction": {
+        "births": 25,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 43,
+        "mutationsPerBirth": 1.72
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 164.07,
+        "meanGlobalPlantBiomass": 5570.741,
+        "sampledOrganisms": 1934,
+        "meanLocalPlantPatches": 3.906,
+        "meanLocalPlantBiomass": 186.182,
+        "meanLocalCarrionPatches": 0.151,
+        "meanLocalSpringPatches": 0.17,
+        "meanPlantNearestNeighborDistance": 46.478
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1245,
+        "matesWithinSensor": 378,
+        "meanNearestCompatibleMateDistance": 248.033
+      },
+      "genetics": {
+        "maxChildDivergence": 0.056,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.086,
+        "isolatedPairSamples": 0,
+        "pairSamples": 28340
+      }
+    },
+    {
+      "seed": 954366,
+      "ticks": 10000,
+      "elapsedSeconds": 0.442,
+      "finalPopulation": 0,
+      "births": 36,
+      "deathsTotal": 102,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 106829,
+        "flee": 2661,
+        "mate": 1541,
+        "food": 30845,
+        "rest": 23658,
+        "water": 25899
+      },
+      "feeding": {
+        "plant_success": 972,
+        "prey_failed": 36,
+        "prey_success": 36,
+        "plant_failed": 1,
+        "carrion_success": 43
+      },
+      "deaths": {
+        "sp_0_2750:predation": 13,
+        "sp_0_5378:predation": 18,
+        "sp_0_5926:dehydration": 3,
+        "sp_0_2750:dehydration": 4,
+        "sp_0_5378:dehydration": 4,
+        "sp_0_5926:predation": 5,
+        "sp_0_9658:starvation": 11,
+        "sp_0_2750:starvation": 5,
+        "sp_0_5378:starvation": 15,
+        "sp_0_2750:senescence": 3,
+        "sp_0_5926:starvation": 2,
+        "sp_0_5378:senescence": 8,
+        "sp_0_5926:senescence": 11
+      },
+      "deathGenerations": {
+        "1:predation": 28,
+        "1:dehydration": 7,
+        "2:predation": 6,
+        "2:dehydration": 2,
+        "1:starvation": 19,
+        "3:predation": 2,
+        "2:starvation": 7,
+        "4:starvation": 3,
+        "3:starvation": 2,
+        "1:senescence": 12,
+        "4:dehydration": 1,
+        "2:senescence": 5,
+        "3:senescence": 2,
+        "4:senescence": 2,
+        "7:starvation": 1,
+        "6:starvation": 1,
+        "5:dehydration": 1,
+        "5:senescence": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 108034,
+          "visibleFood": 75411,
+          "foodSelected": 14773,
+          "mateReady": 18887,
+          "mateFound": 3106
+        },
+        "scavenger": {
+          "total": 62377,
+          "visibleFood": 21197,
+          "foodSelected": 13385,
+          "mateReady": 16615,
+          "mateFound": 5146
+        },
+        "carnivore": {
+          "total": 21022,
+          "visibleFood": 5032,
+          "foodSelected": 2687,
+          "mateReady": 2961,
+          "mateFound": 24
+        }
+      },
+      "foodVisible": 101640,
+      "foodDecisions": 30845,
+      "travel": {
+        "started": 1506,
+        "reached": 1051,
+        "abandoned": 455,
+        "elapsedTicks": 17970,
+        "initialDistance": 80764.99775226414,
+        "successRate": 0.698,
+        "meanTimeToFeedTicks": 17.098,
+        "meanStartingDistance": 53.629
+      },
+      "energy": {
+        "gainedFromFood": 17730.757,
+        "metabolicSpent": 18991.325,
+        "ratio": 0.934
+      },
+      "reproduction": {
+        "births": 36,
+        "birthBlockedAtCap": 0,
+        "mutationEvents": 50,
+        "mutationsPerBirth": 1.389
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 186.18,
+        "meanGlobalPlantBiomass": 9529.35,
+        "sampledOrganisms": 1883,
+        "meanLocalPlantPatches": 3.071,
+        "meanLocalPlantBiomass": 146.295,
+        "meanLocalCarrionPatches": 0.141,
+        "meanLocalSpringPatches": 0.186,
+        "meanPlantNearestNeighborDistance": 50.082
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1089,
+        "matesWithinSensor": 252,
+        "meanNearestCompatibleMateDistance": 254.733
+      },
+      "genetics": {
+        "maxChildDivergence": 0.081,
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.101,
+        "isolatedPairSamples": 0,
+        "pairSamples": 22778
+      }
+    }
+  ]
+}

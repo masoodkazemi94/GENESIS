@@ -5,11 +5,13 @@
 
 import { OrganismState, ResourcePatch, TerrainMap } from '../../types/simulation.js';
 import { getCellAt } from '../terrain/terrain.js';
+import type { SimulationProbe } from '../performance/probe.js';
 
 /**
  * High-performance 2D Spatial Hash Grid for entity lookups in O(1) time
  */
 export class SpatialHashGrid {
+  public probe?: SimulationProbe;
   public cellSize: number;
   public cols: number;
   public rows: number;
@@ -32,6 +34,7 @@ export class SpatialHashGrid {
   }
 
   public populateOrganisms(organisms: OrganismState[]): void {
+    const started = this.probe?.start();
     this.buckets.clear();
     for (let i = 0; i < organisms.length; i++) {
       const org = organisms[i];
@@ -46,9 +49,11 @@ export class SpatialHashGrid {
       }
       bucket.push(org);
     }
+    if (started !== undefined) this.probe?.end('spatial.populateOrganisms', started);
   }
 
   public populateFood(resources: ResourcePatch[]): void {
+    const started = this.probe?.start();
     this.foodBuckets.clear();
     this.carrionBuckets.clear();
     this.waterBuckets.clear();
@@ -82,9 +87,11 @@ export class SpatialHashGrid {
         bucket.push(res);
       }
     }
+    if (started !== undefined) this.probe?.end('spatial.populateFood', started);
   }
 
   public queryRadius(x: number, y: number, radius: number): OrganismState[] {
+    const started = this.probe?.start();
     const minCx = Math.max(0, Math.floor((x - radius) / this.cellSize));
     const maxCx = Math.min(this.cols - 1, Math.floor((x + radius) / this.cellSize));
     const minCy = Math.max(0, Math.floor((y - radius) / this.cellSize));
@@ -108,10 +115,12 @@ export class SpatialHashGrid {
       }
     }
 
+    if (started !== undefined) this.probe?.end('spatial.queryOrganisms', started);
     return results;
   }
 
   public queryFoodRadius(x: number, y: number, radius: number): ResourcePatch[] {
+    const started = this.probe?.start();
     const minCx = Math.max(0, Math.floor((x - radius) / this.cellSize));
     const maxCx = Math.min(this.cols - 1, Math.floor((x + radius) / this.cellSize));
     const minCy = Math.max(0, Math.floor((y - radius) / this.cellSize));
@@ -135,10 +144,12 @@ export class SpatialHashGrid {
       }
     }
 
+    if (started !== undefined) this.probe?.end('spatial.queryFood', started);
     return results;
   }
 
   public queryCarrionRadius(x: number, y: number, radius: number): ResourcePatch[] {
+    const started = this.probe?.start();
     const minCx = Math.max(0, Math.floor((x - radius) / this.cellSize));
     const maxCx = Math.min(this.cols - 1, Math.floor((x + radius) / this.cellSize));
     const minCy = Math.max(0, Math.floor((y - radius) / this.cellSize));
@@ -162,10 +173,12 @@ export class SpatialHashGrid {
       }
     }
 
+    if (started !== undefined) this.probe?.end('spatial.queryCarrion', started);
     return results;
   }
 
   public queryWaterRadius(x: number, y: number, radius: number): ResourcePatch[] {
+    const started = this.probe?.start();
     const minCx = Math.max(0, Math.floor((x - radius) / this.cellSize));
     const maxCx = Math.min(this.cols - 1, Math.floor((x + radius) / this.cellSize));
     const minCy = Math.max(0, Math.floor((y - radius) / this.cellSize));
@@ -189,6 +202,7 @@ export class SpatialHashGrid {
       }
     }
 
+    if (started !== undefined) this.probe?.end('spatial.queryWater', started);
     return results;
   }
 }

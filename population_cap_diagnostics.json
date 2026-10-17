@@ -1,0 +1,3587 @@
+{
+  "schemaVersion": 1,
+  "experiment": "matched fixed seeds, unchanged ecology parameters, observational samples",
+  "sampleEvery": 500,
+  "ticks": 10000,
+  "results": [
+    {
+      "model": 0,
+      "seed": 166064,
+      "ticks": 10000,
+      "elapsedMs": 1001.532,
+      "capTicks": 0,
+      "firstCapTick": null,
+      "blockedBirths": 0,
+      "births": 81,
+      "birthsAtCap": 0,
+      "juvenileDeaths": 0,
+      "totalDeaths": 146,
+      "deathsAtCap": 0,
+      "deathCauses": {
+        "predation": 39,
+        "starvation": 52,
+        "dehydration": 10,
+        "senescence": 44,
+        "thermal": 1
+      },
+      "deathCausesAtCap": {},
+      "plantFeedings": 1937,
+      "carrionFeedings": 88,
+      "activeMateDecisionsAtCap": 0,
+      "mateReadyAtCap": 0,
+      "mateNearbyAtCap": 0,
+      "decisionCountAtCap": 0,
+      "populationIntegral": 369911,
+      "peakPopulation": 68,
+      "roleTicksAtCap": {},
+      "sampleSeries": [
+        {
+          "tick": 500,
+          "population": 65,
+          "roles": {
+            "herbivore": 39,
+            "scavenger": 16,
+            "carnivore": 10
+          },
+          "plantPatches": 220,
+          "plantBiomass": 12387.633,
+          "plantInputSincePreviousSample": 3106.966,
+          "plantLossSincePreviousSample": 898.542,
+          "accessiblePlantPerConsumer": 146.82,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 55,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 7,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1000,
+          "population": 60,
+          "roles": {
+            "herbivore": 39,
+            "scavenger": 11,
+            "carnivore": 10
+          },
+          "plantPatches": 220,
+          "plantBiomass": 12687.339,
+          "plantInputSincePreviousSample": 1362.251,
+          "plantLossSincePreviousSample": 1062.544,
+          "accessiblePlantPerConsumer": 131.741,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 50,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 14,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1500,
+          "population": 56,
+          "roles": {
+            "herbivore": 41,
+            "scavenger": 9,
+            "carnivore": 6
+          },
+          "plantPatches": 220,
+          "plantBiomass": 11876.273,
+          "plantInputSincePreviousSample": 198.054,
+          "plantLossSincePreviousSample": 1009.12,
+          "accessiblePlantPerConsumer": 85.835,
+          "consumersWithoutFood": 8,
+          "consumerSamples": 50,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 24,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2000,
+          "population": 55,
+          "roles": {
+            "herbivore": 43,
+            "scavenger": 8,
+            "carnivore": 4
+          },
+          "plantPatches": 220,
+          "plantBiomass": 11099.203,
+          "plantInputSincePreviousSample": 85.827,
+          "plantLossSincePreviousSample": 862.896,
+          "accessiblePlantPerConsumer": 103.499,
+          "consumersWithoutFood": 14,
+          "consumerSamples": 51,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 30,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2500,
+          "population": 46,
+          "roles": {
+            "herbivore": 36,
+            "scavenger": 8,
+            "carnivore": 2
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10558.677,
+          "plantInputSincePreviousSample": 190.678,
+          "plantLossSincePreviousSample": 731.205,
+          "accessiblePlantPerConsumer": 76.165,
+          "consumersWithoutFood": 11,
+          "consumerSamples": 44,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 34,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3000,
+          "population": 43,
+          "roles": {
+            "herbivore": 37,
+            "scavenger": 6
+          },
+          "plantPatches": 220,
+          "plantBiomass": 11606.611,
+          "plantInputSincePreviousSample": 1846.42,
+          "plantLossSincePreviousSample": 798.486,
+          "accessiblePlantPerConsumer": 91.288,
+          "consumersWithoutFood": 11,
+          "consumerSamples": 43,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 39,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3500,
+          "population": 41,
+          "roles": {
+            "herbivore": 36,
+            "scavenger": 5
+          },
+          "plantPatches": 220,
+          "plantBiomass": 11895.303,
+          "plantInputSincePreviousSample": 1115.925,
+          "plantLossSincePreviousSample": 827.234,
+          "accessiblePlantPerConsumer": 69.584,
+          "consumersWithoutFood": 8,
+          "consumerSamples": 41,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 46,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4000,
+          "population": 46,
+          "roles": {
+            "herbivore": 43,
+            "scavenger": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 11029.24,
+          "plantInputSincePreviousSample": 100.177,
+          "plantLossSincePreviousSample": 966.24,
+          "accessiblePlantPerConsumer": 47.434,
+          "consumersWithoutFood": 18,
+          "consumerSamples": 46,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 58,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4500,
+          "population": 47,
+          "roles": {
+            "herbivore": 44,
+            "scavenger": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10297.78,
+          "plantInputSincePreviousSample": 86.962,
+          "plantLossSincePreviousSample": 818.421,
+          "accessiblePlantPerConsumer": 22.052,
+          "consumersWithoutFood": 35,
+          "consumerSamples": 47,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 68,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5000,
+          "population": 46,
+          "roles": {
+            "herbivore": 43,
+            "scavenger": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10232.343,
+          "plantInputSincePreviousSample": 336.121,
+          "plantLossSincePreviousSample": 401.558,
+          "accessiblePlantPerConsumer": 20.929,
+          "consumersWithoutFood": 28,
+          "consumerSamples": 46,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 70,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5500,
+          "population": 44,
+          "roles": {
+            "herbivore": 41,
+            "scavenger": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10945.384,
+          "plantInputSincePreviousSample": 1645.061,
+          "plantLossSincePreviousSample": 932.02,
+          "accessiblePlantPerConsumer": 21.994,
+          "consumersWithoutFood": 12,
+          "consumerSamples": 44,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 72,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6000,
+          "population": 40,
+          "roles": {
+            "herbivore": 37,
+            "scavenger": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 11107.503,
+          "plantInputSincePreviousSample": 886.702,
+          "plantLossSincePreviousSample": 724.583,
+          "accessiblePlantPerConsumer": 31.202,
+          "consumersWithoutFood": 23,
+          "consumerSamples": 40,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 76,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6500,
+          "population": 38,
+          "roles": {
+            "herbivore": 36,
+            "scavenger": 2
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10965.574,
+          "plantInputSincePreviousSample": 65.151,
+          "plantLossSincePreviousSample": 207.08,
+          "accessiblePlantPerConsumer": 26.41,
+          "consumersWithoutFood": 22,
+          "consumerSamples": 38,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 76,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7000,
+          "population": 31,
+          "roles": {
+            "herbivore": 30,
+            "scavenger": 1
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10495.682,
+          "plantInputSincePreviousSample": 79.417,
+          "plantLossSincePreviousSample": 549.309,
+          "accessiblePlantPerConsumer": 46.694,
+          "consumersWithoutFood": 13,
+          "consumerSamples": 31,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 80,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7500,
+          "population": 19,
+          "roles": {
+            "herbivore": 19
+          },
+          "plantPatches": 220,
+          "plantBiomass": 2380.399,
+          "plantInputSincePreviousSample": 0,
+          "plantLossSincePreviousSample": 8115.283,
+          "accessiblePlantPerConsumer": 10.281,
+          "consumersWithoutFood": 12,
+          "consumerSamples": 19,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 81,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8000,
+          "population": 14,
+          "roles": {
+            "herbivore": 14
+          },
+          "plantPatches": 220,
+          "plantBiomass": 176,
+          "plantInputSincePreviousSample": 0,
+          "plantLossSincePreviousSample": 2204.399,
+          "accessiblePlantPerConsumer": 0,
+          "consumersWithoutFood": 14,
+          "consumerSamples": 14,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 81,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8500,
+          "population": 9,
+          "roles": {
+            "herbivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 176,
+          "plantInputSincePreviousSample": 0,
+          "plantLossSincePreviousSample": 0,
+          "accessiblePlantPerConsumer": 0,
+          "consumersWithoutFood": 9,
+          "consumerSamples": 9,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 81,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9000,
+          "population": 6,
+          "roles": {
+            "herbivore": 6
+          },
+          "plantPatches": 220,
+          "plantBiomass": 176,
+          "plantInputSincePreviousSample": 0,
+          "plantLossSincePreviousSample": 0,
+          "accessiblePlantPerConsumer": 0,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 6,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 81,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9500,
+          "population": 1,
+          "roles": {
+            "herbivore": 1
+          },
+          "plantPatches": 220,
+          "plantBiomass": 246.709,
+          "plantInputSincePreviousSample": 72.277,
+          "plantLossSincePreviousSample": 1.568,
+          "accessiblePlantPerConsumer": 0,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 1,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 81,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 10000,
+          "population": 1,
+          "roles": {
+            "herbivore": 1
+          },
+          "plantPatches": 220,
+          "plantBiomass": 2666.385,
+          "plantInputSincePreviousSample": 2460.628,
+          "plantLossSincePreviousSample": 40.952,
+          "accessiblePlantPerConsumer": 16.887,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 1,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 81,
+          "juvenileDeathsCumulative": 0
+        }
+      ],
+      "meanPopulation": 36.991
+    },
+    {
+      "model": 0,
+      "seed": 497022,
+      "ticks": 10000,
+      "elapsedMs": 785.482,
+      "capTicks": 0,
+      "firstCapTick": null,
+      "blockedBirths": 0,
+      "births": 89,
+      "birthsAtCap": 0,
+      "juvenileDeaths": 0,
+      "totalDeaths": 152,
+      "deathsAtCap": 0,
+      "deathCauses": {
+        "predation": 53,
+        "starvation": 60,
+        "senescence": 38,
+        "dehydration": 1
+      },
+      "deathCausesAtCap": {},
+      "plantFeedings": 3456,
+      "carrionFeedings": 27,
+      "activeMateDecisionsAtCap": 0,
+      "mateReadyAtCap": 0,
+      "mateNearbyAtCap": 0,
+      "decisionCountAtCap": 0,
+      "populationIntegral": 330074,
+      "peakPopulation": 70,
+      "roleTicksAtCap": {},
+      "sampleSeries": [
+        {
+          "tick": 500,
+          "population": 68,
+          "roles": {
+            "herbivore": 45,
+            "scavenger": 14,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 11460.666,
+          "plantInputSincePreviousSample": 2753.786,
+          "plantLossSincePreviousSample": 1660.213,
+          "accessiblePlantPerConsumer": 89.97,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 59,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 11,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1000,
+          "population": 64,
+          "roles": {
+            "herbivore": 46,
+            "scavenger": 10,
+            "carnivore": 8
+          },
+          "plantPatches": 220,
+          "plantBiomass": 11354.167,
+          "plantInputSincePreviousSample": 1942.71,
+          "plantLossSincePreviousSample": 2049.208,
+          "accessiblePlantPerConsumer": 104.691,
+          "consumersWithoutFood": 9,
+          "consumerSamples": 56,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 20,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1500,
+          "population": 65,
+          "roles": {
+            "herbivore": 50,
+            "scavenger": 7,
+            "carnivore": 8
+          },
+          "plantPatches": 220,
+          "plantBiomass": 9563.883,
+          "plantInputSincePreviousSample": 309.8,
+          "plantLossSincePreviousSample": 2100.084,
+          "accessiblePlantPerConsumer": 58.958,
+          "consumersWithoutFood": 19,
+          "consumerSamples": 57,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 33,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2000,
+          "population": 68,
+          "roles": {
+            "herbivore": 56,
+            "scavenger": 6,
+            "carnivore": 6
+          },
+          "plantPatches": 220,
+          "plantBiomass": 8044.283,
+          "plantInputSincePreviousSample": 98.884,
+          "plantLossSincePreviousSample": 1618.484,
+          "accessiblePlantPerConsumer": 35.677,
+          "consumersWithoutFood": 26,
+          "consumerSamples": 62,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 42,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2500,
+          "population": 64,
+          "roles": {
+            "herbivore": 57,
+            "scavenger": 4,
+            "carnivore": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 6608.632,
+          "plantInputSincePreviousSample": 168.527,
+          "plantLossSincePreviousSample": 1604.178,
+          "accessiblePlantPerConsumer": 33.619,
+          "consumersWithoutFood": 23,
+          "consumerSamples": 61,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 54,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3000,
+          "population": 52,
+          "roles": {
+            "herbivore": 48,
+            "scavenger": 1,
+            "carnivore": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 6929.643,
+          "plantInputSincePreviousSample": 2400.794,
+          "plantLossSincePreviousSample": 2079.784,
+          "accessiblePlantPerConsumer": 35.113,
+          "consumersWithoutFood": 9,
+          "consumerSamples": 49,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 62,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3500,
+          "population": 51,
+          "roles": {
+            "herbivore": 49,
+            "carnivore": 2
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7041.112,
+          "plantInputSincePreviousSample": 2273.942,
+          "plantLossSincePreviousSample": 2162.473,
+          "accessiblePlantPerConsumer": 26.791,
+          "consumersWithoutFood": 14,
+          "consumerSamples": 49,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 72,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4000,
+          "population": 46,
+          "roles": {
+            "herbivore": 45,
+            "carnivore": 1
+          },
+          "plantPatches": 220,
+          "plantBiomass": 6013.313,
+          "plantInputSincePreviousSample": 144.882,
+          "plantLossSincePreviousSample": 1172.681,
+          "accessiblePlantPerConsumer": 13.956,
+          "consumersWithoutFood": 30,
+          "consumerSamples": 45,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 77,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4500,
+          "population": 35,
+          "roles": {
+            "herbivore": 35
+          },
+          "plantPatches": 220,
+          "plantBiomass": 5533.173,
+          "plantInputSincePreviousSample": 94.412,
+          "plantLossSincePreviousSample": 574.552,
+          "accessiblePlantPerConsumer": 17.893,
+          "consumersWithoutFood": 25,
+          "consumerSamples": 35,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 80,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5000,
+          "population": 19,
+          "roles": {
+            "herbivore": 19
+          },
+          "plantPatches": 220,
+          "plantBiomass": 5458.033,
+          "plantInputSincePreviousSample": 382.672,
+          "plantLossSincePreviousSample": 457.812,
+          "accessiblePlantPerConsumer": 17.312,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 19,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 80,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5500,
+          "population": 16,
+          "roles": {
+            "herbivore": 16
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7158.128,
+          "plantInputSincePreviousSample": 2688.965,
+          "plantLossSincePreviousSample": 988.869,
+          "accessiblePlantPerConsumer": 56.593,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 16,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 81,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6000,
+          "population": 15,
+          "roles": {
+            "herbivore": 15
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7991.289,
+          "plantInputSincePreviousSample": 1585.083,
+          "plantLossSincePreviousSample": 751.923,
+          "accessiblePlantPerConsumer": 36.907,
+          "consumersWithoutFood": 5,
+          "consumerSamples": 15,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 83,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6500,
+          "population": 13,
+          "roles": {
+            "herbivore": 13
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7614.816,
+          "plantInputSincePreviousSample": 82.738,
+          "plantLossSincePreviousSample": 459.211,
+          "accessiblePlantPerConsumer": 37.313,
+          "consumersWithoutFood": 5,
+          "consumerSamples": 13,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 83,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7000,
+          "population": 14,
+          "roles": {
+            "herbivore": 14
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7206.464,
+          "plantInputSincePreviousSample": 84.216,
+          "plantLossSincePreviousSample": 492.568,
+          "accessiblePlantPerConsumer": 28.006,
+          "consumersWithoutFood": 5,
+          "consumerSamples": 14,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 85,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7500,
+          "population": 10,
+          "roles": {
+            "herbivore": 10
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7182.774,
+          "plantInputSincePreviousSample": 379.738,
+          "plantLossSincePreviousSample": 403.428,
+          "accessiblePlantPerConsumer": 22.251,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 10,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 87,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8000,
+          "population": 10,
+          "roles": {
+            "herbivore": 10
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7714.104,
+          "plantInputSincePreviousSample": 1198.714,
+          "plantLossSincePreviousSample": 667.384,
+          "accessiblePlantPerConsumer": 46.837,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 10,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 88,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8500,
+          "population": 8,
+          "roles": {
+            "herbivore": 8
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7666.388,
+          "plantInputSincePreviousSample": 447.226,
+          "plantLossSincePreviousSample": 494.942,
+          "accessiblePlantPerConsumer": 48.755,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 8,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 89,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9000,
+          "population": 8,
+          "roles": {
+            "herbivore": 8
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7437.683,
+          "plantInputSincePreviousSample": 40.959,
+          "plantLossSincePreviousSample": 269.663,
+          "accessiblePlantPerConsumer": 38.906,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 8,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 89,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9500,
+          "population": 6,
+          "roles": {
+            "herbivore": 6
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7289.652,
+          "plantInputSincePreviousSample": 44.878,
+          "plantLossSincePreviousSample": 192.909,
+          "accessiblePlantPerConsumer": 59.308,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 6,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 89,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 10000,
+          "population": 3,
+          "roles": {
+            "herbivore": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 8061.484,
+          "plantInputSincePreviousSample": 959.613,
+          "plantLossSincePreviousSample": 187.781,
+          "accessiblePlantPerConsumer": 143.379,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 3,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 89,
+          "juvenileDeathsCumulative": 0
+        }
+      ],
+      "meanPopulation": 33.007
+    },
+    {
+      "model": 0,
+      "seed": 875922,
+      "ticks": 10000,
+      "elapsedMs": 902.228,
+      "capTicks": 0,
+      "firstCapTick": null,
+      "blockedBirths": 0,
+      "births": 177,
+      "birthsAtCap": 0,
+      "juvenileDeaths": 1,
+      "totalDeaths": 233,
+      "deathsAtCap": 0,
+      "deathCauses": {
+        "predation": 21,
+        "starvation": 141,
+        "thermal": 26,
+        "senescence": 45
+      },
+      "deathCausesAtCap": {},
+      "plantFeedings": 4701,
+      "carrionFeedings": 333,
+      "activeMateDecisionsAtCap": 0,
+      "mateReadyAtCap": 0,
+      "mateNearbyAtCap": 0,
+      "decisionCountAtCap": 0,
+      "populationIntegral": 518994,
+      "peakPopulation": 78,
+      "roleTicksAtCap": {},
+      "sampleSeries": [
+        {
+          "tick": 500,
+          "population": 77,
+          "roles": {
+            "herbivore": 51,
+            "scavenger": 17,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10741.129,
+          "plantInputSincePreviousSample": 2383.718,
+          "plantLossSincePreviousSample": 1814.736,
+          "accessiblePlantPerConsumer": 80.08,
+          "consumersWithoutFood": 13,
+          "consumerSamples": 68,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 19,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 1000,
+          "population": 77,
+          "roles": {
+            "herbivore": 58,
+            "scavenger": 12,
+            "carnivore": 7
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10231.365,
+          "plantInputSincePreviousSample": 1255.462,
+          "plantLossSincePreviousSample": 1765.227,
+          "accessiblePlantPerConsumer": 44.855,
+          "consumersWithoutFood": 26,
+          "consumerSamples": 70,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 32,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 1500,
+          "population": 72,
+          "roles": {
+            "herbivore": 55,
+            "scavenger": 11,
+            "carnivore": 6
+          },
+          "plantPatches": 220,
+          "plantBiomass": 8723.253,
+          "plantInputSincePreviousSample": 160.354,
+          "plantLossSincePreviousSample": 1668.466,
+          "accessiblePlantPerConsumer": 40.195,
+          "consumersWithoutFood": 30,
+          "consumerSamples": 66,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 46,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 2000,
+          "population": 68,
+          "roles": {
+            "herbivore": 52,
+            "scavenger": 15,
+            "carnivore": 1
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7412.454,
+          "plantInputSincePreviousSample": 61.831,
+          "plantLossSincePreviousSample": 1372.63,
+          "accessiblePlantPerConsumer": 28.509,
+          "consumersWithoutFood": 41,
+          "consumerSamples": 67,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 61,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 2500,
+          "population": 74,
+          "roles": {
+            "herbivore": 59,
+            "scavenger": 15
+          },
+          "plantPatches": 220,
+          "plantBiomass": 6304.416,
+          "plantInputSincePreviousSample": 113.532,
+          "plantLossSincePreviousSample": 1221.57,
+          "accessiblePlantPerConsumer": 19.945,
+          "consumersWithoutFood": 45,
+          "consumerSamples": 74,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 74,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 3000,
+          "population": 69,
+          "roles": {
+            "herbivore": 56,
+            "scavenger": 13
+          },
+          "plantPatches": 220,
+          "plantBiomass": 6203.641,
+          "plantInputSincePreviousSample": 1600.466,
+          "plantLossSincePreviousSample": 1701.241,
+          "accessiblePlantPerConsumer": 18.81,
+          "consumersWithoutFood": 17,
+          "consumerSamples": 69,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 84,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 3500,
+          "population": 66,
+          "roles": {
+            "herbivore": 55,
+            "scavenger": 11
+          },
+          "plantPatches": 220,
+          "plantBiomass": 5680.571,
+          "plantInputSincePreviousSample": 1477.611,
+          "plantLossSincePreviousSample": 2000.682,
+          "accessiblePlantPerConsumer": 14.637,
+          "consumersWithoutFood": 19,
+          "consumerSamples": 66,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 95,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 4000,
+          "population": 58,
+          "roles": {
+            "herbivore": 47,
+            "scavenger": 11
+          },
+          "plantPatches": 220,
+          "plantBiomass": 4775.519,
+          "plantInputSincePreviousSample": 112.815,
+          "plantLossSincePreviousSample": 1017.866,
+          "accessiblePlantPerConsumer": 29.763,
+          "consumersWithoutFood": 34,
+          "consumerSamples": 58,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 105,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 4500,
+          "population": 54,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 12
+          },
+          "plantPatches": 220,
+          "plantBiomass": 3990.986,
+          "plantInputSincePreviousSample": 85.21,
+          "plantLossSincePreviousSample": 869.744,
+          "accessiblePlantPerConsumer": 17.89,
+          "consumersWithoutFood": 34,
+          "consumerSamples": 54,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 115,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 5000,
+          "population": 49,
+          "roles": {
+            "scavenger": 13,
+            "herbivore": 36
+          },
+          "plantPatches": 220,
+          "plantBiomass": 3308.739,
+          "plantInputSincePreviousSample": 393.622,
+          "plantLossSincePreviousSample": 1075.868,
+          "accessiblePlantPerConsumer": 35.03,
+          "consumersWithoutFood": 8,
+          "consumerSamples": 49,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 124,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 5500,
+          "population": 53,
+          "roles": {
+            "scavenger": 14,
+            "herbivore": 39
+          },
+          "plantPatches": 220,
+          "plantBiomass": 4331.733,
+          "plantInputSincePreviousSample": 2777.519,
+          "plantLossSincePreviousSample": 1754.525,
+          "accessiblePlantPerConsumer": 45.998,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 53,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 133,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 6000,
+          "population": 63,
+          "roles": {
+            "herbivore": 50,
+            "scavenger": 13
+          },
+          "plantPatches": 220,
+          "plantBiomass": 4248.824,
+          "plantInputSincePreviousSample": 1856.608,
+          "plantLossSincePreviousSample": 1939.517,
+          "accessiblePlantPerConsumer": 25.944,
+          "consumersWithoutFood": 25,
+          "consumerSamples": 63,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 147,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 6500,
+          "population": 62,
+          "roles": {
+            "herbivore": 52,
+            "scavenger": 10
+          },
+          "plantPatches": 220,
+          "plantBiomass": 3051.28,
+          "plantInputSincePreviousSample": 106.086,
+          "plantLossSincePreviousSample": 1303.631,
+          "accessiblePlantPerConsumer": 24.8,
+          "consumersWithoutFood": 31,
+          "consumerSamples": 62,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 156,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 7000,
+          "population": 50,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 8
+          },
+          "plantPatches": 220,
+          "plantBiomass": 2250.25,
+          "plantInputSincePreviousSample": 113.677,
+          "plantLossSincePreviousSample": 914.708,
+          "accessiblePlantPerConsumer": 16.105,
+          "consumersWithoutFood": 22,
+          "consumerSamples": 50,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 165,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 7500,
+          "population": 30,
+          "roles": {
+            "herbivore": 27,
+            "scavenger": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 1971.537,
+          "plantInputSincePreviousSample": 464.533,
+          "plantLossSincePreviousSample": 743.246,
+          "accessiblePlantPerConsumer": 12.811,
+          "consumersWithoutFood": 8,
+          "consumerSamples": 30,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 168,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 8000,
+          "population": 22,
+          "roles": {
+            "scavenger": 2,
+            "herbivore": 20
+          },
+          "plantPatches": 220,
+          "plantBiomass": 2863.62,
+          "plantInputSincePreviousSample": 1795.931,
+          "plantLossSincePreviousSample": 903.849,
+          "accessiblePlantPerConsumer": 26.466,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 22,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 168,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 8500,
+          "population": 19,
+          "roles": {
+            "scavenger": 1,
+            "herbivore": 18
+          },
+          "plantPatches": 220,
+          "plantBiomass": 3048.48,
+          "plantInputSincePreviousSample": 771.315,
+          "plantLossSincePreviousSample": 586.455,
+          "accessiblePlantPerConsumer": 32.545,
+          "consumersWithoutFood": 10,
+          "consumerSamples": 19,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 170,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 9000,
+          "population": 20,
+          "roles": {
+            "herbivore": 20
+          },
+          "plantPatches": 220,
+          "plantBiomass": 2566.985,
+          "plantInputSincePreviousSample": 67.398,
+          "plantLossSincePreviousSample": 548.893,
+          "accessiblePlantPerConsumer": 9.44,
+          "consumersWithoutFood": 11,
+          "consumerSamples": 20,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 175,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 9500,
+          "population": 13,
+          "roles": {
+            "herbivore": 13
+          },
+          "plantPatches": 220,
+          "plantBiomass": 2283.989,
+          "plantInputSincePreviousSample": 65.05,
+          "plantLossSincePreviousSample": 348.046,
+          "accessiblePlantPerConsumer": 0.738,
+          "consumersWithoutFood": 11,
+          "consumerSamples": 13,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 177,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 10000,
+          "population": 10,
+          "roles": {
+            "herbivore": 10
+          },
+          "plantPatches": 220,
+          "plantBiomass": 3499.483,
+          "plantInputSincePreviousSample": 1510.965,
+          "plantLossSincePreviousSample": 295.471,
+          "accessiblePlantPerConsumer": 16.698,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 10,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 177,
+          "juvenileDeathsCumulative": 1
+        }
+      ],
+      "meanPopulation": 51.899
+    },
+    {
+      "model": 1,
+      "seed": 166064,
+      "ticks": 10000,
+      "elapsedMs": 16838.597,
+      "capTicks": 573,
+      "firstCapTick": 3448,
+      "blockedBirths": 2130,
+      "births": 413,
+      "birthsAtCap": 0,
+      "juvenileDeaths": 0,
+      "totalDeaths": 403,
+      "deathsAtCap": 22,
+      "deathCauses": {
+        "predation": 19,
+        "starvation": 55,
+        "senescence": 256,
+        "dehydration": 27,
+        "thermal": 46
+      },
+      "deathCausesAtCap": {
+        "senescence": 18,
+        "thermal": 1,
+        "dehydration": 2,
+        "starvation": 1
+      },
+      "plantFeedings": 5707,
+      "carrionFeedings": 646,
+      "activeMateDecisionsAtCap": 5118,
+      "mateReadyAtCap": 11508,
+      "mateNearbyAtCap": 10390,
+      "decisionCountAtCap": 126060,
+      "populationIntegral": 1370659,
+      "peakPopulation": 220,
+      "roleTicksAtCap": {
+        "herbivore": 18617,
+        "scavenger": 106870,
+        "omnivore": 573
+      },
+      "sampleSeries": [
+        {
+          "tick": 500,
+          "population": 72,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 21,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 12312.709,
+          "plantInputSincePreviousSample": 3323.501,
+          "plantLossSincePreviousSample": 1190,
+          "accessiblePlantPerConsumer": 123.111,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 63,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 11,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1000,
+          "population": 95,
+          "roles": {
+            "herbivore": 48,
+            "scavenger": 38,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 12328.371,
+          "plantInputSincePreviousSample": 2089.662,
+          "plantLossSincePreviousSample": 2074,
+          "accessiblePlantPerConsumer": 94.013,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 86,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 34,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1500,
+          "population": 118,
+          "roles": {
+            "herbivore": 49,
+            "scavenger": 60,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10438.046,
+          "plantInputSincePreviousSample": 378.572,
+          "plantLossSincePreviousSample": 2268.898,
+          "accessiblePlantPerConsumer": 60.529,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 109,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 62,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2000,
+          "population": 138,
+          "roles": {
+            "herbivore": 48,
+            "scavenger": 87,
+            "carnivore": 3
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7754.116,
+          "plantInputSincePreviousSample": 154.198,
+          "plantLossSincePreviousSample": 2838.128,
+          "accessiblePlantPerConsumer": 30.563,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 135,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 94,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2500,
+          "population": 156,
+          "roles": {
+            "herbivore": 46,
+            "scavenger": 108,
+            "carnivore": 2
+          },
+          "plantPatches": 231,
+          "plantBiomass": 5627.836,
+          "plantInputSincePreviousSample": 483.962,
+          "plantLossSincePreviousSample": 2610.241,
+          "accessiblePlantPerConsumer": 17.505,
+          "consumersWithoutFood": 13,
+          "consumerSamples": 154,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 122,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3000,
+          "population": 170,
+          "roles": {
+            "herbivore": 41,
+            "scavenger": 128,
+            "omnivore": 1
+          },
+          "plantPatches": 231,
+          "plantBiomass": 6368.355,
+          "plantInputSincePreviousSample": 3917.299,
+          "plantLossSincePreviousSample": 3176.781,
+          "accessiblePlantPerConsumer": 23.972,
+          "consumersWithoutFood": 7,
+          "consumerSamples": 170,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 151,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3500,
+          "population": 220,
+          "roles": {
+            "herbivore": 35,
+            "scavenger": 184,
+            "omnivore": 1
+          },
+          "plantPatches": 231,
+          "plantBiomass": 5526.68,
+          "plantInputSincePreviousSample": 3981.856,
+          "plantLossSincePreviousSample": 4823.53,
+          "accessiblePlantPerConsumer": 18.594,
+          "consumersWithoutFood": 8,
+          "consumerSamples": 220,
+          "blockedBirthsCumulative": 17,
+          "birthsCumulative": 214,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4000,
+          "population": 220,
+          "roles": {
+            "herbivore": 30,
+            "scavenger": 189,
+            "omnivore": 1
+          },
+          "plantPatches": 235,
+          "plantBiomass": 2906.887,
+          "plantInputSincePreviousSample": 364.615,
+          "plantLossSincePreviousSample": 2984.408,
+          "accessiblePlantPerConsumer": 7.965,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 220,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 233,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4500,
+          "population": 203,
+          "roles": {
+            "herbivore": 27,
+            "scavenger": 175,
+            "omnivore": 1
+          },
+          "plantPatches": 252,
+          "plantBiomass": 1400.796,
+          "plantInputSincePreviousSample": 472.48,
+          "plantLossSincePreviousSample": 1978.571,
+          "accessiblePlantPerConsumer": 4.28,
+          "consumersWithoutFood": 8,
+          "consumerSamples": 203,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 241,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5000,
+          "population": 171,
+          "roles": {
+            "herbivore": 18,
+            "scavenger": 152,
+            "omnivore": 1
+          },
+          "plantPatches": 261,
+          "plantBiomass": 1146.422,
+          "plantInputSincePreviousSample": 991.506,
+          "plantLossSincePreviousSample": 1245.88,
+          "accessiblePlantPerConsumer": 4.561,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 171,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 244,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5500,
+          "population": 171,
+          "roles": {
+            "herbivore": 14,
+            "scavenger": 156,
+            "omnivore": 1
+          },
+          "plantPatches": 261,
+          "plantBiomass": 3234.464,
+          "plantInputSincePreviousSample": 5998.351,
+          "plantLossSincePreviousSample": 3910.31,
+          "accessiblePlantPerConsumer": 15.17,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 171,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 267,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6000,
+          "population": 187,
+          "roles": {
+            "herbivore": 9,
+            "scavenger": 178
+          },
+          "plantPatches": 261,
+          "plantBiomass": 3387.347,
+          "plantInputSincePreviousSample": 4221.402,
+          "plantLossSincePreviousSample": 4068.519,
+          "accessiblePlantPerConsumer": 14.47,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 187,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 326,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6500,
+          "population": 176,
+          "roles": {
+            "herbivore": 8,
+            "scavenger": 168
+          },
+          "plantPatches": 262,
+          "plantBiomass": 1183.209,
+          "plantInputSincePreviousSample": 246.353,
+          "plantLossSincePreviousSample": 2450.491,
+          "accessiblePlantPerConsumer": 4.162,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 176,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 340,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7000,
+          "population": 145,
+          "roles": {
+            "herbivore": 5,
+            "scavenger": 140
+          },
+          "plantPatches": 278,
+          "plantBiomass": 761.315,
+          "plantInputSincePreviousSample": 499.478,
+          "plantLossSincePreviousSample": 921.372,
+          "accessiblePlantPerConsumer": 3.281,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 145,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 342,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7500,
+          "population": 83,
+          "roles": {
+            "scavenger": 80,
+            "herbivore": 3
+          },
+          "plantPatches": 291,
+          "plantBiomass": 1259.754,
+          "plantInputSincePreviousSample": 1269.191,
+          "plantLossSincePreviousSample": 770.752,
+          "accessiblePlantPerConsumer": 10.421,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 83,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 342,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8000,
+          "population": 70,
+          "roles": {
+            "scavenger": 68,
+            "herbivore": 2
+          },
+          "plantPatches": 291,
+          "plantBiomass": 3769.468,
+          "plantInputSincePreviousSample": 4205.223,
+          "plantLossSincePreviousSample": 1695.509,
+          "accessiblePlantPerConsumer": 40.433,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 70,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 359,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8500,
+          "population": 90,
+          "roles": {
+            "scavenger": 88,
+            "herbivore": 2
+          },
+          "plantPatches": 291,
+          "plantBiomass": 3390.922,
+          "plantInputSincePreviousSample": 1811.478,
+          "plantLossSincePreviousSample": 2190.024,
+          "accessiblePlantPerConsumer": 24.171,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 90,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 389,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9000,
+          "population": 94,
+          "roles": {
+            "scavenger": 92,
+            "herbivore": 2
+          },
+          "plantPatches": 291,
+          "plantBiomass": 1927.07,
+          "plantInputSincePreviousSample": 134.129,
+          "plantLossSincePreviousSample": 1597.981,
+          "accessiblePlantPerConsumer": 12.953,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 94,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 403,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9500,
+          "population": 82,
+          "roles": {
+            "scavenger": 80,
+            "herbivore": 2
+          },
+          "plantPatches": 291,
+          "plantBiomass": 1203.495,
+          "plantInputSincePreviousSample": 128.488,
+          "plantLossSincePreviousSample": 852.062,
+          "accessiblePlantPerConsumer": 8.179,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 82,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 408,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 10000,
+          "population": 76,
+          "roles": {
+            "scavenger": 74,
+            "herbivore": 2
+          },
+          "plantPatches": 294,
+          "plantBiomass": 2816.541,
+          "plantInputSincePreviousSample": 2979.834,
+          "plantLossSincePreviousSample": 1366.789,
+          "accessiblePlantPerConsumer": 30.204,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 76,
+          "blockedBirthsCumulative": 2130,
+          "birthsCumulative": 413,
+          "juvenileDeathsCumulative": 0
+        }
+      ],
+      "meanPopulation": 137.066
+    },
+    {
+      "model": 1,
+      "seed": 497022,
+      "ticks": 10000,
+      "elapsedMs": 4050.468,
+      "capTicks": 0,
+      "firstCapTick": null,
+      "blockedBirths": 0,
+      "births": 216,
+      "birthsAtCap": 0,
+      "juvenileDeaths": 1,
+      "totalDeaths": 263,
+      "deathsAtCap": 0,
+      "deathCauses": {
+        "predation": 26,
+        "starvation": 73,
+        "senescence": 118,
+        "dehydration": 12,
+        "thermal": 34
+      },
+      "deathCausesAtCap": {},
+      "plantFeedings": 3864,
+      "carrionFeedings": 259,
+      "activeMateDecisionsAtCap": 0,
+      "mateReadyAtCap": 0,
+      "mateNearbyAtCap": 0,
+      "decisionCountAtCap": 0,
+      "populationIntegral": 681949,
+      "peakPopulation": 105,
+      "roleTicksAtCap": {},
+      "sampleSeries": [
+        {
+          "tick": 500,
+          "population": 78,
+          "roles": {
+            "herbivore": 50,
+            "scavenger": 18,
+            "carnivore": 10
+          },
+          "plantPatches": 220,
+          "plantBiomass": 11117.466,
+          "plantInputSincePreviousSample": 2763.648,
+          "plantLossSincePreviousSample": 2013.275,
+          "accessiblePlantPerConsumer": 89.764,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 68,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 14,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1000,
+          "population": 87,
+          "roles": {
+            "herbivore": 51,
+            "scavenger": 26,
+            "carnivore": 10
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10780.442,
+          "plantInputSincePreviousSample": 2218.167,
+          "plantLossSincePreviousSample": 2555.191,
+          "accessiblePlantPerConsumer": 62.227,
+          "consumersWithoutFood": 8,
+          "consumerSamples": 77,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 29,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1500,
+          "population": 100,
+          "roles": {
+            "herbivore": 56,
+            "scavenger": 35,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 8431.796,
+          "plantInputSincePreviousSample": 317.226,
+          "plantLossSincePreviousSample": 2665.872,
+          "accessiblePlantPerConsumer": 36.697,
+          "consumersWithoutFood": 14,
+          "consumerSamples": 91,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 50,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 2000,
+          "population": 104,
+          "roles": {
+            "herbivore": 54,
+            "scavenger": 43,
+            "carnivore": 7
+          },
+          "plantPatches": 221,
+          "plantBiomass": 6565.683,
+          "plantInputSincePreviousSample": 114.026,
+          "plantLossSincePreviousSample": 1980.14,
+          "accessiblePlantPerConsumer": 26.765,
+          "consumersWithoutFood": 20,
+          "consumerSamples": 97,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 64,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 2500,
+          "population": 92,
+          "roles": {
+            "herbivore": 44,
+            "scavenger": 42,
+            "carnivore": 6
+          },
+          "plantPatches": 227,
+          "plantBiomass": 5483.389,
+          "plantInputSincePreviousSample": 315.63,
+          "plantLossSincePreviousSample": 1397.924,
+          "accessiblePlantPerConsumer": 27.478,
+          "consumersWithoutFood": 16,
+          "consumerSamples": 86,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 71,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 3000,
+          "population": 81,
+          "roles": {
+            "herbivore": 36,
+            "scavenger": 40,
+            "carnivore": 5
+          },
+          "plantPatches": 227,
+          "plantBiomass": 6467.42,
+          "plantInputSincePreviousSample": 2967.463,
+          "plantLossSincePreviousSample": 1983.432,
+          "accessiblePlantPerConsumer": 40.059,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 76,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 81,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 3500,
+          "population": 83,
+          "roles": {
+            "herbivore": 38,
+            "scavenger": 42,
+            "carnivore": 3
+          },
+          "plantPatches": 227,
+          "plantBiomass": 6229.164,
+          "plantInputSincePreviousSample": 2489.358,
+          "plantLossSincePreviousSample": 2727.614,
+          "accessiblePlantPerConsumer": 46.367,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 80,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 102,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 4000,
+          "population": 95,
+          "roles": {
+            "herbivore": 44,
+            "scavenger": 51
+          },
+          "plantPatches": 227,
+          "plantBiomass": 3699.889,
+          "plantInputSincePreviousSample": 196.36,
+          "plantLossSincePreviousSample": 2725.635,
+          "accessiblePlantPerConsumer": 23.683,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 95,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 130,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 4500,
+          "population": 88,
+          "roles": {
+            "herbivore": 40,
+            "scavenger": 48
+          },
+          "plantPatches": 235,
+          "plantBiomass": 2196.155,
+          "plantInputSincePreviousSample": 282.988,
+          "plantLossSincePreviousSample": 1786.721,
+          "accessiblePlantPerConsumer": 11.257,
+          "consumersWithoutFood": 8,
+          "consumerSamples": 88,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 141,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 5000,
+          "population": 80,
+          "roles": {
+            "herbivore": 36,
+            "scavenger": 44
+          },
+          "plantPatches": 245,
+          "plantBiomass": 2014.173,
+          "plantInputSincePreviousSample": 739.882,
+          "plantLossSincePreviousSample": 921.865,
+          "accessiblePlantPerConsumer": 11.11,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 80,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 146,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 5500,
+          "population": 75,
+          "roles": {
+            "herbivore": 31,
+            "scavenger": 44
+          },
+          "plantPatches": 245,
+          "plantBiomass": 3896.973,
+          "plantInputSincePreviousSample": 4028.966,
+          "plantLossSincePreviousSample": 2146.166,
+          "accessiblePlantPerConsumer": 22.543,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 75,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 152,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 6000,
+          "population": 87,
+          "roles": {
+            "herbivore": 31,
+            "scavenger": 56
+          },
+          "plantPatches": 245,
+          "plantBiomass": 4104.872,
+          "plantInputSincePreviousSample": 2611.362,
+          "plantLossSincePreviousSample": 2403.463,
+          "accessiblePlantPerConsumer": 32.434,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 87,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 173,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 6500,
+          "population": 78,
+          "roles": {
+            "scavenger": 50,
+            "herbivore": 28
+          },
+          "plantPatches": 245,
+          "plantBiomass": 2534.146,
+          "plantInputSincePreviousSample": 143.938,
+          "plantLossSincePreviousSample": 1714.664,
+          "accessiblePlantPerConsumer": 11.158,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 78,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 184,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 7000,
+          "population": 70,
+          "roles": {
+            "herbivore": 24,
+            "scavenger": 46
+          },
+          "plantPatches": 258,
+          "plantBiomass": 1917.988,
+          "plantInputSincePreviousSample": 360.495,
+          "plantLossSincePreviousSample": 976.652,
+          "accessiblePlantPerConsumer": 11.867,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 70,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 192,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 7500,
+          "population": 56,
+          "roles": {
+            "herbivore": 16,
+            "scavenger": 40
+          },
+          "plantPatches": 269,
+          "plantBiomass": 2054.304,
+          "plantInputSincePreviousSample": 842.126,
+          "plantLossSincePreviousSample": 705.81,
+          "accessiblePlantPerConsumer": 14.015,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 56,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 195,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 8000,
+          "population": 24,
+          "roles": {
+            "herbivore": 3,
+            "scavenger": 21
+          },
+          "plantPatches": 276,
+          "plantBiomass": 2014.688,
+          "plantInputSincePreviousSample": 1344.969,
+          "plantLossSincePreviousSample": 1384.586,
+          "accessiblePlantPerConsumer": 21.17,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 24,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 202,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 8500,
+          "population": 13,
+          "roles": {
+            "herbivore": 2,
+            "scavenger": 11
+          },
+          "plantPatches": 293,
+          "plantBiomass": 2092.913,
+          "plantInputSincePreviousSample": 578.811,
+          "plantLossSincePreviousSample": 500.586,
+          "accessiblePlantPerConsumer": 54.329,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 13,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 203,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 9000,
+          "population": 15,
+          "roles": {
+            "scavenger": 14,
+            "herbivore": 1
+          },
+          "plantPatches": 312,
+          "plantBiomass": 2199.643,
+          "plantInputSincePreviousSample": 429.629,
+          "plantLossSincePreviousSample": 322.9,
+          "accessiblePlantPerConsumer": 50.782,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 15,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 207,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 9500,
+          "population": 16,
+          "roles": {
+            "scavenger": 16
+          },
+          "plantPatches": 316,
+          "plantBiomass": 2025.357,
+          "plantInputSincePreviousSample": 185.093,
+          "plantLossSincePreviousSample": 359.379,
+          "accessiblePlantPerConsumer": 34.773,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 16,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 211,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 10000,
+          "population": 19,
+          "roles": {
+            "scavenger": 19
+          },
+          "plantPatches": 316,
+          "plantBiomass": 4506.763,
+          "plantInputSincePreviousSample": 2852.461,
+          "plantLossSincePreviousSample": 371.054,
+          "accessiblePlantPerConsumer": 39.081,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 19,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 216,
+          "juvenileDeathsCumulative": 1
+        }
+      ],
+      "meanPopulation": 68.195
+    },
+    {
+      "model": 1,
+      "seed": 875922,
+      "ticks": 10000,
+      "elapsedMs": 8874.392,
+      "capTicks": 0,
+      "firstCapTick": null,
+      "blockedBirths": 0,
+      "births": 285,
+      "birthsAtCap": 0,
+      "juvenileDeaths": 0,
+      "totalDeaths": 307,
+      "deathsAtCap": 0,
+      "deathCauses": {
+        "thermal": 47,
+        "predation": 14,
+        "starvation": 103,
+        "senescence": 143
+      },
+      "deathCausesAtCap": {},
+      "plantFeedings": 4687,
+      "carrionFeedings": 574,
+      "activeMateDecisionsAtCap": 0,
+      "mateReadyAtCap": 0,
+      "mateNearbyAtCap": 0,
+      "decisionCountAtCap": 0,
+      "populationIntegral": 965137,
+      "peakPopulation": 150,
+      "roleTicksAtCap": {},
+      "sampleSeries": [
+        {
+          "tick": 500,
+          "population": 87,
+          "roles": {
+            "herbivore": 54,
+            "scavenger": 24,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10462.339,
+          "plantInputSincePreviousSample": 2545.868,
+          "plantLossSincePreviousSample": 2255.676,
+          "accessiblePlantPerConsumer": 79.145,
+          "consumersWithoutFood": 8,
+          "consumerSamples": 78,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 25,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1000,
+          "population": 113,
+          "roles": {
+            "herbivore": 63,
+            "scavenger": 41,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 8976.27,
+          "plantInputSincePreviousSample": 1781.024,
+          "plantLossSincePreviousSample": 3267.093,
+          "accessiblePlantPerConsumer": 43.314,
+          "consumersWithoutFood": 10,
+          "consumerSamples": 104,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 56,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1500,
+          "population": 134,
+          "roles": {
+            "herbivore": 73,
+            "scavenger": 55,
+            "carnivore": 6
+          },
+          "plantPatches": 224,
+          "plantBiomass": 5979.337,
+          "plantInputSincePreviousSample": 344.646,
+          "plantLossSincePreviousSample": 3341.579,
+          "accessiblePlantPerConsumer": 19.764,
+          "consumersWithoutFood": 23,
+          "consumerSamples": 128,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 90,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2000,
+          "population": 147,
+          "roles": {
+            "herbivore": 76,
+            "scavenger": 67,
+            "carnivore": 4
+          },
+          "plantPatches": 238,
+          "plantBiomass": 3756.937,
+          "plantInputSincePreviousSample": 351.443,
+          "plantLossSincePreviousSample": 2573.843,
+          "accessiblePlantPerConsumer": 14.688,
+          "consumersWithoutFood": 32,
+          "consumerSamples": 143,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 115,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2500,
+          "population": 146,
+          "roles": {
+            "herbivore": 76,
+            "scavenger": 69,
+            "carnivore": 1
+          },
+          "plantPatches": 249,
+          "plantBiomass": 2210.017,
+          "plantInputSincePreviousSample": 392.634,
+          "plantLossSincePreviousSample": 1939.554,
+          "accessiblePlantPerConsumer": 6.977,
+          "consumersWithoutFood": 28,
+          "consumerSamples": 145,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 125,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3000,
+          "population": 118,
+          "roles": {
+            "herbivore": 56,
+            "scavenger": 61,
+            "omnivore": 1
+          },
+          "plantPatches": 254,
+          "plantBiomass": 2648.752,
+          "plantInputSincePreviousSample": 3006.66,
+          "plantLossSincePreviousSample": 2567.925,
+          "accessiblePlantPerConsumer": 12.47,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 118,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 141,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3500,
+          "population": 124,
+          "roles": {
+            "herbivore": 55,
+            "scavenger": 69
+          },
+          "plantPatches": 254,
+          "plantBiomass": 2493.482,
+          "plantInputSincePreviousSample": 2972.982,
+          "plantLossSincePreviousSample": 3128.252,
+          "accessiblePlantPerConsumer": 13.903,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 124,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 166,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4000,
+          "population": 109,
+          "roles": {
+            "herbivore": 47,
+            "scavenger": 62
+          },
+          "plantPatches": 258,
+          "plantBiomass": 952.757,
+          "plantInputSincePreviousSample": 277.879,
+          "plantLossSincePreviousSample": 1818.604,
+          "accessiblePlantPerConsumer": 3.87,
+          "consumersWithoutFood": 12,
+          "consumerSamples": 109,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 177,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4500,
+          "population": 88,
+          "roles": {
+            "scavenger": 55,
+            "herbivore": 33
+          },
+          "plantPatches": 271,
+          "plantBiomass": 803.285,
+          "plantInputSincePreviousSample": 355.171,
+          "plantLossSincePreviousSample": 504.644,
+          "accessiblePlantPerConsumer": 3.675,
+          "consumersWithoutFood": 7,
+          "consumerSamples": 88,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 177,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5000,
+          "population": 69,
+          "roles": {
+            "scavenger": 47,
+            "herbivore": 22
+          },
+          "plantPatches": 281,
+          "plantBiomass": 1156.22,
+          "plantInputSincePreviousSample": 782.328,
+          "plantLossSincePreviousSample": 429.392,
+          "accessiblePlantPerConsumer": 12.14,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 69,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 178,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5500,
+          "population": 69,
+          "roles": {
+            "scavenger": 52,
+            "herbivore": 17
+          },
+          "plantPatches": 281,
+          "plantBiomass": 3128.04,
+          "plantInputSincePreviousSample": 4208.49,
+          "plantLossSincePreviousSample": 2236.671,
+          "accessiblePlantPerConsumer": 30.208,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 69,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 195,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6000,
+          "population": 86,
+          "roles": {
+            "scavenger": 69,
+            "herbivore": 17
+          },
+          "plantPatches": 281,
+          "plantBiomass": 3711.638,
+          "plantInputSincePreviousSample": 2762.631,
+          "plantLossSincePreviousSample": 2179.034,
+          "accessiblePlantPerConsumer": 27.328,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 86,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 223,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6500,
+          "population": 101,
+          "roles": {
+            "scavenger": 84,
+            "herbivore": 17
+          },
+          "plantPatches": 281,
+          "plantBiomass": 1732.974,
+          "plantInputSincePreviousSample": 147.911,
+          "plantLossSincePreviousSample": 2126.574,
+          "accessiblePlantPerConsumer": 7.669,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 101,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 248,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7000,
+          "population": 95,
+          "roles": {
+            "herbivore": 12,
+            "scavenger": 83
+          },
+          "plantPatches": 291,
+          "plantBiomass": 1061.35,
+          "plantInputSincePreviousSample": 330.388,
+          "plantLossSincePreviousSample": 1002.012,
+          "accessiblePlantPerConsumer": 4.601,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 95,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 252,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7500,
+          "population": 82,
+          "roles": {
+            "scavenger": 75,
+            "herbivore": 7
+          },
+          "plantPatches": 300,
+          "plantBiomass": 1067.737,
+          "plantInputSincePreviousSample": 809.565,
+          "plantLossSincePreviousSample": 803.178,
+          "accessiblePlantPerConsumer": 7.617,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 82,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 254,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8000,
+          "population": 82,
+          "roles": {
+            "herbivore": 5,
+            "scavenger": 77
+          },
+          "plantPatches": 300,
+          "plantBiomass": 1836.095,
+          "plantInputSincePreviousSample": 2496.768,
+          "plantLossSincePreviousSample": 1728.41,
+          "accessiblePlantPerConsumer": 17,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 82,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 267,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8500,
+          "population": 95,
+          "roles": {
+            "herbivore": 6,
+            "scavenger": 89
+          },
+          "plantPatches": 300,
+          "plantBiomass": 940.455,
+          "plantInputSincePreviousSample": 1070.44,
+          "plantLossSincePreviousSample": 1966.08,
+          "accessiblePlantPerConsumer": 7.751,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 95,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 283,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9000,
+          "population": 78,
+          "roles": {
+            "scavenger": 73,
+            "herbivore": 5
+          },
+          "plantPatches": 307,
+          "plantBiomass": 549.561,
+          "plantInputSincePreviousSample": 213.859,
+          "plantLossSincePreviousSample": 604.753,
+          "accessiblePlantPerConsumer": 4.049,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 78,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 283,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9500,
+          "population": 59,
+          "roles": {
+            "scavenger": 55,
+            "herbivore": 4
+          },
+          "plantPatches": 314,
+          "plantBiomass": 570.013,
+          "plantInputSincePreviousSample": 206.289,
+          "plantLossSincePreviousSample": 185.837,
+          "accessiblePlantPerConsumer": 3.919,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 59,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 283,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 10000,
+          "population": 44,
+          "roles": {
+            "scavenger": 42,
+            "herbivore": 2
+          },
+          "plantPatches": 317,
+          "plantBiomass": 1879.778,
+          "plantInputSincePreviousSample": 2050.101,
+          "plantLossSincePreviousSample": 740.336,
+          "accessiblePlantPerConsumer": 19.417,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 44,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 285,
+          "juvenileDeathsCumulative": 0
+        }
+      ],
+      "meanPopulation": 96.514
+    },
+    {
+      "model": 2,
+      "seed": 166064,
+      "ticks": 10000,
+      "elapsedMs": 17259.076,
+      "capTicks": 0,
+      "firstCapTick": null,
+      "blockedBirths": 0,
+      "births": 389,
+      "birthsAtCap": 0,
+      "juvenileDeaths": 0,
+      "totalDeaths": 400,
+      "deathsAtCap": 0,
+      "deathCauses": {
+        "predation": 20,
+        "starvation": 64,
+        "senescence": 262,
+        "dehydration": 22,
+        "thermal": 32
+      },
+      "deathCausesAtCap": {},
+      "plantFeedings": 5481,
+      "carrionFeedings": 663,
+      "activeMateDecisionsAtCap": 0,
+      "mateReadyAtCap": 0,
+      "mateNearbyAtCap": 0,
+      "decisionCountAtCap": 0,
+      "populationIntegral": 1324929,
+      "peakPopulation": 217,
+      "roleTicksAtCap": {},
+      "sampleSeries": [
+        {
+          "tick": 500,
+          "population": 72,
+          "roles": {
+            "herbivore": 42,
+            "scavenger": 21,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 12312.709,
+          "plantInputSincePreviousSample": 3323.501,
+          "plantLossSincePreviousSample": 1190,
+          "accessiblePlantPerConsumer": 123.111,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 63,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 11,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1000,
+          "population": 95,
+          "roles": {
+            "herbivore": 48,
+            "scavenger": 38,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 12328.371,
+          "plantInputSincePreviousSample": 2089.662,
+          "plantLossSincePreviousSample": 2074,
+          "accessiblePlantPerConsumer": 94.013,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 86,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 34,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1500,
+          "population": 121,
+          "roles": {
+            "herbivore": 50,
+            "scavenger": 62,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10213.35,
+          "plantInputSincePreviousSample": 377.793,
+          "plantLossSincePreviousSample": 2492.814,
+          "accessiblePlantPerConsumer": 59.812,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 112,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 65,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2000,
+          "population": 146,
+          "roles": {
+            "herbivore": 55,
+            "scavenger": 88,
+            "carnivore": 2,
+            "omnivore": 1
+          },
+          "plantPatches": 220,
+          "plantBiomass": 7322.192,
+          "plantInputSincePreviousSample": 161.658,
+          "plantLossSincePreviousSample": 3052.816,
+          "accessiblePlantPerConsumer": 32.959,
+          "consumersWithoutFood": 5,
+          "consumerSamples": 144,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 100,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2500,
+          "population": 158,
+          "roles": {
+            "herbivore": 46,
+            "scavenger": 110,
+            "carnivore": 1,
+            "omnivore": 1
+          },
+          "plantPatches": 226,
+          "plantBiomass": 5083.611,
+          "plantInputSincePreviousSample": 389.807,
+          "plantLossSincePreviousSample": 2628.388,
+          "accessiblePlantPerConsumer": 15.944,
+          "consumersWithoutFood": 13,
+          "consumerSamples": 157,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 126,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3000,
+          "population": 174,
+          "roles": {
+            "herbivore": 39,
+            "scavenger": 134,
+            "omnivore": 1
+          },
+          "plantPatches": 226,
+          "plantBiomass": 6044.135,
+          "plantInputSincePreviousSample": 4074.33,
+          "plantLossSincePreviousSample": 3113.806,
+          "accessiblePlantPerConsumer": 24.608,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 174,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 157,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3500,
+          "population": 208,
+          "roles": {
+            "herbivore": 30,
+            "scavenger": 175,
+            "omnivore": 3
+          },
+          "plantPatches": 226,
+          "plantBiomass": 5907.581,
+          "plantInputSincePreviousSample": 4075.281,
+          "plantLossSincePreviousSample": 4211.834,
+          "accessiblePlantPerConsumer": 21.17,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 208,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 204,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4000,
+          "population": 212,
+          "roles": {
+            "herbivore": 21,
+            "scavenger": 188,
+            "omnivore": 3
+          },
+          "plantPatches": 226,
+          "plantBiomass": 3027.084,
+          "plantInputSincePreviousSample": 281.553,
+          "plantLossSincePreviousSample": 3162.051,
+          "accessiblePlantPerConsumer": 9.749,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 212,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 230,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4500,
+          "population": 200,
+          "roles": {
+            "herbivore": 18,
+            "scavenger": 179,
+            "omnivore": 3
+          },
+          "plantPatches": 238,
+          "plantBiomass": 1518.261,
+          "plantInputSincePreviousSample": 387.161,
+          "plantLossSincePreviousSample": 1895.984,
+          "accessiblePlantPerConsumer": 4.941,
+          "consumersWithoutFood": 9,
+          "consumerSamples": 200,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 239,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5000,
+          "population": 178,
+          "roles": {
+            "herbivore": 14,
+            "scavenger": 161,
+            "omnivore": 3
+          },
+          "plantPatches": 254,
+          "plantBiomass": 1163.777,
+          "plantInputSincePreviousSample": 1046.718,
+          "plantLossSincePreviousSample": 1401.203,
+          "accessiblePlantPerConsumer": 4.89,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 178,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 243,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5500,
+          "population": 166,
+          "roles": {
+            "herbivore": 9,
+            "scavenger": 154,
+            "omnivore": 3
+          },
+          "plantPatches": 254,
+          "plantBiomass": 3314.008,
+          "plantInputSincePreviousSample": 5616.214,
+          "plantLossSincePreviousSample": 3465.983,
+          "accessiblePlantPerConsumer": 15.885,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 166,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 262,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6000,
+          "population": 199,
+          "roles": {
+            "scavenger": 190,
+            "herbivore": 6,
+            "omnivore": 3
+          },
+          "plantPatches": 254,
+          "plantBiomass": 3092.077,
+          "plantInputSincePreviousSample": 4090.458,
+          "plantLossSincePreviousSample": 4312.388,
+          "accessiblePlantPerConsumer": 12.22,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 199,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 313,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6500,
+          "population": 176,
+          "roles": {
+            "herbivore": 5,
+            "omnivore": 2,
+            "scavenger": 169
+          },
+          "plantPatches": 260,
+          "plantBiomass": 1200.254,
+          "plantInputSincePreviousSample": 311.348,
+          "plantLossSincePreviousSample": 2203.171,
+          "accessiblePlantPerConsumer": 4.491,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 176,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 326,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7000,
+          "population": 136,
+          "roles": {
+            "scavenger": 133,
+            "herbivore": 2,
+            "omnivore": 1
+          },
+          "plantPatches": 272,
+          "plantBiomass": 639.14,
+          "plantInputSincePreviousSample": 424.546,
+          "plantLossSincePreviousSample": 985.66,
+          "accessiblePlantPerConsumer": 2.608,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 136,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 326,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7500,
+          "population": 84,
+          "roles": {
+            "scavenger": 83,
+            "herbivore": 1
+          },
+          "plantPatches": 279,
+          "plantBiomass": 1108.037,
+          "plantInputSincePreviousSample": 1115.518,
+          "plantLossSincePreviousSample": 646.621,
+          "accessiblePlantPerConsumer": 8.319,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 84,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 327,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8000,
+          "population": 66,
+          "roles": {
+            "scavenger": 66
+          },
+          "plantPatches": 279,
+          "plantBiomass": 3180.505,
+          "plantInputSincePreviousSample": 3831.682,
+          "plantLossSincePreviousSample": 1759.214,
+          "accessiblePlantPerConsumer": 24.77,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 66,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 341,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8500,
+          "population": 74,
+          "roles": {
+            "scavenger": 74
+          },
+          "plantPatches": 279,
+          "plantBiomass": 2805.193,
+          "plantInputSincePreviousSample": 1629.005,
+          "plantLossSincePreviousSample": 2004.317,
+          "accessiblePlantPerConsumer": 17.309,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 74,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 365,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9000,
+          "population": 71,
+          "roles": {
+            "scavenger": 71
+          },
+          "plantPatches": 279,
+          "plantBiomass": 1757.511,
+          "plantInputSincePreviousSample": 125.337,
+          "plantLossSincePreviousSample": 1173.019,
+          "accessiblePlantPerConsumer": 11.544,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 71,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 375,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9500,
+          "population": 58,
+          "roles": {
+            "scavenger": 58
+          },
+          "plantPatches": 289,
+          "plantBiomass": 1341.06,
+          "plantInputSincePreviousSample": 292.292,
+          "plantLossSincePreviousSample": 708.743,
+          "accessiblePlantPerConsumer": 10.172,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 58,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 379,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 10000,
+          "population": 55,
+          "roles": {
+            "scavenger": 55
+          },
+          "plantPatches": 292,
+          "plantBiomass": 3289.112,
+          "plantInputSincePreviousSample": 2889.121,
+          "plantLossSincePreviousSample": 941.068,
+          "accessiblePlantPerConsumer": 38.876,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 55,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 389,
+          "juvenileDeathsCumulative": 0
+        }
+      ],
+      "meanPopulation": 132.493
+    },
+    {
+      "model": 2,
+      "seed": 497022,
+      "ticks": 10000,
+      "elapsedMs": 5842.8,
+      "capTicks": 0,
+      "firstCapTick": null,
+      "blockedBirths": 0,
+      "births": 267,
+      "birthsAtCap": 0,
+      "juvenileDeaths": 1,
+      "totalDeaths": 274,
+      "deathsAtCap": 0,
+      "deathCauses": {
+        "predation": 20,
+        "starvation": 95,
+        "senescence": 144,
+        "dehydration": 2,
+        "thermal": 13
+      },
+      "deathCausesAtCap": {},
+      "plantFeedings": 4544,
+      "carrionFeedings": 428,
+      "activeMateDecisionsAtCap": 0,
+      "mateReadyAtCap": 0,
+      "mateNearbyAtCap": 0,
+      "decisionCountAtCap": 0,
+      "populationIntegral": 847763,
+      "peakPopulation": 132,
+      "roleTicksAtCap": {},
+      "sampleSeries": [
+        {
+          "tick": 500,
+          "population": 80,
+          "roles": {
+            "herbivore": 54,
+            "scavenger": 17,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10748.315,
+          "plantInputSincePreviousSample": 2731.976,
+          "plantLossSincePreviousSample": 2350.754,
+          "accessiblePlantPerConsumer": 79.55,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 71,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 15,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1000,
+          "population": 101,
+          "roles": {
+            "herbivore": 73,
+            "scavenger": 19,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 9245.966,
+          "plantInputSincePreviousSample": 2232.63,
+          "plantLossSincePreviousSample": 3734.979,
+          "accessiblePlantPerConsumer": 57.677,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 92,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 41,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1500,
+          "population": 121,
+          "roles": {
+            "herbivore": 86,
+            "scavenger": 27,
+            "carnivore": 8
+          },
+          "plantPatches": 220,
+          "plantBiomass": 5782.148,
+          "plantInputSincePreviousSample": 383.58,
+          "plantLossSincePreviousSample": 3847.398,
+          "accessiblePlantPerConsumer": 28.162,
+          "consumersWithoutFood": 22,
+          "consumerSamples": 113,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 67,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 2000,
+          "population": 130,
+          "roles": {
+            "herbivore": 91,
+            "scavenger": 32,
+            "carnivore": 7
+          },
+          "plantPatches": 228,
+          "plantBiomass": 3355.719,
+          "plantInputSincePreviousSample": 264.115,
+          "plantLossSincePreviousSample": 2690.543,
+          "accessiblePlantPerConsumer": 12.15,
+          "consumersWithoutFood": 28,
+          "consumerSamples": 123,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 82,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 2500,
+          "population": 114,
+          "roles": {
+            "herbivore": 74,
+            "scavenger": 35,
+            "carnivore": 5
+          },
+          "plantPatches": 238,
+          "plantBiomass": 2533.43,
+          "plantInputSincePreviousSample": 389.822,
+          "plantLossSincePreviousSample": 1212.112,
+          "accessiblePlantPerConsumer": 16.455,
+          "consumersWithoutFood": 24,
+          "consumerSamples": 109,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 89,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 3000,
+          "population": 86,
+          "roles": {
+            "herbivore": 53,
+            "scavenger": 30,
+            "carnivore": 3
+          },
+          "plantPatches": 239,
+          "plantBiomass": 3603.769,
+          "plantInputSincePreviousSample": 3055.118,
+          "plantLossSincePreviousSample": 1984.778,
+          "accessiblePlantPerConsumer": 21.351,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 83,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 93,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 3500,
+          "population": 68,
+          "roles": {
+            "herbivore": 35,
+            "scavenger": 32,
+            "carnivore": 1
+          },
+          "plantPatches": 239,
+          "plantBiomass": 4587.178,
+          "plantInputSincePreviousSample": 3002.923,
+          "plantLossSincePreviousSample": 2019.515,
+          "accessiblePlantPerConsumer": 24.507,
+          "consumersWithoutFood": 5,
+          "consumerSamples": 67,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 103,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 4000,
+          "population": 63,
+          "roles": {
+            "herbivore": 27,
+            "scavenger": 36
+          },
+          "plantPatches": 239,
+          "plantBiomass": 3515.103,
+          "plantInputSincePreviousSample": 217.854,
+          "plantLossSincePreviousSample": 1289.929,
+          "accessiblePlantPerConsumer": 26.33,
+          "consumersWithoutFood": 4,
+          "consumerSamples": 63,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 113,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 4500,
+          "population": 63,
+          "roles": {
+            "herbivore": 18,
+            "scavenger": 45
+          },
+          "plantPatches": 239,
+          "plantBiomass": 2402.073,
+          "plantInputSincePreviousSample": 160.679,
+          "plantLossSincePreviousSample": 1273.709,
+          "accessiblePlantPerConsumer": 19.489,
+          "consumersWithoutFood": 3,
+          "consumerSamples": 63,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 129,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 5000,
+          "population": 58,
+          "roles": {
+            "herbivore": 8,
+            "scavenger": 50
+          },
+          "plantPatches": 239,
+          "plantBiomass": 2037.632,
+          "plantInputSincePreviousSample": 627.33,
+          "plantLossSincePreviousSample": 991.772,
+          "accessiblePlantPerConsumer": 15.369,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 58,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 136,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 5500,
+          "population": 68,
+          "roles": {
+            "herbivore": 3,
+            "scavenger": 65
+          },
+          "plantPatches": 239,
+          "plantBiomass": 4850.498,
+          "plantInputSincePreviousSample": 4531.925,
+          "plantLossSincePreviousSample": 1719.059,
+          "accessiblePlantPerConsumer": 27.886,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 68,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 156,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 6000,
+          "population": 87,
+          "roles": {
+            "herbivore": 1,
+            "scavenger": 86
+          },
+          "plantPatches": 239,
+          "plantBiomass": 5501.126,
+          "plantInputSincePreviousSample": 2782.263,
+          "plantLossSincePreviousSample": 2131.635,
+          "accessiblePlantPerConsumer": 30.432,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 87,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 180,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 6500,
+          "population": 91,
+          "roles": {
+            "scavenger": 91
+          },
+          "plantPatches": 239,
+          "plantBiomass": 4074.204,
+          "plantInputSincePreviousSample": 140.976,
+          "plantLossSincePreviousSample": 1567.898,
+          "accessiblePlantPerConsumer": 16.852,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 91,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 195,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 7000,
+          "population": 92,
+          "roles": {
+            "scavenger": 92
+          },
+          "plantPatches": 249,
+          "plantBiomass": 3249.939,
+          "plantInputSincePreviousSample": 312.884,
+          "plantLossSincePreviousSample": 1137.149,
+          "accessiblePlantPerConsumer": 24.933,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 92,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 203,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 7500,
+          "population": 86,
+          "roles": {
+            "scavenger": 86
+          },
+          "plantPatches": 254,
+          "plantBiomass": 2178.862,
+          "plantInputSincePreviousSample": 683.958,
+          "plantLossSincePreviousSample": 1755.034,
+          "accessiblePlantPerConsumer": 14.567,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 86,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 222,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 8000,
+          "population": 88,
+          "roles": {
+            "scavenger": 88
+          },
+          "plantPatches": 254,
+          "plantBiomass": 2408.324,
+          "plantInputSincePreviousSample": 2215.298,
+          "plantLossSincePreviousSample": 1985.837,
+          "accessiblePlantPerConsumer": 13.164,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 88,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 238,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 8500,
+          "population": 87,
+          "roles": {
+            "scavenger": 87
+          },
+          "plantPatches": 254,
+          "plantBiomass": 1566.593,
+          "plantInputSincePreviousSample": 897.391,
+          "plantLossSincePreviousSample": 1739.121,
+          "accessiblePlantPerConsumer": 7.864,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 87,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 254,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 9000,
+          "population": 75,
+          "roles": {
+            "scavenger": 75
+          },
+          "plantPatches": 269,
+          "plantBiomass": 1168.209,
+          "plantInputSincePreviousSample": 333.405,
+          "plantLossSincePreviousSample": 731.79,
+          "accessiblePlantPerConsumer": 5.228,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 75,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 258,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 9500,
+          "population": 68,
+          "roles": {
+            "scavenger": 68
+          },
+          "plantPatches": 277,
+          "plantBiomass": 795.414,
+          "plantInputSincePreviousSample": 204.41,
+          "plantLossSincePreviousSample": 577.204,
+          "accessiblePlantPerConsumer": 6.631,
+          "consumersWithoutFood": 5,
+          "consumerSamples": 68,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 263,
+          "juvenileDeathsCumulative": 1
+        },
+        {
+          "tick": 10000,
+          "population": 59,
+          "roles": {
+            "scavenger": 59
+          },
+          "plantPatches": 283,
+          "plantBiomass": 1922.634,
+          "plantInputSincePreviousSample": 2071.694,
+          "plantLossSincePreviousSample": 944.474,
+          "accessiblePlantPerConsumer": 19.662,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 59,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 267,
+          "juvenileDeathsCumulative": 1
+        }
+      ],
+      "meanPopulation": 84.776
+    },
+    {
+      "model": 2,
+      "seed": 875922,
+      "ticks": 10000,
+      "elapsedMs": 5682.842,
+      "capTicks": 0,
+      "firstCapTick": null,
+      "blockedBirths": 0,
+      "births": 270,
+      "birthsAtCap": 0,
+      "juvenileDeaths": 0,
+      "totalDeaths": 272,
+      "deathsAtCap": 0,
+      "deathCauses": {
+        "predation": 10,
+        "thermal": 48,
+        "starvation": 134,
+        "senescence": 76,
+        "dehydration": 4
+      },
+      "deathCausesAtCap": {},
+      "plantFeedings": 3935,
+      "carrionFeedings": 376,
+      "activeMateDecisionsAtCap": 0,
+      "mateReadyAtCap": 0,
+      "mateNearbyAtCap": 0,
+      "decisionCountAtCap": 0,
+      "populationIntegral": 826386,
+      "peakPopulation": 147,
+      "roleTicksAtCap": {},
+      "sampleSeries": [
+        {
+          "tick": 500,
+          "population": 82,
+          "roles": {
+            "herbivore": 50,
+            "scavenger": 23,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 10678.55,
+          "plantInputSincePreviousSample": 2613.94,
+          "plantLossSincePreviousSample": 2107.536,
+          "accessiblePlantPerConsumer": 78.804,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 73,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 21,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1000,
+          "population": 112,
+          "roles": {
+            "herbivore": 66,
+            "scavenger": 37,
+            "carnivore": 9
+          },
+          "plantPatches": 220,
+          "plantBiomass": 9539.031,
+          "plantInputSincePreviousSample": 1982.227,
+          "plantLossSincePreviousSample": 3121.746,
+          "accessiblePlantPerConsumer": 51.985,
+          "consumersWithoutFood": 15,
+          "consumerSamples": 103,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 52,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 1500,
+          "population": 133,
+          "roles": {
+            "herbivore": 87,
+            "scavenger": 41,
+            "carnivore": 4,
+            "omnivore": 1
+          },
+          "plantPatches": 220,
+          "plantBiomass": 6431.27,
+          "plantInputSincePreviousSample": 288.477,
+          "plantLossSincePreviousSample": 3396.238,
+          "accessiblePlantPerConsumer": 28.896,
+          "consumersWithoutFood": 23,
+          "consumerSamples": 129,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 81,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2000,
+          "population": 136,
+          "roles": {
+            "herbivore": 91,
+            "scavenger": 41,
+            "carnivore": 3,
+            "omnivore": 1
+          },
+          "plantPatches": 236,
+          "plantBiomass": 4023.167,
+          "plantInputSincePreviousSample": 369.902,
+          "plantLossSincePreviousSample": 2778.005,
+          "accessiblePlantPerConsumer": 23.176,
+          "consumersWithoutFood": 25,
+          "consumerSamples": 133,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 99,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 2500,
+          "population": 143,
+          "roles": {
+            "herbivore": 95,
+            "scavenger": 46,
+            "carnivore": 1,
+            "omnivore": 1
+          },
+          "plantPatches": 248,
+          "plantBiomass": 1690.44,
+          "plantInputSincePreviousSample": 408.075,
+          "plantLossSincePreviousSample": 2740.801,
+          "accessiblePlantPerConsumer": 6.798,
+          "consumersWithoutFood": 23,
+          "consumerSamples": 142,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 121,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3000,
+          "population": 122,
+          "roles": {
+            "herbivore": 85,
+            "scavenger": 36,
+            "omnivore": 1
+          },
+          "plantPatches": 250,
+          "plantBiomass": 2039.662,
+          "plantInputSincePreviousSample": 3248.227,
+          "plantLossSincePreviousSample": 2899.004,
+          "accessiblePlantPerConsumer": 9.705,
+          "consumersWithoutFood": 6,
+          "consumerSamples": 122,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 131,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 3500,
+          "population": 110,
+          "roles": {
+            "herbivore": 75,
+            "scavenger": 34,
+            "omnivore": 1
+          },
+          "plantPatches": 250,
+          "plantBiomass": 1649.933,
+          "plantInputSincePreviousSample": 3112.722,
+          "plantLossSincePreviousSample": 3502.452,
+          "accessiblePlantPerConsumer": 8.483,
+          "consumersWithoutFood": 9,
+          "consumerSamples": 110,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 147,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4000,
+          "population": 91,
+          "roles": {
+            "herbivore": 59,
+            "scavenger": 31,
+            "omnivore": 1
+          },
+          "plantPatches": 253,
+          "plantBiomass": 384.359,
+          "plantInputSincePreviousSample": 192.592,
+          "plantLossSincePreviousSample": 1458.165,
+          "accessiblePlantPerConsumer": 0,
+          "consumersWithoutFood": 91,
+          "consumerSamples": 91,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 149,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 4500,
+          "population": 68,
+          "roles": {
+            "scavenger": 23,
+            "herbivore": 45
+          },
+          "plantPatches": 253,
+          "plantBiomass": 202.4,
+          "plantInputSincePreviousSample": 0,
+          "plantLossSincePreviousSample": 181.959,
+          "accessiblePlantPerConsumer": 0,
+          "consumersWithoutFood": 68,
+          "consumerSamples": 68,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 149,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5000,
+          "population": 25,
+          "roles": {
+            "scavenger": 14,
+            "herbivore": 11
+          },
+          "plantPatches": 253,
+          "plantBiomass": 202.4,
+          "plantInputSincePreviousSample": 0,
+          "plantLossSincePreviousSample": 0,
+          "accessiblePlantPerConsumer": 0,
+          "consumersWithoutFood": 25,
+          "consumerSamples": 25,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 149,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 5500,
+          "population": 16,
+          "roles": {
+            "scavenger": 16
+          },
+          "plantPatches": 253,
+          "plantBiomass": 3611.741,
+          "plantInputSincePreviousSample": 3695.119,
+          "plantLossSincePreviousSample": 285.779,
+          "accessiblePlantPerConsumer": 81.973,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 16,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 153,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6000,
+          "population": 27,
+          "roles": {
+            "scavenger": 27
+          },
+          "plantPatches": 253,
+          "plantBiomass": 5932.038,
+          "plantInputSincePreviousSample": 2973.137,
+          "plantLossSincePreviousSample": 652.839,
+          "accessiblePlantPerConsumer": 76.717,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 27,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 164,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 6500,
+          "population": 42,
+          "roles": {
+            "scavenger": 42
+          },
+          "plantPatches": 253,
+          "plantBiomass": 4994.356,
+          "plantInputSincePreviousSample": 150.797,
+          "plantLossSincePreviousSample": 1088.48,
+          "accessiblePlantPerConsumer": 59.631,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 42,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 182,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7000,
+          "population": 49,
+          "roles": {
+            "scavenger": 49
+          },
+          "plantPatches": 253,
+          "plantBiomass": 4148.36,
+          "plantInputSincePreviousSample": 153.109,
+          "plantLossSincePreviousSample": 999.105,
+          "accessiblePlantPerConsumer": 30.676,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 49,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 192,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 7500,
+          "population": 65,
+          "roles": {
+            "scavenger": 65
+          },
+          "plantPatches": 253,
+          "plantBiomass": 3371.838,
+          "plantInputSincePreviousSample": 611.476,
+          "plantLossSincePreviousSample": 1387.998,
+          "accessiblePlantPerConsumer": 27.198,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 65,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 210,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8000,
+          "population": 85,
+          "roles": {
+            "scavenger": 85
+          },
+          "plantPatches": 253,
+          "plantBiomass": 3459.855,
+          "plantInputSincePreviousSample": 2132.798,
+          "plantLossSincePreviousSample": 2044.781,
+          "accessiblePlantPerConsumer": 21.781,
+          "consumersWithoutFood": 0,
+          "consumerSamples": 85,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 237,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 8500,
+          "population": 96,
+          "roles": {
+            "scavenger": 96
+          },
+          "plantPatches": 253,
+          "plantBiomass": 2425.384,
+          "plantInputSincePreviousSample": 905.268,
+          "plantLossSincePreviousSample": 1939.74,
+          "accessiblePlantPerConsumer": 16.361,
+          "consumersWithoutFood": 1,
+          "consumerSamples": 96,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 255,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9000,
+          "population": 96,
+          "roles": {
+            "scavenger": 96
+          },
+          "plantPatches": 262,
+          "plantBiomass": 1574.142,
+          "plantInputSincePreviousSample": 229.249,
+          "plantLossSincePreviousSample": 1080.491,
+          "accessiblePlantPerConsumer": 10.714,
+          "consumersWithoutFood": 2,
+          "consumerSamples": 96,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 262,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 9500,
+          "population": 90,
+          "roles": {
+            "scavenger": 90
+          },
+          "plantPatches": 268,
+          "plantBiomass": 248.283,
+          "plantInputSincePreviousSample": 149.88,
+          "plantLossSincePreviousSample": 1475.738,
+          "accessiblePlantPerConsumer": 0.37,
+          "consumersWithoutFood": 70,
+          "consumerSamples": 90,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 270,
+          "juvenileDeathsCumulative": 0
+        },
+        {
+          "tick": 10000,
+          "population": 64,
+          "roles": {
+            "scavenger": 64
+          },
+          "plantPatches": 268,
+          "plantBiomass": 214.4,
+          "plantInputSincePreviousSample": 0,
+          "plantLossSincePreviousSample": 33.883,
+          "accessiblePlantPerConsumer": 0,
+          "consumersWithoutFood": 64,
+          "consumerSamples": 64,
+          "blockedBirthsCumulative": 0,
+          "birthsCumulative": 270,
+          "juvenileDeathsCumulative": 0
+        }
+      ],
+      "meanPopulation": 82.639
+    }
+  ]
+}

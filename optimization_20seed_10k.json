@@ -1,0 +1,949 @@
+{
+  "schemaVersion": 1,
+  "mode": "repair",
+  "config": {
+    "behaviorModel": 1,
+    "initialPlantCount": 220,
+    "plantGrowth": 1,
+    "plantCapacity": 1,
+    "plantReseedingPlantOnly": false,
+    "feedingEfficiency": 1,
+    "metabolicCost": 1,
+    "movementCost": 1,
+    "predatorDamage": 1,
+    "predatorPursuitCost": 1,
+    "herbivoreFertilityThreshold": 1,
+    "scavengerCarrionRange": 1,
+    "mateDetectionRange": 1,
+    "disasterFrequency": 1,
+    "disasterSeverity": 1
+  },
+  "environment": {
+    "node": "v22.17.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "seeds": [
+    691297,
+    260679,
+    853895,
+    486400,
+    497022,
+    166064,
+    875922,
+    615480,
+    159286,
+    954366,
+    574415,
+    999042,
+    203736,
+    504041,
+    470113,
+    161809,
+    648400,
+    435233,
+    678421,
+    878136
+  ],
+  "checkpoints": [
+    10000
+  ],
+  "results": [
+    {
+      "seed": 691297,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 1.637,
+          "population": 0,
+          "meanPopulation": 17.97,
+          "peakPopulation": 66,
+          "roles": {},
+          "roleCount": 0,
+          "species": {},
+          "newSpecies": 0,
+          "totalBirths": 0,
+          "totalDeaths": 66,
+          "plantBiomass": 8068.171,
+          "metrics": {
+            "foodTargetStarts": 1143,
+            "foodTargetSwitches": 26,
+            "foodPursuitsCompleted": 1058,
+            "foodPursuitsAbandoned": 81,
+            "predatorStrikes": 27,
+            "predatorKills": 14,
+            "carnivoreFoodEnergy": 1125.692,
+            "carnivoreMetabolicEnergy": 1861.552,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 0,
+            "scavengerBirths": 0,
+            "localFoodSamples": 143,
+            "localFoodVisible": 117,
+            "localFoodReachable": 117,
+            "localFoodPatches": 812,
+            "plantFeedings": 1039,
+            "carrionFeedings": 5,
+            "capTicks": 0,
+            "populationIntegral": 179697,
+            "peakPopulation": 66
+          }
+        }
+      ]
+    },
+    {
+      "seed": 260679,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 6.608,
+          "population": 21,
+          "meanPopulation": 98.419,
+          "peakPopulation": 184,
+          "roles": {
+            "herbivore": 1,
+            "scavenger": 20
+          },
+          "roleCount": 2,
+          "species": {
+            "sp_0_5427": 1,
+            "sp_0_1124": 20
+          },
+          "newSpecies": 0,
+          "totalBirths": 351,
+          "totalDeaths": 396,
+          "plantBiomass": 5654.883,
+          "metrics": {
+            "foodTargetStarts": 9934,
+            "foodTargetSwitches": 2205,
+            "foodPursuitsCompleted": 6530,
+            "foodPursuitsAbandoned": 3307,
+            "predatorStrikes": 16,
+            "predatorKills": 6,
+            "carnivoreFoodEnergy": 335.733,
+            "carnivoreMetabolicEnergy": 1040.516,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 92,
+            "scavengerBirths": 259,
+            "localFoodSamples": 942,
+            "localFoodVisible": 903,
+            "localFoodReachable": 898,
+            "localFoodPatches": 7804,
+            "plantFeedings": 5681,
+            "carrionFeedings": 843,
+            "capTicks": 0,
+            "populationIntegral": 984190,
+            "peakPopulation": 184
+          }
+        }
+      ]
+    },
+    {
+      "seed": 853895,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 0.661,
+          "population": 0,
+          "meanPopulation": 19.048,
+          "peakPopulation": 67,
+          "roles": {},
+          "roleCount": 0,
+          "species": {},
+          "newSpecies": 0,
+          "totalBirths": 20,
+          "totalDeaths": 86,
+          "plantBiomass": 12863.466,
+          "metrics": {
+            "foodTargetStarts": 1249,
+            "foodTargetSwitches": 65,
+            "foodPursuitsCompleted": 1112,
+            "foodPursuitsAbandoned": 132,
+            "predatorStrikes": 44,
+            "predatorKills": 18,
+            "carnivoreFoodEnergy": 1216.431,
+            "carnivoreMetabolicEnergy": 1971.618,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 18,
+            "scavengerBirths": 2,
+            "localFoodSamples": 159,
+            "localFoodVisible": 136,
+            "localFoodReachable": 133,
+            "localFoodPatches": 493,
+            "plantFeedings": 1094,
+            "carrionFeedings": 0,
+            "capTicks": 0,
+            "populationIntegral": 190480,
+            "peakPopulation": 67
+          }
+        }
+      ]
+    },
+    {
+      "seed": 486400,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 1.828,
+          "population": 13,
+          "meanPopulation": 46.541,
+          "peakPopulation": 97,
+          "roles": {
+            "scavenger": 13
+          },
+          "roleCount": 1,
+          "species": {
+            "sp_0_3401": 13
+          },
+          "newSpecies": 0,
+          "totalBirths": 129,
+          "totalDeaths": 182,
+          "plantBiomass": 6280.765,
+          "metrics": {
+            "foodTargetStarts": 3813,
+            "foodTargetSwitches": 588,
+            "foodPursuitsCompleted": 2927,
+            "foodPursuitsAbandoned": 869,
+            "predatorStrikes": 44,
+            "predatorKills": 22,
+            "carnivoreFoodEnergy": 1152.026,
+            "carnivoreMetabolicEnergy": 1842.658,
+            "carnivoreBirths": 2,
+            "herbivoreBirths": 16,
+            "scavengerBirths": 111,
+            "localFoodSamples": 437,
+            "localFoodVisible": 359,
+            "localFoodReachable": 340,
+            "localFoodPatches": 1818,
+            "plantFeedings": 2629,
+            "carrionFeedings": 276,
+            "capTicks": 0,
+            "populationIntegral": 465412,
+            "peakPopulation": 97
+          }
+        }
+      ]
+    },
+    {
+      "seed": 497022,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 3.389,
+          "population": 19,
+          "meanPopulation": 68.195,
+          "peakPopulation": 105,
+          "roles": {
+            "scavenger": 19
+          },
+          "roleCount": 1,
+          "species": {
+            "sp_0_1024": 19
+          },
+          "newSpecies": 0,
+          "totalBirths": 216,
+          "totalDeaths": 263,
+          "plantBiomass": 4506.763,
+          "metrics": {
+            "foodTargetStarts": 5630,
+            "foodTargetSwitches": 1050,
+            "foodPursuitsCompleted": 4149,
+            "foodPursuitsAbandoned": 1447,
+            "predatorStrikes": 52,
+            "predatorKills": 26,
+            "carnivoreFoodEnergy": 1730.524,
+            "carnivoreMetabolicEnergy": 2313.187,
+            "carnivoreBirths": 2,
+            "herbivoreBirths": 79,
+            "scavengerBirths": 135,
+            "localFoodSamples": 662,
+            "localFoodVisible": 616,
+            "localFoodReachable": 611,
+            "localFoodPatches": 4734,
+            "plantFeedings": 3864,
+            "carrionFeedings": 259,
+            "capTicks": 0,
+            "populationIntegral": 681949,
+            "peakPopulation": 105
+          }
+        }
+      ]
+    },
+    {
+      "seed": 166064,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 12.614,
+          "population": 76,
+          "meanPopulation": 137.066,
+          "peakPopulation": 220,
+          "roles": {
+            "scavenger": 74,
+            "herbivore": 2
+          },
+          "roleCount": 2,
+          "species": {
+            "sp_0_2127": 74,
+            "sp_0_3884": 2
+          },
+          "newSpecies": 0,
+          "totalBirths": 413,
+          "totalDeaths": 403,
+          "plantBiomass": 2816.541,
+          "metrics": {
+            "foodTargetStarts": 11055,
+            "foodTargetSwitches": 3324,
+            "foodPursuitsCompleted": 6372,
+            "foodPursuitsAbandoned": 4582,
+            "predatorStrikes": 37,
+            "predatorKills": 19,
+            "carnivoreFoodEnergy": 978.869,
+            "carnivoreMetabolicEnergy": 1591.307,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 40,
+            "scavengerBirths": 372,
+            "localFoodSamples": 1366,
+            "localFoodVisible": 1337,
+            "localFoodReachable": 1330,
+            "localFoodPatches": 18454,
+            "plantFeedings": 5707,
+            "carrionFeedings": 646,
+            "capTicks": 573,
+            "populationIntegral": 1370659,
+            "peakPopulation": 220
+          }
+        }
+      ]
+    },
+    {
+      "seed": 875922,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 6.851,
+          "population": 44,
+          "meanPopulation": 96.514,
+          "peakPopulation": 150,
+          "roles": {
+            "scavenger": 42,
+            "herbivore": 2
+          },
+          "roleCount": 2,
+          "species": {
+            "sp_0_1902": 42,
+            "sp_0_2827": 2
+          },
+          "newSpecies": 0,
+          "totalBirths": 285,
+          "totalDeaths": 307,
+          "plantBiomass": 1879.778,
+          "metrics": {
+            "foodTargetStarts": 8057,
+            "foodTargetSwitches": 2037,
+            "foodPursuitsCompleted": 5275,
+            "foodPursuitsAbandoned": 2720,
+            "predatorStrikes": 27,
+            "predatorKills": 14,
+            "carnivoreFoodEnergy": 898.156,
+            "carnivoreMetabolicEnergy": 1533.468,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 95,
+            "scavengerBirths": 189,
+            "localFoodSamples": 941,
+            "localFoodVisible": 886,
+            "localFoodReachable": 879,
+            "localFoodPatches": 8622,
+            "plantFeedings": 4687,
+            "carrionFeedings": 574,
+            "capTicks": 0,
+            "populationIntegral": 965137,
+            "peakPopulation": 150
+          }
+        }
+      ]
+    },
+    {
+      "seed": 615480,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 2.347,
+          "population": 0,
+          "meanPopulation": 48.871,
+          "peakPopulation": 176,
+          "roles": {},
+          "roleCount": 0,
+          "species": {},
+          "newSpecies": 0,
+          "totalBirths": 132,
+          "totalDeaths": 198,
+          "plantBiomass": 12017.502,
+          "metrics": {
+            "foodTargetStarts": 4362,
+            "foodTargetSwitches": 673,
+            "foodPursuitsCompleted": 3108,
+            "foodPursuitsAbandoned": 1232,
+            "predatorStrikes": 14,
+            "predatorKills": 7,
+            "carnivoreFoodEnergy": 455.586,
+            "carnivoreMetabolicEnergy": 1202.447,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 121,
+            "scavengerBirths": 11,
+            "localFoodSamples": 448,
+            "localFoodVisible": 388,
+            "localFoodReachable": 384,
+            "localFoodPatches": 2402,
+            "plantFeedings": 2916,
+            "carrionFeedings": 185,
+            "capTicks": 0,
+            "populationIntegral": 488708,
+            "peakPopulation": 176
+          }
+        }
+      ]
+    },
+    {
+      "seed": 159286,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 4.499,
+          "population": 24,
+          "meanPopulation": 72.64,
+          "peakPopulation": 97,
+          "roles": {
+            "scavenger": 23,
+            "omnivore": 1
+          },
+          "roleCount": 2,
+          "species": {
+            "sp_0_2192": 24
+          },
+          "newSpecies": 0,
+          "totalBirths": 180,
+          "totalDeaths": 222,
+          "plantBiomass": 265.793,
+          "metrics": {
+            "foodTargetStarts": 7731,
+            "foodTargetSwitches": 1487,
+            "foodPursuitsCompleted": 5344,
+            "foodPursuitsAbandoned": 2350,
+            "predatorStrikes": 30,
+            "predatorKills": 15,
+            "carnivoreFoodEnergy": 1069.419,
+            "carnivoreMetabolicEnergy": 1786.048,
+            "carnivoreBirths": 1,
+            "herbivoreBirths": 18,
+            "scavengerBirths": 160,
+            "localFoodSamples": 705,
+            "localFoodVisible": 667,
+            "localFoodReachable": 661,
+            "localFoodPatches": 4836,
+            "plantFeedings": 4728,
+            "carrionFeedings": 601,
+            "capTicks": 0,
+            "populationIntegral": 726403,
+            "peakPopulation": 97
+          }
+        }
+      ]
+    },
+    {
+      "seed": 954366,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 2.992,
+          "population": 58,
+          "meanPopulation": 71.134,
+          "peakPopulation": 143,
+          "roles": {
+            "scavenger": 58
+          },
+          "roleCount": 1,
+          "species": {
+            "sp_0_5926": 58
+          },
+          "newSpecies": 0,
+          "totalBirths": 231,
+          "totalDeaths": 239,
+          "plantBiomass": 5814.149,
+          "metrics": {
+            "foodTargetStarts": 5034,
+            "foodTargetSwitches": 1237,
+            "foodPursuitsCompleted": 3377,
+            "foodPursuitsAbandoned": 1626,
+            "predatorStrikes": 74,
+            "predatorKills": 37,
+            "carnivoreFoodEnergy": 2494.047,
+            "carnivoreMetabolicEnergy": 3052.05,
+            "carnivoreBirths": 1,
+            "herbivoreBirths": 55,
+            "scavengerBirths": 175,
+            "localFoodSamples": 703,
+            "localFoodVisible": 579,
+            "localFoodReachable": 565,
+            "localFoodPatches": 3320,
+            "plantFeedings": 3040,
+            "carrionFeedings": 300,
+            "capTicks": 0,
+            "populationIntegral": 711342,
+            "peakPopulation": 143
+          }
+        }
+      ]
+    },
+    {
+      "seed": 574415,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 3.051,
+          "population": 44,
+          "meanPopulation": 73.225,
+          "peakPopulation": 130,
+          "roles": {
+            "herbivore": 44
+          },
+          "roleCount": 1,
+          "species": {
+            "sp_0_4338": 41,
+            "sp_0_9881": 3
+          },
+          "newSpecies": 0,
+          "totalBirths": 235,
+          "totalDeaths": 257,
+          "plantBiomass": 2856.216,
+          "metrics": {
+            "foodTargetStarts": 6699,
+            "foodTargetSwitches": 1279,
+            "foodPursuitsCompleted": 4695,
+            "foodPursuitsAbandoned": 1975,
+            "predatorStrikes": 86,
+            "predatorKills": 43,
+            "carnivoreFoodEnergy": 2718.952,
+            "carnivoreMetabolicEnergy": 3156.188,
+            "carnivoreBirths": 3,
+            "herbivoreBirths": 223,
+            "scavengerBirths": 9,
+            "localFoodSamples": 726,
+            "localFoodVisible": 660,
+            "localFoodReachable": 655,
+            "localFoodPatches": 3486,
+            "plantFeedings": 4611,
+            "carrionFeedings": 41,
+            "capTicks": 0,
+            "populationIntegral": 732250,
+            "peakPopulation": 130
+          }
+        }
+      ]
+    },
+    {
+      "seed": 999042,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 3.818,
+          "population": 69,
+          "meanPopulation": 82.335,
+          "peakPopulation": 122,
+          "roles": {
+            "scavenger": 65,
+            "herbivore": 3,
+            "omnivore": 1
+          },
+          "roleCount": 3,
+          "species": {
+            "sp_0_5627": 66,
+            "sp_0_1111": 3
+          },
+          "newSpecies": 0,
+          "totalBirths": 260,
+          "totalDeaths": 257,
+          "plantBiomass": 2849.999,
+          "metrics": {
+            "foodTargetStarts": 6673,
+            "foodTargetSwitches": 1266,
+            "foodPursuitsCompleted": 4756,
+            "foodPursuitsAbandoned": 1863,
+            "predatorStrikes": 34,
+            "predatorKills": 17,
+            "carnivoreFoodEnergy": 1217.528,
+            "carnivoreMetabolicEnergy": 1832.454,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 82,
+            "scavengerBirths": 176,
+            "localFoodSamples": 819,
+            "localFoodVisible": 799,
+            "localFoodReachable": 795,
+            "localFoodPatches": 5035,
+            "plantFeedings": 4359,
+            "carrionFeedings": 380,
+            "capTicks": 0,
+            "populationIntegral": 823348,
+            "peakPopulation": 122
+          }
+        }
+      ]
+    },
+    {
+      "seed": 203736,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 7.794,
+          "population": 49,
+          "meanPopulation": 119.02,
+          "peakPopulation": 172,
+          "roles": {
+            "herbivore": 11,
+            "scavenger": 38
+          },
+          "roleCount": 2,
+          "species": {
+            "sp_0_1867": 11,
+            "sp_0_3092": 38
+          },
+          "newSpecies": 0,
+          "totalBirths": 396,
+          "totalDeaths": 413,
+          "plantBiomass": 2587.898,
+          "metrics": {
+            "foodTargetStarts": 11133,
+            "foodTargetSwitches": 2864,
+            "foodPursuitsCompleted": 6688,
+            "foodPursuitsAbandoned": 4368,
+            "predatorStrikes": 39,
+            "predatorKills": 20,
+            "carnivoreFoodEnergy": 1275.712,
+            "carnivoreMetabolicEnergy": 1870.732,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 108,
+            "scavengerBirths": 287,
+            "localFoodSamples": 1171,
+            "localFoodVisible": 1074,
+            "localFoodReachable": 1064,
+            "localFoodPatches": 9134,
+            "plantFeedings": 5879,
+            "carrionFeedings": 789,
+            "capTicks": 0,
+            "populationIntegral": 1190199,
+            "peakPopulation": 172
+          }
+        }
+      ]
+    },
+    {
+      "seed": 504041,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 9.481,
+          "population": 42,
+          "meanPopulation": 123.241,
+          "peakPopulation": 178,
+          "roles": {
+            "scavenger": 41,
+            "herbivore": 1
+          },
+          "roleCount": 2,
+          "species": {
+            "sp_0_4047": 41,
+            "sp_0_8890": 1
+          },
+          "newSpecies": 0,
+          "totalBirths": 361,
+          "totalDeaths": 385,
+          "plantBiomass": 2931.156,
+          "metrics": {
+            "foodTargetStarts": 10887,
+            "foodTargetSwitches": 2770,
+            "foodPursuitsCompleted": 6811,
+            "foodPursuitsAbandoned": 3994,
+            "predatorStrikes": 20,
+            "predatorKills": 10,
+            "carnivoreFoodEnergy": 660.867,
+            "carnivoreMetabolicEnergy": 1353.787,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 73,
+            "scavengerBirths": 287,
+            "localFoodSamples": 1213,
+            "localFoodVisible": 1181,
+            "localFoodReachable": 1173,
+            "localFoodPatches": 11548,
+            "plantFeedings": 5879,
+            "carrionFeedings": 922,
+            "capTicks": 0,
+            "populationIntegral": 1232406,
+            "peakPopulation": 178
+          }
+        }
+      ]
+    },
+    {
+      "seed": 470113,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 7.85,
+          "population": 36,
+          "meanPopulation": 101.211,
+          "peakPopulation": 161,
+          "roles": {
+            "scavenger": 36
+          },
+          "roleCount": 1,
+          "species": {
+            "sp_0_5784": 36
+          },
+          "newSpecies": 0,
+          "totalBirths": 329,
+          "totalDeaths": 359,
+          "plantBiomass": 3048.944,
+          "metrics": {
+            "foodTargetStarts": 9036,
+            "foodTargetSwitches": 2557,
+            "foodPursuitsCompleted": 5457,
+            "foodPursuitsAbandoned": 3496,
+            "predatorStrikes": 53,
+            "predatorKills": 18,
+            "carnivoreFoodEnergy": 1315.873,
+            "carnivoreMetabolicEnergy": 1940.318,
+            "carnivoreBirths": 1,
+            "herbivoreBirths": 41,
+            "scavengerBirths": 287,
+            "localFoodSamples": 1006,
+            "localFoodVisible": 968,
+            "localFoodReachable": 934,
+            "localFoodPatches": 10150,
+            "plantFeedings": 4756,
+            "carrionFeedings": 683,
+            "capTicks": 0,
+            "populationIntegral": 1012113,
+            "peakPopulation": 161
+          }
+        }
+      ]
+    },
+    {
+      "seed": 161809,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 5.256,
+          "population": 42,
+          "meanPopulation": 102.686,
+          "peakPopulation": 150,
+          "roles": {
+            "herbivore": 42
+          },
+          "roleCount": 1,
+          "species": {
+            "sp_0_2324": 42
+          },
+          "newSpecies": 0,
+          "totalBirths": 272,
+          "totalDeaths": 296,
+          "plantBiomass": 3854.993,
+          "metrics": {
+            "foodTargetStarts": 7432,
+            "foodTargetSwitches": 1337,
+            "foodPursuitsCompleted": 5514,
+            "foodPursuitsAbandoned": 1886,
+            "predatorStrikes": 26,
+            "predatorKills": 13,
+            "carnivoreFoodEnergy": 783.253,
+            "carnivoreMetabolicEnergy": 1490.572,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 269,
+            "scavengerBirths": 3,
+            "localFoodSamples": 1006,
+            "localFoodVisible": 959,
+            "localFoodReachable": 953,
+            "localFoodPatches": 4767,
+            "plantFeedings": 5480,
+            "carrionFeedings": 21,
+            "capTicks": 0,
+            "populationIntegral": 1026862,
+            "peakPopulation": 150
+          }
+        }
+      ]
+    },
+    {
+      "seed": 648400,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 6.826,
+          "population": 18,
+          "meanPopulation": 84.957,
+          "peakPopulation": 149,
+          "roles": {
+            "scavenger": 17,
+            "herbivore": 1
+          },
+          "roleCount": 2,
+          "species": {
+            "sp_0_8247": 18
+          },
+          "newSpecies": 0,
+          "totalBirths": 323,
+          "totalDeaths": 371,
+          "plantBiomass": 4256.32,
+          "metrics": {
+            "foodTargetStarts": 9339,
+            "foodTargetSwitches": 2692,
+            "foodPursuitsCompleted": 5286,
+            "foodPursuitsAbandoned": 3960,
+            "predatorStrikes": 67,
+            "predatorKills": 34,
+            "carnivoreFoodEnergy": 2179.413,
+            "carnivoreMetabolicEnergy": 2834.906,
+            "carnivoreBirths": 2,
+            "herbivoreBirths": 34,
+            "scavengerBirths": 287,
+            "localFoodSamples": 814,
+            "localFoodVisible": 797,
+            "localFoodReachable": 792,
+            "localFoodPatches": 7831,
+            "plantFeedings": 4711,
+            "carrionFeedings": 541,
+            "capTicks": 0,
+            "populationIntegral": 849567,
+            "peakPopulation": 149
+          }
+        }
+      ]
+    },
+    {
+      "seed": 435233,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 2.337,
+          "population": 0,
+          "meanPopulation": 51.958,
+          "peakPopulation": 140,
+          "roles": {},
+          "roleCount": 0,
+          "species": {},
+          "newSpecies": 0,
+          "totalBirths": 155,
+          "totalDeaths": 221,
+          "plantBiomass": 10866.155,
+          "metrics": {
+            "foodTargetStarts": 4042,
+            "foodTargetSwitches": 592,
+            "foodPursuitsCompleted": 3088,
+            "foodPursuitsAbandoned": 932,
+            "predatorStrikes": 114,
+            "predatorKills": 46,
+            "carnivoreFoodEnergy": 2990.282,
+            "carnivoreMetabolicEnergy": 3406.905,
+            "carnivoreBirths": 2,
+            "herbivoreBirths": 151,
+            "scavengerBirths": 2,
+            "localFoodSamples": 494,
+            "localFoodVisible": 469,
+            "localFoodReachable": 462,
+            "localFoodPatches": 2465,
+            "plantFeedings": 2968,
+            "carrionFeedings": 74,
+            "capTicks": 0,
+            "populationIntegral": 519578,
+            "peakPopulation": 140
+          }
+        }
+      ]
+    },
+    {
+      "seed": 678421,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 9.597,
+          "population": 30,
+          "meanPopulation": 113.436,
+          "peakPopulation": 196,
+          "roles": {
+            "scavenger": 30
+          },
+          "roleCount": 1,
+          "species": {
+            "sp_0_1755": 30
+          },
+          "newSpecies": 0,
+          "totalBirths": 291,
+          "totalDeaths": 327,
+          "plantBiomass": 3488.284,
+          "metrics": {
+            "foodTargetStarts": 8082,
+            "foodTargetSwitches": 1839,
+            "foodPursuitsCompleted": 5159,
+            "foodPursuitsAbandoned": 2848,
+            "predatorStrikes": 40,
+            "predatorKills": 20,
+            "carnivoreFoodEnergy": 1279.169,
+            "carnivoreMetabolicEnergy": 1979.498,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 1,
+            "scavengerBirths": 290,
+            "localFoodSamples": 1125,
+            "localFoodVisible": 1114,
+            "localFoodReachable": 1109,
+            "localFoodPatches": 11626,
+            "plantFeedings": 4566,
+            "carrionFeedings": 573,
+            "capTicks": 0,
+            "populationIntegral": 1134364,
+            "peakPopulation": 196
+          }
+        }
+      ]
+    },
+    {
+      "seed": 878136,
+      "checkpoints": [
+        {
+          "tick": 10000,
+          "elapsedSeconds": 1.997,
+          "population": 0,
+          "meanPopulation": 39.055,
+          "peakPopulation": 91,
+          "roles": {},
+          "roleCount": 0,
+          "species": {},
+          "newSpecies": 0,
+          "totalBirths": 88,
+          "totalDeaths": 154,
+          "plantBiomass": 8596.502,
+          "metrics": {
+            "foodTargetStarts": 2493,
+            "foodTargetSwitches": 340,
+            "foodPursuitsCompleted": 1993,
+            "foodPursuitsAbandoned": 494,
+            "predatorStrikes": 24,
+            "predatorKills": 12,
+            "carnivoreFoodEnergy": 964.017,
+            "carnivoreMetabolicEnergy": 1729.017,
+            "carnivoreBirths": 0,
+            "herbivoreBirths": 86,
+            "scavengerBirths": 2,
+            "localFoodSamples": 354,
+            "localFoodVisible": 235,
+            "localFoodReachable": 235,
+            "localFoodPatches": 1007,
+            "plantFeedings": 1976,
+            "carrionFeedings": 5,
+            "capTicks": 0,
+            "populationIntegral": 390553,
+            "peakPopulation": 91
+          }
+        }
+      ]
+    }
+  ]
+}

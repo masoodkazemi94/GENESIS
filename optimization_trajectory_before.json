@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "results": [
+    {
+      "model": 0,
+      "seed": 10101,
+      "tick": 2000,
+      "population": 32,
+      "sha256": "8206e93be9acbf5bd376b3be1de8bbae7d463fd4f55b0ec6e12f77e29e27ee6d"
+    },
+    {
+      "model": 0,
+      "seed": 691153,
+      "tick": 2000,
+      "population": 82,
+      "sha256": "fa4d1e453234d440e9ad5d6b6a863cbe7c9be8be5719839a75b2d4916a03dc57"
+    },
+    {
+      "model": 0,
+      "seed": 260679,
+      "tick": 2000,
+      "population": 89,
+      "sha256": "029b411a2075060c4161f61766e13ea02eda17a51be564c25641c84b0a5d6334"
+    },
+    {
+      "model": 1,
+      "seed": 10101,
+      "tick": 2000,
+      "population": 99,
+      "sha256": "d6a92d0a2e409f707dae906f1509f5c02b0f5a2e716eb94481da16cf0dba0419"
+    },
+    {
+      "model": 1,
+      "seed": 691153,
+      "tick": 2000,
+      "population": 183,
+      "sha256": "dcf23e7c4af9c43020be2372ba86a38bf6e1c632d739813747b6e9c121f047fe"
+    },
+    {
+      "model": 1,
+      "seed": 260679,
+      "tick": 2000,
+      "population": 182,
+      "sha256": "0c030eb8aac0aee0e7681e728e0a02ce90c53f5b903442b53a206367790cfc7c"
+    }
+  ]
+}

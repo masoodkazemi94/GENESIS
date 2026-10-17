@@ -1,0 +1,1607 @@
+{
+  "schemaVersion": 1,
+  "profileBeforeFile": "simulation_profile_results_before.json",
+  "profileAfterFile": "simulation_profile_results_after_reuse.json",
+  "profiles": [
+    {
+      "model": 0,
+      "requestedPopulation": 20,
+      "requestedResources": 250,
+      "repeats": 3,
+      "meanActualPopulationBefore": 20,
+      "meanActualPopulationAfter": 20,
+      "before": {
+        "tickMeanMs": 0.0827,
+        "tickP95Ms": 0.1383,
+        "tickMaxMs": 1.3064,
+        "cpuUserMs": 42.5807,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 8000
+      },
+      "after": {
+        "tickMeanMs": 0.0743,
+        "tickP95Ms": 0.1308,
+        "tickMaxMs": 0.5612,
+        "cpuUserMs": 38.1997,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 8000
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 20,
+      "requestedResources": 250,
+      "repeats": 3,
+      "meanActualPopulationBefore": 20,
+      "meanActualPopulationAfter": 20,
+      "before": {
+        "tickMeanMs": 0.101,
+        "tickP95Ms": 0.1306,
+        "tickMaxMs": 1.1867,
+        "cpuUserMs": 41.1323,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 19581.666666666668
+      },
+      "after": {
+        "tickMeanMs": 0.0861,
+        "tickP95Ms": 0.1086,
+        "tickMaxMs": 0.7537,
+        "cpuUserMs": 34.2873,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 15581.666666666666
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 65,
+      "requestedResources": 250,
+      "repeats": 3,
+      "meanActualPopulationBefore": 64.1883,
+      "meanActualPopulationAfter": 64.1883,
+      "before": {
+        "tickMeanMs": 0.1903,
+        "tickP95Ms": 0.2664,
+        "tickMaxMs": 1.474,
+        "cpuUserMs": 85.8697,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 25679.333333333332
+      },
+      "after": {
+        "tickMeanMs": 0.1874,
+        "tickP95Ms": 0.2992,
+        "tickMaxMs": 1.2827,
+        "cpuUserMs": 83.4223,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 25679.333333333332
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 65,
+      "requestedResources": 250,
+      "repeats": 3,
+      "meanActualPopulationBefore": 64.9183,
+      "meanActualPopulationAfter": 64.9183,
+      "before": {
+        "tickMeanMs": 0.3551,
+        "tickP95Ms": 0.5319,
+        "tickMaxMs": 1.225,
+        "cpuUserMs": 114.7543,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 71061.66666666667
+      },
+      "after": {
+        "tickMeanMs": 0.3483,
+        "tickP95Ms": 0.4441,
+        "tickMaxMs": 4.1679,
+        "cpuUserMs": 106.079,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 58077.333333333336
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 250,
+      "repeats": 3,
+      "meanActualPopulationBefore": 146.5233,
+      "meanActualPopulationAfter": 146.5233,
+      "before": {
+        "tickMeanMs": 0.296,
+        "tickP95Ms": 0.4184,
+        "tickMaxMs": 1.3422,
+        "cpuUserMs": 100.9,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 58616.666666666664
+      },
+      "after": {
+        "tickMeanMs": 0.301,
+        "tickP95Ms": 0.4459,
+        "tickMaxMs": 1.0708,
+        "cpuUserMs": 97.6603,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 58616.666666666664
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 250,
+      "repeats": 3,
+      "meanActualPopulationBefore": 149.535,
+      "meanActualPopulationAfter": 149.535,
+      "before": {
+        "tickMeanMs": 0.6589,
+        "tickP95Ms": 0.9766,
+        "tickMaxMs": 1.8007,
+        "cpuUserMs": 177.601,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 132966.66666666666
+      },
+      "after": {
+        "tickMeanMs": 0.6131,
+        "tickP95Ms": 0.8702,
+        "tickMaxMs": 1.4073,
+        "cpuUserMs": 165.808,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 103057.66666666667
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 220,
+      "requestedResources": 250,
+      "repeats": 3,
+      "meanActualPopulationBefore": 214.4733,
+      "meanActualPopulationAfter": 214.4733,
+      "before": {
+        "tickMeanMs": 0.3961,
+        "tickP95Ms": 0.5612,
+        "tickMaxMs": 1.301,
+        "cpuUserMs": 121.5877,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 85802.33333333333
+      },
+      "after": {
+        "tickMeanMs": 0.3992,
+        "tickP95Ms": 0.5753,
+        "tickMaxMs": 1.2719,
+        "cpuUserMs": 119.564,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 85802.33333333333
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 220,
+      "requestedResources": 250,
+      "repeats": 3,
+      "meanActualPopulationBefore": 218.775,
+      "meanActualPopulationAfter": 218.775,
+      "before": {
+        "tickMeanMs": 1.0148,
+        "tickP95Ms": 1.5473,
+        "tickMaxMs": 2.3309,
+        "cpuUserMs": 274.6247,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 179234
+      },
+      "after": {
+        "tickMeanMs": 0.9248,
+        "tickP95Ms": 1.3589,
+        "tickMaxMs": 2.0267,
+        "cpuUserMs": 238.9817,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 135474
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 50,
+      "repeats": 3,
+      "meanActualPopulationBefore": 146.45,
+      "meanActualPopulationAfter": 146.45,
+      "before": {
+        "tickMeanMs": 0.2245,
+        "tickP95Ms": 0.2831,
+        "tickMaxMs": 0.952,
+        "cpuUserMs": 60.598,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 58587.333333333336
+      },
+      "after": {
+        "tickMeanMs": 0.2715,
+        "tickP95Ms": 0.402,
+        "tickMaxMs": 0.9845,
+        "cpuUserMs": 92.5613,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 58587.333333333336
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 50,
+      "repeats": 3,
+      "meanActualPopulationBefore": 149.68,
+      "meanActualPopulationAfter": 149.68,
+      "before": {
+        "tickMeanMs": 0.3881,
+        "tickP95Ms": 0.4692,
+        "tickMaxMs": 0.9853,
+        "cpuUserMs": 99.808,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 99563.33333333333
+      },
+      "after": {
+        "tickMeanMs": 0.3814,
+        "tickP95Ms": 0.5068,
+        "tickMaxMs": 0.9262,
+        "cpuUserMs": 120.1387,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 69626.33333333333
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 500,
+      "repeats": 3,
+      "meanActualPopulationBefore": 146.5233,
+      "meanActualPopulationAfter": 146.5233,
+      "before": {
+        "tickMeanMs": 0.3331,
+        "tickP95Ms": 0.4694,
+        "tickMaxMs": 1.361,
+        "cpuUserMs": 109.0297,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 58616.666666666664
+      },
+      "after": {
+        "tickMeanMs": 0.3374,
+        "tickP95Ms": 0.4733,
+        "tickMaxMs": 1.2564,
+        "cpuUserMs": 106.3297,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 58616.666666666664
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 500,
+      "repeats": 3,
+      "meanActualPopulationBefore": 149.5383,
+      "meanActualPopulationAfter": 149.5383,
+      "before": {
+        "tickMeanMs": 0.9933,
+        "tickP95Ms": 1.4165,
+        "tickMaxMs": 2.1149,
+        "cpuUserMs": 250.8843,
+        "foodIndexCalls": 400,
+        "organismQueryCalls": 177152.66666666666
+      },
+      "after": {
+        "tickMeanMs": 0.9754,
+        "tickP95Ms": 1.4418,
+        "tickMaxMs": 2.3572,
+        "cpuUserMs": 234.292,
+        "foodIndexCalls": 200,
+        "organismQueryCalls": 147243.33333333334
+      }
+    }
+  ],
+  "individualStagesAt220": [
+    {
+      "name": "before",
+      "repeats": 3,
+      "tickMeanMs": 1.0148,
+      "foodIndexCalls": 400,
+      "organismQueryCalls": 179234,
+      "foodDiscoveryMs": 136.5286
+    },
+    {
+      "name": "after_index_rebuild_removal",
+      "repeats": 3,
+      "tickMeanMs": 1.0126,
+      "foodIndexCalls": 200,
+      "organismQueryCalls": 179234,
+      "foodDiscoveryMs": 137.1403
+    },
+    {
+      "name": "after_legacy_food_scan_removal",
+      "repeats": 3,
+      "tickMeanMs": 1.0002,
+      "foodIndexCalls": 200,
+      "organismQueryCalls": 179234,
+      "foodDiscoveryMs": 132.0043
+    },
+    {
+      "name": "after_neighbor_query_reuse",
+      "repeats": 3,
+      "tickMeanMs": 0.9248,
+      "foodIndexCalls": 200,
+      "organismQueryCalls": 135474,
+      "foodDiscoveryMs": 119.0939
+    }
+  ],
+  "trajectory": {
+    "cases": 6,
+    "allHashesMatch": true,
+    "beforeFile": "optimization_trajectory_before.json",
+    "afterFile": "optimization_trajectory_final.json"
+  },
+  "benchmark10k": {
+    "tick": 10000,
+    "seedsCompleted": 20,
+    "totalTicks": 200000,
+    "allRecordedStateMetricsMatch": true,
+    "priorWallSeconds": 123.682,
+    "currentWallSeconds": 101.433,
+    "priorMicrosecondsPerOrganismTick": 7.8903,
+    "currentMicrosecondsPerOrganismTick": 6.4709,
+    "paired": [
+      {
+        "seed": 691297,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.203,
+        "currentWallSeconds": 1.637,
+        "priorOrganismTicks": 179697,
+        "currentOrganismTicks": 179697,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 260679,
+        "sameRecordedState": true,
+        "priorWallSeconds": 9.384,
+        "currentWallSeconds": 6.608,
+        "priorOrganismTicks": 984190,
+        "currentOrganismTicks": 984190,
+        "priorPopulation": 21,
+        "currentPopulation": 21
+      },
+      {
+        "seed": 853895,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.875,
+        "currentWallSeconds": 0.661,
+        "priorOrganismTicks": 190480,
+        "currentOrganismTicks": 190480,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 486400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.119,
+        "currentWallSeconds": 1.828,
+        "priorOrganismTicks": 465412,
+        "currentOrganismTicks": 465412,
+        "priorPopulation": 13,
+        "currentPopulation": 13
+      },
+      {
+        "seed": 497022,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.112,
+        "currentWallSeconds": 3.389,
+        "priorOrganismTicks": 681949,
+        "currentOrganismTicks": 681949,
+        "priorPopulation": 19,
+        "currentPopulation": 19
+      },
+      {
+        "seed": 166064,
+        "sameRecordedState": true,
+        "priorWallSeconds": 16.114,
+        "currentWallSeconds": 12.614,
+        "priorOrganismTicks": 1370659,
+        "currentOrganismTicks": 1370659,
+        "priorPopulation": 76,
+        "currentPopulation": 76
+      },
+      {
+        "seed": 875922,
+        "sameRecordedState": true,
+        "priorWallSeconds": 7.787,
+        "currentWallSeconds": 6.851,
+        "priorOrganismTicks": 965137,
+        "currentOrganismTicks": 965137,
+        "priorPopulation": 44,
+        "currentPopulation": 44
+      },
+      {
+        "seed": 615480,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.881,
+        "currentWallSeconds": 2.347,
+        "priorOrganismTicks": 488708,
+        "currentOrganismTicks": 488708,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 159286,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.303,
+        "currentWallSeconds": 4.499,
+        "priorOrganismTicks": 726403,
+        "currentOrganismTicks": 726403,
+        "priorPopulation": 24,
+        "currentPopulation": 24
+      },
+      {
+        "seed": 954366,
+        "sameRecordedState": true,
+        "priorWallSeconds": 3.385,
+        "currentWallSeconds": 2.992,
+        "priorOrganismTicks": 711342,
+        "currentOrganismTicks": 711342,
+        "priorPopulation": 58,
+        "currentPopulation": 58
+      },
+      {
+        "seed": 574415,
+        "sameRecordedState": true,
+        "priorWallSeconds": 3.442,
+        "currentWallSeconds": 3.051,
+        "priorOrganismTicks": 732250,
+        "currentOrganismTicks": 732250,
+        "priorPopulation": 44,
+        "currentPopulation": 44
+      },
+      {
+        "seed": 999042,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.295,
+        "currentWallSeconds": 3.818,
+        "priorOrganismTicks": 823348,
+        "currentOrganismTicks": 823348,
+        "priorPopulation": 69,
+        "currentPopulation": 69
+      },
+      {
+        "seed": 203736,
+        "sameRecordedState": true,
+        "priorWallSeconds": 9.11,
+        "currentWallSeconds": 7.794,
+        "priorOrganismTicks": 1190199,
+        "currentOrganismTicks": 1190199,
+        "priorPopulation": 49,
+        "currentPopulation": 49
+      },
+      {
+        "seed": 504041,
+        "sameRecordedState": true,
+        "priorWallSeconds": 11.711,
+        "currentWallSeconds": 9.481,
+        "priorOrganismTicks": 1232406,
+        "currentOrganismTicks": 1232406,
+        "priorPopulation": 42,
+        "currentPopulation": 42
+      },
+      {
+        "seed": 470113,
+        "sameRecordedState": true,
+        "priorWallSeconds": 8.835,
+        "currentWallSeconds": 7.85,
+        "priorOrganismTicks": 1012113,
+        "currentOrganismTicks": 1012113,
+        "priorPopulation": 36,
+        "currentPopulation": 36
+      },
+      {
+        "seed": 161809,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.544,
+        "currentWallSeconds": 5.256,
+        "priorOrganismTicks": 1026862,
+        "currentOrganismTicks": 1026862,
+        "priorPopulation": 42,
+        "currentPopulation": 42
+      },
+      {
+        "seed": 648400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 7.872,
+        "currentWallSeconds": 6.826,
+        "priorOrganismTicks": 849567,
+        "currentOrganismTicks": 849567,
+        "priorPopulation": 18,
+        "currentPopulation": 18
+      },
+      {
+        "seed": 435233,
+        "sameRecordedState": true,
+        "priorWallSeconds": 3.08,
+        "currentWallSeconds": 2.337,
+        "priorOrganismTicks": 519578,
+        "currentOrganismTicks": 519578,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 678421,
+        "sameRecordedState": true,
+        "priorWallSeconds": 12.719,
+        "currentWallSeconds": 9.597,
+        "priorOrganismTicks": 1134364,
+        "currentOrganismTicks": 1134364,
+        "priorPopulation": 30,
+        "currentPopulation": 30
+      },
+      {
+        "seed": 878136,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.911,
+        "currentWallSeconds": 1.997,
+        "priorOrganismTicks": 390553,
+        "currentOrganismTicks": 390553,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      }
+    ]
+  },
+  "benchmark50k": {
+    "tick": 50000,
+    "seedsCompleted": 20,
+    "totalTicks": 1000000,
+    "allRecordedStateMetricsMatch": true,
+    "priorWallSeconds": 843.977,
+    "currentWallSeconds": 758.567,
+    "priorMicrosecondsPerOrganismTick": 12.7021,
+    "currentMicrosecondsPerOrganismTick": 11.4167,
+    "paired": [
+      {
+        "seed": 691297,
+        "sameRecordedState": true,
+        "priorWallSeconds": 3.327,
+        "currentWallSeconds": 2.301,
+        "priorOrganismTicks": 179697,
+        "currentOrganismTicks": 179697,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 260679,
+        "sameRecordedState": true,
+        "priorWallSeconds": 23.161,
+        "currentWallSeconds": 17.365,
+        "priorOrganismTicks": 1997768,
+        "currentOrganismTicks": 1997768,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 853895,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.275,
+        "currentWallSeconds": 1.913,
+        "priorOrganismTicks": 190480,
+        "currentOrganismTicks": 190480,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 486400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 10.973,
+        "currentWallSeconds": 8.862,
+        "priorOrganismTicks": 1416752,
+        "currentOrganismTicks": 1416752,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 497022,
+        "sameRecordedState": true,
+        "priorWallSeconds": 31.886,
+        "currentWallSeconds": 27.353,
+        "priorOrganismTicks": 3744232,
+        "currentOrganismTicks": 3744232,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 166064,
+        "sameRecordedState": true,
+        "priorWallSeconds": 114.711,
+        "currentWallSeconds": 103.395,
+        "priorOrganismTicks": 7125016,
+        "currentOrganismTicks": 7125016,
+        "priorPopulation": 216,
+        "currentPopulation": 216
+      },
+      {
+        "seed": 875922,
+        "sameRecordedState": true,
+        "priorWallSeconds": 85.028,
+        "currentWallSeconds": 77.929,
+        "priorOrganismTicks": 5589907,
+        "currentOrganismTicks": 5589907,
+        "priorPopulation": 76,
+        "currentPopulation": 76
+      },
+      {
+        "seed": 615480,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.213,
+        "currentWallSeconds": 3.284,
+        "priorOrganismTicks": 488708,
+        "currentOrganismTicks": 488708,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 159286,
+        "sameRecordedState": true,
+        "priorWallSeconds": 6.496,
+        "currentWallSeconds": 5.459,
+        "priorOrganismTicks": 744502,
+        "currentOrganismTicks": 744502,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 954366,
+        "sameRecordedState": true,
+        "priorWallSeconds": 18.41,
+        "currentWallSeconds": 16.332,
+        "priorOrganismTicks": 2559617,
+        "currentOrganismTicks": 2559617,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 574415,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.508,
+        "currentWallSeconds": 4.661,
+        "priorOrganismTicks": 986048,
+        "currentOrganismTicks": 986048,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 999042,
+        "sameRecordedState": true,
+        "priorWallSeconds": 39.558,
+        "currentWallSeconds": 34.22,
+        "priorOrganismTicks": 5357673,
+        "currentOrganismTicks": 5357673,
+        "priorPopulation": 110,
+        "currentPopulation": 110
+      },
+      {
+        "seed": 203736,
+        "sameRecordedState": true,
+        "priorWallSeconds": 69.737,
+        "currentWallSeconds": 66.847,
+        "priorOrganismTicks": 5954263,
+        "currentOrganismTicks": 5954263,
+        "priorPopulation": 82,
+        "currentPopulation": 82
+      },
+      {
+        "seed": 504041,
+        "sameRecordedState": true,
+        "priorWallSeconds": 131.713,
+        "currentWallSeconds": 113.809,
+        "priorOrganismTicks": 7243616,
+        "currentOrganismTicks": 7243616,
+        "priorPopulation": 38,
+        "currentPopulation": 38
+      },
+      {
+        "seed": 470113,
+        "sameRecordedState": true,
+        "priorWallSeconds": 93.32,
+        "currentWallSeconds": 81.187,
+        "priorOrganismTicks": 6298476,
+        "currentOrganismTicks": 6298476,
+        "priorPopulation": 104,
+        "currentPopulation": 104
+      },
+      {
+        "seed": 161809,
+        "sameRecordedState": true,
+        "priorWallSeconds": 42.722,
+        "currentWallSeconds": 38.709,
+        "priorOrganismTicks": 6436835,
+        "currentOrganismTicks": 6436835,
+        "priorPopulation": 220,
+        "currentPopulation": 220
+      },
+      {
+        "seed": 648400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 22.92,
+        "currentWallSeconds": 20.183,
+        "priorOrganismTicks": 2164068,
+        "currentOrganismTicks": 2164068,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 435233,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.05,
+        "currentWallSeconds": 3.998,
+        "priorOrganismTicks": 519578,
+        "currentOrganismTicks": 519578,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 678421,
+        "sameRecordedState": true,
+        "priorWallSeconds": 128.593,
+        "currentWallSeconds": 126.764,
+        "priorOrganismTicks": 7055937,
+        "currentOrganismTicks": 7055937,
+        "priorPopulation": 199,
+        "currentPopulation": 199
+      },
+      {
+        "seed": 878136,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.376,
+        "currentWallSeconds": 3.996,
+        "priorOrganismTicks": 390553,
+        "currentOrganismTicks": 390553,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      }
+    ]
+  },
+  "model0Benchmark10k": {
+    "tick": 10000,
+    "seedsCompleted": 20,
+    "totalTicks": 200000,
+    "allRecordedStateMetricsMatch": true,
+    "priorWallSeconds": 22.756,
+    "currentWallSeconds": 25.955,
+    "priorMicrosecondsPerOrganismTick": 2.5967,
+    "currentMicrosecondsPerOrganismTick": 2.9618,
+    "paired": [
+      {
+        "seed": 691297,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.125,
+        "currentWallSeconds": 1.031,
+        "priorOrganismTicks": 145425,
+        "currentOrganismTicks": 145425,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 260679,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.978,
+        "currentWallSeconds": 1.442,
+        "priorOrganismTicks": 478882,
+        "currentOrganismTicks": 478882,
+        "priorPopulation": 8,
+        "currentPopulation": 8
+      },
+      {
+        "seed": 853895,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.141,
+        "currentWallSeconds": 1.481,
+        "priorOrganismTicks": 172494,
+        "currentOrganismTicks": 172494,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 486400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.809,
+        "currentWallSeconds": 1.569,
+        "priorOrganismTicks": 416876,
+        "currentOrganismTicks": 416876,
+        "priorPopulation": 9,
+        "currentPopulation": 9
+      },
+      {
+        "seed": 497022,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.593,
+        "currentWallSeconds": 0.645,
+        "priorOrganismTicks": 330074,
+        "currentOrganismTicks": 330074,
+        "priorPopulation": 3,
+        "currentPopulation": 3
+      },
+      {
+        "seed": 166064,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.694,
+        "currentWallSeconds": 0.934,
+        "priorOrganismTicks": 369911,
+        "currentOrganismTicks": 369911,
+        "priorPopulation": 1,
+        "currentPopulation": 1
+      },
+      {
+        "seed": 875922,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.089,
+        "currentWallSeconds": 1.052,
+        "priorOrganismTicks": 518994,
+        "currentOrganismTicks": 518994,
+        "priorPopulation": 10,
+        "currentPopulation": 10
+      },
+      {
+        "seed": 615480,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.918,
+        "currentWallSeconds": 1.181,
+        "priorOrganismTicks": 525384,
+        "currentOrganismTicks": 525384,
+        "priorPopulation": 32,
+        "currentPopulation": 32
+      },
+      {
+        "seed": 159286,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.591,
+        "currentWallSeconds": 1.001,
+        "priorOrganismTicks": 291031,
+        "currentOrganismTicks": 291031,
+        "priorPopulation": 4,
+        "currentPopulation": 4
+      },
+      {
+        "seed": 954366,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.636,
+        "currentWallSeconds": 0.724,
+        "priorOrganismTicks": 251497,
+        "currentOrganismTicks": 251497,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 574415,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.932,
+        "currentWallSeconds": 1.219,
+        "priorOrganismTicks": 408558,
+        "currentOrganismTicks": 408558,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 999042,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.901,
+        "currentWallSeconds": 0.986,
+        "priorOrganismTicks": 430279,
+        "currentOrganismTicks": 430279,
+        "priorPopulation": 5,
+        "currentPopulation": 5
+      },
+      {
+        "seed": 203736,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.607,
+        "currentWallSeconds": 1.46,
+        "priorOrganismTicks": 775216,
+        "currentOrganismTicks": 775216,
+        "priorPopulation": 68,
+        "currentPopulation": 68
+      },
+      {
+        "seed": 504041,
+        "sameRecordedState": true,
+        "priorWallSeconds": 3.156,
+        "currentWallSeconds": 1.894,
+        "priorOrganismTicks": 707177,
+        "currentOrganismTicks": 707177,
+        "priorPopulation": 29,
+        "currentPopulation": 29
+      },
+      {
+        "seed": 470113,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.211,
+        "currentWallSeconds": 2.842,
+        "priorOrganismTicks": 482040,
+        "currentOrganismTicks": 482040,
+        "priorPopulation": 21,
+        "currentPopulation": 21
+      },
+      {
+        "seed": 161809,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.852,
+        "currentWallSeconds": 3.042,
+        "priorOrganismTicks": 914535,
+        "currentOrganismTicks": 914535,
+        "priorPopulation": 29,
+        "currentPopulation": 29
+      },
+      {
+        "seed": 648400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.951,
+        "currentWallSeconds": 0.951,
+        "priorOrganismTicks": 494047,
+        "currentOrganismTicks": 494047,
+        "priorPopulation": 8,
+        "currentPopulation": 8
+      },
+      {
+        "seed": 435233,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.502,
+        "currentWallSeconds": 1.333,
+        "priorOrganismTicks": 628591,
+        "currentOrganismTicks": 628591,
+        "priorPopulation": 28,
+        "currentPopulation": 28
+      },
+      {
+        "seed": 678421,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.698,
+        "currentWallSeconds": 0.438,
+        "priorOrganismTicks": 114133,
+        "currentOrganismTicks": 114133,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 878136,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.372,
+        "currentWallSeconds": 0.73,
+        "priorOrganismTicks": 308218,
+        "currentOrganismTicks": 308218,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      }
+    ]
+  },
+  "model0Benchmark50k": {
+    "tick": 50000,
+    "seedsCompleted": 20,
+    "totalTicks": 1000000,
+    "allRecordedStateMetricsMatch": true,
+    "priorWallSeconds": 78.02,
+    "currentWallSeconds": 85.015,
+    "priorMicrosecondsPerOrganismTick": 4.7758,
+    "currentMicrosecondsPerOrganismTick": 5.204,
+    "paired": [
+      {
+        "seed": 691297,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.492,
+        "currentWallSeconds": 4.233,
+        "priorOrganismTicks": 145425,
+        "currentOrganismTicks": 145425,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 260679,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.42,
+        "currentWallSeconds": 2.979,
+        "priorOrganismTicks": 500686,
+        "currentOrganismTicks": 500686,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 853895,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.948,
+        "currentWallSeconds": 2.256,
+        "priorOrganismTicks": 172494,
+        "currentOrganismTicks": 172494,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 486400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.721,
+        "currentWallSeconds": 3.582,
+        "priorOrganismTicks": 432175,
+        "currentOrganismTicks": 432175,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 497022,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.028,
+        "currentWallSeconds": 2.079,
+        "priorOrganismTicks": 336042,
+        "currentOrganismTicks": 336042,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 166064,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.619,
+        "currentWallSeconds": 1.683,
+        "priorOrganismTicks": 371061,
+        "currentOrganismTicks": 371061,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 875922,
+        "sameRecordedState": true,
+        "priorWallSeconds": 3.033,
+        "currentWallSeconds": 3.818,
+        "priorOrganismTicks": 609527,
+        "currentOrganismTicks": 609527,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 615480,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.163,
+        "currentWallSeconds": 2.874,
+        "priorOrganismTicks": 841391,
+        "currentOrganismTicks": 841391,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 159286,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.211,
+        "currentWallSeconds": 7.166,
+        "priorOrganismTicks": 297771,
+        "currentOrganismTicks": 297771,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 954366,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.059,
+        "currentWallSeconds": 1.898,
+        "priorOrganismTicks": 251497,
+        "currentOrganismTicks": 251497,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 574415,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.004,
+        "currentWallSeconds": 3.777,
+        "priorOrganismTicks": 408558,
+        "currentOrganismTicks": 408558,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 999042,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.534,
+        "currentWallSeconds": 5.786,
+        "priorOrganismTicks": 518430,
+        "currentOrganismTicks": 518430,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 203736,
+        "sameRecordedState": true,
+        "priorWallSeconds": 7.183,
+        "currentWallSeconds": 6.812,
+        "priorOrganismTicks": 3131552,
+        "currentOrganismTicks": 3131552,
+        "priorPopulation": 13,
+        "currentPopulation": 13
+      },
+      {
+        "seed": 504041,
+        "sameRecordedState": true,
+        "priorWallSeconds": 7.026,
+        "currentWallSeconds": 6.403,
+        "priorOrganismTicks": 947715,
+        "currentOrganismTicks": 947715,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 470113,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.745,
+        "currentWallSeconds": 4.446,
+        "priorOrganismTicks": 585720,
+        "currentOrganismTicks": 585720,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 161809,
+        "sameRecordedState": true,
+        "priorWallSeconds": 9.108,
+        "currentWallSeconds": 11.957,
+        "priorOrganismTicks": 3965385,
+        "currentOrganismTicks": 3965385,
+        "priorPopulation": 106,
+        "currentPopulation": 106
+      },
+      {
+        "seed": 648400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.223,
+        "currentWallSeconds": 2.059,
+        "priorOrganismTicks": 510882,
+        "currentOrganismTicks": 510882,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 435233,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.673,
+        "currentWallSeconds": 4.235,
+        "priorOrganismTicks": 1887701,
+        "currentOrganismTicks": 1887701,
+        "priorPopulation": 12,
+        "currentPopulation": 12
+      },
+      {
+        "seed": 678421,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.758,
+        "currentWallSeconds": 3.853,
+        "priorOrganismTicks": 114133,
+        "currentOrganismTicks": 114133,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 878136,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.072,
+        "currentWallSeconds": 3.119,
+        "priorOrganismTicks": 308218,
+        "currentOrganismTicks": 308218,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      }
+    ]
+  },
+  "model0Repeat10k": {
+    "tick": 10000,
+    "seedsCompleted": 20,
+    "totalTicks": 200000,
+    "allRecordedStateMetricsMatch": true,
+    "priorWallSeconds": 22.756,
+    "currentWallSeconds": 20.924,
+    "priorMicrosecondsPerOrganismTick": 2.5967,
+    "currentMicrosecondsPerOrganismTick": 2.3877,
+    "paired": [
+      {
+        "seed": 691297,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.125,
+        "currentWallSeconds": 0.989,
+        "priorOrganismTicks": 145425,
+        "currentOrganismTicks": 145425,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 260679,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.978,
+        "currentWallSeconds": 1.061,
+        "priorOrganismTicks": 478882,
+        "currentOrganismTicks": 478882,
+        "priorPopulation": 8,
+        "currentPopulation": 8
+      },
+      {
+        "seed": 853895,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.141,
+        "currentWallSeconds": 1.118,
+        "priorOrganismTicks": 172494,
+        "currentOrganismTicks": 172494,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 486400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.809,
+        "currentWallSeconds": 0.916,
+        "priorOrganismTicks": 416876,
+        "currentOrganismTicks": 416876,
+        "priorPopulation": 9,
+        "currentPopulation": 9
+      },
+      {
+        "seed": 497022,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.593,
+        "currentWallSeconds": 0.817,
+        "priorOrganismTicks": 330074,
+        "currentOrganismTicks": 330074,
+        "priorPopulation": 3,
+        "currentPopulation": 3
+      },
+      {
+        "seed": 166064,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.694,
+        "currentWallSeconds": 0.813,
+        "priorOrganismTicks": 369911,
+        "currentOrganismTicks": 369911,
+        "priorPopulation": 1,
+        "currentPopulation": 1
+      },
+      {
+        "seed": 875922,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.089,
+        "currentWallSeconds": 1.08,
+        "priorOrganismTicks": 518994,
+        "currentOrganismTicks": 518994,
+        "priorPopulation": 10,
+        "currentPopulation": 10
+      },
+      {
+        "seed": 615480,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.918,
+        "currentWallSeconds": 1.045,
+        "priorOrganismTicks": 525384,
+        "currentOrganismTicks": 525384,
+        "priorPopulation": 32,
+        "currentPopulation": 32
+      },
+      {
+        "seed": 159286,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.591,
+        "currentWallSeconds": 0.673,
+        "priorOrganismTicks": 291031,
+        "currentOrganismTicks": 291031,
+        "priorPopulation": 4,
+        "currentPopulation": 4
+      },
+      {
+        "seed": 954366,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.636,
+        "currentWallSeconds": 0.672,
+        "priorOrganismTicks": 251497,
+        "currentOrganismTicks": 251497,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 574415,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.932,
+        "currentWallSeconds": 0.902,
+        "priorOrganismTicks": 408558,
+        "currentOrganismTicks": 408558,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 999042,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.901,
+        "currentWallSeconds": 0.888,
+        "priorOrganismTicks": 430279,
+        "currentOrganismTicks": 430279,
+        "priorPopulation": 5,
+        "currentPopulation": 5
+      },
+      {
+        "seed": 203736,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.607,
+        "currentWallSeconds": 1.422,
+        "priorOrganismTicks": 775216,
+        "currentOrganismTicks": 775216,
+        "priorPopulation": 68,
+        "currentPopulation": 68
+      },
+      {
+        "seed": 504041,
+        "sameRecordedState": true,
+        "priorWallSeconds": 3.156,
+        "currentWallSeconds": 1.453,
+        "priorOrganismTicks": 707177,
+        "currentOrganismTicks": 707177,
+        "priorPopulation": 29,
+        "currentPopulation": 29
+      },
+      {
+        "seed": 470113,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.211,
+        "currentWallSeconds": 0.962,
+        "priorOrganismTicks": 482040,
+        "currentOrganismTicks": 482040,
+        "priorPopulation": 21,
+        "currentPopulation": 21
+      },
+      {
+        "seed": 161809,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.852,
+        "currentWallSeconds": 2.298,
+        "priorOrganismTicks": 914535,
+        "currentOrganismTicks": 914535,
+        "priorPopulation": 29,
+        "currentPopulation": 29
+      },
+      {
+        "seed": 648400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.951,
+        "currentWallSeconds": 1.258,
+        "priorOrganismTicks": 494047,
+        "currentOrganismTicks": 494047,
+        "priorPopulation": 8,
+        "currentPopulation": 8
+      },
+      {
+        "seed": 435233,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.502,
+        "currentWallSeconds": 1.381,
+        "priorOrganismTicks": 628591,
+        "currentOrganismTicks": 628591,
+        "priorPopulation": 28,
+        "currentPopulation": 28
+      },
+      {
+        "seed": 678421,
+        "sameRecordedState": true,
+        "priorWallSeconds": 0.698,
+        "currentWallSeconds": 0.489,
+        "priorOrganismTicks": 114133,
+        "currentOrganismTicks": 114133,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 878136,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.372,
+        "currentWallSeconds": 0.687,
+        "priorOrganismTicks": 308218,
+        "currentOrganismTicks": 308218,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      }
+    ]
+  },
+  "model0Repeat50k": {
+    "tick": 50000,
+    "seedsCompleted": 20,
+    "totalTicks": 1000000,
+    "allRecordedStateMetricsMatch": true,
+    "priorWallSeconds": 78.02,
+    "currentWallSeconds": 76.402,
+    "priorMicrosecondsPerOrganismTick": 4.7758,
+    "currentMicrosecondsPerOrganismTick": 4.6768,
+    "paired": [
+      {
+        "seed": 691297,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.492,
+        "currentWallSeconds": 2.189,
+        "priorOrganismTicks": 145425,
+        "currentOrganismTicks": 145425,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 260679,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.42,
+        "currentWallSeconds": 2.506,
+        "priorOrganismTicks": 500686,
+        "currentOrganismTicks": 500686,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 853895,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.948,
+        "currentWallSeconds": 1.816,
+        "priorOrganismTicks": 172494,
+        "currentOrganismTicks": 172494,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 486400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.721,
+        "currentWallSeconds": 4.579,
+        "priorOrganismTicks": 432175,
+        "currentOrganismTicks": 432175,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 497022,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.028,
+        "currentWallSeconds": 2.523,
+        "priorOrganismTicks": 336042,
+        "currentOrganismTicks": 336042,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 166064,
+        "sameRecordedState": true,
+        "priorWallSeconds": 1.619,
+        "currentWallSeconds": 1.549,
+        "priorOrganismTicks": 371061,
+        "currentOrganismTicks": 371061,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 875922,
+        "sameRecordedState": true,
+        "priorWallSeconds": 3.033,
+        "currentWallSeconds": 3.197,
+        "priorOrganismTicks": 609527,
+        "currentOrganismTicks": 609527,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 615480,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.163,
+        "currentWallSeconds": 2.358,
+        "priorOrganismTicks": 841391,
+        "currentOrganismTicks": 841391,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 159286,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.211,
+        "currentWallSeconds": 6.639,
+        "priorOrganismTicks": 297771,
+        "currentOrganismTicks": 297771,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 954366,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.059,
+        "currentWallSeconds": 1.723,
+        "priorOrganismTicks": 251497,
+        "currentOrganismTicks": 251497,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 574415,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.004,
+        "currentWallSeconds": 3.615,
+        "priorOrganismTicks": 408558,
+        "currentOrganismTicks": 408558,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 999042,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.534,
+        "currentWallSeconds": 4.677,
+        "priorOrganismTicks": 518430,
+        "currentOrganismTicks": 518430,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 203736,
+        "sameRecordedState": true,
+        "priorWallSeconds": 7.183,
+        "currentWallSeconds": 6.128,
+        "priorOrganismTicks": 3131552,
+        "currentOrganismTicks": 3131552,
+        "priorPopulation": 13,
+        "currentPopulation": 13
+      },
+      {
+        "seed": 504041,
+        "sameRecordedState": true,
+        "priorWallSeconds": 7.026,
+        "currentWallSeconds": 4.83,
+        "priorOrganismTicks": 947715,
+        "currentOrganismTicks": 947715,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 470113,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.745,
+        "currentWallSeconds": 2.241,
+        "priorOrganismTicks": 585720,
+        "currentOrganismTicks": 585720,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 161809,
+        "sameRecordedState": true,
+        "priorWallSeconds": 9.108,
+        "currentWallSeconds": 11.136,
+        "priorOrganismTicks": 3965385,
+        "currentOrganismTicks": 3965385,
+        "priorPopulation": 106,
+        "currentPopulation": 106
+      },
+      {
+        "seed": 648400,
+        "sameRecordedState": true,
+        "priorWallSeconds": 2.223,
+        "currentWallSeconds": 2.902,
+        "priorOrganismTicks": 510882,
+        "currentOrganismTicks": 510882,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 435233,
+        "sameRecordedState": true,
+        "priorWallSeconds": 5.673,
+        "currentWallSeconds": 5.173,
+        "priorOrganismTicks": 1887701,
+        "currentOrganismTicks": 1887701,
+        "priorPopulation": 12,
+        "currentPopulation": 12
+      },
+      {
+        "seed": 678421,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.758,
+        "currentWallSeconds": 3.662,
+        "priorOrganismTicks": 114133,
+        "currentOrganismTicks": 114133,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      },
+      {
+        "seed": 878136,
+        "sameRecordedState": true,
+        "priorWallSeconds": 4.072,
+        "currentWallSeconds": 2.959,
+        "priorOrganismTicks": 308218,
+        "currentOrganismTicks": 308218,
+        "priorPopulation": 0,
+        "currentPopulation": 0
+      }
+    ]
+  }
+}

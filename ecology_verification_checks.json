@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "results": [
+    {
+      "name": "baseline",
+      "config": {
+        "initialPlantCount": 220,
+        "plantGrowth": 1,
+        "plantCapacity": 1,
+        "plantReseedingPlantOnly": false,
+        "feedingEfficiency": 1,
+        "metabolicCost": 1,
+        "movementCost": 1,
+        "predatorDamage": 1,
+        "predatorPursuitCost": 1,
+        "herbivoreFertilityThreshold": 1,
+        "scavengerCarrionRange": 1,
+        "mateDetectionRange": 1,
+        "disasterFrequency": 1,
+        "disasterSeverity": 1
+      },
+      "replay": [
+        {
+          "seed": 10101,
+          "ticksBeforeSave": 2000,
+          "ticksAfterSave": 10000,
+          "equalAtRestore": true,
+          "equalAfterReplay": true,
+          "rngEqual": true
+        },
+        {
+          "seed": 20202,
+          "ticksBeforeSave": 2000,
+          "ticksAfterSave": 10000,
+          "equalAtRestore": true,
+          "equalAfterReplay": true,
+          "rngEqual": true
+        },
+        {
+          "seed": 30303,
+          "ticksBeforeSave": 2000,
+          "ticksAfterSave": 10000,
+          "equalAtRestore": true,
+          "equalAfterReplay": true,
+          "rngEqual": true
+        }
+      ],
+      "load": [
+        {
+          "requestedPopulation": 20,
+          "peakPopulation": 20,
+          "ticksMeasured": 200,
+          "meanTickMs": 0.083,
+          "p95TickMs": 0.1,
+          "maxTickMs": 0.603,
+          "peakHeapMiB": 175.182
+        },
+        {
+          "requestedPopulation": 65,
+          "peakPopulation": 67,
+          "ticksMeasured": 200,
+          "meanTickMs": 0.215,
+          "p95TickMs": 0.308,
+          "maxTickMs": 5.756,
+          "peakHeapMiB": 190.159
+        },
+        {
+          "requestedPopulation": 150,
+          "peakPopulation": 151,
+          "ticksMeasured": 200,
+          "meanTickMs": 0.186,
+          "p95TickMs": 0.206,
+          "maxTickMs": 0.462,
+          "peakHeapMiB": 76.079
+        }
+      ]
+    },
+    {
+      "name": "candidate",
+      "config": {
+        "initialPlantCount": 220,
+        "plantGrowth": 1,
+        "plantCapacity": 1,
+        "plantReseedingPlantOnly": true,
+        "feedingEfficiency": 1,
+        "metabolicCost": 1,
+        "movementCost": 1,
+        "predatorDamage": 1,
+        "predatorPursuitCost": 1,
+        "herbivoreFertilityThreshold": 1,
+        "scavengerCarrionRange": 1,
+        "mateDetectionRange": 1,
+        "disasterFrequency": 1,
+        "disasterSeverity": 0.9
+      },
+      "replay": [
+        {
+          "seed": 10101,
+          "ticksBeforeSave": 2000,
+          "ticksAfterSave": 10000,
+          "equalAtRestore": true,
+          "equalAfterReplay": true,
+          "rngEqual": true
+        },
+        {
+          "seed": 20202,
+          "ticksBeforeSave": 2000,
+          "ticksAfterSave": 10000,
+          "equalAtRestore": true,
+          "equalAfterReplay": true,
+          "rngEqual": true
+        },
+        {
+          "seed": 30303,
+          "ticksBeforeSave": 2000,
+          "ticksAfterSave": 10000,
+          "equalAtRestore": true,
+          "equalAfterReplay": true,
+          "rngEqual": true
+        }
+      ],
+      "load": [
+        {
+          "requestedPopulation": 20,
+          "peakPopulation": 20,
+          "ticksMeasured": 200,
+          "meanTickMs": 0.049,
+          "p95TickMs": 0.067,
+          "maxTickMs": 0.895,
+          "peakHeapMiB": 166.45
+        },
+        {
+          "requestedPopulation": 65,
+          "peakPopulation": 67,
+          "ticksMeasured": 200,
+          "meanTickMs": 0.096,
+          "p95TickMs": 0.105,
+          "maxTickMs": 0.54,
+          "peakHeapMiB": 182.107
+        },
+        {
+          "requestedPopulation": 150,
+          "peakPopulation": 151,
+          "ticksMeasured": 200,
+          "meanTickMs": 0.203,
+          "p95TickMs": 0.226,
+          "maxTickMs": 1.21,
+          "peakHeapMiB": 38.215
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "method": "Node worker thread -> main thread, 5 warmups and 30 measured round trips per population; small request plus snapshot payload.",
+  "results": [
+    {
+      "population": 20,
+      "snapshotBytes": 91242,
+      "trials": 30,
+      "meanMs": 0.457,
+      "p95Ms": 0.763,
+      "maxMs": 1.25
+    },
+    {
+      "population": 65,
+      "snapshotBytes": 152255,
+      "trials": 30,
+      "meanMs": 0.54,
+      "p95Ms": 1.142,
+      "maxMs": 1.233
+    },
+    {
+      "population": 150,
+      "snapshotBytes": 267556,
+      "trials": 30,
+      "meanMs": 0.708,
+      "p95Ms": 1.009,
+      "maxMs": 1.146
+    }
+  ]
+}

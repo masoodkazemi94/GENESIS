@@ -5,6 +5,7 @@
 
 import { BiomeType, Genome, OrganismState, SpeciesTaxon } from '../../types/simulation.js';
 import { PRNG } from '../math/prng.js';
+import { LEGACY_ECOLOGY_CONFIG, type EcologyConfig } from '../ecology/config.js';
 
 export function getPreferredBiomesForDiet(diet: Genome['diet']): BiomeType[] {
   switch (diet) {
@@ -98,7 +99,9 @@ export function updateOrganismMetabolism(
   org: OrganismState,
   temperature: number,
   isDrought = false,
-  isFlooded = false
+  isFlooded = false,
+  config: EcologyConfig = LEGACY_ECOLOGY_CONFIG,
+  measuredCosts?: { basal: number; movement: number; thermal: number; flood: number }
 ): number {
   org.age += 1;
 
@@ -149,21 +152,28 @@ export function updateOrganismMetabolism(
     (org.genome.metabolicEfficiency || 1.0);
 
   // Kinetic movement cost scales with current velocity and body mass
-  const kineticCost = (speedRatio * 0.042 * org.genome.speed * org.genome.bodySize);
+  const kineticCost = (speedRatio * 0.042 * org.genome.speed * org.genome.bodySize) * config.movementCost *
+    (org.state === 'hunting' ? config.predatorPursuitCost : 1);
 
   // Flood water wading stamina tax
   const floodCost = isFlooded ? 0.035 : 0;
 
-  let totalMetabolicCost = basalCost + kineticCost + thermalEnergyDrain + floodCost;
+  let totalMetabolicCost = basalCost * config.metabolicCost + kineticCost + thermalEnergyDrain + floodCost;
 
   // Resting behavior reduces metabolic expenditure by 60%
-  if (org.state === 'resting') {
-    totalMetabolicCost *= 0.40;
-  }
+  const restFactor = org.state === 'resting' ? 0.40 : 1;
+  totalMetabolicCost *= restFactor;
 
   const previousEnergy = org.energy;
   org.energy = Math.max(0, org.energy - totalMetabolicCost);
   const actualEnergyBurned = previousEnergy - org.energy;
+  if (measuredCosts) {
+    const scale = totalMetabolicCost > 0 ? actualEnergyBurned / totalMetabolicCost : 0;
+    measuredCosts.basal = basalCost * config.metabolicCost * restFactor * scale;
+    measuredCosts.movement = kineticCost * restFactor * scale;
+    measuredCosts.thermal = thermalEnergyDrain * restFactor * scale;
+    measuredCosts.flood = floodCost * restFactor * scale;
+  }
 
   // Apply thermal cellular damage if severe
   if (thermalDamage > 0) {
@@ -219,7 +229,9 @@ export function updateOrganismMetabolism(
     org.state = 'dead';
     if (!org.deathCause) {
       org.deathCause =
-        org.energy <= 0
+        thermalDamage > 0
+          ? 'thermal'
+          : org.energy <= 0
           ? 'starvation'
           : org.age > org.maxAge
           ? 'senescence'

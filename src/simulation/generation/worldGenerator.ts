@@ -15,6 +15,7 @@ import { generateSpeciesTaxon } from '../species/species.js';
 import { createOrganism } from '../organism/organism.js';
 import { generateTerrain, findValidSpawnLocation, isValidSpawnCell, WORLD_WIDTH, WORLD_HEIGHT } from '../terrain/terrain.js';
 import { createInitialResources } from '../ecosystem/ecosystem.js';
+import type { EcologyConfig } from '../ecology/config.js';
 
 const PLANET_PREFIXES = [
   'Aethel', 'Sylva', 'Oasis', 'Vesper', 'Borea', 'Nyx', 'Kael', 'Thala',
@@ -42,11 +43,11 @@ export interface GeneratedWorld {
   resources: ResourcePatch[];
 }
 
-export function generateNewWorld(seed: number): GeneratedWorld {
+export function generateNewWorld(seed: number, config?: EcologyConfig): GeneratedWorld {
   const prng = new PRNG(seed);
   const worldName = generatePlanetName(prng);
   const terrain = generateTerrain(seed);
-  const resources = createInitialResources(terrain, prng.fork(), 220);
+  const resources = createInitialResources(terrain, prng.fork(), config?.initialPlantCount ?? 220, config?.plantCapacity ?? 1);
 
   // Create three initial trophic roles: Herbivores, Carnivores, and Scavengers
   const foundingSpeciesConfigs = [

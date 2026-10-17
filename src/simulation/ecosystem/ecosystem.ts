@@ -16,7 +16,7 @@ export interface EcosystemUpdateResult {
   carrionBiomass: number;
 }
 
-export function createInitialResources(terrain: TerrainMap, prng: PRNG, count = 200): ResourcePatch[] {
+export function createInitialResources(terrain: TerrainMap, prng: PRNG, count = 200, capacityMultiplier = 1): ResourcePatch[] {
   const patches: ResourcePatch[] = [];
   let attempts = 0;
 
@@ -30,7 +30,7 @@ export function createInitialResources(terrain: TerrainMap, prng: PRNG, count = 
     // Favor high plant suitability biomes (forests, grasslands, river banks)
     if (cell.plantSuitability < 0.15 && prng.chance(0.85)) continue;
 
-    const maxAmount = prng.range(35, 90);
+    const maxAmount = prng.range(35, 90) * capacityMultiplier;
     const baseGrowth = prng.range(0.12, 0.28) * Math.max(0.18, cell.plantSuitability);
     patches.push({
       id: `res_${patches.length}_${prng.rangeInt(1000, 9999)}`,
@@ -74,11 +74,12 @@ export function spawnCarrion(
   x: number,
   y: number,
   bodySize: number,
-  carrionAmount: number
+  carrionAmount: number,
+  id = `carrion_${resources.length}`
 ): void {
   const radius = Math.max(10, Math.min(26, bodySize * 15));
   resources.push({
-    id: `carrion_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+    id,
     x,
     y,
     type: 'carrion',
@@ -103,7 +104,10 @@ export function updateResourceEcosystem(
   terrain: TerrainMap,
   climate: ClimateState,
   soilNutrientReserve: number,
-  prng: PRNG
+  prng: PRNG,
+  growthMultiplier = 1,
+  plantOnlyReseeding = false,
+  avoidPlantClustering = false
 ): EcosystemUpdateResult {
   let solarEnergyInflow = 0;
   let recycledSoilNutrients = 0;
@@ -164,7 +168,7 @@ export function updateResourceEcosystem(
 
         if (capacitySpace > 0) {
           const potentialGrowth =
-            res.growthRate *
+            res.growthRate * growthMultiplier *
             basePhotoFactor *
             tempPhotoCurve *
             moistFactor *
@@ -215,16 +219,21 @@ export function updateResourceEcosystem(
   }
 
   // Seed new plant patches if regional density drops below carrying capacity and not during severe drought
-  if (resources.length < 180 && !climate.isDrought && prng.chance(0.20)) {
+  const reseedingCount = plantOnlyReseeding
+    ? resources.reduce((count, resource) => count + (resource.type === 'plant' && resource.amount > 1.5 ? 1 : 0), 0)
+    : resources.length;
+  if (reseedingCount < 180 && !climate.isDrought && prng.chance(0.20)) {
     const x = prng.range(60, terrain.worldWidth - 60);
     const y = prng.range(60, terrain.worldHeight - 60);
     const cell = getCellAt(terrain, x, y);
 
-    if (cell && !cell.isWater && !cell.isFlooded && cell.plantSuitability > 0.22) {
+    const nearbyPlant = avoidPlantClustering && resources.some(resource => resource.type === 'plant' &&
+      (resource.x - x) ** 2 + (resource.y - y) ** 2 < 35 ** 2);
+    if (cell && !cell.isWater && !cell.isFlooded && cell.plantSuitability > 0.22 && !nearbyPlant) {
       const maxAmount = prng.range(35, 80);
       const initialAmount = prng.range(12, 22);
       resources.push({
-        id: `plant_${Date.now()}_${prng.rangeInt(1000, 9999)}`,
+        id: `plant_${resources.length}_${prng.rangeInt(1000, 9999)}`,
         x,
         y,
         type: 'plant',

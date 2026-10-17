@@ -1,0 +1,9 @@
+{
+  "seed": 486400,
+  "ticks": 25000,
+  "organisms": 0,
+  "disasters": 3,
+  "terrainPatches": 8188,
+  "storageBytes": 1246494,
+  "method": "Fresh SimulationEngine(486400), 25,000 headless steps, Buffer.byteLength(JSON.stringify(engine.serializeForStorage()))."
+}

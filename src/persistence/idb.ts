@@ -4,6 +4,7 @@
  */
 
 import { SavedWorldData } from '../types/simulation.js';
+import { isValidEcologyConfig } from '../simulation/ecology/config.js';
 
 const DB_NAME = 'genesis_simulation_db';
 const DB_VERSION = 1;
@@ -58,6 +59,7 @@ export function isValidSavedWorld(data: unknown): data is SavedWorldData {
     Array.isArray(d.organisms) &&
     Array.isArray(d.resources) &&
     Array.isArray(d.species) &&
+    (d.ecologyConfig === undefined || isValidEcologyConfig(d.ecologyConfig)) &&
     typeof d.climate === 'object' &&
     d.climate !== null
   );

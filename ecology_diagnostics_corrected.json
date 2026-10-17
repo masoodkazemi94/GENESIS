@@ -1,0 +1,3303 @@
+{
+  "schemaVersion": 1,
+  "method": "observer hooks plus 100-tick spatial samples",
+  "config": {
+    "initialPlantCount": 220,
+    "plantGrowth": 1,
+    "plantCapacity": 1,
+    "plantReseedingPlantOnly": false,
+    "feedingEfficiency": 1,
+    "metabolicCost": 1,
+    "movementCost": 1,
+    "predatorDamage": 1,
+    "predatorPursuitCost": 1,
+    "herbivoreFertilityThreshold": 1,
+    "scavengerCarrionRange": 1,
+    "mateDetectionRange": 1,
+    "disasterFrequency": 1,
+    "disasterSeverity": 1
+  },
+  "seeds": [
+    691297,
+    260679,
+    853895,
+    486400,
+    497022,
+    166064,
+    875922,
+    615480,
+    159286,
+    954366
+  ],
+  "ticksPerSeed": 10000,
+  "totalTicks": 100000,
+  "results": [
+    {
+      "seed": 691297,
+      "ticks": 10000,
+      "elapsedSeconds": 1.002,
+      "finalPopulation": 0,
+      "firstZeroTick": 4672,
+      "peakPopulation": 66,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 0,
+          "roles": {}
+        }
+      ],
+      "births": 0,
+      "deathsTotal": 66,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 88748,
+        "flee": 3275,
+        "food": 29224,
+        "water": 14865,
+        "rest": 9379
+      },
+      "feeding": {
+        "prey_failed": 23,
+        "prey_success": 23,
+        "plant_success": 810,
+        "carrion_success": 73
+      },
+      "deaths": {
+        "sp_0_5130:predation": 6,
+        "sp_0_1464:predation": 7,
+        "sp_0_8711:predation": 10,
+        "sp_0_2198:starvation": 7,
+        "sp_0_1464:starvation": 3,
+        "sp_0_8711:senescence": 12,
+        "sp_0_1464:senescence": 7,
+        "sp_0_8711:starvation": 2,
+        "sp_0_2198:senescence": 2,
+        "sp_0_1464:dehydration": 1,
+        "sp_0_5130:senescence": 5,
+        "sp_0_5130:starvation": 4
+      },
+      "deathGenerations": {
+        "1:predation": 23,
+        "1:starvation": 16,
+        "1:senescence": 26,
+        "1:dehydration": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 91218,
+          "visibleFood": 82641,
+          "foodSelected": 14017,
+          "mateReady": 9296,
+          "mateFound": 3695
+        },
+        "scavenger": {
+          "total": 37933,
+          "visibleFood": 18766,
+          "foodSelected": 13712,
+          "mateReady": 154,
+          "mateFound": 36
+        },
+        "carnivore": {
+          "total": 16340,
+          "visibleFood": 2472,
+          "foodSelected": 1495,
+          "mateReady": 4027,
+          "mateFound": 0
+        }
+      },
+      "foodVisible": 103879,
+      "foodDecisions": 29224,
+      "waterVisible": 84329,
+      "waterDecisions": 14865,
+      "predatorDetections": 2472,
+      "predatorPursuitDecisions": 1495,
+      "travel": {
+        "started": 1301,
+        "reached": 906,
+        "abandoned": 395,
+        "elapsedTicks": 18209,
+        "initialDistance": 95294.83452283949,
+        "beyondContactStarted": 1112,
+        "beyondContactReached": 717,
+        "beyondContactAbandoned": 395,
+        "beyondContactElapsedTicks": 18183,
+        "byType": {
+          "prey": {
+            "started": 25,
+            "reached": 23,
+            "abandoned": 2,
+            "startingDistanceSum": 1764.7558556357171
+          },
+          "plant": {
+            "started": 866,
+            "reached": 810,
+            "abandoned": 56,
+            "startingDistanceSum": 42360.070869253555
+          },
+          "carrion": {
+            "started": 410,
+            "reached": 73,
+            "abandoned": 337,
+            "startingDistanceSum": 51170.007797950195
+          }
+        },
+        "successRate": 0.696,
+        "meanTimeToFeedTicks": 20.098,
+        "beyondContactSuccessRate": 0.645,
+        "meanTravelTicksBeyondContact": 25.36,
+        "meanStartingDistance": 73.247
+      },
+      "energy": {
+        "gainedFromFood": 14555.856,
+        "metabolicSpent": 17564.573,
+        "costs": {
+          "basal": 10670.479,
+          "movement": 6536.668,
+          "thermal": 357.425,
+          "flood": 0
+        },
+        "ratio": 0.829,
+        "byDiet": {
+          "herbivore": {
+            "gained": 9484.368,
+            "spent": 11051.638
+          },
+          "scavenger": {
+            "gained": 3585.822,
+            "spent": 4305.109
+          },
+          "carnivore": {
+            "gained": 1485.665,
+            "spent": 2207.825
+          }
+        }
+      },
+      "reproduction": {
+        "births": 0,
+        "birthsByDiet": {},
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 2631,
+          "no_mate_within_sense": 9746,
+          "energy": 128669,
+          "other_utility_won": 3731,
+          "age": 683,
+          "hydration": 31
+        },
+        "mutationEvents": 0,
+        "mutationTraits": {},
+        "mutationsPerBirth": null
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 175.53,
+        "meanGlobalPlantBiomass": 6563.107,
+        "sampledOrganisms": 1422,
+        "meanLocalPlantPatches": 4.307,
+        "meanLocalPlantBiomass": 204.005,
+        "meanLocalCarrionPatches": 0.127,
+        "meanLocalSpringPatches": 0.158,
+        "meanPlantNearestNeighborDistance": 50.562
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1014,
+        "matesWithinSensor": 216,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 90,
+            "compatibleAnywhere": 772,
+            "withinSensor": 169,
+            "nearestDistanceSum": 177665.89075985353
+          },
+          "scavenger": {
+            "eligible": 1,
+            "compatibleAnywhere": 175,
+            "withinSensor": 47,
+            "nearestDistanceSum": 66776.47105933774
+          },
+          "carnivore": {
+            "eligible": 41,
+            "compatibleAnywhere": 67,
+            "withinSensor": 0,
+            "nearestDistanceSum": 45170.87291226409
+          }
+        },
+        "meanNearestCompatibleMateDistance": 285.615
+      },
+      "genetics": {
+        "maxChildDivergence": 0,
+        "meanChildDivergence": null,
+        "childDivergenceBins": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0,
+        "meanWithinSpeciesDistance": 0,
+        "withinSpeciesDistanceBins": [
+          17304,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 17304
+      }
+    },
+    {
+      "seed": 260679,
+      "ticks": 10000,
+      "elapsedSeconds": 1.13,
+      "finalPopulation": 8,
+      "firstZeroTick": null,
+      "peakPopulation": 92,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 8,
+          "roles": {
+            "herbivore": 8
+          }
+        }
+      ],
+      "births": 163,
+      "deathsTotal": 221,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 193171,
+        "flee": 11125,
+        "mate": 7787,
+        "food": 142060,
+        "water": 45948,
+        "rest": 78827
+      },
+      "feeding": {
+        "plant_success": 5205,
+        "prey_failed": 81,
+        "prey_success": 58,
+        "carrion_success": 28
+      },
+      "deaths": {
+        "sp_0_5427:predation": 20,
+        "sp_0_1124:predation": 12,
+        "sp_0_9572:predation": 26,
+        "sp_0_8430:starvation": 10,
+        "sp_0_5427:starvation": 41,
+        "sp_0_9572:starvation": 39,
+        "sp_0_1124:starvation": 3,
+        "sp_0_1124:senescence": 2,
+        "sp_0_5427:senescence": 16,
+        "sp_0_8430:senescence": 3,
+        "sp_0_9572:senescence": 19,
+        "sp_0_9572:thermal": 3,
+        "sp_0_9572:dehydration": 4,
+        "sp_0_5427:dehydration": 2,
+        "sp_0_5427:thermal": 21
+      },
+      "deathGenerations": {
+        "1:predation": 32,
+        "2:predation": 11,
+        "2:starvation": 9,
+        "3:predation": 6,
+        "4:predation": 4,
+        "3:starvation": 14,
+        "1:starvation": 15,
+        "1:senescence": 19,
+        "5:predation": 1,
+        "2:senescence": 4,
+        "7:thermal": 1,
+        "5:starvation": 3,
+        "6:starvation": 7,
+        "3:senescence": 1,
+        "4:starvation": 7,
+        "7:starvation": 3,
+        "9:predation": 1,
+        "2:thermal": 1,
+        "4:senescence": 1,
+        "5:dehydration": 1,
+        "2:dehydration": 3,
+        "8:starvation": 7,
+        "7:predation": 2,
+        "6:predation": 1,
+        "6:senescence": 1,
+        "9:starvation": 5,
+        "10:starvation": 4,
+        "11:starvation": 4,
+        "5:senescence": 3,
+        "3:dehydration": 1,
+        "9:senescence": 1,
+        "7:senescence": 1,
+        "12:senescence": 1,
+        "13:starvation": 1,
+        "12:starvation": 2,
+        "13:dehydration": 1,
+        "19:starvation": 2,
+        "10:senescence": 3,
+        "15:senescence": 1,
+        "11:thermal": 1,
+        "14:senescence": 1,
+        "11:senescence": 1,
+        "19:thermal": 2,
+        "21:thermal": 4,
+        "18:starvation": 3,
+        "20:thermal": 3,
+        "24:thermal": 1,
+        "25:thermal": 1,
+        "16:thermal": 2,
+        "17:thermal": 3,
+        "22:thermal": 3,
+        "23:thermal": 1,
+        "13:thermal": 1,
+        "16:starvation": 1,
+        "21:starvation": 3,
+        "17:senescence": 1,
+        "20:starvation": 2,
+        "17:starvation": 1,
+        "19:senescence": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 426950,
+          "visibleFood": 290387,
+          "foodSelected": 121178,
+          "mateReady": 76720,
+          "mateFound": 30923
+        },
+        "scavenger": {
+          "total": 23549,
+          "visibleFood": 12810,
+          "foodSelected": 9463,
+          "mateReady": 2512,
+          "mateFound": 470
+        },
+        "carnivore": {
+          "total": 28419,
+          "visibleFood": 16877,
+          "foodSelected": 11419,
+          "mateReady": 3561,
+          "mateFound": 441
+        }
+      },
+      "foodVisible": 320074,
+      "foodDecisions": 142060,
+      "waterVisible": 265241,
+      "waterDecisions": 45948,
+      "predatorDetections": 16877,
+      "predatorPursuitDecisions": 11419,
+      "travel": {
+        "started": 10517,
+        "reached": 5291,
+        "abandoned": 5223,
+        "elapsedTicks": 78414,
+        "initialDistance": 607279.8626938828,
+        "beyondContactStarted": 8917,
+        "beyondContactReached": 3712,
+        "beyondContactAbandoned": 5202,
+        "beyondContactElapsedTicks": 78200,
+        "byType": {
+          "plant": {
+            "started": 9999,
+            "reached": 5205,
+            "abandoned": 4791,
+            "startingDistanceSum": 551596.342830985
+          },
+          "prey": {
+            "started": 136,
+            "reached": 58,
+            "abandoned": 78,
+            "startingDistanceSum": 9791.653972783408
+          },
+          "carrion": {
+            "started": 382,
+            "reached": 28,
+            "abandoned": 354,
+            "startingDistanceSum": 45891.865890114415
+          }
+        },
+        "successRate": 0.503,
+        "meanTimeToFeedTicks": 14.82,
+        "beyondContactSuccessRate": 0.416,
+        "meanTravelTicksBeyondContact": 21.067,
+        "meanStartingDistance": 57.743
+      },
+      "energy": {
+        "gainedFromFood": 53374.599,
+        "metabolicSpent": 50995.477,
+        "costs": {
+          "basal": 29678.878,
+          "movement": 18981.393,
+          "thermal": 2335.206,
+          "flood": 0
+        },
+        "ratio": 1.047,
+        "byDiet": {
+          "herbivore": {
+            "gained": 48486.103,
+            "spent": 44748.532
+          },
+          "scavenger": {
+            "gained": 2189.348,
+            "spent": 2951.295
+          },
+          "carnivore": {
+            "gained": 2699.147,
+            "spent": 3295.65
+          }
+        }
+      },
+      "reproduction": {
+        "births": 163,
+        "birthsByDiet": {
+          "herbivore": 157,
+          "scavenger": 2,
+          "carnivore": 4
+        },
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 87569,
+          "no_mate_within_sense": 50959,
+          "other_utility_won": 24047,
+          "immature": 20518,
+          "energy": 282613,
+          "hydration": 1765,
+          "age": 3660
+        },
+        "mutationEvents": 265,
+        "mutationTraits": {
+          "speed": {
+            "count": 20,
+            "meanAbsoluteDelta": 0.262
+          },
+          "visionRange": {
+            "count": 13,
+            "meanAbsoluteDelta": 10.892
+          },
+          "foodProcessingEfficiency": {
+            "count": 18,
+            "meanAbsoluteDelta": 0.079
+          },
+          "bodySize": {
+            "count": 20,
+            "meanAbsoluteDelta": 0.117
+          },
+          "camouflage": {
+            "count": 12,
+            "meanAbsoluteDelta": 0.068
+          },
+          "colorSaturation": {
+            "count": 25,
+            "meanAbsoluteDelta": 0.051
+          },
+          "reproductiveInvestment": {
+            "count": 20,
+            "meanAbsoluteDelta": 0.04
+          },
+          "gestationTicks": {
+            "count": 14,
+            "meanAbsoluteDelta": 7.975
+          },
+          "tailLength": {
+            "count": 16,
+            "meanAbsoluteDelta": 0.383
+          },
+          "fertilityThreshold": {
+            "count": 16,
+            "meanAbsoluteDelta": 2.164
+          },
+          "coldTolerance": {
+            "count": 27,
+            "meanAbsoluteDelta": 2.549
+          },
+          "aggression": {
+            "count": 17,
+            "meanAbsoluteDelta": 0.056
+          },
+          "heatTolerance": {
+            "count": 12,
+            "meanAbsoluteDelta": 2.508
+          },
+          "metabolicEfficiency": {
+            "count": 17,
+            "meanAbsoluteDelta": 0.071
+          },
+          "endurance": {
+            "count": 18,
+            "meanAbsoluteDelta": 0.089
+          }
+        },
+        "mutationsPerBirth": 1.626
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 160.18,
+        "meanGlobalPlantBiomass": 6159.806,
+        "sampledOrganisms": 4748,
+        "meanLocalPlantPatches": 2.423,
+        "meanLocalPlantBiomass": 92.071,
+        "meanLocalCarrionPatches": 0.405,
+        "meanLocalSpringPatches": 0.175,
+        "meanPlantNearestNeighborDistance": 55.322
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1794,
+        "matesWithinSensor": 568,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 800,
+            "compatibleAnywhere": 1583,
+            "withinSensor": 539,
+            "nearestDistanceSum": 308126.7888103552
+          },
+          "scavenger": {
+            "eligible": 30,
+            "compatibleAnywhere": 134,
+            "withinSensor": 21,
+            "nearestDistanceSum": 61526.02187383333
+          },
+          "carnivore": {
+            "eligible": 33,
+            "compatibleAnywhere": 77,
+            "withinSensor": 8,
+            "nearestDistanceSum": 53026.29006782226
+          }
+        },
+        "meanNearestCompatibleMateDistance": 235.607
+      },
+      "genetics": {
+        "maxChildDivergence": 0.104,
+        "meanChildDivergence": 0.043,
+        "childDivergenceBins": [
+          93,
+          69,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.101,
+        "meanWithinSpeciesDistance": 0.032,
+        "withinSpeciesDistanceBins": [
+          95764,
+          25986,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 121756
+      }
+    },
+    {
+      "seed": 853895,
+      "ticks": 10000,
+      "elapsedSeconds": 0.825,
+      "finalPopulation": 0,
+      "firstZeroTick": 5593,
+      "peakPopulation": 67,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 0,
+          "roles": {}
+        }
+      ],
+      "births": 22,
+      "deathsTotal": 88,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 88518,
+        "flee": 3028,
+        "mate": 1056,
+        "food": 27602,
+        "water": 32704,
+        "rest": 19648
+      },
+      "feeding": {
+        "plant_success": 1250,
+        "prey_failed": 44,
+        "prey_success": 32,
+        "carrion_success": 17
+      },
+      "deaths": {
+        "sp_0_6592:predation": 15,
+        "sp_0_4555:predation": 7,
+        "sp_0_1202:predation": 10,
+        "sp_0_1202:thermal": 3,
+        "sp_0_1202:starvation": 1,
+        "sp_0_5547:starvation": 9,
+        "sp_0_6592:starvation": 12,
+        "sp_0_6592:senescence": 17,
+        "sp_0_4555:senescence": 4,
+        "sp_0_5547:senescence": 1,
+        "sp_0_4555:starvation": 6,
+        "sp_0_1202:dehydration": 1,
+        "sp_0_6592:dehydration": 1,
+        "sp_0_4555:dehydration": 1
+      },
+      "deathGenerations": {
+        "1:predation": 28,
+        "1:thermal": 3,
+        "1:starvation": 20,
+        "2:predation": 2,
+        "2:starvation": 4,
+        "1:senescence": 13,
+        "4:predation": 1,
+        "3:predation": 1,
+        "1:dehydration": 2,
+        "4:dehydration": 1,
+        "2:senescence": 4,
+        "3:starvation": 3,
+        "4:senescence": 1,
+        "3:senescence": 4,
+        "4:starvation": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 139537,
+          "visibleFood": 108215,
+          "foodSelected": 22050,
+          "mateReady": 20223,
+          "mateFound": 6335
+        },
+        "scavenger": {
+          "total": 13244,
+          "visibleFood": 6827,
+          "foodSelected": 3221,
+          "mateReady": 874,
+          "mateFound": 146
+        },
+        "carnivore": {
+          "total": 19775,
+          "visibleFood": 5934,
+          "foodSelected": 2331,
+          "mateReady": 2867,
+          "mateFound": 30
+        }
+      },
+      "foodVisible": 120976,
+      "foodDecisions": 27602,
+      "waterVisible": 105665,
+      "waterDecisions": 32704,
+      "predatorDetections": 5934,
+      "predatorPursuitDecisions": 2331,
+      "travel": {
+        "started": 1935,
+        "reached": 1299,
+        "abandoned": 636,
+        "elapsedTicks": 17084,
+        "initialDistance": 100026.66329752424,
+        "beyondContactStarted": 1467,
+        "beyondContactReached": 832,
+        "beyondContactAbandoned": 635,
+        "beyondContactElapsedTicks": 17014,
+        "byType": {
+          "prey": {
+            "started": 44,
+            "reached": 32,
+            "abandoned": 12,
+            "startingDistanceSum": 3431.9068881090616
+          },
+          "plant": {
+            "started": 1690,
+            "reached": 1250,
+            "abandoned": 440,
+            "startingDistanceSum": 73292.57623948509
+          },
+          "carrion": {
+            "started": 201,
+            "reached": 17,
+            "abandoned": 184,
+            "startingDistanceSum": 23302.18016993019
+          }
+        },
+        "successRate": 0.671,
+        "meanTimeToFeedTicks": 13.152,
+        "beyondContactSuccessRate": 0.567,
+        "meanTravelTicksBeyondContact": 20.45,
+        "meanStartingDistance": 51.693
+      },
+      "energy": {
+        "gainedFromFood": 16889.511,
+        "metabolicSpent": 18884.149,
+        "costs": {
+          "basal": 12600.564,
+          "movement": 6004.97,
+          "thermal": 278.614,
+          "flood": 0
+        },
+        "ratio": 0.894,
+        "byDiet": {
+          "herbivore": {
+            "gained": 14327.81,
+            "spent": 15042.412
+          },
+          "scavenger": {
+            "gained": 650.932,
+            "spent": 1238.503
+          },
+          "carnivore": {
+            "gained": 1910.769,
+            "spent": 2603.234
+          }
+        }
+      },
+      "reproduction": {
+        "births": 22,
+        "birthsByDiet": {
+          "herbivore": 21,
+          "carnivore": 1
+        },
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 14494,
+          "no_mate_within_sense": 17453,
+          "energy": 129858,
+          "other_utility_won": 5455,
+          "immature": 3061,
+          "age": 1178,
+          "hydration": 1
+        },
+        "mutationEvents": 40,
+        "mutationTraits": {
+          "aggression": {
+            "count": 5,
+            "meanAbsoluteDelta": 0.086
+          },
+          "heatTolerance": {
+            "count": 3,
+            "meanAbsoluteDelta": 1.503
+          },
+          "reproductiveInvestment": {
+            "count": 6,
+            "meanAbsoluteDelta": 0.017
+          },
+          "camouflage": {
+            "count": 1,
+            "meanAbsoluteDelta": 0.131
+          },
+          "foodProcessingEfficiency": {
+            "count": 2,
+            "meanAbsoluteDelta": 0.049
+          },
+          "metabolicEfficiency": {
+            "count": 3,
+            "meanAbsoluteDelta": 0.077
+          },
+          "visionRange": {
+            "count": 1,
+            "meanAbsoluteDelta": 36.539
+          },
+          "colorSaturation": {
+            "count": 3,
+            "meanAbsoluteDelta": 0.061
+          },
+          "fertilityThreshold": {
+            "count": 3,
+            "meanAbsoluteDelta": 1.852
+          },
+          "endurance": {
+            "count": 4,
+            "meanAbsoluteDelta": 0.075
+          },
+          "gestationTicks": {
+            "count": 2,
+            "meanAbsoluteDelta": 4.338
+          },
+          "tailLength": {
+            "count": 3,
+            "meanAbsoluteDelta": 0.254
+          },
+          "speed": {
+            "count": 1,
+            "meanAbsoluteDelta": 0.266
+          },
+          "bodySize": {
+            "count": 2,
+            "meanAbsoluteDelta": 0.189
+          },
+          "coldTolerance": {
+            "count": 1,
+            "meanAbsoluteDelta": 1.664
+          }
+        },
+        "mutationsPerBirth": 1.818
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 206.86,
+        "meanGlobalPlantBiomass": 11079.688,
+        "sampledOrganisms": 1699,
+        "meanLocalPlantPatches": 2.624,
+        "meanLocalPlantBiomass": 121.174,
+        "meanLocalCarrionPatches": 0.152,
+        "meanLocalSpringPatches": 0.079,
+        "meanPlantNearestNeighborDistance": 50.016
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 962,
+        "matesWithinSensor": 129,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 226,
+            "compatibleAnywhere": 821,
+            "withinSensor": 109,
+            "nearestDistanceSum": 183892.8808154722
+          },
+          "scavenger": {
+            "eligible": 10,
+            "compatibleAnywhere": 74,
+            "withinSensor": 18,
+            "nearestDistanceSum": 20383.92664819858
+          },
+          "carnivore": {
+            "eligible": 29,
+            "compatibleAnywhere": 67,
+            "withinSensor": 2,
+            "nearestDistanceSum": 34365.24075739284
+          }
+        },
+        "meanNearestCompatibleMateDistance": 248.069
+      },
+      "genetics": {
+        "maxChildDivergence": 0.077,
+        "meanChildDivergence": 0.029,
+        "childDivergenceBins": [
+          17,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.105,
+        "meanWithinSpeciesDistance": 0.02,
+        "withinSpeciesDistanceBins": [
+          23460,
+          5004,
+          74,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 28538
+      }
+    },
+    {
+      "seed": 486400,
+      "ticks": 10000,
+      "elapsedSeconds": 1.976,
+      "finalPopulation": 9,
+      "firstZeroTick": null,
+      "peakPopulation": 73,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 9,
+          "roles": {
+            "herbivore": 9
+          }
+        }
+      ],
+      "births": 93,
+      "deathsTotal": 150,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 193590,
+        "flee": 3106,
+        "mate": 4068,
+        "food": 83347,
+        "water": 71984,
+        "rest": 60824
+      },
+      "feeding": {
+        "plant_success": 2985,
+        "prey_failed": 31,
+        "prey_success": 30,
+        "carrion_success": 58
+      },
+      "deaths": {
+        "sp_0_1318:predation": 19,
+        "sp_0_3401:predation": 7,
+        "sp_0_2487:predation": 4,
+        "sp_0_5428:starvation": 8,
+        "sp_0_3401:starvation": 1,
+        "sp_0_1318:starvation": 42,
+        "sp_0_3401:dehydration": 1,
+        "sp_0_3401:senescence": 9,
+        "sp_0_2487:senescence": 8,
+        "sp_0_2487:starvation": 4,
+        "sp_0_2487:dehydration": 1,
+        "sp_0_1318:thermal": 4,
+        "sp_0_2487:thermal": 1,
+        "sp_0_1318:senescence": 33,
+        "sp_0_5428:senescence": 2,
+        "sp_0_1318:dehydration": 6
+      },
+      "deathGenerations": {
+        "1:predation": 16,
+        "2:predation": 9,
+        "1:starvation": 17,
+        "2:starvation": 3,
+        "1:dehydration": 3,
+        "5:predation": 2,
+        "3:predation": 1,
+        "1:senescence": 28,
+        "2:thermal": 1,
+        "1:thermal": 2,
+        "6:predation": 1,
+        "4:predation": 1,
+        "3:starvation": 4,
+        "4:starvation": 5,
+        "3:senescence": 9,
+        "2:senescence": 3,
+        "2:dehydration": 2,
+        "5:starvation": 3,
+        "6:starvation": 4,
+        "4:dehydration": 3,
+        "4:senescence": 1,
+        "5:senescence": 3,
+        "7:starvation": 5,
+        "6:senescence": 4,
+        "10:starvation": 6,
+        "11:starvation": 3,
+        "9:starvation": 3,
+        "8:senescence": 3,
+        "6:thermal": 1,
+        "8:thermal": 1,
+        "8:starvation": 2,
+        "7:senescence": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 364869,
+          "visibleFood": 266859,
+          "foodSelected": 70028,
+          "mateReady": 70690,
+          "mateFound": 20697
+        },
+        "scavenger": {
+          "total": 33881,
+          "visibleFood": 16598,
+          "foodSelected": 11037,
+          "mateReady": 6350,
+          "mateFound": 599
+        },
+        "carnivore": {
+          "total": 18169,
+          "visibleFood": 4869,
+          "foodSelected": 2282,
+          "mateReady": 3205,
+          "mateFound": 49
+        }
+      },
+      "foodVisible": 288326,
+      "foodDecisions": 83347,
+      "waterVisible": 271133,
+      "waterDecisions": 71984,
+      "predatorDetections": 4869,
+      "predatorPursuitDecisions": 2282,
+      "travel": {
+        "started": 4776,
+        "reached": 3073,
+        "abandoned": 1698,
+        "elapsedTicks": 46189,
+        "initialDistance": 236798.49446920774,
+        "beyondContactStarted": 3848,
+        "beyondContactReached": 2145,
+        "beyondContactAbandoned": 1698,
+        "beyondContactElapsedTicks": 46083,
+        "byType": {
+          "plant": {
+            "started": 4454,
+            "reached": 2985,
+            "abandoned": 1464,
+            "startingDistanceSum": 211391.37825248923
+          },
+          "prey": {
+            "started": 41,
+            "reached": 30,
+            "abandoned": 11,
+            "startingDistanceSum": 2831.519771739289
+          },
+          "carrion": {
+            "started": 281,
+            "reached": 58,
+            "abandoned": 223,
+            "startingDistanceSum": 22575.5964449795
+          }
+        },
+        "successRate": 0.643,
+        "meanTimeToFeedTicks": 15.031,
+        "beyondContactSuccessRate": 0.557,
+        "meanTravelTicksBeyondContact": 21.484,
+        "meanStartingDistance": 49.581
+      },
+      "energy": {
+        "gainedFromFood": 36205.783,
+        "metabolicSpent": 35457.611,
+        "costs": {
+          "basal": 22605.906,
+          "movement": 12115.031,
+          "thermal": 736.675,
+          "flood": 0
+        },
+        "ratio": 1.021,
+        "byDiet": {
+          "herbivore": {
+            "gained": 31195.468,
+            "spent": 29285.489
+          },
+          "scavenger": {
+            "gained": 3500.845,
+            "spent": 4014.287
+          },
+          "carnivore": {
+            "gained": 1509.47,
+            "spent": 2157.836
+          }
+        }
+      },
+      "reproduction": {
+        "births": 93,
+        "birthsByDiet": {
+          "scavenger": 3,
+          "herbivore": 89,
+          "carnivore": 1
+        },
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 50536,
+          "no_mate_within_sense": 58900,
+          "other_utility_won": 17277,
+          "immature": 12196,
+          "energy": 267816,
+          "age": 5148,
+          "hydration": 978
+        },
+        "mutationEvents": 144,
+        "mutationTraits": {
+          "colorSaturation": {
+            "count": 9,
+            "meanAbsoluteDelta": 0.081
+          },
+          "tailLength": {
+            "count": 12,
+            "meanAbsoluteDelta": 0.382
+          },
+          "reproductiveInvestment": {
+            "count": 11,
+            "meanAbsoluteDelta": 0.039
+          },
+          "gestationTicks": {
+            "count": 11,
+            "meanAbsoluteDelta": 6.695
+          },
+          "speed": {
+            "count": 7,
+            "meanAbsoluteDelta": 0.203
+          },
+          "bodySize": {
+            "count": 12,
+            "meanAbsoluteDelta": 0.179
+          },
+          "camouflage": {
+            "count": 11,
+            "meanAbsoluteDelta": 0.059
+          },
+          "aggression": {
+            "count": 10,
+            "meanAbsoluteDelta": 0.046
+          },
+          "metabolicEfficiency": {
+            "count": 9,
+            "meanAbsoluteDelta": 0.121
+          },
+          "visionRange": {
+            "count": 11,
+            "meanAbsoluteDelta": 14.22
+          },
+          "endurance": {
+            "count": 7,
+            "meanAbsoluteDelta": 0.092
+          },
+          "fertilityThreshold": {
+            "count": 13,
+            "meanAbsoluteDelta": 2.293
+          },
+          "heatTolerance": {
+            "count": 8,
+            "meanAbsoluteDelta": 1.815
+          },
+          "coldTolerance": {
+            "count": 8,
+            "meanAbsoluteDelta": 2.86
+          },
+          "foodProcessingEfficiency": {
+            "count": 5,
+            "meanAbsoluteDelta": 0.035
+          }
+        },
+        "mutationsPerBirth": 1.548
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 179.63,
+        "meanGlobalPlantBiomass": 8306.7,
+        "sampledOrganisms": 4139,
+        "meanLocalPlantPatches": 2.507,
+        "meanLocalPlantBiomass": 109.435,
+        "meanLocalCarrionPatches": 0.223,
+        "meanLocalSpringPatches": 0.187,
+        "meanPlantNearestNeighborDistance": 55.079
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 2045,
+        "matesWithinSensor": 590,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 735,
+            "compatibleAnywhere": 1763,
+            "withinSensor": 554,
+            "nearestDistanceSum": 318439.3132129953
+          },
+          "scavenger": {
+            "eligible": 71,
+            "compatibleAnywhere": 221,
+            "withinSensor": 36,
+            "nearestDistanceSum": 77256.03425752431
+          },
+          "carnivore": {
+            "eligible": 35,
+            "compatibleAnywhere": 61,
+            "withinSensor": 0,
+            "nearestDistanceSum": 42440.06314480613
+          }
+        },
+        "meanNearestCompatibleMateDistance": 214.247
+      },
+      "genetics": {
+        "maxChildDivergence": 0.066,
+        "meanChildDivergence": 0.029,
+        "childDivergenceBins": [
+          73,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.11,
+        "meanWithinSpeciesDistance": 0.027,
+        "withinSpeciesDistanceBins": [
+          106320,
+          17714,
+          96,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 124130
+      }
+    },
+    {
+      "seed": 497022,
+      "ticks": 10000,
+      "elapsedSeconds": 0.663,
+      "finalPopulation": 3,
+      "firstZeroTick": null,
+      "peakPopulation": 70,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 3,
+          "roles": {
+            "herbivore": 3
+          }
+        }
+      ],
+      "births": 89,
+      "deathsTotal": 152,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 160936,
+        "flee": 7203,
+        "mate": 3513,
+        "food": 76128,
+        "rest": 58332,
+        "water": 24011
+      },
+      "feeding": {
+        "plant_success": 3456,
+        "prey_failed": 48,
+        "prey_success": 53,
+        "carrion_success": 27,
+        "plant_failed": 1
+      },
+      "deaths": {
+        "sp_0_7626:predation": 11,
+        "sp_0_7739:predation": 27,
+        "sp_0_1024:predation": 15,
+        "sp_0_9090:starvation": 8,
+        "sp_0_7739:starvation": 47,
+        "sp_0_7626:senescence": 4,
+        "sp_0_7626:starvation": 3,
+        "sp_0_9090:senescence": 2,
+        "sp_0_1024:starvation": 2,
+        "sp_0_7739:senescence": 31,
+        "sp_0_1024:senescence": 1,
+        "sp_0_7739:dehydration": 1
+      },
+      "deathGenerations": {
+        "1:predation": 37,
+        "2:predation": 9,
+        "1:starvation": 15,
+        "4:predation": 1,
+        "3:predation": 3,
+        "5:starvation": 9,
+        "1:senescence": 14,
+        "5:predation": 2,
+        "4:starvation": 11,
+        "2:starvation": 5,
+        "2:senescence": 6,
+        "3:starvation": 7,
+        "6:predation": 1,
+        "3:senescence": 3,
+        "7:starvation": 4,
+        "3:dehydration": 1,
+        "6:starvation": 3,
+        "8:starvation": 2,
+        "4:senescence": 3,
+        "9:starvation": 1,
+        "6:senescence": 4,
+        "8:senescence": 1,
+        "10:starvation": 1,
+        "9:senescence": 1,
+        "10:senescence": 2,
+        "5:senescence": 1,
+        "11:senescence": 2,
+        "13:starvation": 1,
+        "12:starvation": 1,
+        "12:senescence": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 283142,
+          "visibleFood": 185294,
+          "foodSelected": 60436,
+          "mateReady": 63295,
+          "mateFound": 14821
+        },
+        "scavenger": {
+          "total": 24531,
+          "visibleFood": 15184,
+          "foodSelected": 10479,
+          "mateReady": 4232,
+          "mateFound": 1269
+        },
+        "carnivore": {
+          "total": 22450,
+          "visibleFood": 10090,
+          "foodSelected": 5213,
+          "mateReady": 5555,
+          "mateFound": 117
+        }
+      },
+      "foodVisible": 210568,
+      "foodDecisions": 76128,
+      "waterVisible": 203482,
+      "waterDecisions": 24011,
+      "predatorDetections": 10090,
+      "predatorPursuitDecisions": 5213,
+      "travel": {
+        "started": 5111,
+        "reached": 3536,
+        "abandoned": 1573,
+        "elapsedTicks": 48535,
+        "initialDistance": 275860.10990441183,
+        "beyondContactStarted": 4028,
+        "beyondContactReached": 2456,
+        "beyondContactAbandoned": 1570,
+        "beyondContactElapsedTicks": 48422,
+        "byType": {
+          "plant": {
+            "started": 4687,
+            "reached": 3456,
+            "abandoned": 1229,
+            "startingDistanceSum": 225507.3849075662
+          },
+          "prey": {
+            "started": 68,
+            "reached": 53,
+            "abandoned": 15,
+            "startingDistanceSum": 5400.011042376467
+          },
+          "carrion": {
+            "started": 356,
+            "reached": 27,
+            "abandoned": 329,
+            "startingDistanceSum": 44952.71395446878
+          }
+        },
+        "successRate": 0.692,
+        "meanTimeToFeedTicks": 13.726,
+        "beyondContactSuccessRate": 0.61,
+        "meanTravelTicksBeyondContact": 19.716,
+        "meanStartingDistance": 53.974
+      },
+      "energy": {
+        "gainedFromFood": 37408.367,
+        "metabolicSpent": 37589.167,
+        "costs": {
+          "basal": 23554.079,
+          "movement": 13718.305,
+          "thermal": 316.784,
+          "flood": 0
+        },
+        "ratio": 0.995,
+        "byDiet": {
+          "herbivore": {
+            "gained": 32571.333,
+            "spent": 31373.155
+          },
+          "scavenger": {
+            "gained": 1780.332,
+            "spent": 2486.518
+          },
+          "carnivore": {
+            "gained": 3056.702,
+            "spent": 3729.495
+          }
+        }
+      },
+      "reproduction": {
+        "births": 89,
+        "birthsByDiet": {
+          "scavenger": 3,
+          "herbivore": 85,
+          "carnivore": 1
+        },
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 53512,
+          "no_mate_within_sense": 56875,
+          "other_utility_won": 12694,
+          "energy": 186454,
+          "immature": 11354,
+          "age": 5721
+        },
+        "mutationEvents": 148,
+        "mutationTraits": {
+          "visionRange": {
+            "count": 6,
+            "meanAbsoluteDelta": 12.863
+          },
+          "gestationTicks": {
+            "count": 7,
+            "meanAbsoluteDelta": 8.761
+          },
+          "endurance": {
+            "count": 11,
+            "meanAbsoluteDelta": 0.105
+          },
+          "reproductiveInvestment": {
+            "count": 11,
+            "meanAbsoluteDelta": 0.029
+          },
+          "fertilityThreshold": {
+            "count": 13,
+            "meanAbsoluteDelta": 2.682
+          },
+          "speed": {
+            "count": 10,
+            "meanAbsoluteDelta": 0.286
+          },
+          "aggression": {
+            "count": 9,
+            "meanAbsoluteDelta": 0.069
+          },
+          "foodProcessingEfficiency": {
+            "count": 9,
+            "meanAbsoluteDelta": 0.081
+          },
+          "colorSaturation": {
+            "count": 12,
+            "meanAbsoluteDelta": 0.074
+          },
+          "metabolicEfficiency": {
+            "count": 11,
+            "meanAbsoluteDelta": 0.076
+          },
+          "bodySize": {
+            "count": 14,
+            "meanAbsoluteDelta": 0.167
+          },
+          "heatTolerance": {
+            "count": 7,
+            "meanAbsoluteDelta": 1.635
+          },
+          "coldTolerance": {
+            "count": 13,
+            "meanAbsoluteDelta": 2.577
+          },
+          "camouflage": {
+            "count": 7,
+            "meanAbsoluteDelta": 0.039
+          },
+          "tailLength": {
+            "count": 8,
+            "meanAbsoluteDelta": 0.427
+          }
+        },
+        "mutationsPerBirth": 1.663
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 173.33,
+        "meanGlobalPlantBiomass": 7680.175,
+        "sampledOrganisms": 3265,
+        "meanLocalPlantPatches": 2.409,
+        "meanLocalPlantBiomass": 97.104,
+        "meanLocalCarrionPatches": 0.233,
+        "meanLocalSpringPatches": 0.164,
+        "meanPlantNearestNeighborDistance": 52.808
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1518,
+        "matesWithinSensor": 376,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 673,
+            "compatibleAnywhere": 1281,
+            "withinSensor": 314,
+            "nearestDistanceSum": 267162.8488130442
+          },
+          "scavenger": {
+            "eligible": 40,
+            "compatibleAnywhere": 137,
+            "withinSensor": 56,
+            "nearestDistanceSum": 33932.28089584184
+          },
+          "carnivore": {
+            "eligible": 55,
+            "compatibleAnywhere": 100,
+            "withinSensor": 6,
+            "nearestDistanceSum": 48772.53612216367
+          }
+        },
+        "meanNearestCompatibleMateDistance": 230.479
+      },
+      "genetics": {
+        "maxChildDivergence": 0.068,
+        "meanChildDivergence": 0.023,
+        "childDivergenceBins": [
+          85,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.108,
+        "meanWithinSpeciesDistance": 0.028,
+        "withinSpeciesDistanceBins": [
+          78942,
+          12432,
+          32,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 91406
+      }
+    },
+    {
+      "seed": 166064,
+      "ticks": 10000,
+      "elapsedSeconds": 0.798,
+      "finalPopulation": 1,
+      "firstZeroTick": null,
+      "peakPopulation": 68,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 1,
+          "roles": {
+            "herbivore": 1
+          }
+        }
+      ],
+      "births": 81,
+      "deathsTotal": 146,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 183577,
+        "flee": 5241,
+        "mate": 3525,
+        "food": 57834,
+        "rest": 58345,
+        "water": 61448
+      },
+      "feeding": {
+        "plant_success": 1937,
+        "prey_failed": 30,
+        "prey_success": 39,
+        "carrion_success": 88
+      },
+      "deaths": {
+        "sp_0_3884:predation": 20,
+        "sp_0_3192:predation": 10,
+        "sp_0_2127:predation": 9,
+        "sp_0_3105:starvation": 8,
+        "sp_0_3192:starvation": 2,
+        "sp_0_3192:dehydration": 3,
+        "sp_0_3884:starvation": 41,
+        "sp_0_3192:senescence": 3,
+        "sp_0_3105:senescence": 2,
+        "sp_0_2127:senescence": 8,
+        "sp_0_3884:senescence": 31,
+        "sp_0_3884:dehydration": 6,
+        "sp_0_2127:starvation": 1,
+        "sp_0_3884:thermal": 1,
+        "sp_0_2127:dehydration": 1
+      },
+      "deathGenerations": {
+        "1:predation": 33,
+        "1:starvation": 14,
+        "2:predation": 2,
+        "3:predation": 3,
+        "2:starvation": 1,
+        "1:dehydration": 4,
+        "4:predation": 1,
+        "1:senescence": 15,
+        "3:starvation": 3,
+        "4:starvation": 3,
+        "2:dehydration": 1,
+        "2:senescence": 6,
+        "3:senescence": 4,
+        "4:dehydration": 1,
+        "6:starvation": 3,
+        "5:thermal": 1,
+        "6:senescence": 5,
+        "5:dehydration": 1,
+        "5:starvation": 2,
+        "9:starvation": 4,
+        "8:starvation": 3,
+        "3:dehydration": 1,
+        "7:starvation": 4,
+        "7:dehydration": 1,
+        "8:senescence": 5,
+        "5:senescence": 2,
+        "7:senescence": 2,
+        "4:senescence": 3,
+        "12:starvation": 4,
+        "10:starvation": 4,
+        "10:dehydration": 1,
+        "11:starvation": 7,
+        "9:senescence": 1,
+        "10:senescence": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 308294,
+          "visibleFood": 192170,
+          "foodSelected": 38378,
+          "mateReady": 43703,
+          "mateFound": 13259
+        },
+        "scavenger": {
+          "total": 43548,
+          "visibleFood": 27050,
+          "foodSelected": 17075,
+          "mateReady": 5126,
+          "mateFound": 2281
+        },
+        "carnivore": {
+          "total": 18128,
+          "visibleFood": 5412,
+          "foodSelected": 2381,
+          "mateReady": 3465,
+          "mateFound": 105
+        }
+      },
+      "foodVisible": 224632,
+      "foodDecisions": 57834,
+      "waterVisible": 184890,
+      "waterDecisions": 61448,
+      "predatorDetections": 5412,
+      "predatorPursuitDecisions": 2381,
+      "travel": {
+        "started": 4200,
+        "reached": 2064,
+        "abandoned": 2135,
+        "elapsedTicks": 30803,
+        "initialDistance": 250516.51882563185,
+        "beyondContactStarted": 3497,
+        "beyondContactReached": 1366,
+        "beyondContactAbandoned": 2130,
+        "beyondContactElapsedTicks": 30749,
+        "byType": {
+          "plant": {
+            "started": 3316,
+            "reached": 1937,
+            "abandoned": 1378,
+            "startingDistanceSum": 140066.8504056207
+          },
+          "prey": {
+            "started": 45,
+            "reached": 39,
+            "abandoned": 6,
+            "startingDistanceSum": 3657.945093278529
+          },
+          "carrion": {
+            "started": 839,
+            "reached": 88,
+            "abandoned": 751,
+            "startingDistanceSum": 106791.72332673288
+          }
+        },
+        "successRate": 0.491,
+        "meanTimeToFeedTicks": 14.924,
+        "beyondContactSuccessRate": 0.391,
+        "meanTravelTicksBeyondContact": 22.51,
+        "meanStartingDistance": 59.647
+      },
+      "energy": {
+        "gainedFromFood": 28276.03,
+        "metabolicSpent": 28009.459,
+        "costs": {
+          "basal": 18826.656,
+          "movement": 8982.977,
+          "thermal": 152.599,
+          "flood": 47.227
+        },
+        "ratio": 1.01,
+        "byDiet": {
+          "herbivore": {
+            "gained": 23065.525,
+            "spent": 21750.109
+          },
+          "scavenger": {
+            "gained": 3356.652,
+            "spent": 3771.992
+          },
+          "carnivore": {
+            "gained": 1853.853,
+            "spent": 2487.358
+          }
+        }
+      },
+      "reproduction": {
+        "births": 81,
+        "birthsByDiet": {
+          "scavenger": 4,
+          "carnivore": 1,
+          "herbivore": 76
+        },
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 48881,
+          "no_mate_within_sense": 36649,
+          "other_utility_won": 12120,
+          "immature": 9438,
+          "energy": 255211,
+          "hydration": 896,
+          "age": 3250
+        },
+        "mutationEvents": 143,
+        "mutationTraits": {
+          "fertilityThreshold": {
+            "count": 9,
+            "meanAbsoluteDelta": 2.757
+          },
+          "gestationTicks": {
+            "count": 8,
+            "meanAbsoluteDelta": 10.446
+          },
+          "tailLength": {
+            "count": 7,
+            "meanAbsoluteDelta": 0.336
+          },
+          "visionRange": {
+            "count": 12,
+            "meanAbsoluteDelta": 13.343
+          },
+          "camouflage": {
+            "count": 5,
+            "meanAbsoluteDelta": 0.052
+          },
+          "coldTolerance": {
+            "count": 13,
+            "meanAbsoluteDelta": 2.114
+          },
+          "endurance": {
+            "count": 10,
+            "meanAbsoluteDelta": 0.089
+          },
+          "aggression": {
+            "count": 12,
+            "meanAbsoluteDelta": 0.073
+          },
+          "metabolicEfficiency": {
+            "count": 9,
+            "meanAbsoluteDelta": 0.062
+          },
+          "speed": {
+            "count": 12,
+            "meanAbsoluteDelta": 0.206
+          },
+          "heatTolerance": {
+            "count": 9,
+            "meanAbsoluteDelta": 2.22
+          },
+          "reproductiveInvestment": {
+            "count": 7,
+            "meanAbsoluteDelta": 0.042
+          },
+          "foodProcessingEfficiency": {
+            "count": 12,
+            "meanAbsoluteDelta": 0.06
+          },
+          "bodySize": {
+            "count": 10,
+            "meanAbsoluteDelta": 0.104
+          },
+          "colorSaturation": {
+            "count": 8,
+            "meanAbsoluteDelta": 0.045
+          }
+        },
+        "mutationsPerBirth": 1.765
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 158.93,
+        "meanGlobalPlantBiomass": 8200.719,
+        "sampledOrganisms": 3666,
+        "meanLocalPlantPatches": 3.091,
+        "meanLocalPlantBiomass": 161.25,
+        "meanLocalCarrionPatches": 0.183,
+        "meanLocalSpringPatches": 0.06,
+        "meanPlantNearestNeighborDistance": 51.88
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1672,
+        "matesWithinSensor": 525,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 439,
+            "compatibleAnywhere": 1336,
+            "withinSensor": 380,
+            "nearestDistanceSum": 224617.94686434275
+          },
+          "scavenger": {
+            "eligible": 54,
+            "compatibleAnywhere": 262,
+            "withinSensor": 143,
+            "nearestDistanceSum": 66371.95154856112
+          },
+          "carnivore": {
+            "eligible": 39,
+            "compatibleAnywhere": 74,
+            "withinSensor": 2,
+            "nearestDistanceSum": 47885.965265590654
+          }
+        },
+        "meanNearestCompatibleMateDistance": 202.677
+      },
+      "genetics": {
+        "maxChildDivergence": 0.088,
+        "meanChildDivergence": 0.022,
+        "childDivergenceBins": [
+          78,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.112,
+        "meanWithinSpeciesDistance": 0.026,
+        "withinSpeciesDistanceBins": [
+          92246,
+          9312,
+          18,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 101576
+      }
+    },
+    {
+      "seed": 875922,
+      "ticks": 10000,
+      "elapsedSeconds": 0.967,
+      "finalPopulation": 10,
+      "firstZeroTick": null,
+      "peakPopulation": 78,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 10,
+          "roles": {
+            "herbivore": 10
+          }
+        }
+      ],
+      "births": 177,
+      "deathsTotal": 233,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 199942,
+        "flee": 3280,
+        "mate": 7408,
+        "food": 165854,
+        "rest": 105944,
+        "water": 36619
+      },
+      "feeding": {
+        "plant_success": 4701,
+        "prey_failed": 22,
+        "prey_success": 21,
+        "carrion_success": 333,
+        "plant_failed": 1
+      },
+      "deaths": {
+        "sp_0_2827:predation": 10,
+        "sp_0_3855:predation": 6,
+        "sp_0_1902:predation": 5,
+        "sp_0_9409:starvation": 10,
+        "sp_0_2827:starvation": 106,
+        "sp_0_1902:thermal": 4,
+        "sp_0_2827:thermal": 16,
+        "sp_0_3855:thermal": 6,
+        "sp_0_1902:starvation": 14,
+        "sp_0_3855:starvation": 11,
+        "sp_0_2827:senescence": 28,
+        "sp_0_1902:senescence": 15,
+        "sp_0_3855:senescence": 2
+      },
+      "deathGenerations": {
+        "2:predation": 3,
+        "1:predation": 18,
+        "1:starvation": 31,
+        "1:thermal": 4,
+        "4:thermal": 3,
+        "2:starvation": 14,
+        "2:thermal": 1,
+        "5:thermal": 3,
+        "3:starvation": 10,
+        "6:thermal": 2,
+        "7:thermal": 1,
+        "5:starvation": 5,
+        "4:starvation": 11,
+        "1:senescence": 13,
+        "8:thermal": 3,
+        "2:senescence": 4,
+        "7:starvation": 7,
+        "6:starvation": 12,
+        "3:senescence": 7,
+        "3:thermal": 1,
+        "4:senescence": 4,
+        "9:starvation": 4,
+        "8:starvation": 6,
+        "10:thermal": 3,
+        "12:starvation": 6,
+        "10:starvation": 5,
+        "5:senescence": 5,
+        "7:senescence": 4,
+        "11:starvation": 6,
+        "14:starvation": 7,
+        "9:senescence": 1,
+        "13:starvation": 4,
+        "15:starvation": 5,
+        "18:starvation": 2,
+        "13:senescence": 3,
+        "17:starvation": 1,
+        "10:senescence": 1,
+        "16:starvation": 1,
+        "12:thermal": 3,
+        "9:thermal": 1,
+        "18:thermal": 1,
+        "20:starvation": 2,
+        "14:senescence": 1,
+        "21:starvation": 1,
+        "17:senescence": 1,
+        "22:starvation": 1,
+        "18:senescence": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 411447,
+          "visibleFood": 244265,
+          "foodSelected": 111618,
+          "mateReady": 58130,
+          "mateFound": 23670
+        },
+        "scavenger": {
+          "total": 93773,
+          "visibleFood": 65762,
+          "foodSelected": 51080,
+          "mateReady": 14375,
+          "mateFound": 5964
+        },
+        "carnivore": {
+          "total": 13827,
+          "visibleFood": 4025,
+          "foodSelected": 3156,
+          "mateReady": 1962,
+          "mateFound": 239
+        }
+      },
+      "foodVisible": 314052,
+      "foodDecisions": 165854,
+      "waterVisible": 343894,
+      "waterDecisions": 36619,
+      "predatorDetections": 4025,
+      "predatorPursuitDecisions": 3156,
+      "travel": {
+        "started": 9398,
+        "reached": 5055,
+        "abandoned": 4336,
+        "elapsedTicks": 77008,
+        "initialDistance": 589550.5529600923,
+        "beyondContactStarted": 7918,
+        "beyondContactReached": 3586,
+        "beyondContactAbandoned": 4325,
+        "beyondContactElapsedTicks": 76836,
+        "byType": {
+          "plant": {
+            "started": 8698,
+            "reached": 4701,
+            "abandoned": 3990,
+            "startingDistanceSum": 493005.1534786444
+          },
+          "prey": {
+            "started": 32,
+            "reached": 21,
+            "abandoned": 11,
+            "startingDistanceSum": 2790.4365884705007
+          },
+          "carrion": {
+            "started": 668,
+            "reached": 333,
+            "abandoned": 335,
+            "startingDistanceSum": 93754.96289297994
+          }
+        },
+        "successRate": 0.538,
+        "meanTimeToFeedTicks": 15.234,
+        "beyondContactSuccessRate": 0.453,
+        "meanTravelTicksBeyondContact": 21.427,
+        "meanStartingDistance": 62.731
+      },
+      "energy": {
+        "gainedFromFood": 53611.635,
+        "metabolicSpent": 51917.679,
+        "costs": {
+          "basal": 30527.13,
+          "movement": 18621.867,
+          "thermal": 2756.257,
+          "flood": 12.425
+        },
+        "ratio": 1.033,
+        "byDiet": {
+          "herbivore": {
+            "gained": 43175.472,
+            "spent": 41031.019
+          },
+          "scavenger": {
+            "gained": 9310.988,
+            "spent": 9013.485
+          },
+          "carnivore": {
+            "gained": 1125.175,
+            "spent": 1873.175
+          }
+        }
+      },
+      "reproduction": {
+        "births": 177,
+        "birthsByDiet": {
+          "herbivore": 153,
+          "scavenger": 23,
+          "carnivore": 1
+        },
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 88371,
+          "no_mate_within_sense": 44594,
+          "other_utility_won": 22465,
+          "immature": 21128,
+          "energy": 330076,
+          "age": 4769,
+          "hydration": 236
+        },
+        "mutationEvents": 284,
+        "mutationTraits": {
+          "reproductiveInvestment": {
+            "count": 20,
+            "meanAbsoluteDelta": 0.031
+          },
+          "tailLength": {
+            "count": 19,
+            "meanAbsoluteDelta": 0.324
+          },
+          "bodySize": {
+            "count": 15,
+            "meanAbsoluteDelta": 0.123
+          },
+          "coldTolerance": {
+            "count": 17,
+            "meanAbsoluteDelta": 2.152
+          },
+          "speed": {
+            "count": 19,
+            "meanAbsoluteDelta": 0.269
+          },
+          "fertilityThreshold": {
+            "count": 26,
+            "meanAbsoluteDelta": 2.19
+          },
+          "metabolicEfficiency": {
+            "count": 26,
+            "meanAbsoluteDelta": 0.086
+          },
+          "aggression": {
+            "count": 23,
+            "meanAbsoluteDelta": 0.068
+          },
+          "heatTolerance": {
+            "count": 23,
+            "meanAbsoluteDelta": 2.299
+          },
+          "camouflage": {
+            "count": 18,
+            "meanAbsoluteDelta": 0.073
+          },
+          "gestationTicks": {
+            "count": 11,
+            "meanAbsoluteDelta": 11.19
+          },
+          "endurance": {
+            "count": 16,
+            "meanAbsoluteDelta": 0.079
+          },
+          "foodProcessingEfficiency": {
+            "count": 16,
+            "meanAbsoluteDelta": 0.064
+          },
+          "visionRange": {
+            "count": 15,
+            "meanAbsoluteDelta": 16.235
+          },
+          "colorSaturation": {
+            "count": 20,
+            "meanAbsoluteDelta": 0.04
+          }
+        },
+        "mutationsPerBirth": 1.605
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 145.7,
+        "meanGlobalPlantBiomass": 4933.298,
+        "sampledOrganisms": 5162,
+        "meanLocalPlantPatches": 2.794,
+        "meanLocalPlantBiomass": 88.161,
+        "meanLocalCarrionPatches": 0.353,
+        "meanLocalSpringPatches": 0.357,
+        "meanPlantNearestNeighborDistance": 53.451
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1785,
+        "matesWithinSensor": 746,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 592,
+            "compatibleAnywhere": 1293,
+            "withinSensor": 537,
+            "nearestDistanceSum": 244601.07638195806
+          },
+          "scavenger": {
+            "eligible": 157,
+            "compatibleAnywhere": 457,
+            "withinSensor": 205,
+            "nearestDistanceSum": 149677.73559497047
+          },
+          "carnivore": {
+            "eligible": 22,
+            "compatibleAnywhere": 35,
+            "withinSensor": 4,
+            "nearestDistanceSum": 19129.322103780796
+          }
+        },
+        "meanNearestCompatibleMateDistance": 231.601
+      },
+      "genetics": {
+        "maxChildDivergence": 0.079,
+        "meanChildDivergence": 0.036,
+        "childDivergenceBins": [
+          134,
+          43,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.105,
+        "meanWithinSpeciesDistance": 0.041,
+        "withinSpeciesDistanceBins": [
+          97616,
+          63144,
+          194,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 160954
+      }
+    },
+    {
+      "seed": 615480,
+      "ticks": 10000,
+      "elapsedSeconds": 0.989,
+      "finalPopulation": 32,
+      "firstZeroTick": null,
+      "peakPopulation": 133,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 32,
+          "roles": {
+            "herbivore": 32
+          }
+        }
+      ],
+      "births": 219,
+      "deathsTotal": 253,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 190024,
+        "flee": 8989,
+        "mate": 9540,
+        "food": 179172,
+        "water": 57053,
+        "rest": 80626
+      },
+      "feeding": {
+        "plant_success": 6599,
+        "prey_failed": 27,
+        "prey_success": 30,
+        "carrion_success": 80
+      },
+      "deaths": {
+        "sp_0_4416:predation": 7,
+        "sp_0_8232:thermal": 4,
+        "sp_0_3085:predation": 18,
+        "sp_0_8232:predation": 5,
+        "sp_0_7239:starvation": 10,
+        "sp_0_3085:starvation": 72,
+        "sp_0_4416:starvation": 48,
+        "sp_0_3085:senescence": 32,
+        "sp_0_8232:starvation": 6,
+        "sp_0_4416:senescence": 19,
+        "sp_0_4416:thermal": 4,
+        "sp_0_3085:thermal": 24,
+        "sp_0_7239:senescence": 1,
+        "sp_0_8232:senescence": 1,
+        "sp_0_3085:dehydration": 1,
+        "sp_0_4416:dehydration": 1
+      },
+      "deathGenerations": {
+        "1:predation": 16,
+        "1:thermal": 3,
+        "2:predation": 6,
+        "1:starvation": 35,
+        "2:starvation": 21,
+        "3:predation": 2,
+        "5:predation": 2,
+        "4:predation": 1,
+        "1:senescence": 12,
+        "3:starvation": 15,
+        "6:predation": 1,
+        "5:starvation": 13,
+        "6:starvation": 8,
+        "4:starvation": 16,
+        "11:predation": 1,
+        "7:starvation": 7,
+        "3:thermal": 1,
+        "6:thermal": 1,
+        "10:predation": 1,
+        "8:starvation": 2,
+        "3:senescence": 7,
+        "5:senescence": 3,
+        "2:senescence": 2,
+        "4:senescence": 4,
+        "9:thermal": 1,
+        "9:dehydration": 1,
+        "6:senescence": 6,
+        "9:starvation": 2,
+        "8:thermal": 1,
+        "7:thermal": 1,
+        "5:thermal": 1,
+        "11:thermal": 2,
+        "10:thermal": 1,
+        "10:starvation": 2,
+        "2:thermal": 1,
+        "7:senescence": 2,
+        "10:senescence": 3,
+        "9:senescence": 3,
+        "11:senescence": 2,
+        "8:senescence": 4,
+        "7:dehydration": 1,
+        "12:senescence": 2,
+        "19:starvation": 1,
+        "18:starvation": 2,
+        "20:thermal": 3,
+        "16:thermal": 3,
+        "17:starvation": 2,
+        "15:starvation": 3,
+        "13:senescence": 1,
+        "14:senescence": 1,
+        "15:thermal": 2,
+        "14:thermal": 2,
+        "19:thermal": 1,
+        "17:thermal": 3,
+        "13:thermal": 1,
+        "18:thermal": 3,
+        "12:thermal": 1,
+        "16:starvation": 1,
+        "15:senescence": 1,
+        "12:starvation": 1,
+        "13:starvation": 2,
+        "20:starvation": 2,
+        "14:starvation": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 477726,
+          "visibleFood": 338697,
+          "foodSelected": 159200,
+          "mateReady": 79081,
+          "mateFound": 34310
+        },
+        "scavenger": {
+          "total": 28530,
+          "visibleFood": 20410,
+          "foodSelected": 13497,
+          "mateReady": 714,
+          "mateFound": 130
+        },
+        "carnivore": {
+          "total": 19148,
+          "visibleFood": 8827,
+          "foodSelected": 6475,
+          "mateReady": 2771,
+          "mateFound": 210
+        }
+      },
+      "foodVisible": 367934,
+      "foodDecisions": 179172,
+      "waterVisible": 362465,
+      "waterDecisions": 57053,
+      "predatorDetections": 8827,
+      "predatorPursuitDecisions": 6475,
+      "travel": {
+        "started": 12891,
+        "reached": 6709,
+        "abandoned": 6159,
+        "elapsedTicks": 93194,
+        "initialDistance": 782776.013698666,
+        "beyondContactStarted": 10829,
+        "beyondContactReached": 4661,
+        "beyondContactAbandoned": 6145,
+        "beyondContactElapsedTicks": 92915,
+        "byType": {
+          "plant": {
+            "started": 12289,
+            "reached": 6599,
+            "abandoned": 5667,
+            "startingDistanceSum": 703798.5505464707
+          },
+          "prey": {
+            "started": 74,
+            "reached": 30,
+            "abandoned": 44,
+            "startingDistanceSum": 5229.001149670099
+          },
+          "carrion": {
+            "started": 528,
+            "reached": 80,
+            "abandoned": 448,
+            "startingDistanceSum": 73748.46200252467
+          }
+        },
+        "successRate": 0.52,
+        "meanTimeToFeedTicks": 13.891,
+        "beyondContactSuccessRate": 0.43,
+        "meanTravelTicksBeyondContact": 19.935,
+        "meanStartingDistance": 60.723
+      },
+      "energy": {
+        "gainedFromFood": 66373.662,
+        "metabolicSpent": 61884.36,
+        "costs": {
+          "basal": 36118.472,
+          "movement": 22501.623,
+          "thermal": 3264.266,
+          "flood": 0
+        },
+        "ratio": 1.073,
+        "byDiet": {
+          "herbivore": {
+            "gained": 61939.76,
+            "spent": 55992.268
+          },
+          "scavenger": {
+            "gained": 2805.817,
+            "spent": 3584.948
+          },
+          "carnivore": {
+            "gained": 1628.086,
+            "spent": 2307.144
+          }
+        }
+      },
+      "reproduction": {
+        "births": 219,
+        "birthsByDiet": {
+          "herbivore": 216,
+          "carnivore": 2,
+          "scavenger": 1
+        },
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 118648,
+          "no_mate_within_sense": 47916,
+          "energy": 290097,
+          "immature": 27714,
+          "other_utility_won": 25110,
+          "hydration": 864,
+          "age": 5515
+        },
+        "mutationEvents": 383,
+        "mutationTraits": {
+          "bodySize": {
+            "count": 25,
+            "meanAbsoluteDelta": 0.187
+          },
+          "heatTolerance": {
+            "count": 24,
+            "meanAbsoluteDelta": 2.161
+          },
+          "camouflage": {
+            "count": 19,
+            "meanAbsoluteDelta": 0.073
+          },
+          "coldTolerance": {
+            "count": 30,
+            "meanAbsoluteDelta": 2.457
+          },
+          "foodProcessingEfficiency": {
+            "count": 26,
+            "meanAbsoluteDelta": 0.071
+          },
+          "gestationTicks": {
+            "count": 34,
+            "meanAbsoluteDelta": 9.603
+          },
+          "metabolicEfficiency": {
+            "count": 23,
+            "meanAbsoluteDelta": 0.099
+          },
+          "endurance": {
+            "count": 29,
+            "meanAbsoluteDelta": 0.074
+          },
+          "speed": {
+            "count": 29,
+            "meanAbsoluteDelta": 0.235
+          },
+          "colorSaturation": {
+            "count": 25,
+            "meanAbsoluteDelta": 0.034
+          },
+          "visionRange": {
+            "count": 36,
+            "meanAbsoluteDelta": 9.762
+          },
+          "reproductiveInvestment": {
+            "count": 24,
+            "meanAbsoluteDelta": 0.034
+          },
+          "tailLength": {
+            "count": 20,
+            "meanAbsoluteDelta": 0.329
+          },
+          "fertilityThreshold": {
+            "count": 20,
+            "meanAbsoluteDelta": 2.218
+          },
+          "aggression": {
+            "count": 19,
+            "meanAbsoluteDelta": 0.057
+          }
+        },
+        "mutationsPerBirth": 1.749
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 145.1,
+        "meanGlobalPlantBiomass": 5217.284,
+        "sampledOrganisms": 5231,
+        "meanLocalPlantPatches": 2.959,
+        "meanLocalPlantBiomass": 108.71,
+        "meanLocalCarrionPatches": 0.431,
+        "meanLocalSpringPatches": 0.343,
+        "meanPlantNearestNeighborDistance": 54.655
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1598,
+        "matesWithinSensor": 492,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 854,
+            "compatibleAnywhere": 1449,
+            "withinSensor": 452,
+            "nearestDistanceSum": 325499.2979562522
+          },
+          "scavenger": {
+            "eligible": 6,
+            "compatibleAnywhere": 101,
+            "withinSensor": 38,
+            "nearestDistanceSum": 45410.10795146865
+          },
+          "carnivore": {
+            "eligible": 32,
+            "compatibleAnywhere": 48,
+            "withinSensor": 2,
+            "nearestDistanceSum": 24693.79627190497
+          }
+        },
+        "meanNearestCompatibleMateDistance": 247.561
+      },
+      "genetics": {
+        "maxChildDivergence": 0.12,
+        "meanChildDivergence": 0.044,
+        "childDivergenceBins": [
+          131,
+          84,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.14,
+        "meanWithinSpeciesDistance": 0.041,
+        "withinSpeciesDistanceBins": [
+          102750,
+          63392,
+          3014,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 169156
+      }
+    },
+    {
+      "seed": 159286,
+      "ticks": 10000,
+      "elapsedSeconds": 0.634,
+      "finalPopulation": 4,
+      "firstZeroTick": null,
+      "peakPopulation": 69,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 4,
+          "roles": {
+            "herbivore": 4
+          }
+        }
+      ],
+      "births": 53,
+      "deathsTotal": 115,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 163251,
+        "flee": 4399,
+        "mate": 1996,
+        "food": 67500,
+        "rest": 23395,
+        "water": 30548
+      },
+      "feeding": {
+        "plant_success": 2147,
+        "prey_failed": 30,
+        "prey_success": 29,
+        "carrion_success": 107
+      },
+      "deaths": {
+        "sp_0_2192:predation": 6,
+        "sp_0_2601:predation": 13,
+        "sp_0_1220:predation": 10,
+        "sp_0_2192:starvation": 6,
+        "sp_0_3524:thermal": 1,
+        "sp_0_3524:starvation": 8,
+        "sp_0_1220:dehydration": 1,
+        "sp_0_2601:starvation": 18,
+        "sp_0_1220:senescence": 10,
+        "sp_0_1220:starvation": 3,
+        "sp_0_2601:thermal": 7,
+        "sp_0_3524:senescence": 1,
+        "sp_0_2601:senescence": 25,
+        "sp_0_2192:senescence": 5,
+        "sp_0_2601:dehydration": 1
+      },
+      "deathGenerations": {
+        "1:predation": 25,
+        "1:starvation": 17,
+        "1:thermal": 2,
+        "2:predation": 3,
+        "3:predation": 1,
+        "2:starvation": 2,
+        "1:dehydration": 1,
+        "1:senescence": 21,
+        "3:starvation": 5,
+        "2:thermal": 1,
+        "2:senescence": 6,
+        "6:starvation": 2,
+        "3:senescence": 2,
+        "4:starvation": 6,
+        "3:dehydration": 1,
+        "4:senescence": 2,
+        "5:starvation": 1,
+        "5:thermal": 1,
+        "7:starvation": 1,
+        "8:starvation": 1,
+        "6:senescence": 4,
+        "7:senescence": 2,
+        "5:senescence": 3,
+        "7:thermal": 2,
+        "8:thermal": 2,
+        "8:senescence": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 236269,
+          "visibleFood": 189743,
+          "foodSelected": 50342,
+          "mateReady": 39613,
+          "mateFound": 13599
+        },
+        "scavenger": {
+          "total": 39528,
+          "visibleFood": 20706,
+          "foodSelected": 14480,
+          "mateReady": 5692,
+          "mateFound": 1054
+        },
+        "carnivore": {
+          "total": 15292,
+          "visibleFood": 4930,
+          "foodSelected": 2678,
+          "mateReady": 2296,
+          "mateFound": 81
+        }
+      },
+      "foodVisible": 215379,
+      "foodDecisions": 67500,
+      "waterVisible": 171209,
+      "waterDecisions": 30548,
+      "predatorDetections": 4930,
+      "predatorPursuitDecisions": 2678,
+      "travel": {
+        "started": 3574,
+        "reached": 2283,
+        "abandoned": 1291,
+        "elapsedTicks": 38898,
+        "initialDistance": 204962.6650839211,
+        "beyondContactStarted": 2906,
+        "beyondContactReached": 1620,
+        "beyondContactAbandoned": 1286,
+        "beyondContactElapsedTicks": 38794,
+        "byType": {
+          "plant": {
+            "started": 3161,
+            "reached": 2147,
+            "abandoned": 1014,
+            "startingDistanceSum": 164463.27631128623
+          },
+          "prey": {
+            "started": 49,
+            "reached": 29,
+            "abandoned": 20,
+            "startingDistanceSum": 3168.704243714264
+          },
+          "carrion": {
+            "started": 364,
+            "reached": 107,
+            "abandoned": 257,
+            "startingDistanceSum": 37330.684528920814
+          }
+        },
+        "successRate": 0.639,
+        "meanTimeToFeedTicks": 17.038,
+        "beyondContactSuccessRate": 0.557,
+        "meanTravelTicksBeyondContact": 23.947,
+        "meanStartingDistance": 57.348
+      },
+      "energy": {
+        "gainedFromFood": 29463.139,
+        "metabolicSpent": 29679.367,
+        "costs": {
+          "basal": 18451.27,
+          "movement": 10437.902,
+          "thermal": 790.196,
+          "flood": 0
+        },
+        "ratio": 0.993,
+        "byDiet": {
+          "herbivore": {
+            "gained": 22951.393,
+            "spent": 21776.898
+          },
+          "scavenger": {
+            "gained": 4811.54,
+            "spent": 5491.121
+          },
+          "carnivore": {
+            "gained": 1700.207,
+            "spent": 2411.348
+          }
+        }
+      },
+      "reproduction": {
+        "births": 53,
+        "birthsByDiet": {
+          "herbivore": 50,
+          "carnivore": 1,
+          "scavenger": 2
+        },
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 31153,
+          "no_mate_within_sense": 32867,
+          "other_utility_won": 12738,
+          "immature": 6335,
+          "energy": 202307,
+          "age": 3663,
+          "hydration": 30
+        },
+        "mutationEvents": 97,
+        "mutationTraits": {
+          "speed": {
+            "count": 12,
+            "meanAbsoluteDelta": 0.203
+          },
+          "foodProcessingEfficiency": {
+            "count": 4,
+            "meanAbsoluteDelta": 0.048
+          },
+          "fertilityThreshold": {
+            "count": 10,
+            "meanAbsoluteDelta": 2.719
+          },
+          "reproductiveInvestment": {
+            "count": 5,
+            "meanAbsoluteDelta": 0.025
+          },
+          "gestationTicks": {
+            "count": 8,
+            "meanAbsoluteDelta": 11.587
+          },
+          "colorSaturation": {
+            "count": 5,
+            "meanAbsoluteDelta": 0.042
+          },
+          "visionRange": {
+            "count": 10,
+            "meanAbsoluteDelta": 18.977
+          },
+          "aggression": {
+            "count": 7,
+            "meanAbsoluteDelta": 0.037
+          },
+          "metabolicEfficiency": {
+            "count": 3,
+            "meanAbsoluteDelta": 0.105
+          },
+          "bodySize": {
+            "count": 4,
+            "meanAbsoluteDelta": 0.136
+          },
+          "heatTolerance": {
+            "count": 7,
+            "meanAbsoluteDelta": 1.439
+          },
+          "tailLength": {
+            "count": 6,
+            "meanAbsoluteDelta": 0.419
+          },
+          "camouflage": {
+            "count": 3,
+            "meanAbsoluteDelta": 0.055
+          },
+          "coldTolerance": {
+            "count": 7,
+            "meanAbsoluteDelta": 3.045
+          },
+          "endurance": {
+            "count": 6,
+            "meanAbsoluteDelta": 0.054
+          }
+        },
+        "mutationsPerBirth": 1.83
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 191.4,
+        "meanGlobalPlantBiomass": 8612.732,
+        "sampledOrganisms": 2884,
+        "meanLocalPlantPatches": 3.792,
+        "meanLocalPlantBiomass": 170.878,
+        "meanLocalCarrionPatches": 0.173,
+        "meanLocalSpringPatches": 0.207,
+        "meanPlantNearestNeighborDistance": 46.36
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1720,
+        "matesWithinSensor": 475,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 433,
+            "compatibleAnywhere": 1424,
+            "withinSensor": 405,
+            "nearestDistanceSum": 303356.70406942966
+          },
+          "scavenger": {
+            "eligible": 60,
+            "compatibleAnywhere": 252,
+            "withinSensor": 64,
+            "nearestDistanceSum": 89321.11344957948
+          },
+          "carnivore": {
+            "eligible": 21,
+            "compatibleAnywhere": 44,
+            "withinSensor": 6,
+            "nearestDistanceSum": 27290.656250559132
+          }
+        },
+        "meanNearestCompatibleMateDistance": 244.168
+      },
+      "genetics": {
+        "maxChildDivergence": 0.095,
+        "meanChildDivergence": 0.034,
+        "childDivergenceBins": [
+          41,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.117,
+        "meanWithinSpeciesDistance": 0.033,
+        "withinSpeciesDistanceBins": [
+          39754,
+          15506,
+          364,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 55624
+      }
+    },
+    {
+      "seed": 954366,
+      "ticks": 10000,
+      "elapsedSeconds": 0.583,
+      "finalPopulation": 0,
+      "firstZeroTick": 9185,
+      "peakPopulation": 69,
+      "populationCheckpoints": [
+        {
+          "tick": 10000,
+          "population": 0,
+          "roles": {}
+        }
+      ],
+      "births": 53,
+      "deathsTotal": 119,
+      "newSpecies": 0,
+      "actions": {
+        "wander": 126954,
+        "flee": 2494,
+        "mate": 2154,
+        "food": 54304,
+        "rest": 32485,
+        "water": 33169
+      },
+      "feeding": {
+        "plant_success": 1454,
+        "prey_failed": 29,
+        "prey_success": 30,
+        "plant_failed": 4,
+        "carrion_success": 103
+      },
+      "deaths": {
+        "sp_0_2750:predation": 12,
+        "sp_0_5378:predation": 10,
+        "sp_0_5926:thermal": 2,
+        "sp_0_2750:thermal": 1,
+        "sp_0_5926:predation": 8,
+        "sp_0_5378:thermal": 2,
+        "sp_0_9658:starvation": 11,
+        "sp_0_5378:starvation": 32,
+        "sp_0_2750:starvation": 3,
+        "sp_0_2750:dehydration": 2,
+        "sp_0_2750:senescence": 6,
+        "sp_0_5926:senescence": 14,
+        "sp_0_5378:senescence": 13,
+        "sp_0_5926:starvation": 1,
+        "sp_0_5926:dehydration": 2
+      },
+      "deathGenerations": {
+        "1:predation": 27,
+        "1:thermal": 2,
+        "2:predation": 2,
+        "3:predation": 1,
+        "2:thermal": 1,
+        "1:starvation": 18,
+        "2:starvation": 5,
+        "3:starvation": 4,
+        "4:starvation": 4,
+        "1:dehydration": 2,
+        "1:senescence": 17,
+        "2:senescence": 6,
+        "5:starvation": 4,
+        "8:starvation": 3,
+        "7:starvation": 3,
+        "6:starvation": 4,
+        "3:senescence": 4,
+        "5:senescence": 1,
+        "4:senescence": 3,
+        "9:starvation": 2,
+        "5:dehydration": 1,
+        "6:thermal": 1,
+        "4:dehydration": 1,
+        "8:senescence": 1,
+        "7:senescence": 1,
+        "9:thermal": 1
+      },
+      "decisionsByDiet": {
+        "herbivore": {
+          "total": 161529,
+          "visibleFood": 113569,
+          "foodSelected": 23271,
+          "mateReady": 33873,
+          "mateFound": 4981
+        },
+        "scavenger": {
+          "total": 71536,
+          "visibleFood": 41832,
+          "foodSelected": 28958,
+          "mateReady": 12488,
+          "mateFound": 3927
+        },
+        "carnivore": {
+          "total": 18495,
+          "visibleFood": 4193,
+          "foodSelected": 2075,
+          "mateReady": 2578,
+          "mateFound": 62
+        }
+      },
+      "foodVisible": 159594,
+      "foodDecisions": 54304,
+      "waterVisible": 151594,
+      "waterDecisions": 33169,
+      "predatorDetections": 4193,
+      "predatorPursuitDecisions": 2075,
+      "travel": {
+        "started": 2401,
+        "reached": 1587,
+        "abandoned": 814,
+        "elapsedTicks": 26914,
+        "initialDistance": 142680.79974389952,
+        "beyondContactStarted": 1986,
+        "beyondContactReached": 1175,
+        "beyondContactAbandoned": 811,
+        "beyondContactElapsedTicks": 26867,
+        "byType": {
+          "plant": {
+            "started": 1995,
+            "reached": 1454,
+            "abandoned": 541,
+            "startingDistanceSum": 95550.73997737179
+          },
+          "prey": {
+            "started": 41,
+            "reached": 30,
+            "abandoned": 11,
+            "startingDistanceSum": 2669.3803262623264
+          },
+          "carrion": {
+            "started": 365,
+            "reached": 103,
+            "abandoned": 262,
+            "startingDistanceSum": 44460.67944026532
+          }
+        },
+        "successRate": 0.661,
+        "meanTimeToFeedTicks": 16.959,
+        "beyondContactSuccessRate": 0.592,
+        "meanTravelTicksBeyondContact": 22.866,
+        "meanStartingDistance": 59.426
+      },
+      "energy": {
+        "gainedFromFood": 24378.591,
+        "metabolicSpent": 25118.448,
+        "costs": {
+          "basal": 16065.847,
+          "movement": 8163.649,
+          "thermal": 888.953,
+          "flood": 0
+        },
+        "ratio": 0.971,
+        "byDiet": {
+          "herbivore": {
+            "gained": 17442.953,
+            "spent": 17536.9
+          },
+          "scavenger": {
+            "gained": 5196.347,
+            "spent": 5112.257
+          },
+          "carnivore": {
+            "gained": 1739.292,
+            "spent": 2469.292
+          }
+        }
+      },
+      "reproduction": {
+        "births": 53,
+        "birthsByDiet": {
+          "herbivore": 39,
+          "scavenger": 12,
+          "carnivore": 2
+        },
+        "birthBlockedAtCap": 0,
+        "reproductionFailures": {
+          "cooldown": 28812,
+          "no_mate_within_sense": 39969,
+          "other_utility_won": 6816,
+          "energy": 163636,
+          "immature": 6271,
+          "hydration": 211,
+          "age": 3691
+        },
+        "mutationEvents": 79,
+        "mutationTraits": {
+          "gestationTicks": {
+            "count": 8,
+            "meanAbsoluteDelta": 10.76
+          },
+          "speed": {
+            "count": 6,
+            "meanAbsoluteDelta": 0.302
+          },
+          "reproductiveInvestment": {
+            "count": 6,
+            "meanAbsoluteDelta": 0.029
+          },
+          "camouflage": {
+            "count": 8,
+            "meanAbsoluteDelta": 0.079
+          },
+          "bodySize": {
+            "count": 6,
+            "meanAbsoluteDelta": 0.174
+          },
+          "endurance": {
+            "count": 4,
+            "meanAbsoluteDelta": 0.065
+          },
+          "heatTolerance": {
+            "count": 8,
+            "meanAbsoluteDelta": 2.368
+          },
+          "coldTolerance": {
+            "count": 2,
+            "meanAbsoluteDelta": 1.29
+          },
+          "fertilityThreshold": {
+            "count": 6,
+            "meanAbsoluteDelta": 2.64
+          },
+          "colorSaturation": {
+            "count": 7,
+            "meanAbsoluteDelta": 0.04
+          },
+          "visionRange": {
+            "count": 5,
+            "meanAbsoluteDelta": 14.917
+          },
+          "aggression": {
+            "count": 3,
+            "meanAbsoluteDelta": 0.057
+          },
+          "foodProcessingEfficiency": {
+            "count": 6,
+            "meanAbsoluteDelta": 0.065
+          },
+          "metabolicEfficiency": {
+            "count": 2,
+            "meanAbsoluteDelta": 0.067
+          },
+          "tailLength": {
+            "count": 2,
+            "meanAbsoluteDelta": 0.178
+          }
+        },
+        "mutationsPerBirth": 1.491
+      },
+      "resources": {
+        "samples": 100,
+        "meanGlobalPlantPatches": 204.09,
+        "meanGlobalPlantBiomass": 10323.44,
+        "sampledOrganisms": 2480,
+        "meanLocalPlantPatches": 2.744,
+        "meanLocalPlantBiomass": 121.402,
+        "meanLocalCarrionPatches": 0.196,
+        "meanLocalSpringPatches": 0.117,
+        "meanPlantNearestNeighborDistance": 50.282
+      },
+      "mating": {
+        "compatibleMatesAnyDistance": 1337,
+        "matesWithinSensor": 297,
+        "byDiet": {
+          "herbivore": {
+            "eligible": 366,
+            "compatibleAnywhere": 843,
+            "withinSensor": 108,
+            "nearestDistanceSum": 189483.33254790414
+          },
+          "scavenger": {
+            "eligible": 145,
+            "compatibleAnywhere": 441,
+            "withinSensor": 185,
+            "nearestDistanceSum": 97722.68919544756
+          },
+          "carnivore": {
+            "eligible": 24,
+            "compatibleAnywhere": 53,
+            "withinSensor": 4,
+            "nearestDistanceSum": 22009.632581584377
+          }
+        },
+        "meanNearestCompatibleMateDistance": 231.276
+      },
+      "genetics": {
+        "maxChildDivergence": 0.091,
+        "meanChildDivergence": 0.034,
+        "childDivergenceBins": [
+          39,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "distanceBinUpperBounds": [
+          0.05,
+          0.1,
+          0.15,
+          0.2,
+          0.25,
+          0.28,
+          0.32,
+          1
+        ],
+        "nearSpeciationBirths": 0,
+        "maxWithinSpeciesDistance": 0.13,
+        "meanWithinSpeciesDistance": 0.027,
+        "withinSpeciesDistanceBins": [
+          25104,
+          7468,
+          826,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "isolatedPairSamples": 0,
+        "maxObservedIsolationDurationTicks": 0,
+        "pairSamples": 33398
+      }
+    }
+  ]
+}

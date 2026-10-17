@@ -1,0 +1,3893 @@
+{
+  "schemaVersion": 1,
+  "environment": {
+    "node": "v22.17.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpus": 10,
+    "gcAvailable": true
+  },
+  "warmupTicks": 20,
+  "measuredTicks": 200,
+  "repeats": 3,
+  "scenarios": [
+    {
+      "model": 0,
+      "population": 20,
+      "resources": 250
+    },
+    {
+      "model": 1,
+      "population": 20,
+      "resources": 250
+    },
+    {
+      "model": 0,
+      "population": 65,
+      "resources": 250
+    },
+    {
+      "model": 1,
+      "population": 65,
+      "resources": 250
+    },
+    {
+      "model": 0,
+      "population": 150,
+      "resources": 250
+    },
+    {
+      "model": 1,
+      "population": 150,
+      "resources": 250
+    },
+    {
+      "model": 0,
+      "population": 220,
+      "resources": 250
+    },
+    {
+      "model": 1,
+      "population": 220,
+      "resources": 250
+    },
+    {
+      "model": 0,
+      "population": 150,
+      "resources": 50
+    },
+    {
+      "model": 1,
+      "population": 150,
+      "resources": 50
+    },
+    {
+      "model": 0,
+      "population": 150,
+      "resources": 500
+    },
+    {
+      "model": 1,
+      "population": 150,
+      "resources": 500
+    }
+  ],
+  "results": [
+    {
+      "model": 0,
+      "requestedPopulation": 20,
+      "requestedResources": 250,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 20,
+      "meanActualResources": 250,
+      "decisions": 4000,
+      "tickMeanMs": 0.109,
+      "tickP95Ms": 0.2639,
+      "tickMaxMs": 1.3915,
+      "cpuUserMs": 60.996,
+      "cpuSystemMs": 2.582,
+      "heapBeforeMiB": 22.4303,
+      "heapAfterMiB": 45.9617,
+      "heapPeakMiB": 45.5029,
+      "heapDeltaMiB": 23.5314,
+      "snapshotBytes": 93334,
+      "snapshotMs": 0.9335,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1887
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.1964
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.6787
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 7.0097
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 5.1679
+        },
+        "spatial.queryOrganisms": {
+          "calls": 8000,
+          "milliseconds": 1.0088
+        },
+        "spatial.queryFood": {
+          "calls": 4000,
+          "milliseconds": 0.7353
+        },
+        "behavior.foodDiscovery": {
+          "calls": 4000,
+          "milliseconds": 2.0269
+        },
+        "spatial.queryWater": {
+          "calls": 4000,
+          "milliseconds": 0.363
+        },
+        "behavior.mateSearch": {
+          "calls": 4000,
+          "milliseconds": 0.3074
+        },
+        "behavior.organismDecision": {
+          "calls": 4000,
+          "milliseconds": 6.1618
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 9.0885
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0124
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 1.6858
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 2.1643
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 3.0245
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 21.7548
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.6025
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 20,
+      "requestedResources": 250,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 20,
+      "meanActualResources": 250,
+      "decisions": 4000,
+      "tickMeanMs": 0.083,
+      "tickP95Ms": 0.092,
+      "tickMaxMs": 1.492,
+      "cpuUserMs": 43.48,
+      "cpuSystemMs": 1.252,
+      "heapBeforeMiB": 22.7309,
+      "heapAfterMiB": 45.2469,
+      "heapPeakMiB": 44.8625,
+      "heapDeltaMiB": 22.516,
+      "snapshotBytes": 93358,
+      "snapshotMs": 0.4412,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1288
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.1868
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.2213
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 3.2115
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 1.862
+        },
+        "spatial.queryOrganisms": {
+          "calls": 8000,
+          "milliseconds": 0.7278
+        },
+        "spatial.queryFood": {
+          "calls": 4000,
+          "milliseconds": 0.5421
+        },
+        "behavior.foodDiscovery": {
+          "calls": 4000,
+          "milliseconds": 1.797
+        },
+        "spatial.queryWater": {
+          "calls": 4000,
+          "milliseconds": 0.2008
+        },
+        "behavior.mateSearch": {
+          "calls": 4000,
+          "milliseconds": 0.2636
+        },
+        "behavior.organismDecision": {
+          "calls": 4000,
+          "milliseconds": 5.2016
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 7.0867
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0088
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.8269
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 1.1985
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.1152
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 16.5759
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1863
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 20,
+      "requestedResources": 250,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 20,
+      "meanActualResources": 250,
+      "decisions": 4000,
+      "tickMeanMs": 0.0562,
+      "tickP95Ms": 0.059,
+      "tickMaxMs": 1.0357,
+      "cpuUserMs": 23.266,
+      "cpuSystemMs": 0.493,
+      "heapBeforeMiB": 22.944,
+      "heapAfterMiB": 43.438,
+      "heapPeakMiB": 43.6538,
+      "heapDeltaMiB": 20.494,
+      "snapshotBytes": 93369,
+      "snapshotMs": 0.4644,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1351
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0314
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.219
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.0345
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 1.7842
+        },
+        "spatial.queryOrganisms": {
+          "calls": 8000,
+          "milliseconds": 0.6973
+        },
+        "spatial.queryFood": {
+          "calls": 4000,
+          "milliseconds": 0.4235
+        },
+        "behavior.foodDiscovery": {
+          "calls": 4000,
+          "milliseconds": 0.9854
+        },
+        "spatial.queryWater": {
+          "calls": 4000,
+          "milliseconds": 0.1919
+        },
+        "behavior.mateSearch": {
+          "calls": 4000,
+          "milliseconds": 0.1132
+        },
+        "behavior.organismDecision": {
+          "calls": 4000,
+          "milliseconds": 3.1617
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 5.7895
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0076
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 0.6902
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 0.623
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.0165
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 11.2042
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1745
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 20,
+      "requestedResources": 250,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 20,
+      "meanActualResources": 250,
+      "decisions": 4000,
+      "tickMeanMs": 0.1178,
+      "tickP95Ms": 0.1632,
+      "tickMaxMs": 1.2242,
+      "cpuUserMs": 57.909,
+      "cpuSystemMs": 0.684,
+      "heapBeforeMiB": 22.9134,
+      "heapAfterMiB": 43.9156,
+      "heapPeakMiB": 47.6835,
+      "heapDeltaMiB": 21.0022,
+      "snapshotBytes": 93334,
+      "snapshotMs": 0.4314,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1331
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.027
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.2359
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 3.108
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 1.8054
+        },
+        "spatial.queryOrganisms": {
+          "calls": 19933,
+          "milliseconds": 1.7544
+        },
+        "spatial.queryFood": {
+          "calls": 8000,
+          "milliseconds": 1.0498
+        },
+        "terrain.routeCheck": {
+          "calls": 7476,
+          "milliseconds": 1.4709
+        },
+        "foraging.candidateScore": {
+          "calls": 8287,
+          "milliseconds": 5.177
+        },
+        "foraging.chooseTarget": {
+          "calls": 4000,
+          "milliseconds": 7.7649
+        },
+        "behavior.foodDiscovery": {
+          "calls": 4000,
+          "milliseconds": 11.9769
+        },
+        "spatial.queryWater": {
+          "calls": 4000,
+          "milliseconds": 0.1943
+        },
+        "behavior.mateSearch": {
+          "calls": 4000,
+          "milliseconds": 0.2493
+        },
+        "behavior.organismDecision": {
+          "calls": 4000,
+          "milliseconds": 15.2026
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 17.0336
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0065
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 0.4406
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 0.6297
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 3.4039
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 23.5377
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1605
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 20,
+      "requestedResources": 250,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 20,
+      "meanActualResources": 250,
+      "decisions": 4000,
+      "tickMeanMs": 0.0947,
+      "tickP95Ms": 0.1123,
+      "tickMaxMs": 1.1573,
+      "cpuUserMs": 32.942,
+      "cpuSystemMs": 0.581,
+      "heapBeforeMiB": 23.0864,
+      "heapAfterMiB": 46.9477,
+      "heapPeakMiB": 46.5127,
+      "heapDeltaMiB": 23.8613,
+      "snapshotBytes": 93358,
+      "snapshotMs": 0.4153,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1272
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0255
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.211
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.8184
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 1.7773
+        },
+        "spatial.queryOrganisms": {
+          "calls": 20337,
+          "milliseconds": 1.8137
+        },
+        "spatial.queryFood": {
+          "calls": 8000,
+          "milliseconds": 0.9481
+        },
+        "terrain.routeCheck": {
+          "calls": 8301,
+          "milliseconds": 1.4044
+        },
+        "foraging.candidateScore": {
+          "calls": 9214,
+          "milliseconds": 5.2533
+        },
+        "foraging.chooseTarget": {
+          "calls": 4000,
+          "milliseconds": 7.3102
+        },
+        "behavior.foodDiscovery": {
+          "calls": 4000,
+          "milliseconds": 8.4773
+        },
+        "spatial.queryWater": {
+          "calls": 4000,
+          "milliseconds": 0.187
+        },
+        "behavior.mateSearch": {
+          "calls": 4000,
+          "milliseconds": 0.114
+        },
+        "behavior.organismDecision": {
+          "calls": 4000,
+          "milliseconds": 10.5458
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 13.9373
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.005
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 0.4038
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 0.6022
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 1.977
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 18.9127
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1593
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 20,
+      "requestedResources": 250,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 20,
+      "meanActualResources": 250,
+      "decisions": 4000,
+      "tickMeanMs": 0.0906,
+      "tickP95Ms": 0.1162,
+      "tickMaxMs": 1.1787,
+      "cpuUserMs": 32.546,
+      "cpuSystemMs": 0.725,
+      "heapBeforeMiB": 23.0363,
+      "heapAfterMiB": 44.9294,
+      "heapPeakMiB": 44.5567,
+      "heapDeltaMiB": 21.893,
+      "snapshotBytes": 93369,
+      "snapshotMs": 0.4198,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1317
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0257
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.2273
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 3.0566
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 1.767
+        },
+        "spatial.queryOrganisms": {
+          "calls": 18475,
+          "milliseconds": 1.6365
+        },
+        "spatial.queryFood": {
+          "calls": 8000,
+          "milliseconds": 0.8707
+        },
+        "terrain.routeCheck": {
+          "calls": 6932,
+          "milliseconds": 1.1983
+        },
+        "foraging.candidateScore": {
+          "calls": 7503,
+          "milliseconds": 6.1196
+        },
+        "foraging.chooseTarget": {
+          "calls": 4000,
+          "milliseconds": 8.1094
+        },
+        "behavior.foodDiscovery": {
+          "calls": 4000,
+          "milliseconds": 9.219
+        },
+        "spatial.queryWater": {
+          "calls": 4000,
+          "milliseconds": 0.1871
+        },
+        "behavior.mateSearch": {
+          "calls": 4000,
+          "milliseconds": 0.1149
+        },
+        "behavior.organismDecision": {
+          "calls": 4000,
+          "milliseconds": 11.3133
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 12.9702
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0055
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 0.4122
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 0.6462
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.0797
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 18.0952
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.16
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 65,
+      "requestedResources": 250,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 64.63,
+      "meanActualResources": 250.37,
+      "decisions": 12926,
+      "tickMeanMs": 0.2271,
+      "tickP95Ms": 0.4205,
+      "tickMaxMs": 1.3762,
+      "cpuUserMs": 117.842,
+      "cpuSystemMs": 1.419,
+      "heapBeforeMiB": 23.1343,
+      "heapAfterMiB": 48.3672,
+      "heapPeakMiB": 54.8887,
+      "heapDeltaMiB": 25.2329,
+      "snapshotBytes": 154190,
+      "snapshotMs": 0.7161,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1513
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0342
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 2.5072
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.0966
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 4.615
+        },
+        "spatial.queryOrganisms": {
+          "calls": 25855,
+          "milliseconds": 4.8018
+        },
+        "spatial.queryFood": {
+          "calls": 8329,
+          "milliseconds": 2.333
+        },
+        "behavior.foodDiscovery": {
+          "calls": 12929,
+          "milliseconds": 8.191
+        },
+        "spatial.queryWater": {
+          "calls": 12929,
+          "milliseconds": 1.0649
+        },
+        "behavior.mateSearch": {
+          "calls": 12929,
+          "milliseconds": 0.8905
+        },
+        "behavior.organismDecision": {
+          "calls": 12929,
+          "milliseconds": 23.32
+        },
+        "spatial.queryCarrion": {
+          "calls": 3000,
+          "milliseconds": 1.407
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 26.179
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0071
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 4.0517
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 5.9024
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 4.212
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 45.3805
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.2645
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 65,
+      "requestedResources": 250,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 64.195,
+      "meanActualResources": 250.805,
+      "decisions": 12839,
+      "tickMeanMs": 0.1554,
+      "tickP95Ms": 0.1755,
+      "tickMaxMs": 1.3557,
+      "cpuUserMs": 54.555,
+      "cpuSystemMs": 0.775,
+      "heapBeforeMiB": 23.16,
+      "heapAfterMiB": 50.7281,
+      "heapPeakMiB": 51.0738,
+      "heapDeltaMiB": 27.5681,
+      "snapshotBytes": 154180,
+      "snapshotMs": 0.7104,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1822
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0363
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.5964
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.6475
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.582
+        },
+        "spatial.queryOrganisms": {
+          "calls": 25681,
+          "milliseconds": 4.408
+        },
+        "spatial.queryFood": {
+          "calls": 8325,
+          "milliseconds": 1.3374
+        },
+        "behavior.foodDiscovery": {
+          "calls": 12842,
+          "milliseconds": 4.8459
+        },
+        "spatial.queryWater": {
+          "calls": 12842,
+          "milliseconds": 0.9139
+        },
+        "behavior.mateSearch": {
+          "calls": 12842,
+          "milliseconds": 0.5429
+        },
+        "behavior.organismDecision": {
+          "calls": 12842,
+          "milliseconds": 16.0803
+        },
+        "spatial.queryCarrion": {
+          "calls": 3000,
+          "milliseconds": 0.7716
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 18.3176
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0084
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.5949
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 2.8862
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.0905
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 31.0316
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.2532
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 65,
+      "requestedResources": 250,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 63.74,
+      "meanActualResources": 251.26,
+      "decisions": 12748,
+      "tickMeanMs": 0.1884,
+      "tickP95Ms": 0.2031,
+      "tickMaxMs": 1.6902,
+      "cpuUserMs": 85.212,
+      "cpuSystemMs": 2.924,
+      "heapBeforeMiB": 23.2055,
+      "heapAfterMiB": 47.1181,
+      "heapPeakMiB": 51.9917,
+      "heapDeltaMiB": 23.9127,
+      "snapshotBytes": 150474,
+      "snapshotMs": 0.8111,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1506
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0399
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.6536
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.4191
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 2.5344
+        },
+        "spatial.queryOrganisms": {
+          "calls": 25502,
+          "milliseconds": 4.8288
+        },
+        "spatial.queryFood": {
+          "calls": 8236,
+          "milliseconds": 1.5179
+        },
+        "behavior.foodDiscovery": {
+          "calls": 12754,
+          "milliseconds": 9.3505
+        },
+        "spatial.queryWater": {
+          "calls": 12754,
+          "milliseconds": 0.9749
+        },
+        "behavior.mateSearch": {
+          "calls": 12754,
+          "milliseconds": 0.8618
+        },
+        "behavior.organismDecision": {
+          "calls": 12754,
+          "milliseconds": 23.4132
+        },
+        "spatial.queryCarrion": {
+          "calls": 2918,
+          "milliseconds": 0.8006
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 26.8428
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0087
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 2.2742
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 3.2836
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.1864
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 37.6348
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.2663
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 65,
+      "requestedResources": 250,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 65,
+      "meanActualResources": 250,
+      "decisions": 13000,
+      "tickMeanMs": 0.3989,
+      "tickP95Ms": 0.519,
+      "tickMaxMs": 1.2047,
+      "cpuUserMs": 172.083,
+      "cpuSystemMs": 1.622,
+      "heapBeforeMiB": 23.1794,
+      "heapAfterMiB": 56.5143,
+      "heapPeakMiB": 55.6224,
+      "heapDeltaMiB": 33.3349,
+      "snapshotBytes": 157861,
+      "snapshotMs": 0.8158,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1597
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0325
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.6321
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.9095
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.2693
+        },
+        "spatial.queryOrganisms": {
+          "calls": 70986,
+          "milliseconds": 9.5293
+        },
+        "spatial.queryFood": {
+          "calls": 19800,
+          "milliseconds": 3.771
+        },
+        "terrain.routeCheck": {
+          "calls": 53103,
+          "milliseconds": 12.5307
+        },
+        "foraging.candidateScore": {
+          "calls": 55981,
+          "milliseconds": 33.406
+        },
+        "foraging.chooseTarget": {
+          "calls": 13000,
+          "milliseconds": 43.4581
+        },
+        "behavior.foodDiscovery": {
+          "calls": 13000,
+          "milliseconds": 50.8974
+        },
+        "spatial.queryWater": {
+          "calls": 13000,
+          "milliseconds": 0.9807
+        },
+        "behavior.mateSearch": {
+          "calls": 13000,
+          "milliseconds": 0.9366
+        },
+        "behavior.organismDecision": {
+          "calls": 13000,
+          "milliseconds": 65.5229
+        },
+        "spatial.queryCarrion": {
+          "calls": 6000,
+          "milliseconds": 1.3157
+        },
+        "predator.preyEvaluations": {
+          "calls": 639,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 68.7842
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0065
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 2.5123
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 2.3698
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.523
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 79.7445
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.3245
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 65,
+      "requestedResources": 250,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 65,
+      "meanActualResources": 250,
+      "decisions": 13000,
+      "tickMeanMs": 0.3353,
+      "tickP95Ms": 0.6624,
+      "tickMaxMs": 1.3795,
+      "cpuUserMs": 82.908,
+      "cpuSystemMs": 1.673,
+      "heapBeforeMiB": 23.377,
+      "heapAfterMiB": 51.5151,
+      "heapPeakMiB": 52.5108,
+      "heapDeltaMiB": 28.1381,
+      "snapshotBytes": 157850,
+      "snapshotMs": 0.5807,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1966
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0677
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.7232
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.7016
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.7595
+        },
+        "spatial.queryOrganisms": {
+          "calls": 69805,
+          "milliseconds": 10.2343
+        },
+        "spatial.queryFood": {
+          "calls": 19803,
+          "milliseconds": 3.9997
+        },
+        "terrain.routeCheck": {
+          "calls": 56321,
+          "milliseconds": 13.0953
+        },
+        "foraging.candidateScore": {
+          "calls": 59198,
+          "milliseconds": 28.9893
+        },
+        "foraging.chooseTarget": {
+          "calls": 13000,
+          "milliseconds": 39.9571
+        },
+        "behavior.foodDiscovery": {
+          "calls": 13000,
+          "milliseconds": 44.4187
+        },
+        "spatial.queryWater": {
+          "calls": 13000,
+          "milliseconds": 1.4622
+        },
+        "behavior.mateSearch": {
+          "calls": 13000,
+          "milliseconds": 0.4212
+        },
+        "behavior.organismDecision": {
+          "calls": 13000,
+          "milliseconds": 54.4623
+        },
+        "spatial.queryCarrion": {
+          "calls": 6000,
+          "milliseconds": 1.2548
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 56.5275
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0066
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 1.3969
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 2.3206
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.6538
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 67.0163
+        },
+        "predator.preyEvaluations": {
+          "calls": 533,
+          "milliseconds": 0
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1437
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 65,
+      "requestedResources": 250,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 64.755,
+      "meanActualResources": 250.245,
+      "decisions": 12951,
+      "tickMeanMs": 0.331,
+      "tickP95Ms": 0.4143,
+      "tickMaxMs": 1.0909,
+      "cpuUserMs": 89.272,
+      "cpuSystemMs": 1.417,
+      "heapBeforeMiB": 23.3169,
+      "heapAfterMiB": 46.0167,
+      "heapPeakMiB": 55.3266,
+      "heapDeltaMiB": 22.6998,
+      "snapshotBytes": 155419,
+      "snapshotMs": 0.598,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1579
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0354
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 0.9256
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.543
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.322
+        },
+        "spatial.queryOrganisms": {
+          "calls": 72394,
+          "milliseconds": 10.104
+        },
+        "spatial.queryFood": {
+          "calls": 19747,
+          "milliseconds": 3.4411
+        },
+        "terrain.routeCheck": {
+          "calls": 54293,
+          "milliseconds": 12.3379
+        },
+        "foraging.candidateScore": {
+          "calls": 58011,
+          "milliseconds": 29.2212
+        },
+        "foraging.chooseTarget": {
+          "calls": 12953,
+          "milliseconds": 39.2438
+        },
+        "behavior.foodDiscovery": {
+          "calls": 12953,
+          "milliseconds": 43.5462
+        },
+        "spatial.queryWater": {
+          "calls": 12953,
+          "milliseconds": 0.9138
+        },
+        "behavior.mateSearch": {
+          "calls": 12953,
+          "milliseconds": 0.4077
+        },
+        "behavior.organismDecision": {
+          "calls": 12953,
+          "milliseconds": 52.3117
+        },
+        "spatial.queryCarrion": {
+          "calls": 5918,
+          "milliseconds": 1.3336
+        },
+        "predator.preyEvaluations": {
+          "calls": 710,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 54.8481
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0069
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 1.344
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 2.3307
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 4.0153
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 66.1568
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1358
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 250,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 146.4,
+      "meanActualResources": 253.6,
+      "decisions": 29280,
+      "tickMeanMs": 0.3629,
+      "tickP95Ms": 0.5932,
+      "tickMaxMs": 1.242,
+      "cpuUserMs": 153.583,
+      "cpuSystemMs": 1.18,
+      "heapBeforeMiB": 23.4774,
+      "heapAfterMiB": 54.6148,
+      "heapPeakMiB": 57.7913,
+      "heapDeltaMiB": 31.1373,
+      "snapshotBytes": 266496,
+      "snapshotMs": 0.9336,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.1531
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0403
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.2732
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 3.5148
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.1013
+        },
+        "spatial.queryOrganisms": {
+          "calls": 58568,
+          "milliseconds": 11.6049
+        },
+        "spatial.queryFood": {
+          "calls": 19688,
+          "milliseconds": 3.6804
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29288,
+          "milliseconds": 16.425
+        },
+        "spatial.queryWater": {
+          "calls": 29288,
+          "milliseconds": 2.0707
+        },
+        "behavior.mateSearch": {
+          "calls": 29288,
+          "milliseconds": 1.6732
+        },
+        "behavior.organismDecision": {
+          "calls": 29288,
+          "milliseconds": 49.9881
+        },
+        "spatial.queryCarrion": {
+          "calls": 6000,
+          "milliseconds": 1.9052
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 53.3676
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.008
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 4.7778
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 8.5838
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.118
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 72.5469
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1742
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 250,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 146.945,
+      "meanActualResources": 253.055,
+      "decisions": 29389,
+      "tickMeanMs": 0.2849,
+      "tickP95Ms": 0.3998,
+      "tickMaxMs": 1.6985,
+      "cpuUserMs": 87.929,
+      "cpuSystemMs": 1.044,
+      "heapBeforeMiB": 23.4604,
+      "heapAfterMiB": 52.1481,
+      "heapPeakMiB": 56.1712,
+      "heapDeltaMiB": 28.6877,
+      "snapshotBytes": 266355,
+      "snapshotMs": 0.9557,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.141
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0333
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.278
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.0042
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.0661
+        },
+        "spatial.queryOrganisms": {
+          "calls": 58785,
+          "milliseconds": 10.3116
+        },
+        "spatial.queryFood": {
+          "calls": 19863,
+          "milliseconds": 4.6798
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29396,
+          "milliseconds": 14.0038
+        },
+        "spatial.queryWater": {
+          "calls": 29396,
+          "milliseconds": 1.9596
+        },
+        "behavior.mateSearch": {
+          "calls": 29396,
+          "milliseconds": 1.187
+        },
+        "behavior.organismDecision": {
+          "calls": 29396,
+          "milliseconds": 38.4723
+        },
+        "spatial.queryCarrion": {
+          "calls": 5933,
+          "milliseconds": 1.8653
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 41.8548
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0057
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.0759
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 6.5455
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.0885
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 56.9463
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1697
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 250,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 146.225,
+      "meanActualResources": 253.775,
+      "decisions": 29245,
+      "tickMeanMs": 0.2403,
+      "tickP95Ms": 0.2621,
+      "tickMaxMs": 1.0862,
+      "cpuUserMs": 61.188,
+      "cpuSystemMs": 0.802,
+      "heapBeforeMiB": 23.5356,
+      "heapAfterMiB": 53.3372,
+      "heapPeakMiB": 53.5192,
+      "heapDeltaMiB": 29.8016,
+      "snapshotBytes": 265536,
+      "snapshotMs": 0.893,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0304
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0139
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.3032
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 5.2305
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.6186
+        },
+        "spatial.queryOrganisms": {
+          "calls": 58497,
+          "milliseconds": 9.8903
+        },
+        "spatial.queryFood": {
+          "calls": 19741,
+          "milliseconds": 2.9517
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29252,
+          "milliseconds": 8.7314
+        },
+        "spatial.queryWater": {
+          "calls": 29252,
+          "milliseconds": 1.878
+        },
+        "behavior.mateSearch": {
+          "calls": 29252,
+          "milliseconds": 0.8327
+        },
+        "behavior.organismDecision": {
+          "calls": 29252,
+          "milliseconds": 29.0814
+        },
+        "spatial.queryCarrion": {
+          "calls": 5924,
+          "milliseconds": 1.7796
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 32.7776
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0056
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.3063
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 6.1692
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 1.9925
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 48.0252
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1616
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 250,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 149.665,
+      "meanActualResources": 250.335,
+      "decisions": 29933,
+      "tickMeanMs": 0.7078,
+      "tickP95Ms": 1.1114,
+      "tickMaxMs": 2.8938,
+      "cpuUserMs": 222.239,
+      "cpuSystemMs": 2.189,
+      "heapBeforeMiB": 23.4438,
+      "heapAfterMiB": 50.4125,
+      "heapPeakMiB": 60.8719,
+      "heapDeltaMiB": 26.9688,
+      "snapshotBytes": 275087,
+      "snapshotMs": 0.8876,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0466
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.028
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.3792
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.3388
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 4.0814
+        },
+        "spatial.queryOrganisms": {
+          "calls": 133532,
+          "milliseconds": 22.3303
+        },
+        "spatial.queryFood": {
+          "calls": 46672,
+          "milliseconds": 8.9926
+        },
+        "terrain.routeCheck": {
+          "calls": 116913,
+          "milliseconds": 27.4993
+        },
+        "foraging.candidateScore": {
+          "calls": 125557,
+          "milliseconds": 55.8158
+        },
+        "foraging.chooseTarget": {
+          "calls": 29936,
+          "milliseconds": 78.8798
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29936,
+          "milliseconds": 92.2039
+        },
+        "spatial.queryWater": {
+          "calls": 29936,
+          "milliseconds": 2.0239
+        },
+        "behavior.mateSearch": {
+          "calls": 29936,
+          "milliseconds": 1.2768
+        },
+        "behavior.organismDecision": {
+          "calls": 29936,
+          "milliseconds": 118.9109
+        },
+        "spatial.queryCarrion": {
+          "calls": 12000,
+          "milliseconds": 2.9128
+        },
+        "predator.preyEvaluations": {
+          "calls": 3943,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 121.8586
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0083
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.9562
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 8.8914
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.3651
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 141.5163
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1657
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 250,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 149.335,
+      "meanActualResources": 250.665,
+      "decisions": 29867,
+      "tickMeanMs": 0.6518,
+      "tickP95Ms": 0.9809,
+      "tickMaxMs": 1.354,
+      "cpuUserMs": 167.878,
+      "cpuSystemMs": 1.615,
+      "heapBeforeMiB": 23.5356,
+      "heapAfterMiB": 53.077,
+      "heapPeakMiB": 59.7916,
+      "heapDeltaMiB": 29.5414,
+      "snapshotBytes": 274779,
+      "snapshotMs": 1.0207,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0356
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0214
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.2482
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 3.7652
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.4165
+        },
+        "spatial.queryOrganisms": {
+          "calls": 132952,
+          "milliseconds": 21.4211
+        },
+        "spatial.queryFood": {
+          "calls": 46538,
+          "milliseconds": 8.5124
+        },
+        "terrain.routeCheck": {
+          "calls": 117253,
+          "milliseconds": 26.2635
+        },
+        "foraging.candidateScore": {
+          "calls": 126379,
+          "milliseconds": 54.967
+        },
+        "foraging.chooseTarget": {
+          "calls": 29869,
+          "milliseconds": 77.1708
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29869,
+          "milliseconds": 89.0358
+        },
+        "spatial.queryWater": {
+          "calls": 29869,
+          "milliseconds": 1.9597
+        },
+        "behavior.mateSearch": {
+          "calls": 29869,
+          "milliseconds": 1.0584
+        },
+        "behavior.organismDecision": {
+          "calls": 29869,
+          "milliseconds": 112.724
+        },
+        "spatial.queryCarrion": {
+          "calls": 12000,
+          "milliseconds": 2.9731
+        },
+        "predator.preyEvaluations": {
+          "calls": 3201,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 115.3492
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0073
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.4602
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 5.6163
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.2146
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 130.3026
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.2233
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 250,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 149.605,
+      "meanActualResources": 250.395,
+      "decisions": 29921,
+      "tickMeanMs": 0.6172,
+      "tickP95Ms": 0.8375,
+      "tickMaxMs": 1.1542,
+      "cpuUserMs": 142.686,
+      "cpuSystemMs": 1.643,
+      "heapBeforeMiB": 23.5191,
+      "heapAfterMiB": 58.4789,
+      "heapPeakMiB": 58.0724,
+      "heapDeltaMiB": 34.9598,
+      "snapshotBytes": 277544,
+      "snapshotMs": 0.9289,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0313
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0173
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.2873
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 3.2702
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 2.9617
+        },
+        "spatial.queryOrganisms": {
+          "calls": 132416,
+          "milliseconds": 20.3483
+        },
+        "spatial.queryFood": {
+          "calls": 46644,
+          "milliseconds": 7.8191
+        },
+        "terrain.routeCheck": {
+          "calls": 113236,
+          "milliseconds": 26.0272
+        },
+        "foraging.candidateScore": {
+          "calls": 123646,
+          "milliseconds": 53.3626
+        },
+        "foraging.chooseTarget": {
+          "calls": 29922,
+          "milliseconds": 74.5676
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29922,
+          "milliseconds": 85.0907
+        },
+        "spatial.queryWater": {
+          "calls": 29922,
+          "milliseconds": 1.9005
+        },
+        "behavior.mateSearch": {
+          "calls": 29922,
+          "milliseconds": 0.8213
+        },
+        "behavior.organismDecision": {
+          "calls": 29922,
+          "milliseconds": 106.764
+        },
+        "spatial.queryCarrion": {
+          "calls": 12000,
+          "milliseconds": 2.8049
+        },
+        "predator.preyEvaluations": {
+          "calls": 3984,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 109.1563
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.006
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.3548
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 5.6355
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.1412
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 123.4049
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1575
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 220,
+      "requestedResources": 250,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 213.13,
+      "meanActualResources": 256.87,
+      "decisions": 42626,
+      "tickMeanMs": 0.5067,
+      "tickP95Ms": 0.9116,
+      "tickMaxMs": 1.5334,
+      "cpuUserMs": 205.511,
+      "cpuSystemMs": 1.549,
+      "heapBeforeMiB": 23.6565,
+      "heapAfterMiB": 56.2014,
+      "heapPeakMiB": 61.145,
+      "heapDeltaMiB": 32.5449,
+      "snapshotBytes": 354129,
+      "snapshotMs": 1.2227,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0383
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0252
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.9103
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 5.0802
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.7493
+        },
+        "spatial.queryOrganisms": {
+          "calls": 85267,
+          "milliseconds": 18.1146
+        },
+        "spatial.queryFood": {
+          "calls": 28241,
+          "milliseconds": 5.496
+        },
+        "behavior.foodDiscovery": {
+          "calls": 42641,
+          "milliseconds": 21.884
+        },
+        "spatial.queryWater": {
+          "calls": 42641,
+          "milliseconds": 3.0605
+        },
+        "behavior.mateSearch": {
+          "calls": 42641,
+          "milliseconds": 2.3504
+        },
+        "behavior.organismDecision": {
+          "calls": 42641,
+          "milliseconds": 70.6193
+        },
+        "spatial.queryCarrion": {
+          "calls": 9000,
+          "milliseconds": 3.2515
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 76.4179
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0083
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 6.5287
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 11.9391
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.1659
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 101.3028
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1958
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 220,
+      "requestedResources": 250,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 215.38,
+      "meanActualResources": 254.62,
+      "decisions": 43076,
+      "tickMeanMs": 0.34,
+      "tickP95Ms": 0.3625,
+      "tickMaxMs": 1.2822,
+      "cpuUserMs": 79.1,
+      "cpuSystemMs": 1.227,
+      "heapBeforeMiB": 23.6433,
+      "heapAfterMiB": 60.4088,
+      "heapPeakMiB": 59.795,
+      "heapDeltaMiB": 36.7655,
+      "snapshotBytes": 356501,
+      "snapshotMs": 1.1233,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0335
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0182
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 2.3325
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.0772
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.9903
+        },
+        "spatial.queryOrganisms": {
+          "calls": 86164,
+          "milliseconds": 14.342
+        },
+        "spatial.queryFood": {
+          "calls": 28894,
+          "milliseconds": 5.1223
+        },
+        "behavior.foodDiscovery": {
+          "calls": 43088,
+          "milliseconds": 13.7264
+        },
+        "spatial.queryWater": {
+          "calls": 43088,
+          "milliseconds": 2.7817
+        },
+        "behavior.mateSearch": {
+          "calls": 43088,
+          "milliseconds": 1.2196
+        },
+        "behavior.organismDecision": {
+          "calls": 43088,
+          "milliseconds": 45.6774
+        },
+        "spatial.queryCarrion": {
+          "calls": 8834,
+          "milliseconds": 2.7899
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 49.2224
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0065
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 4.4449
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 8.1672
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 1.9525
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 67.9702
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1755
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 220,
+      "requestedResources": 250,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 214.91,
+      "meanActualResources": 255.09,
+      "decisions": 42982,
+      "tickMeanMs": 0.3415,
+      "tickP95Ms": 0.4096,
+      "tickMaxMs": 1.0875,
+      "cpuUserMs": 80.152,
+      "cpuSystemMs": 1.111,
+      "heapBeforeMiB": 23.7212,
+      "heapAfterMiB": 51.4079,
+      "heapPeakMiB": 60.2873,
+      "heapDeltaMiB": 27.6867,
+      "snapshotBytes": 357955,
+      "snapshotMs": 2.2582,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0321
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0186
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.8112
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 3.2954
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.5152
+        },
+        "spatial.queryOrganisms": {
+          "calls": 85976,
+          "milliseconds": 15.967
+        },
+        "spatial.queryFood": {
+          "calls": 28725,
+          "milliseconds": 4.4471
+        },
+        "behavior.foodDiscovery": {
+          "calls": 42994,
+          "milliseconds": 13.6772
+        },
+        "spatial.queryWater": {
+          "calls": 42994,
+          "milliseconds": 2.7936
+        },
+        "behavior.mateSearch": {
+          "calls": 42994,
+          "milliseconds": 1.2305
+        },
+        "behavior.organismDecision": {
+          "calls": 42994,
+          "milliseconds": 44.988
+        },
+        "spatial.queryCarrion": {
+          "calls": 8930,
+          "milliseconds": 3.3978
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 47.7164
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0065
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 4.3709
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 9.9248
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.0428
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 68.2646
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 1.1121
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 220,
+      "requestedResources": 250,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 217.74,
+      "meanActualResources": 252.26,
+      "decisions": 43548,
+      "tickMeanMs": 1.1301,
+      "tickP95Ms": 1.8752,
+      "tickMaxMs": 2.9771,
+      "cpuUserMs": 381.885,
+      "cpuSystemMs": 3.391,
+      "heapBeforeMiB": 23.6029,
+      "heapAfterMiB": 53.2363,
+      "heapPeakMiB": 64.0232,
+      "heapDeltaMiB": 29.6334,
+      "snapshotBytes": 367432,
+      "snapshotMs": 1.111,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0616
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.037
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 2.2235
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 3.6906
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 4.1513
+        },
+        "spatial.queryOrganisms": {
+          "calls": 178590,
+          "milliseconds": 34.1768
+        },
+        "spatial.queryFood": {
+          "calls": 67382,
+          "milliseconds": 15.0022
+        },
+        "terrain.routeCheck": {
+          "calls": 173040,
+          "milliseconds": 43.0094
+        },
+        "foraging.candidateScore": {
+          "calls": 191300,
+          "milliseconds": 84.2429
+        },
+        "foraging.chooseTarget": {
+          "calls": 43554,
+          "milliseconds": 121.2157
+        },
+        "behavior.foodDiscovery": {
+          "calls": 43554,
+          "milliseconds": 145.5267
+        },
+        "spatial.queryWater": {
+          "calls": 43554,
+          "milliseconds": 3.5213
+        },
+        "behavior.mateSearch": {
+          "calls": 43554,
+          "milliseconds": 2.2192
+        },
+        "behavior.organismDecision": {
+          "calls": 43554,
+          "milliseconds": 195.336
+        },
+        "spatial.queryCarrion": {
+          "calls": 17938,
+          "milliseconds": 5.9132
+        },
+        "predator.preyEvaluations": {
+          "calls": 7359,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 199.4979
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0105
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 6.4029
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 12.3425
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.9954
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 225.9344
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.166
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 220,
+      "requestedResources": 250,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 219.655,
+      "meanActualResources": 250.345,
+      "decisions": 43931,
+      "tickMeanMs": 1.0112,
+      "tickP95Ms": 1.5406,
+      "tickMaxMs": 2.3874,
+      "cpuUserMs": 224.281,
+      "cpuSystemMs": 3.074,
+      "heapBeforeMiB": 23.7363,
+      "heapAfterMiB": 64.1216,
+      "heapPeakMiB": 63.4806,
+      "heapDeltaMiB": 40.3853,
+      "snapshotBytes": 374624,
+      "snapshotMs": 1.2051,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0578
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0258
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 2.1922
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 4.1816
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 4.2226
+        },
+        "spatial.queryOrganisms": {
+          "calls": 179381,
+          "milliseconds": 31.9031
+        },
+        "spatial.queryFood": {
+          "calls": 68113,
+          "milliseconds": 15.1243
+        },
+        "terrain.routeCheck": {
+          "calls": 170600,
+          "milliseconds": 41.5012
+        },
+        "foraging.candidateScore": {
+          "calls": 188547,
+          "milliseconds": 83.6075
+        },
+        "foraging.chooseTarget": {
+          "calls": 43934,
+          "milliseconds": 120.2655
+        },
+        "behavior.foodDiscovery": {
+          "calls": 43934,
+          "milliseconds": 138.5308
+        },
+        "spatial.queryWater": {
+          "calls": 43934,
+          "milliseconds": 3.0348
+        },
+        "behavior.mateSearch": {
+          "calls": 43934,
+          "milliseconds": 1.3594
+        },
+        "behavior.organismDecision": {
+          "calls": 43934,
+          "milliseconds": 176.37
+        },
+        "spatial.queryCarrion": {
+          "calls": 18000,
+          "milliseconds": 4.5195
+        },
+        "predator.preyEvaluations": {
+          "calls": 6298,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 179.8594
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0072
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 5.7411
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 9.2532
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.8696
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 202.1889
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1792
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 220,
+      "requestedResources": 250,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 218.93,
+      "meanActualResources": 251.07,
+      "decisions": 43786,
+      "tickMeanMs": 0.9032,
+      "tickP95Ms": 1.226,
+      "tickMaxMs": 1.6281,
+      "cpuUserMs": 217.708,
+      "cpuSystemMs": 1.954,
+      "heapBeforeMiB": 23.5961,
+      "heapAfterMiB": 54.2291,
+      "heapPeakMiB": 63.4855,
+      "heapDeltaMiB": 30.6329,
+      "snapshotBytes": 367415,
+      "snapshotMs": 1.1169,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0322
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0182
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.9143
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 3.3153
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 3.649
+        },
+        "spatial.queryOrganisms": {
+          "calls": 179731,
+          "milliseconds": 28.0734
+        },
+        "spatial.queryFood": {
+          "calls": 67860,
+          "milliseconds": 12.2354
+        },
+        "foraging.chooseTarget": {
+          "calls": 43792,
+          "milliseconds": 109.8697
+        },
+        "behavior.foodDiscovery": {
+          "calls": 43792,
+          "milliseconds": 125.5283
+        },
+        "spatial.queryWater": {
+          "calls": 43792,
+          "milliseconds": 3.2013
+        },
+        "behavior.mateSearch": {
+          "calls": 43792,
+          "milliseconds": 1.2934
+        },
+        "behavior.organismDecision": {
+          "calls": 43792,
+          "milliseconds": 158.5404
+        },
+        "terrain.routeCheck": {
+          "calls": 161926,
+          "milliseconds": 37.2723
+        },
+        "foraging.candidateScore": {
+          "calls": 183173,
+          "milliseconds": 77.6235
+        },
+        "spatial.queryCarrion": {
+          "calls": 17868,
+          "milliseconds": 4.5881
+        },
+        "predator.preyEvaluations": {
+          "calls": 8268,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 161.4101
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0058
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 4.3668
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 8.6728
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 2.3196
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 180.6172
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1621
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 50,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 146.44,
+      "meanActualResources": 58.94,
+      "decisions": 29288,
+      "tickMeanMs": 0.251,
+      "tickP95Ms": 0.343,
+      "tickMaxMs": 0.957,
+      "cpuUserMs": 82.325,
+      "cpuSystemMs": 0.764,
+      "heapBeforeMiB": 23.3749,
+      "heapAfterMiB": 37.5328,
+      "heapPeakMiB": 44.8089,
+      "heapDeltaMiB": 14.1579,
+      "snapshotBytes": 228421,
+      "snapshotMs": 0.7978,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.033
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0158
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.8049
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 0.9117
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 2.2869
+        },
+        "spatial.queryOrganisms": {
+          "calls": 58585,
+          "milliseconds": 10.0723
+        },
+        "spatial.queryFood": {
+          "calls": 19697,
+          "milliseconds": 3.0547
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29297,
+          "milliseconds": 9.6742
+        },
+        "spatial.queryWater": {
+          "calls": 29297,
+          "milliseconds": 1.9913
+        },
+        "behavior.mateSearch": {
+          "calls": 29297,
+          "milliseconds": 1.2264
+        },
+        "behavior.organismDecision": {
+          "calls": 29297,
+          "milliseconds": 35.4996
+        },
+        "spatial.queryCarrion": {
+          "calls": 6000,
+          "milliseconds": 1.8334
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 37.1121
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0056
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.0604
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 5.8865
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 1.6603
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 50.1665
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1789
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 50,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 146.305,
+      "meanActualResources": 57.295,
+      "decisions": 29261,
+      "tickMeanMs": 0.2076,
+      "tickP95Ms": 0.2301,
+      "tickMaxMs": 0.8637,
+      "cpuUserMs": 48.771,
+      "cpuSystemMs": 0.741,
+      "heapBeforeMiB": 23.5074,
+      "heapAfterMiB": 37.1573,
+      "heapPeakMiB": 45.2479,
+      "heapDeltaMiB": 13.6499,
+      "snapshotBytes": 227656,
+      "snapshotMs": 0.8972,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0386
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0148
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.698
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 1.4129
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 2.7044
+        },
+        "spatial.queryOrganisms": {
+          "calls": 58528,
+          "milliseconds": 9.4895
+        },
+        "spatial.queryFood": {
+          "calls": 19723,
+          "milliseconds": 2.3424
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29267,
+          "milliseconds": 7.5565
+        },
+        "spatial.queryWater": {
+          "calls": 29267,
+          "milliseconds": 1.9117
+        },
+        "behavior.mateSearch": {
+          "calls": 29267,
+          "milliseconds": 0.8496
+        },
+        "behavior.organismDecision": {
+          "calls": 29267,
+          "milliseconds": 28.3498
+        },
+        "spatial.queryCarrion": {
+          "calls": 5947,
+          "milliseconds": 1.7208
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 29.553
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0088
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 2.9985
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 5.4912
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 0.5371
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 41.4953
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.202
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 50,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 146.605,
+      "meanActualResources": 62.435,
+      "decisions": 29321,
+      "tickMeanMs": 0.2149,
+      "tickP95Ms": 0.2763,
+      "tickMaxMs": 1.0354,
+      "cpuUserMs": 50.698,
+      "cpuSystemMs": 0.766,
+      "heapBeforeMiB": 23.5742,
+      "heapAfterMiB": 39.9191,
+      "heapPeakMiB": 44.7166,
+      "heapDeltaMiB": 16.345,
+      "snapshotBytes": 231021,
+      "snapshotMs": 1.1712,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0331
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0156
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.2146
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 1.2872
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 1.7221
+        },
+        "spatial.queryOrganisms": {
+          "calls": 58649,
+          "milliseconds": 8.8669
+        },
+        "spatial.queryFood": {
+          "calls": 19728,
+          "milliseconds": 2.4212
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29328,
+          "milliseconds": 7.9451
+        },
+        "spatial.queryWater": {
+          "calls": 29328,
+          "milliseconds": 1.8993
+        },
+        "behavior.mateSearch": {
+          "calls": 29328,
+          "milliseconds": 0.9125
+        },
+        "behavior.organismDecision": {
+          "calls": 29328,
+          "milliseconds": 30.3028
+        },
+        "spatial.queryCarrion": {
+          "calls": 6000,
+          "milliseconds": 1.7234
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 31.9718
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.006
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.0182
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 5.5161
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 0.5686
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 42.9583
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.2196
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 50,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 149.38,
+      "meanActualResources": 55.49,
+      "decisions": 29876,
+      "tickMeanMs": 0.4171,
+      "tickP95Ms": 0.5255,
+      "tickMaxMs": 1.2332,
+      "cpuUserMs": 118.697,
+      "cpuSystemMs": 0.991,
+      "heapBeforeMiB": 23.442,
+      "heapAfterMiB": 35.4483,
+      "heapPeakMiB": 48.0512,
+      "heapDeltaMiB": 12.0063,
+      "snapshotBytes": 240754,
+      "snapshotMs": 0.949,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0353
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0154
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.293
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 0.8514
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 1.7487
+        },
+        "spatial.queryOrganisms": {
+          "calls": 99409,
+          "milliseconds": 15.7965
+        },
+        "spatial.queryFood": {
+          "calls": 46556,
+          "milliseconds": 7.0933
+        },
+        "foraging.chooseTarget": {
+          "calls": 29878,
+          "milliseconds": 33.8112
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29878,
+          "milliseconds": 43.4081
+        },
+        "spatial.queryWater": {
+          "calls": 29878,
+          "milliseconds": 2.0241
+        },
+        "behavior.mateSearch": {
+          "calls": 29878,
+          "milliseconds": 1.1746
+        },
+        "behavior.organismDecision": {
+          "calls": 29878,
+          "milliseconds": 68.9559
+        },
+        "terrain.routeCheck": {
+          "calls": 31120,
+          "milliseconds": 7.7468
+        },
+        "foraging.candidateScore": {
+          "calls": 36643,
+          "milliseconds": 14.3804
+        },
+        "spatial.queryCarrion": {
+          "calls": 12000,
+          "milliseconds": 2.9504
+        },
+        "predator.preyEvaluations": {
+          "calls": 3858,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 70.545
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0054
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.0528
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 6.0879
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 1.7954
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 83.3955
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.2915
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 50,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 149.885,
+      "meanActualResources": 54.6,
+      "decisions": 29977,
+      "tickMeanMs": 0.3696,
+      "tickP95Ms": 0.4355,
+      "tickMaxMs": 0.8677,
+      "cpuUserMs": 89.551,
+      "cpuSystemMs": 0.899,
+      "heapBeforeMiB": 23.609,
+      "heapAfterMiB": 38.1505,
+      "heapPeakMiB": 47.926,
+      "heapDeltaMiB": 14.5415,
+      "snapshotBytes": 243036,
+      "snapshotMs": 0.8246,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0326
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0154
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.4968
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 0.848
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 1.9675
+        },
+        "spatial.queryOrganisms": {
+          "calls": 99584,
+          "milliseconds": 14.8064
+        },
+        "spatial.queryFood": {
+          "calls": 46755,
+          "milliseconds": 6.8351
+        },
+        "foraging.chooseTarget": {
+          "calls": 29977,
+          "milliseconds": 31.9159
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29977,
+          "milliseconds": 40.1527
+        },
+        "spatial.queryWater": {
+          "calls": 29977,
+          "milliseconds": 1.9085
+        },
+        "behavior.mateSearch": {
+          "calls": 29977,
+          "milliseconds": 0.8921
+        },
+        "behavior.organismDecision": {
+          "calls": 29977,
+          "milliseconds": 61.0755
+        },
+        "foraging.candidateScore": {
+          "calls": 35212,
+          "milliseconds": 13.9387
+        },
+        "terrain.routeCheck": {
+          "calls": 28683,
+          "milliseconds": 6.8499
+        },
+        "spatial.queryCarrion": {
+          "calls": 12000,
+          "milliseconds": 2.6185
+        },
+        "predator.preyEvaluations": {
+          "calls": 3088,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 62.321
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0061
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.0295
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 5.7558
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 0.656
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 73.886
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1692
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 50,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 149.775,
+      "meanActualResources": 57.82,
+      "decisions": 29955,
+      "tickMeanMs": 0.3776,
+      "tickP95Ms": 0.4465,
+      "tickMaxMs": 0.855,
+      "cpuUserMs": 91.176,
+      "cpuSystemMs": 0.836,
+      "heapBeforeMiB": 23.5498,
+      "heapAfterMiB": 37.2444,
+      "heapPeakMiB": 47.8297,
+      "heapDeltaMiB": 13.6946,
+      "snapshotBytes": 244601,
+      "snapshotMs": 0.8347,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0357
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0153
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.4016
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 1.0013
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 1.9551
+        },
+        "spatial.queryOrganisms": {
+          "calls": 99697,
+          "milliseconds": 15.8317
+        },
+        "spatial.queryFood": {
+          "calls": 46712,
+          "milliseconds": 6.7071
+        },
+        "foraging.chooseTarget": {
+          "calls": 29956,
+          "milliseconds": 32.2293
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29956,
+          "milliseconds": 40.6443
+        },
+        "spatial.queryWater": {
+          "calls": 29956,
+          "milliseconds": 1.9415
+        },
+        "behavior.mateSearch": {
+          "calls": 29956,
+          "milliseconds": 1.4148
+        },
+        "behavior.organismDecision": {
+          "calls": 29956,
+          "milliseconds": 62.6543
+        },
+        "terrain.routeCheck": {
+          "calls": 27094,
+          "milliseconds": 6.6563
+        },
+        "foraging.candidateScore": {
+          "calls": 36317,
+          "milliseconds": 13.522
+        },
+        "spatial.queryCarrion": {
+          "calls": 12000,
+          "milliseconds": 2.5879
+        },
+        "predator.preyEvaluations": {
+          "calls": 3531,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 64.0265
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0055
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.0417
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 5.6181
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 0.7032
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 75.4973
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1735
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 500,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 146.4,
+      "meanActualResources": 503.6,
+      "decisions": 29280,
+      "tickMeanMs": 0.392,
+      "tickP95Ms": 0.6688,
+      "tickMaxMs": 1.525,
+      "cpuUserMs": 158.468,
+      "cpuSystemMs": 1.316,
+      "heapBeforeMiB": 23.7241,
+      "heapAfterMiB": 67.7017,
+      "heapPeakMiB": 67.1443,
+      "heapDeltaMiB": 43.9776,
+      "snapshotBytes": 311995,
+      "snapshotMs": 1.1443,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.045
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0277
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.281
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 6.6823
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 4.3926
+        },
+        "spatial.queryOrganisms": {
+          "calls": 58568,
+          "milliseconds": 12.6779
+        },
+        "spatial.queryFood": {
+          "calls": 19688,
+          "milliseconds": 4.4912
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29288,
+          "milliseconds": 17.5662
+        },
+        "spatial.queryWater": {
+          "calls": 29288,
+          "milliseconds": 2.0547
+        },
+        "behavior.mateSearch": {
+          "calls": 29288,
+          "milliseconds": 1.4308
+        },
+        "behavior.organismDecision": {
+          "calls": 29288,
+          "milliseconds": 48.6912
+        },
+        "spatial.queryCarrion": {
+          "calls": 6000,
+          "milliseconds": 1.8515
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 53.6745
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.008
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 5.6257
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 9.2077
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 4.968
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 78.3388
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.184
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 500,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 146.945,
+      "meanActualResources": 503.055,
+      "decisions": 29389,
+      "tickMeanMs": 0.3243,
+      "tickP95Ms": 0.422,
+      "tickMaxMs": 1.3026,
+      "cpuUserMs": 98.139,
+      "cpuSystemMs": 1.056,
+      "heapBeforeMiB": 23.7531,
+      "heapAfterMiB": 65.7215,
+      "heapPeakMiB": 66.2453,
+      "heapDeltaMiB": 41.9684,
+      "snapshotBytes": 311846,
+      "snapshotMs": 1.0585,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.042
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0163
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.2401
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 6.6051
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 4.852
+        },
+        "spatial.queryOrganisms": {
+          "calls": 58785,
+          "milliseconds": 11.3396
+        },
+        "spatial.queryFood": {
+          "calls": 19863,
+          "milliseconds": 4.0759
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29396,
+          "milliseconds": 14.3434
+        },
+        "spatial.queryWater": {
+          "calls": 29396,
+          "milliseconds": 1.9621
+        },
+        "behavior.mateSearch": {
+          "calls": 29396,
+          "milliseconds": 1.1652
+        },
+        "behavior.organismDecision": {
+          "calls": 29396,
+          "milliseconds": 40.2599
+        },
+        "spatial.queryCarrion": {
+          "calls": 5933,
+          "milliseconds": 1.8208
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 44.4229
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0057
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.0212
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 7.3338
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 5.0293
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 64.8341
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.176
+        }
+      }
+    },
+    {
+      "model": 0,
+      "requestedPopulation": 150,
+      "requestedResources": 500,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 146.225,
+      "meanActualResources": 503.775,
+      "decisions": 29245,
+      "tickMeanMs": 0.283,
+      "tickP95Ms": 0.3175,
+      "tickMaxMs": 1.2554,
+      "cpuUserMs": 70.482,
+      "cpuSystemMs": 1.507,
+      "heapBeforeMiB": 23.8151,
+      "heapAfterMiB": 63.8186,
+      "heapPeakMiB": 65.0475,
+      "heapDeltaMiB": 40.0034,
+      "snapshotBytes": 310925,
+      "snapshotMs": 1.0809,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0333
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0174
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.8613
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 6.7725
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 4.8907
+        },
+        "spatial.queryOrganisms": {
+          "calls": 58497,
+          "milliseconds": 9.444
+        },
+        "spatial.queryFood": {
+          "calls": 19737,
+          "milliseconds": 3.7204
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29252,
+          "milliseconds": 11.0409
+        },
+        "spatial.queryWater": {
+          "calls": 29252,
+          "milliseconds": 2.8435
+        },
+        "behavior.mateSearch": {
+          "calls": 29252,
+          "milliseconds": 0.9125
+        },
+        "behavior.organismDecision": {
+          "calls": 29252,
+          "milliseconds": 33.1115
+        },
+        "spatial.queryCarrion": {
+          "calls": 5924,
+          "milliseconds": 1.809
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 37.7085
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0062
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.0791
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 6.1605
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 4.5655
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 56.5711
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.2089
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 500,
+      "repeat": 0,
+      "ticks": 200,
+      "meanActualPopulation": 149.665,
+      "meanActualResources": 500.335,
+      "decisions": 29933,
+      "tickMeanMs": 1.0442,
+      "tickP95Ms": 1.561,
+      "tickMaxMs": 2.5559,
+      "cpuUserMs": 293.343,
+      "cpuSystemMs": 2.724,
+      "heapBeforeMiB": 23.6657,
+      "heapAfterMiB": 69.8417,
+      "heapPeakMiB": 70.0066,
+      "heapDeltaMiB": 46.176,
+      "snapshotBytes": 320524,
+      "snapshotMs": 1.0775,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0516
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0334
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.9112
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 7.4238
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 5.9464
+        },
+        "spatial.queryOrganisms": {
+          "calls": 178686,
+          "milliseconds": 28.9844
+        },
+        "spatial.queryFood": {
+          "calls": 46672,
+          "milliseconds": 10.9656
+        },
+        "terrain.routeCheck": {
+          "calls": 231391,
+          "milliseconds": 53.179
+        },
+        "foraging.candidateScore": {
+          "calls": 245044,
+          "milliseconds": 109.4304
+        },
+        "foraging.chooseTarget": {
+          "calls": 29936,
+          "milliseconds": 136.5508
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29936,
+          "milliseconds": 152.5591
+        },
+        "spatial.queryWater": {
+          "calls": 29936,
+          "milliseconds": 2.1127
+        },
+        "behavior.mateSearch": {
+          "calls": 29936,
+          "milliseconds": 1.2207
+        },
+        "behavior.organismDecision": {
+          "calls": 29936,
+          "milliseconds": 179.0696
+        },
+        "spatial.queryCarrion": {
+          "calls": 12000,
+          "milliseconds": 2.9309
+        },
+        "predator.preyEvaluations": {
+          "calls": 3935,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 184.1256
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0119
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.9484
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 8.514
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 5.8949
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 208.7983
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1795
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 500,
+      "repeat": 1,
+      "ticks": 200,
+      "meanActualPopulation": 149.325,
+      "meanActualResources": 500.675,
+      "decisions": 29865,
+      "tickMeanMs": 0.9729,
+      "tickP95Ms": 1.3543,
+      "tickMaxMs": 1.5929,
+      "cpuUserMs": 243.938,
+      "cpuSystemMs": 2.327,
+      "heapBeforeMiB": 23.7911,
+      "heapAfterMiB": 62.0902,
+      "heapPeakMiB": 71.1719,
+      "heapDeltaMiB": 38.2992,
+      "snapshotBytes": 320362,
+      "snapshotMs": 1.0553,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0374
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0219
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.3349
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 6.4515
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 4.4024
+        },
+        "spatial.queryOrganisms": {
+          "calls": 176708,
+          "milliseconds": 26.7986
+        },
+        "spatial.queryFood": {
+          "calls": 46534,
+          "milliseconds": 10.5289
+        },
+        "terrain.routeCheck": {
+          "calls": 234413,
+          "milliseconds": 50.2703
+        },
+        "foraging.candidateScore": {
+          "calls": 249966,
+          "milliseconds": 105.1933
+        },
+        "foraging.chooseTarget": {
+          "calls": 29867,
+          "milliseconds": 132.0815
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29867,
+          "milliseconds": 146.7756
+        },
+        "spatial.queryWater": {
+          "calls": 29867,
+          "milliseconds": 1.9777
+        },
+        "behavior.mateSearch": {
+          "calls": 29867,
+          "milliseconds": 1.0525
+        },
+        "behavior.organismDecision": {
+          "calls": 29867,
+          "milliseconds": 171.4526
+        },
+        "spatial.queryCarrion": {
+          "calls": 12000,
+          "milliseconds": 2.9313
+        },
+        "predator.preyEvaluations": {
+          "calls": 3255,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 175.8848
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.006
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.3817
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 5.6385
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 5.0075
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 194.5456
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.16
+        }
+      }
+    },
+    {
+      "model": 1,
+      "requestedPopulation": 150,
+      "requestedResources": 500,
+      "repeat": 2,
+      "ticks": 200,
+      "meanActualPopulation": 149.625,
+      "meanActualResources": 500.375,
+      "decisions": 29925,
+      "tickMeanMs": 0.9627,
+      "tickP95Ms": 1.3341,
+      "tickMaxMs": 2.196,
+      "cpuUserMs": 215.372,
+      "cpuSystemMs": 2.505,
+      "heapBeforeMiB": 23.7677,
+      "heapAfterMiB": 64.8883,
+      "heapPeakMiB": 70.6709,
+      "heapDeltaMiB": 41.1206,
+      "snapshotBytes": 324288,
+      "snapshotMs": 1.0857,
+      "entries": {
+        "engine.climate": {
+          "calls": 200,
+          "milliseconds": 0.0414
+        },
+        "engine.environment": {
+          "calls": 200,
+          "milliseconds": 0.0221
+        },
+        "spatial.populateOrganisms": {
+          "calls": 200,
+          "milliseconds": 1.4461
+        },
+        "spatial.populateFood": {
+          "calls": 400,
+          "milliseconds": 6.2484
+        },
+        "engine.spatialIndex": {
+          "calls": 200,
+          "milliseconds": 4.6361
+        },
+        "spatial.queryOrganisms": {
+          "calls": 176064,
+          "milliseconds": 28.0607
+        },
+        "spatial.queryFood": {
+          "calls": 46650,
+          "milliseconds": 10.8155
+        },
+        "terrain.routeCheck": {
+          "calls": 221114,
+          "milliseconds": 50.0656
+        },
+        "foraging.candidateScore": {
+          "calls": 235249,
+          "milliseconds": 106.8502
+        },
+        "foraging.chooseTarget": {
+          "calls": 29925,
+          "milliseconds": 132.9996
+        },
+        "behavior.foodDiscovery": {
+          "calls": 29925,
+          "milliseconds": 145.5997
+        },
+        "spatial.queryWater": {
+          "calls": 29925,
+          "milliseconds": 1.9672
+        },
+        "behavior.mateSearch": {
+          "calls": 29925,
+          "milliseconds": 0.8576
+        },
+        "behavior.organismDecision": {
+          "calls": 29925,
+          "milliseconds": 168.6751
+        },
+        "spatial.queryCarrion": {
+          "calls": 12000,
+          "milliseconds": 2.8417
+        },
+        "predator.preyEvaluations": {
+          "calls": 3969,
+          "milliseconds": 0
+        },
+        "engine.behavior": {
+          "calls": 200,
+          "milliseconds": 172.5829
+        },
+        "engine.reproductionGenetics": {
+          "calls": 200,
+          "milliseconds": 0.0055
+        },
+        "engine.metabolismDeaths": {
+          "calls": 200,
+          "milliseconds": 3.1813
+        },
+        "engine.physics": {
+          "calls": 200,
+          "milliseconds": 6.4925
+        },
+        "engine.resources": {
+          "calls": 200,
+          "milliseconds": 5.4187
+        },
+        "engine.step": {
+          "calls": 200,
+          "milliseconds": 192.4921
+        },
+        "engine.serializeForStorage": {
+          "calls": 1,
+          "milliseconds": 0.1699
+        }
+      }
+    }
+  ]
+}

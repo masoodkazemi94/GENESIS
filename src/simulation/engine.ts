@@ -45,6 +45,9 @@ import {
 import { generateSpeciesTaxon } from './species/species.js';
 import { SpeciesAncestryTree } from './species/lineageTree.js';
 import { EventChronicle } from './events/events.js';
+import type { EcologyObserver } from './ecology/observer.js';
+import { resolveEcologyConfig, type EcologyConfig } from './ecology/config.js';
+import type { SimulationProbe } from './performance/probe.js';
 
 export const SIMULATION_STEP_MS = 50; // 20 ticks per second (fixed step)
 
@@ -75,11 +78,14 @@ export class SimulationEngine {
   // Internal Ecological Vital Statistics
   public totalBirths = 0;
   public totalDeaths = 0;
+  public totalDeathAgeTicks = 0;
   public causesOfDeath: CauseOfDeathStats = {
     starvation: 0,
     dehydration: 0,
     predation: 0,
     senescence: 0,
+    thermal: 0,
+    disaster: 0,
   };
 
   // Mutation-event log recording genetic changes from parent to offspring
@@ -94,12 +100,17 @@ export class SimulationEngine {
   private prng: PRNG;
   private maxObservedAge = 0;
   private lastApexKills = 0;
+  public observer?: EcologyObserver;
+  public probe?: SimulationProbe;
+  public ecologyConfig: EcologyConfig;
 
-  constructor(seedOrSaved?: number | SavedWorldData) {
+  constructor(seedOrSaved?: number | SavedWorldData, config?: Partial<EcologyConfig>) {
     this.speciesTree = new SpeciesAncestryTree();
     this.chronicle = new EventChronicle(60, 200);
 
     if (typeof seedOrSaved === 'object' && seedOrSaved !== null && 'version' in seedOrSaved) {
+      // Saves without ecology metadata retain the historical effective carrion range.
+      this.ecologyConfig = resolveEcologyConfig(seedOrSaved.ecologyConfig ?? { scavengerCarrionRange: 1 / 1.8 });
       // Restore from saved world data
       this.worldSeed = seedOrSaved.worldSeed;
       this.worldName = seedOrSaved.worldName;
@@ -112,8 +123,9 @@ export class SimulationEngine {
       if (seedOrSaved.stats) {
         this.totalBirths = seedOrSaved.stats.totalBirths || 0;
         this.totalDeaths = seedOrSaved.stats.totalDeaths || 0;
+        this.totalDeathAgeTicks = seedOrSaved.totalDeathAgeTicks || 0;
         if (seedOrSaved.stats.causesOfDeath) {
-          this.causesOfDeath = { ...seedOrSaved.stats.causesOfDeath };
+          this.causesOfDeath = { ...this.causesOfDeath, ...seedOrSaved.stats.causesOfDeath };
         }
         if (seedOrSaved.stats.energyLedger) {
           this.energyLedger = { ...seedOrSaved.stats.energyLedger };
@@ -137,9 +149,10 @@ export class SimulationEngine {
         }
       }
 
-      this.chronicle.restoreEvents(seedOrSaved.events);
+      this.chronicle.restoreEvents(seedOrSaved.events, seedOrSaved.archivedEventsCount, seedOrSaved.nextEventId);
       if (typeof seedOrSaved.prngState === 'number') {
-        this.prng = new PRNG(seedOrSaved.prngState);
+        this.prng = new PRNG(this.worldSeed);
+        this.prng.setState(seedOrSaved.prngState);
       } else {
         this.prng = new PRNG(this.worldSeed + this.tick);
       }
@@ -156,12 +169,26 @@ export class SimulationEngine {
       if (typeof seedOrSaved.biosphereExtinctLogged === 'boolean') {
         this.biosphereExtinctLogged = seedOrSaved.biosphereExtinctLogged;
       }
+      this.lastApexKills = seedOrSaved.lastApexKills ?? 0;
 
       // Recreate procedural terrain from seed
       const gen = generateNewWorld(this.worldSeed);
       this.terrain = gen.terrain;
+      if (seedOrSaved.terrainPatches) {
+        this.terrain.modifiedIndices = new Set();
+        this.terrain.deterioratedIndices = new Set();
+        for (const patch of seedOrSaved.terrainPatches) {
+          const cell = this.terrain.cells[patch.index];
+          if (!cell) continue;
+          const { index, ...state } = patch;
+          Object.assign(cell, state);
+          this.terrain.modifiedIndices.add(patch.index);
+          if (cell.deterioration && cell.deterioration > 0) this.terrain.deterioratedIndices.add(patch.index);
+        }
+      }
       this.spatialGrid = createSpatialGrid(this.terrain.worldWidth, this.terrain.worldHeight, 80);
     } else {
+      this.ecologyConfig = resolveEcologyConfig(config);
       // New world generation
       const seed = typeof seedOrSaved === 'number' ? seedOrSaved : (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
       this.worldSeed = seed;
@@ -169,7 +196,7 @@ export class SimulationEngine {
       this.prng = new PRNG(seed);
       this.climate = createInitialClimate();
 
-      const gen = generateNewWorld(seed);
+      const gen = generateNewWorld(seed, this.ecologyConfig);
       this.worldName = gen.worldName;
       this.terrain = gen.terrain;
       this.organisms = gen.organisms;
@@ -193,12 +220,17 @@ export class SimulationEngine {
   }
 
   public step(): void {
+    const stepStarted = this.probe?.start();
+    this.spatialGrid.probe = this.probe;
     this.tick += 1;
 
     // 1. Advance climate & solar radiation cycle
+    const climateStarted = this.probe?.start();
     this.climate = updateClimate(this.climate, this.tick);
+    if (climateStarted !== undefined) this.probe?.end('engine.climate', climateStarted);
 
     // 2. Environmental & Disaster System (Probabilistic, deterministic, bounded severity)
+    const environmentStarted = this.probe?.start();
     if (this.tick % 40 === 0) {
       for (const k in this.disasterCooldowns) {
         const key = k as keyof DisasterCooldowns;
@@ -213,10 +245,12 @@ export class SimulationEngine {
         this.disasterCooldowns,
         this.tick,
         this.prng,
-        this.resources
+        this.resources,
+        this.ecologyConfig.disasterFrequency
       );
 
       if (newDisaster) {
+        newDisaster.severity = Math.min(1, newDisaster.severity * this.ecologyConfig.disasterSeverity);
         this.climate.activeDisasters.push(newDisaster);
         this.climate.disasterHistoryCount = (this.climate.disasterHistoryCount || 0) + 1;
 
@@ -258,31 +292,47 @@ export class SimulationEngine {
         y: ev.y,
       });
     }
+    if (environmentStarted !== undefined) this.probe?.end('engine.environment', environmentStarted);
 
     // 3. Spatial Indexing
+    const spatialStarted = this.probe?.start();
     populateSpatialGrid(this.spatialGrid, this.organisms, this.resources);
+    if (spatialStarted !== undefined) this.probe?.end('engine.spatialIndex', spatialStarted);
 
     // 4. Autonomous Decision Engine (Utility-based AI with genuine consequence)
+    const behaviorStarted = this.probe?.start();
     const behaviorOutput = updateCreatureBehavior(
       this.organisms,
       this.resources,
       this.terrain,
       this.spatialGrid,
-      this.prng
+      this.prng,
+      this.observer,
+      this.ecologyConfig,
+      this.probe,
+      true
     );
+    if (behaviorStarted !== undefined) this.probe?.end('engine.behavior', behaviorStarted);
 
     // Track energy accounting from behavioral outcomes
     this.energyLedger.dissipatedReproductionTax += behaviorOutput.reproductionTaxDissipated;
 
     // 5. Handle Reproduction & Genetic Inheritance
+    const reproductionStarted = this.probe?.start();
     for (let i = 0; i < behaviorOutput.reproducedParents.length; i++) {
-      // Soft carrying capacity ceiling for smooth real-time execution
-      if (this.organisms.length >= 220) break;
+      // Hard population ceiling for bounded real-time execution
+      if (this.organisms.length >= 220) {
+        this.observer?.onBirthBlocked?.('population_cap');
+        continue;
+      }
 
       const { parentA, parentB } = behaviorOutput.reproducedParents[i];
       const parentTaxon = this.speciesMap.get(parentA.speciesId);
 
-      if (!parentTaxon) continue;
+      if (!parentTaxon) {
+        this.observer?.onBirthBlocked?.('missing_taxon');
+        continue;
+      }
 
       // Two-parent inheritance, genetic recombination, and mutation event logging
       const { childGenome, mutations } = crossoverGenomesWithLog(
@@ -293,9 +343,11 @@ export class SimulationEngine {
         parentB.id,
         this.tick
       );
+      this.probe?.count('genetics.crossover');
 
       // Evaluate speciation criteria against founder and species centroid baseline
       const speciationResult = evaluateSpeciationCriteria(childGenome, parentTaxon);
+      const childGeneration = Math.max(parentA.generation, parentB.generation) + 1;
 
       let childTaxon: SpeciesTaxon;
       if (speciationResult.shouldSpeciate) {
@@ -308,9 +360,10 @@ export class SimulationEngine {
           parentTaxon,
           speciationResult.divergenceScore
         );
+        newTaxon.generationPeak = childGeneration;
 
         this.speciesMap.set(newTaxon.id, newTaxon);
-        this.speciesTree.registerSpecies(newTaxon, parentTaxon.id, this.tick);
+        this.speciesTree.registerSpecies(newTaxon, parentTaxon.id, speciationResult.divergenceScore);
         childTaxon = newTaxon;
 
         this.chronicle.addEvent(
@@ -325,7 +378,8 @@ export class SimulationEngine {
         // Increment population counters on parent taxon and tree
         childTaxon.totalHistoricalCount = (childTaxon.totalHistoricalCount || 0) + 1;
         childTaxon.aliveCount = (childTaxon.aliveCount || 0) + 1;
-        this.speciesTree.recordBirth(childTaxon.id, this.tick);
+        childTaxon.generationPeak = Math.max(childTaxon.generationPeak, childGeneration);
+        this.speciesTree.recordBirth(childTaxon.id, childGeneration);
 
         // Update species centroid genome as an exponential moving average
         const alpha = 0.05;
@@ -363,7 +417,7 @@ export class SimulationEngine {
         childId,
         childTaxon,
         childGenome,
-        Math.max(parentA.generation, parentB.generation) + 1,
+        childGeneration,
         spawnX,
         spawnY,
         this.tick,
@@ -375,14 +429,16 @@ export class SimulationEngine {
 
       this.organisms.push(child);
       this.totalBirths += 1;
+      this.observer?.onBirth?.(child, speciationResult.divergenceScore, mutations);
     }
+    if (reproductionStarted !== undefined) this.probe?.end('engine.reproductionGenetics', reproductionStarted);
 
     // 6. Hunt Kills & Apex Predator Milestones
     for (let k = 0; k < behaviorOutput.kills.length; k++) {
       const { predator, prey, residualCarrionMass } = behaviorOutput.kills[k];
 
       // Spawn residual carcass mass from predator kill as carrion for scavengers
-      spawnCarrion(this.resources, prey.x, prey.y, prey.genome.bodySize, residualCarrionMass);
+      spawnCarrion(this.resources, prey.x, prey.y, prey.genome.bodySize, residualCarrionMass, `carrion_${this.tick}_${prey.id}`);
 
       if (predator.kills >= 5 && predator.kills > this.lastApexKills) {
         this.lastApexKills = predator.kills;
@@ -397,6 +453,7 @@ export class SimulationEngine {
     }
 
     // 7. Metabolism, Aging, Thermal Stress & Mortality
+    const metabolismStarted = this.probe?.start();
     for (let i = 0; i < this.organisms.length; i++) {
       const org = this.organisms[i];
       if (org.state === 'dead') continue;
@@ -406,7 +463,11 @@ export class SimulationEngine {
       const orgCell = getCellAt(this.terrain, org.x, org.y);
       const isFlooded = orgCell ? !!orgCell.isFlooded : false;
 
-      const energyBurned = updateOrganismMetabolism(org, localTemp, this.climate.isDrought, isFlooded);
+      const measuredCosts = this.observer?.onMetabolism
+        ? { basal: 0, movement: 0, thermal: 0, flood: 0 } : undefined;
+      const energyBurned = updateOrganismMetabolism(org, localTemp, this.climate.isDrought,
+        isFlooded, this.ecologyConfig, measuredCosts);
+      if (measuredCosts) this.observer?.onMetabolism?.(org, energyBurned, measuredCosts);
       this.energyLedger.dissipatedMetabolicHeat += energyBurned;
 
       // Track oldest organism
@@ -429,16 +490,18 @@ export class SimulationEngine {
       const org = this.organisms[i];
       if (org.state === 'dead') {
         this.totalDeaths += 1;
+        this.totalDeathAgeTicks += org.age;
 
         // Record cause of death statistics
         const cause = org.deathCause || (org.energy <= 0 ? 'starvation' : org.age > org.maxAge ? 'senescence' : 'dehydration');
+        this.observer?.onDeath?.(org, cause);
         if (cause in this.causesOfDeath) {
           this.causesOfDeath[cause as keyof CauseOfDeathStats] += 1;
         }
 
         // Non-predated deaths become decomposing carrion for scavengers
         if (cause !== 'predation') {
-          spawnCarrion(this.resources, org.x, org.y, org.genome.bodySize, org.genome.bodySize * 28);
+          spawnCarrion(this.resources, org.x, org.y, org.genome.bodySize, org.genome.bodySize * 28, `carrion_${this.tick}_${org.id}`);
         }
 
         const taxon = this.speciesMap.get(org.speciesId);
@@ -474,18 +537,26 @@ export class SimulationEngine {
         this.organisms.splice(i, 1);
       }
     }
+    if (metabolismStarted !== undefined) this.probe?.end('engine.metabolismDeaths', metabolismStarted);
 
     // 9. Physics integration (continuous motion, drag, flood water friction)
+    const physicsStarted = this.probe?.start();
     updatePhysics(this.organisms, this.terrain, this.spatialGrid);
+    if (physicsStarted !== undefined) this.probe?.end('engine.physics', physicsStarted);
 
     // 10. Ecosystem resources (photosynthesis, flora regrowth, carrion decomposition)
+    const ecosystemStarted = this.probe?.start();
     const ecoResult = updateResourceEcosystem(
       this.resources,
       this.terrain,
       this.climate,
       this.energyLedger.soilNutrientEnergy,
-      this.prng
+      this.prng,
+      this.ecologyConfig.plantGrowth,
+      this.ecologyConfig.plantReseedingPlantOnly || (this.ecologyConfig.behaviorModel ?? 0) > 0,
+      (this.ecologyConfig.behaviorModel ?? 0) > 0
     );
+    if (ecosystemStarted !== undefined) this.probe?.end('engine.resources', ecosystemStarted);
 
     // Update energy ledger
     this.energyLedger.solarEnergyInflow += ecoResult.solarEnergyInflow;
@@ -515,6 +586,7 @@ export class SimulationEngine {
         { isMilestone: true }
       );
     }
+    if (stepStarted !== undefined) this.probe?.end('engine.step', stepStarted);
   }
 
   public getStats(): EcosystemStats {
@@ -624,8 +696,10 @@ export class SimulationEngine {
   }
 
   public serializeForStorage(): SavedWorldData {
-    return {
+    const started = this.probe?.start();
+    const saved: SavedWorldData = {
       version: 2,
+      ecologyConfig: { ...this.ecologyConfig },
       worldSeed: this.worldSeed,
       worldName: this.worldName,
       createdTimestamp: this.createdTimestamp,
@@ -637,6 +711,16 @@ export class SimulationEngine {
       maxObservedAge: this.maxObservedAge,
       totalHabitatDeterioration: this.totalHabitatDeterioration,
       biosphereExtinctLogged: this.biosphereExtinctLogged,
+      lastApexKills: this.lastApexKills,
+      totalDeathAgeTicks: this.totalDeathAgeTicks,
+      archivedEventsCount: this.chronicle.getArchivedEventsCount(),
+      nextEventId: this.chronicle.getNextEventId(),
+      terrainPatches: [...(this.terrain.modifiedIndices || [])].sort((a, b) => a - b).map((index) => {
+        const cell = this.terrain.cells[index];
+        return { index, fertility: cell.fertility, plantSuitability: cell.plantSuitability,
+          isFlooded: cell.isFlooded, deterioration: cell.deterioration,
+          ashFertilityBoost: cell.ashFertilityBoost, burnedCooldown: cell.burnedCooldown };
+      }),
       calendar: getCalendarDate(this.tick),
       climate: { ...this.climate, activeDisasters: [...(this.climate.activeDisasters || [])] },
       organisms: this.organisms,
@@ -644,9 +728,11 @@ export class SimulationEngine {
       events: this.chronicle.getAllEvents(),
       species: Array.from(this.speciesMap.values()),
       stats: this.getStats(),
-      mutationEvents: this.mutationEvents.slice(-100),
+      mutationEvents: [...this.mutationEvents],
       ancestryNodes: this.speciesTree.serialize(),
       speciesRegistry: Array.from(this.speciesMap.values()),
     };
+    if (started !== undefined) this.probe?.end('engine.serializeForStorage', started);
+    return saved;
   }
 }

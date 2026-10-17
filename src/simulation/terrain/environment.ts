@@ -147,7 +147,8 @@ export function evaluateDisasterTriggers(
   cooldowns: DisasterCooldowns,
   tick: number,
   prng: PRNG,
-  resources: ResourcePatch[]
+  resources: ResourcePatch[],
+  frequencyMultiplier = 1
 ): EnvironmentalDisaster | null {
   // 1. DROUGHT: High probability during hot summer or severe positive temperature trends
   if (cooldowns.drought <= 0 && !climate.isDrought) {
@@ -155,7 +156,7 @@ export function evaluateDisasterTriggers(
     const isDryAnomaly = climate.globalRainAnomaly < -0.15;
     const droughtChance = isHotSummer ? 0.0035 : isDryAnomaly ? 0.002 : 0.0008;
 
-    if (prng.chance(droughtChance)) {
+    if (prng.chance(Math.min(1, droughtChance * frequencyMultiplier))) {
       cooldowns.drought = DEFAULT_DISASTER_COOLDOWNS.drought;
       const severity = Math.min(0.88, Math.max(0.45, 0.55 + prng.range(-0.1, 0.3)));
       const durationTicks = prng.rangeInt(1000, 2200);
@@ -183,7 +184,7 @@ export function evaluateDisasterTriggers(
     const isDryAndHot = climate.temperature > 22 && (climate.rainfall < 0.28 || climate.isDrought);
     const fireChance = isDryAndHot ? 0.005 : prng.chance(0.001) ? 0.001 : 0;
 
-    if (fireChance > 0 && prng.chance(fireChance)) {
+    if (fireChance > 0 && prng.chance(Math.min(1, fireChance * frequencyMultiplier))) {
       // Find candidate dry vegetated cell
       const cs = terrain.cellSize;
       let bestCandidate: TerrainCell | null = null;
@@ -236,7 +237,7 @@ export function evaluateDisasterTriggers(
     const isTorrential = climate.rainfall > 0.72;
     const floodChance = isTorrential ? 0.004 : isSpringMelt ? 0.003 : 0.0006;
 
-    if (prng.chance(floodChance)) {
+    if (prng.chance(Math.min(1, floodChance * frequencyMultiplier))) {
       // Find candidate river / low-elevation junction
       const cs = terrain.cellSize;
       let floodOriginCell: TerrainCell | null = null;
@@ -279,7 +280,7 @@ export function evaluateDisasterTriggers(
   // 4. RARE VOLCANIC ERUPTION: Super rare, erupts from prominent mountain peak
   if (cooldowns.volcanic_eruption <= 0 && tick > 1200) {
     const volcanoChance = 0.0006; // Rare occurrence
-    if (prng.chance(volcanoChance)) {
+    if (prng.chance(Math.min(1, volcanoChance * frequencyMultiplier))) {
       // Find highest peak cell in terrain
       let highestCell: TerrainCell | null = null;
       let maxElevation = MOUNTAIN_LEVEL;
@@ -322,7 +323,7 @@ export function evaluateDisasterTriggers(
   // 5. COLD SNAP: Extreme winter frost / polar vortex
   if (cooldowns.cold_snap <= 0 && climate.season === 'winter') {
     const coldSnapChance = 0.0035;
-    if (prng.chance(coldSnapChance)) {
+    if (prng.chance(Math.min(1, coldSnapChance * frequencyMultiplier))) {
       cooldowns.cold_snap = DEFAULT_DISASTER_COOLDOWNS.cold_snap;
       const severity = Math.min(0.90, Math.max(0.50, 0.65 + prng.range(-0.1, 0.2)));
       const radius = terrain.worldWidth * 0.75;
@@ -400,6 +401,8 @@ export function updateEnvironmentalDisasters(
             cell.ashFertilityBoost = 0.45;
             if (!terrain.deterioratedIndices) terrain.deterioratedIndices = new Set();
             terrain.deterioratedIndices.add(gy * terrain.width + gx);
+            if (!terrain.modifiedIndices) terrain.modifiedIndices = new Set();
+            terrain.modifiedIndices.add(gy * terrain.width + gx);
           }
         }
       }
@@ -440,7 +443,7 @@ export function updateEnvironmentalDisasters(
 
           if (org.health <= 0) {
             org.state = 'dead';
-            org.deathCause = 'starvation'; // Or severe environmental hazard
+            org.deathCause = 'disaster';
           }
         }
       }
@@ -467,6 +470,8 @@ export function updateEnvironmentalDisasters(
             // Lowland cells and river banks are submerged
             if (cell.height <= SEA_LEVEL + 0.08 || cell.isRiver) {
               cell.isFlooded = true;
+              if (!terrain.modifiedIndices) terrain.modifiedIndices = new Set();
+              terrain.modifiedIndices.add(gy * terrain.width + gx);
             }
           }
         }
@@ -513,6 +518,8 @@ export function updateEnvironmentalDisasters(
             cell.ashFertilityBoost = 0.70;
             if (!terrain.deterioratedIndices) terrain.deterioratedIndices = new Set();
             terrain.deterioratedIndices.add(gy * terrain.width + gx);
+            if (!terrain.modifiedIndices) terrain.modifiedIndices = new Set();
+            terrain.modifiedIndices.add(gy * terrain.width + gx);
           } else if (distSq <= rSq) {
             // Volcanic ash deposit
             cell.deterioration = Math.min(0.65, (cell.deterioration || 0) + 0.03 * disaster.severity);
@@ -520,6 +527,8 @@ export function updateEnvironmentalDisasters(
             cell.ashFertilityBoost = 0.55;
             if (!terrain.deterioratedIndices) terrain.deterioratedIndices = new Set();
             terrain.deterioratedIndices.add(gy * terrain.width + gx);
+            if (!terrain.modifiedIndices) terrain.modifiedIndices = new Set();
+            terrain.modifiedIndices.add(gy * terrain.width + gx);
           }
         }
       }
